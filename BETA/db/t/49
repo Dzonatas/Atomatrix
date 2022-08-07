@@ -1,0 +1,10 @@
+o6 p40 c0 s48 l43 c0 w0 p0 v7
+name	(49,877)	$ door
+aliases	(49,877)	?
+desc	(49,877)	$ undescript object
+
+portal	(49,877)	# 1
+locked	(49,877)	# 0
+other_side	(49,877)	M 48
+open	(49,877)	# 1
+.

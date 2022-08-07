@@ -1,0 +1,16 @@
+o6 p10 c0 s291 l233 c0 w373 p0 v5
+name	(347,895)	$ Floating Ear
+aliases	(347,895)	$ ear
+desc	(347,895)	$ Your ear looks fine.
+dark	(6,91)	# 1
+isfor	(6,27)	# 373
+.
+follow (0)
+~~.isfor ? !
+.location <> .isfor.location ? _moveto(.isfor.location);
+/*$crtl random(10)==5 ? .isfor tell("Something tickles at your ear.");*/
+
+tell (0)
+principal() tell("[Ear] ", +argv);
+follow();
+

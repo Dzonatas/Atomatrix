@@ -1,0 +1,49 @@
+o6 p10 c0 s434 l478 c0 w55 p0 v3
+name	(6,219)	$ data directory
+verbs	(20,0)	A 1
+A 7
+$ fs
+# -1
+# -1
+# -1
+# -1
+$ fs
+A 1
+# -102
+list	(6,27)	# 434
+.
+fs (0)
+$curses initscr(); 
+$curses cbreak();  
+$curses noecho();
+$curses nonl(); 
+$curses erase();
+
+p=$proc.getenv("HOME") + "/src/o";
+
+d= $io directory(p);
+d @~ $error ? {
+	.list initialize( d );
+	[ 1 ] {
+		c=.list input();
+		c == 'd' ? {
+			d= $io directory(p + "/" + .list item());
+			d @~ $error ? {
+				p += "/" + .list item();
+				.list initialize( d );
+				}
+			<;
+			}
+		c == 'e' ? {
+			$proc.system("vi " + p + "/" + .list item());
+			$curses clear();
+			.list visualize();
+			<;
+			}
+		.;
+		}
+	}
+
+$curses refresh();
+$curses endwin();
+

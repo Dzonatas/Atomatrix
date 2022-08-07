@@ -1,0 +1,215 @@
+o6 p450 c0 s447 l445 c0 w0 p0 v10
+name	(446,895)	$ Window
+window	(6,219)	?
+gc	(6,219)	?
+font	(6,219)	?
+cx	(6,219)	# 0
+cy	(6,219)	# 32
+text	(6,219)	A 1
+A 0
+x	(6,219)	# 0
+y	(6,219)	# 2
+list	(6,219)	A 17
+A 2
+$ addch
+$ 
+A 2
+$ create
+$ 
+A 2
+$ crlf
+$ 
+A 2
+$ delch
+$ 
+A 2
+$ destroy
+$ 
+A 2
+$ expose
+$ 
+A 2
+$ flush
+$ 
+A 2
+$ hide
+$ 
+A 2
+$ hidecursor
+$ 
+A 2
+$ keypress
+$ 
+A 2
+$ notify
+$ 
+A 2
+$ print
+$ 
+A 2
+$ prompt
+$ 
+A 2
+$ scroll
+$ 
+A 2
+$ show
+$ 
+A 2
+$ showcursor
+$ 
+A 2
+$ updatecursor
+$ 
+.
+buttonpress (0)
+y = argv[0].y / .font.height;
+y == 0 ? !
+y -= 1;
+y => .list length() ? !
+( p = .location.obj program( .list[y][0] ) ) @ $error ?
+	{
+	textate("Program not found.");
+	!
+	}
+( text = p source() ) @ $error ?
+	{
+	textate("Could not edit program source.");
+	!
+	}
+ntext = $editor edit(text) ;
+p source( ntext ) @ $error ?
+	textate("Could not reprogram.");
+,	textate("Reprogrammed.");
+
+crlf (0)
+.x = 0;
+.y += 1;
+.y => 25 ? {
+	.y = 24;
+	scroll();
+	}
+
+scroll (0)
+.gc copyarea(0, .font.height, 639, 400 - .font.height, 0, 0);
+.gc cleararea(0, 400 - .font.height, 639, 399);
+popl(.text);
+x=0;
+pushr(.text,{});
+[x < 80] {
+	pushr(.text[24]," ");
+	x += 1;
+	}
+
+showcursor (0)
+.gc fillrectangle(.cx, .cy, .font.width, .font.height);
+
+hidecursor (0)
+.gc cleararea( .cx, .cy, .font.width, .font.height);
+.gc drawstring(.cx, .cy + .font.ascent, .text[.y][.x]);
+
+keypress (0)
+~~argv[0].key ? {
+	argv[0].keycode == 98  ? { cursor_up(); }
+	argv[0].keycode == 103 ? { cursor_select(); }
+	argv[0].keycode == 36  ? { cursor_select(); }
+	argv[0].keycode == 104 ? { cursor_down(); }
+	argv[0].keycode == 9   ? { destroy(); ! }
+	}
+,	{
+	argv[0].key == "e" ? { cursor_select(); }
+	argv[0].key == "j" ?	{ cursor_down(); }
+	argv[0].key == "k" ?	{ cursor_up(); }
+	}
+$X.flush();
+
+show (0)
+.window map();
+$X.flush();
+
+create (0)
+.window	= $X.window();
+.window.x		= 100;
+.window.y		= 100;
+.window.width		= 640;
+.window.height		= 400;
+.window.background	= .grey;
+.window create();
+
+enableevents();
+
+.gc	= $X.gc(.window);
+.font	= $X.font("8x16");
+c = $X.color(0,0,0);
+.gc setforeground(c);
+.gc setfont(.font);
+.text	= {{}};
+.x	= 0;
+.y	= 0;
+updatecursor();
+y = 0;
+.list = {};
+[ p; .location.obj programs() ]
+	pushr( .list , {p identifier() , "" } ) ;
+.list = $util sort( .list , 0 ) ;
+
+hide (0)
+.window unmap();
+$X.flush();
+
+destroy (0)
+disableevents();
+.window = NULL;
+flush();
+
+expose (0)
+y = 1;
+i = 0;
+.gc drawstring(0, .font.ascent, ascii(" Object : ",.location.obj.name, "(#", .location.obj, ")"));
+max = .list length();
+[y < 25 && i < max] {
+	.gc drawstring(.font.width * 2, (y * .font.height) + .font.ascent, .list[i][0]);
+	y += 1;
+	i += 1;
+	}
+showcursor();
+$X.flush();
+
+updatecursor (0)
+.cx = .x * .font.width;
+.cy = .y * .font.height;
+
+cursor_up (0)
+.y == 0 ? !
+hidecursor();
+.y -= 1;
+updatecursor();
+showcursor();
+
+cursor_down (0)
+.y == .list length() ? !
+hidecursor();
+.y += 1;
+updatecursor();
+showcursor();
+
+cursor_select (0)
+y = .y;
+y == 0 ? !
+y -= 1;
+y => .list length() ? !
+( p = .location.obj program( .list[y][0] ) ) @ $error ?
+	{
+	textate("Program not found.");
+	!
+	}
+( text = p source() ) @ $error ?
+	{
+	textate("Could not edit program source.");
+	!
+	}
+ntext = $editor edit(text) ;
+p source( ntext ) @ $error ?
+	textate("Could not reprogram.");
+,	textate("Reprogrammed.");
+

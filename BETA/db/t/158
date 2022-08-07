@@ -1,0 +1,17 @@
+o6 p4 c0 s155 l0 c146 w0 p0 v3
+name	(158,877)	$ Bank
+desc	(158,877)	$ Inside of what looks like a vault!
+exits	(4,219)	A 4
+A 1
+# 5
+A 1
+M 148
+A 0
+A 0
+.
+_moved_out (0)
+1!
+
+_accept (0)
+argv[0] == 146 || $wizard precesses(argv[0]) ? 1!
+

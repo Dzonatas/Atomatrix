@@ -1,0 +1,16 @@
+o6 p10 c0 s441 l478 c447 w445 p0 v5
+main	(442,895)	M 447
+name	(442,895)	$ shell
+aliases	(442,895)	?
+desc	(442,895)	?
+window	(6,91)	M 444
+.
+testmsg (0)
+textate("it worked");
+
+shell (0)
+.main create();
+.main show();
+
+task (0)
+

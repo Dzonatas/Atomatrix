@@ -1,0 +1,11 @@
+o4 p4 c0 s485 l107 c493 w487 p0 v3
+name	(4,219)	$ Macintosh
+desc	(4,219)	?
+exits	(4,219)	A 4
+A 0
+A 0
+A 1
+$ exit
+A 1
+M 475
+.

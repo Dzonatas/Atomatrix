@@ -1,0 +1,155 @@
+o6 p10 c0 s445 l478 c0 w223 p0 v8
+name	(451,895)	$ myWindowManager
+aliases	(451,895)	?
+desc	(451,895)	?
+wyndo	(6,91)	# 159
+event	(6,219)	?
+bpx	(6,219)	?
+bpy	(6,219)	?
+loop	(6,219)	?
+.
+mywm (0)
+//avatar() tell("mywm started");
+$x11 start();
+startup();
+io();
+//avatar() tell("mywm ended");
+
+io (0)
+$x11 redirect();
+
+wyndo = $proc.getenv("WINDOWID") ;
+wyndo = $module serialed( wyndo ) ;
+wyndo ? {
+	.wyndo inquir( wyndo );
+	}
+
+a = $x querytree( $x.defaultrootwindow );
+a ? {
+	l = a[2] length( );
+	i = 0;
+	[ i < l ] {
+		query( a[2][i] );
+		i += 1;
+		}
+	}
+
+.bpx = 0;
+.bpy = 0;
+
+.loop = 1;
+[ .loop ] {
+	.event		= $x event();
+	.event.type	== $x.keypress		? keypress();		,
+	.event.type	== $x.keyrelease	? keyrelease();		,
+	.event.type	== $x.buttonpress	? buttonpress();	,
+	.event.type	== $x.buttonrelease	? buttonrelease();	,
+	.event.type	== $x.motionnotify	? motionnotify();	,
+	.event.type	== $x.createnotify	? createnotify();	,
+	.event.type	== $x.maprequest	? maprequest();		,
+	.event.type	== $x.configurerequest	? configurerequest();
+	}
+
+startup (0)
+dg = $x allocnamedcolor( $x.defaultcolormap, "rgb:10/10/10" );
+$x setwindowbackground( $x.defaultrootwindow, dg );
+$x clearwindow( $x.defaultrootwindow );
+$x flush();
+
+query (0)
+enqueue( argv[0] );
+
+a = $x querytree( argv[0] );
+a ? {
+	l = a[2] length( );
+	i = 0;
+	[ i < l ] {
+		query( a[2][i] );
+		i += 1;
+		}
+	}
+
+enqueue (0)
+$x grabbutton( $x.button1, 8, argv[0], $x.false, $x.buttonpressmask, $x.grabmodeasync, $x.grabmodeasync, $x.none, $x.none );
+$x grabkey( $x.anykey, 8, argv[0], $x.false, $x.grabmodeasync, $x.grabmodeasync );
+
+boundsize (0)
+o = argv[0];
+m = 0;
+
+o.x < .wyndo.x ? {
+	o.x = .wyndo.x;
+	m =  m | $x.cwx;
+	/* FIXME :  o.mask = o.mask | $x.cxw    crashes */
+	}
+
+o.y < .wyndo.y ? {
+	o.y = .wyndo.y;
+	m = m | $x.cwy;
+	}
+
+
+o.width > .wyndo.width ? {
+	o.width = .wyndo.width;
+	m = m | $x.cwwidth;
+	}
+
+
+
+o.height > .wyndo.height ? {
+	o.height = .wyndo.height;
+	m = m | $x.cwheight;
+	}
+
+o.mask = o.mask | m;
+
+o!
+
+keypress (0)
+.event.state == 8 ?
+	{
+	.event.keycode == 11 ?		// alt 3
+		{
+		$x lowerwindow( .event.window ) ;
+		$x flush() ;
+		}
+	}
+
+keyrelease (0)
+
+buttonpress (0)
+.event.window == $x.defaultrootwindow ?
+	{
+	.loop = 0 ;
+	!
+	}
+.event.state == 8 ?
+	{
+	$x grabpointer( .event.window ,	$x.false ,
+		$x.button1motionmask | $x.buttonpressmask | $x.buttonreleasemask ,
+		$x.grabmodeasync , $x.grabmodeasync , .event.window , $x.none , $x.currenttime ) ;
+	.bpx = .event.x ;
+	.bpy = .event.y ;
+	}
+
+buttonrelease (0)
+$x ungrabpointer( $x.currenttime );
+
+motionnotify (0)
+$x movewindow( .event.window , .event.x_root - .bpx , .event.y_root - .bpy ) ;
+$x flush() ;
+
+createnotify (0)
+
+maprequest (0)
+o = boundsize( $x getgeometry( .event.window ) );
+$x mapwindow( .event.window );
+enqueue( .event.window );
+$x flush();
+
+configurerequest (0)
+boundsize( .event.windowchanges );
+$x configurewindow( .event.window, .event.windowchanges.mask, .event.windowchanges );
+/*$x configurewindow( .event.window, .event.value_mask, .event.windowchanges );*/
+$x flush();
+

@@ -1,0 +1,9 @@
+o6 p115 c0 s0 l303 c0 w285 p0 v4
+name	(73,585)	$ leather pants
+type	(73,585)	$ lp
+defense	(73,585)	$ +2
+using	(73,80)	A 2
+# 303
+A 1
+$ lb
+.

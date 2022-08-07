@@ -1,0 +1,36 @@
+o17 p74 c381 s109 l74 c0 w120 p0 v5
+name	(115,73)	$ ARMOUR-LOWER-BODY
+desc	(115,73)	$ A new pair of leather leggings.
+worn	(6,73)	$ lb
+types	(6,73)	A 8
+A 7
+$ l
+$ js
+$ jp
+$ lp
+$ sp
+$ rp
+$ pp
+A 2
+$ leggins
+$ +1
+A 2
+$ jean skirt
+$ +2
+A 2
+$ jeans
+$ +2
+A 2
+$ leather pants
+$ +2
+A 2
+$ scale-mail pants
+$ +3
+A 2
+$ ring-mail pants
+$ +4
+A 2
+$ plate-mail pants
+$ +5
+type	(6,73)	$ l-body
+.

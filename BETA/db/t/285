@@ -1,0 +1,9 @@
+o73 p136 c0 s0 l303 c0 w0 p0 v4
+name	(73,585)	$ plastic gloves
+type	(73,585)	$ pg
+defense	(73,585)	$ +0
+using	(73,80)	A 2
+# 303
+A 1
+$ bh
+.

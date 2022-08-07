@@ -1,0 +1,11 @@
+o6 p4 c0 s252 l0 c0 w0 p0 v3
+name	(253,877)	$ storage area
+desc	(253,1023)	$ 
+exits	(4,219)	A 4
+A 1
+# 5
+A 1
+M 251
+A 0
+A 0
+.

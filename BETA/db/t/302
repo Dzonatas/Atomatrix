@@ -1,0 +1,41 @@
+o6 p10 c0 s202 l478 c0 w159 p0 v3
+name	(6,219)	$ xterm
+verbs	(20,0)	A 1
+A 7
+$ xterm
+# -1
+# -1
+# -1
+# -1
+$ xterm
+A 1
+# -102
+xterm	(6,27)	A 11
+$ xterm
+$ +cm
+$ -tn
+$ xterm-color
+$ -ls
+$ -sl
+$ 500
+$ -fn
+$ 6x10
+$ -g
+$ 80x24+40+100
+.
+xterm (0)
+.xterm="xterm +cm -tn xterm-color -ls -sl 500 -fn 10x20 -g +93+168";
+.xterm= {
+	"xterm",
+	"+cm",
+	"-tn", "xterm-color",
+	"-ls",
+	"-sl", "500",
+	"-fn", "6x10",
+	"-g", "80x24+40+100"
+	};
+$proc.fork(this,"forked");
+
+forked (0)
+$proc.exec(+.xterm);
+

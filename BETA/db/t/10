@@ -1,0 +1,133 @@
+o6 p1 c275 s0 l0 c0 w0 p0 v7
+name	(10,895)	$ objectgen
+aliases	(10,895)	?
+desc	(10,895)	$ That object is non descriptive.
+generic_note	(10,73)	M 29
+generic_door	(10,73)	M 40
+verbs	(20,0)	A 5
+A 6
+$ drop|throw
+# 1
+# -1
+# -1
+# -1
+$ drop
+A 7
+$ get|take
+# 1
+# -1
+# -1
+# -1
+$ get
+A 1
+# -104
+A 6
+$ throw
+# 1
+# 4
+# 0
+# -1
+$ drop
+A 7
+$ give
+# 1
+# 4
+# 0
+# -1
+$ give
+A 1
+# -108
+A 7
+$ put
+# 1
+# 12
+# 0
+# -1
+$ put
+A 1
+# -108
+container	(17,73)	# 244
+.
+_moveto (0)
+.nomove ? $error.perm!
+this reintermodulize(argv[0])!
+
+drop (0)
+.location <> avatar() ?
+	textate("You don't have that!") !
+~~.location _accept(this) ?
+	textate("You can't drop that here.") !
+ok=_moveto(avatar().location);
+~~ok ?	{
+	textate(_msg("drop",0) || "You can't seem to drop that.");
+	msg=_omsg("drop",0) ?
+		intertextate( msg ) ;
+	!
+	}
+textate(_msg("drop",1) || "Dropped.");
+intertextate( _omsg("drop",1) 
+	|| avatar().name + " drops " + $util name(this,"the") + ".");
+/*
+verb=="throw" && iobjstr ? {
+	textate("You throw ",$util name(this,"the"),
+		" at ",iobjstr,"!");
+	intertextate(avatar().name,
+		" throws ",$util name(this,"the")," at ",iobjstr,"!");
+	}
+intertextate(avatar().name," drops ",
+	$util name(this,"the"),".");
+caller==avatar() serinteger()?
+	textate("Dropped."); ,
+	textate("You drop ",$util name(this,"the"),".");
+*/
+
+get (0)
+dobj = argv[0];
+dobj.location == avatar() ?
+	textate("You already have that.") !
+~~avatar() _accept(dobj) ?
+	textate("You can't take that.") !
+ok=dobj _moveto( avatar() ) ;
+~~ok ?	{
+	textate(dobj _msg("take",0) || "You can't seem to take that.");
+	msg=dobj _omsg("take",0) ? intertextate(msg);
+	!
+	}
+textate(dobj _msg("take",1) || "Taken.");
+intertextate(dobj _omsg("take",1) 
+	|| avatar().name," takes ",$util name(dobj,"the"),".");
+
+give (0)
+iobj = argv[0];
+.location <> avatar() serinteger()?
+	textate("You don't have ",$util name(this),"!") !
+~~iobj ?
+	textate("To whom?") !
+ok=this reintermodulize(iobj);
+~~ok ? {
+	ok==$error.perm ?
+		textate("You can't seem to do that."); ,
+		textate("Doesn't want it.");
+
+} , {
+	iobj tell(avatar().name," gives ",$util name(this)," to you.");
+	textate("Ok.");
+	}
+
+put (0)
+iobj = argv[0] ;
+.location <> avatar() ?
+	textate("You don't have ",$util name(this),"!") !
+~~iobj ?
+	textate("Inside what?") !
+ok=this reintermodulize(iobj);
+~~ok ?	{
+	ok==$error.perm ?
+		textate("You can not seem to do that.") ! ,
+		textate("You can not put that inside there.") !
+
+	} 
+
+//	iobj tell(avatar().name," puts ",$util name(this)," inside of " .");  UPDATE: notify locals
+textate("Ok.") ;
+

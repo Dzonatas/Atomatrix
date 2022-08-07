@@ -1,0 +1,28 @@
+o6 p4 c0 s22 l0 c126 w0 p0 v5
+transition	(6,27)	M 3
+exits	(175,219)	A 2
+A 1
+# 1
+A 1
+M 310
+verbs	(20,0)	A 1
+A 7
+$ wait
+# -1
+# -1
+# -1
+# -1
+$ buswait
+A 1
+# -102
+name	(6,27)	$ kmal bus station
+desc	(6,27)	$ 
+.
+buswait (0)
+textate("bus arrives");
+textate("you get on");
+avatar() reintermodulize(.transition);
+textate("bus moves");
+$program sleep(2);
+textate("you get off");
+

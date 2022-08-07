@@ -1,0 +1,14 @@
+o17 p4 c0 s229 l0 c0 w0 p0 v3
+name	(230,877)	$ Waterfall Bridge
+desc	(230,877)	$ The bridge swings back and forth with your weight as you cross south and
+down, directly in front of the waterfall.  Mist sprays up all about you.
+exits	(4,219)	A 4
+A 2
+# 2
+# 1
+A 2
+M 231
+M 229
+A 0
+A 0
+.

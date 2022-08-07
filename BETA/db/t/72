@@ -1,0 +1,446 @@
+o72 p1 c352 s265 l222 c352 w221 p0 v14
+name	(72,877)	$ NPC
+scheduler	(72,73)	# 0
+treasure	(72,73)	M 146
+treasurelist	(72,73)	A 4
+M 142
+M 140
+M 141
+M 143
+task	(72,511)	# 5
+bank	(17,73)	# 158
+active	(72,729)	A 17
+M 217
+M 237
+M 66
+M 161
+M 219
+M 227
+M 178
+M 189
+M 264
+M 262
+M 351
+M 93
+M 438
+M 439
+M 72
+M 280
+M 259
+verbs	(20,0)	A 4
+A 6
+$ h*it|kill|hack|slash|a*ttack
+# 1
+# -1
+# -1
+# -1
+$ hit
+A 6
+$ dit
+# 1
+# -1
+# -1
+# -1
+$ dit
+A 6
+$ start
+# 1
+# -1
+# -1
+# -1
+$ start
+A 6
+$ stop
+# 1
+# -1
+# -1
+# -1
+$ stop
+body	(72,73)	A 2
+A 19
+$ h
+$ n
+$ ub
+$ ra
+$ la
+$ rh
+$ lh
+$ c
+$ b
+$ lb
+$ ll
+$ rl
+$ lf
+$ rf
+$ d
+$ bh
+$ bf
+$ ba
+$ bl
+A 19
+$ head
+$ neck
+$ upper-body
+$ right-arm
+$ left-arm
+$ right-hand
+$ left-hand
+$ chest
+$ back
+$ lower-body
+$ left-leg
+$ right-leg
+$ left-foot
+$ right-foot
+$ finger
+$ hands
+$ feet
+$ arms
+$ legs
+npc	(72,73)	# 1
+monsters	(72,73)	M 221
+recycled	(72,91)	A 3
+M 79
+M 290
+M 352
+name_def	(6,219)	A 1
+$ pn
+on_demand	(72,91)	A 11
+M 262
+M 93
+M 79
+M 290
+M 280
+M 264
+M 259
+M 352
+M 351
+M 438
+M 439
+.
+myexits_bounded (0)
+d={};
+my_exits=$area_list area_expand(.wander_bounds);
+x=0;
+[ dirnum; .location.exits[0]] {
+	.location.exits[1][x] @# my_exits ?
+		pushr(d,$compass_dirs[dirnum-1]);
+	x=x+1;
+	}
+x=0;
+[ dir; .location.exits[2]] {
+	.location.exits[3][x] @# .location.exits[1] ? {
+		x=x+1;
+		<;
+		}
+	.location.exits[3][x] @# my_exits ? {
+		i = dir index( "|" ) ?
+			dir = dir substring( 0 , i ) ;
+		i = dir index( "*" ) ?
+			dir = dir substring( 0 , i ) ;
+		pushr(d,dir);
+		}
+	x=x+1;
+	}
+d!
+
+_recycle (0)
+argv -> o;
+~~o ? o=this;
+~~$npc_class precesses(o) ? $error.invobj!
+
+o stop(o);
+
+$util lock($npc_class,"rlock");
+o @# $npc_class.recycled ? {
+	$util unlock($npc_class,"rlock");
+	1!
+	}
+o @# $npc_class.on_demand ? {
+	$util db("#",o,"(",$util name(o),") RECYCLED");
+	[ v; o variants() ]
+		v delete() ;
+	[ c; o.objects] {
+		$battle.object precesses(c) ?
+			c _recycle() ;
+		,	c drop() ;
+		}
+	o _moveto($npc_class);
+	$modules serialed(o) reprecessize( $npc_class ) ;
+	pushr($npc_class.recycled,o);
+	}
+,	{
+	$util db("#",o,"(",$util name(o),") don't know how to recycle");
+	}
+$util unlock($npc_class,"rlock");
+1!
+
+_create (0)
+argv -> generic;
+/* add variants that successants of NPC must have */
+(~~generic) || ~~$npc_class precesses(generic) ?
+	generic = $npc_class ;
+m	= popl($npc_class.recycled) ;
+~~o ?	{ 
+	~~(m=create(generic,generic)) ?
+		m !
+	pushr($npc_class.on_demand,m);
+	}
+,	{
+	m reprecessize( $module serialed( generic ) ) ;
+	}
+vs	= { "name", "task", "doing", "wait_time", "status" } ;
+[ v ; vs ]
+	m addVariant( v ) security( "a=rw" ) ;
+m principal( $npc_class ) ;
+m !
+
+showmsg (0)
+argv -> who, what, arg1, arg2;
+msgs=who._msgs;
+[ type; msgs] what==type[0] ? { msg=type; <; }
+
+default=msg[1];
+
+speak (0)
+.doing="";
+.say ? {
+	.location announce(.name," says '",popl(.say),"'");
+	!
+	}
+~~.random_say ? !
+r=$crtl random(.random_say length());
+.location announce(.name," says '",.random_say[r],"'");
+
+_kill (0)
+tasks($npc_class.scheduler)==$npc_class ? {
+	textate("Shutting down NPC Scheduler.");
+	kill($npc_class.scheduler);
+	}
+, textate("NPC Scheduler wasn't started.");
+
+_exec (0)
+tasks($npc_class.scheduler)==$npc_class ? {
+	textate("NPC Scheduler already started.");
+	!
+	}
+$npc_class.scheduler=addtask(72,"scheduler");
+textate("NPC Scheduler started.");
+
+_accept (0)
+1!
+
+droptreasure (0)
+mon=argv[0];
+
+dropobj={};
+~~mon.objects ? .treasure make(mon,1);
+[ obj; mon.objects] {
+	dropobj={ +dropobj, obj };
+	obj drop();
+	}
+dropobj <> {} ? dropobj!
+
+({})!  /* obj drop() should work, don't create anything yet */
+
+l=mon.treasurelist length();
+l ? {
+	obj=mon.treasurelist[l-1];
+	[ mobj; mon.treasurelist] {
+		mobj <> obj ?
+			newlist={ +newlist, mobj };
+		}
+	obj.numitems=$util roll(2,mon.dexterity/20,0);
+	obj npc_drop(mon);
+	mon.treasurelist=newlist;
+	({ obj })!
+	}
+
+({})!
+$module serialed(mon.treasure) @ $module ? {
+	n=create(mon.treasure);
+	~~n ? ({})!
+	n.name= n.name lowercase() ;
+	n.numitems=$util roll(2,mon.dexterty/20,0);
+	n.droppedby=mon;
+	n npc_drop(mon);
+	({ n })!
+	}
+
+
+myexits (0)
+d={};
+x=0;
+[ dirnum; .location.exits[0]] {
+	pushr(d,$compass_dirs[dirnum-1]);
+	x=x+1;
+	}
+x=0;
+[ dir; .location.exits[2]] {
+	.location.exits[3][x] @# .location.exits[1] ? {
+		x=x+1;
+		<;
+		}
+	i = dir index("|") ?
+		dir = dir substring(0,i);
+	i = dir index("*") ?
+		dir = dir substring(0,i);
+	pushr(d,dir);
+	x += 1 ;
+	}
+d!
+
+wander (0)
+/* wander without attacking */
+
+avatar().wait_time= $crtl time() + $util rolld("2d4+3");
+.wander_bounds ? d=myexits_bounded();
+, d=myexits();
+~~d ? !
+dir=d[$crtl random(d length())];
+.location movedir(dir)!
+
+attack (0)
+.hp<1 ? !
+$module serialed(argv[0]) @ $module ? .attacking=argv[0];
+.attacking @# .location.objects && .attacking.hp>0 ?
+	.attacking hit();
+,	{
+	[ i; .location.objects] {
+		isAvatar( i ) && i.hp > 0 ?
+			{
+			.attacking=i;
+			.doing="attack";
+			.attacking hit();
+			avatar().wait_time= $crtl time()+5;
+			1!
+			}
+		}
+	.doing=0;
+	0!
+	}
+avatar().wait_time= $crtl time() + 5 ; 
+1!
+
+start (0)
+dobj==$npc_class ? {
+	$npc_class _exec();
+	!
+	}
+$util lock($npc_class,"alock");
+this @# $npc_class.active ? {
+	$util unlock($npc_class,"alock");
+	1!
+	}
+pushr($npc_class.active,this);
+.ticks=0;
+$util unlock($npc_class,"alock");
+1!
+
+task (0)
+/* If the npc is set to do something then do that */
+avatar().doing ? {  // UPDATE:
+	avatar():(avatar().doing)()!
+	}
+
+/* this npc might be allowed to do several things randomly */
+/* which might have it start doing other things on certain conditions */
+roll=$crtl random(100);
+[ pdo; avatar().random_do] {
+	roll<pdo[1] ? {
+		ret=avatar() (pdo[0])();
+		ret ? !
+		}
+	}
+
+hit (0)
+.hp>0 ? {
+	.doing="attack";
+	$battle hit(this);
+	}
+, $battle hit(this);
+
+scheduler (0)
+/* NPC Scheduler
+This program runs threw all the NPCs objects and invokes their task program.
+*/
+[1] {
+	t={};
+	now= $crtl time() ;
+	[ o; $npc_class.active] {
+		tasks(o.task)==o || o.wait_time>now ? <;
+		pushr(t,{o,o.wait_time});
+		}
+	/* wait if all NPC's not ready yet */
+	~~t	?
+		{
+		$program sleep( 1 ) ;
+		< ;
+		}
+	/* allow only 4 tasks max spawned */
+	i= 3 - wait() length() ;
+	i<=0	?
+		{
+		sleep( 1 ) ;
+		< ;
+		}
+	/* sort by .wait_time */
+	t=$util sort(t,1)[0..(i-1)];
+
+	[ n; t] {
+		n[0].wait_time=now+5;
+		n[0].task=addtask(n[0],"task");
+		}
+	}
+
+stop (0)
+dobj==$npc_class ? {
+	$npc_class _kill();
+	!
+	}
+$util lock($npc_class,"alock");
+( x = this @# $npc_class.active ) @ $integer ?
+	pull($npc_class.active,x);
+$util unlock($npc_class,"alock");
+
+act_dead (0)
+/*$crtl time() < .wait_time ? !*/
+.location announce_all($util name(this,"A")," dissolves into dust.");
+this reintermodulize(.home);
+.doing=0;
+.hp=.mhp;
+.status="";
+.location announce_all($util name(this,"A")," enters the room.");
+
+die (0)
+avatar().hp=0;
+/*avatar().status="corpse"; done in 75 kill*/
+avatar().attacking=0;
+avatar() droptreasure(avatar());
+avatar().doing="act_dead";
+avatar().wait_time= $crtl time()+$util rolld("10d6");
+1!
+
+_aliases (0)
+/* this code will split the input string.  If each word in the input
+/*  string is found in the name (or partial word) then true 
+/*  e.g.   name="Sword of Sharpness"  input="sharp sword" matches
+*/
+argv[0] == .name ?
+	1 !
+.status == "corpse" ?
+	0 !
+w	= argv[0] lowercase() split(" ") ;
+lw	= w[0] length() ;
+[ i ; .name lowercase() split(" ") ]
+	{
+	w[0]== i substring(0,lw) ?
+		{
+		w[1] ? { _aliases( w[1..-1] join(" ") ) ? 1! }
+		, 1!
+		}
+	}
+0 !
+
+_area_aim (0)
+

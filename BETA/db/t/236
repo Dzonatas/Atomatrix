@@ -1,0 +1,14 @@
+o17 p4 c0 s235 l0 c237 w0 p0 v3
+name	(236,877)	$ Temple Garden
+desc	(236,877)	$ The temple opens into a vast garden, sparsly decorated with beautiful
+trees and flowers.  A monk sits here in full lotus, gently concentrating
+on nothing.  To the west, a red silk curtain flows slightly in the
+breeze, hiding the garden's exit through a gigantic archway.
+exits	(4,219)	A 4
+A 1
+# 4
+A 1
+M 226
+A 0
+A 0
+.

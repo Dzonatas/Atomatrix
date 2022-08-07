@@ -1,0 +1,92 @@
+o17 p96 c0 s97 l151 c0 w0 p0 v4
+name	(81,877)	$ Newbie Weapon&Armor Vending Machine
+aliases	(81,877)	$ newbie*|vending*|machine|lever
+desc	(81,877)	$ A large, unruly vending machine, with warning labels and disclaimers
+plastered all along its surface.  A large arrow points to a lever,
+and a sign underneath says, "PULL LEVER".  
+verbs	(20,0)	A 1
+A 6
+$ pull
+# 0
+# 13
+# 1
+# -1
+$ evoke
+.
+evoke (0)
+objs={
+	"handw.club.wc",
+	"handw.club.s",
+	"handw.knife.sb",
+	"handw.knife.dg",
+	"handw.knife.pk",
+	"handw.knife.bk",
+	"armour.hands.lg",
+	"armour.hands.pg",
+	"armour.head.lc",
+	"armour.head.bh",
+	"armour.head.hm",
+	"armour.feet.air",
+	"armour.feet.lb",
+	"armour.feet.cb",
+	"armour.u-body.bj",
+	"armour.u-body.ls",
+	"armour.u-body.b",
+	"armour.l-body.l",
+	"armour.l-body.js",
+	"armour.l-body.jp",
+	"armour.l-body.lp"
+	};
+
+nobjs={};
+
+textate("You hear tremendous rattles and clunks from the vending machine.");
+
+l=objs length();
+items={};
+pitems={};
+[ o; {+avatar().objects,+.location.objects} ]
+	{
+	~~$battle.object precesses(o) ? <;
+	sel=$battle.object get_type(o);
+	ptype= sel substring( 0 , sel endex( "." ) integer() );
+	ptype @# pitems ? <;
+	pushr(pitems,ptype);
+	}
+n	= 8 ;
+[ n -= 1 ]
+	{
+	sel=objs[$crtl random(l)];
+	/* strip off last bit after . */
+	ptype= set substring( 0 , sel endex( "." ) integer() );
+	ptype @# pitems ? <;
+	pushr(pitems,ptype);
+	pushr(items,sel);
+	}
+
+obj=0;
+[ o; items] {
+/*
+	$program sleep(2);
+*/
+	obj=$battle.object make(o,.location);
+	~~obj ? {
+		textate("grind..grind..",o);
+		}
+	,	{
+		textate($util name(obj)," drops from the machine.");
+		}
+	}
+
+avatar() variant( "mhp" ) @ $error ?
+	{	/* set up avatar() vars */
+	textate("The machine shoots a bolt of electricity at you!");
+	$battle register(avatar() serinteger());
+	textate("You feel different...");
+	avatar().hp=10;
+	avatar().dexterity=50;
+	avatar().strength=50;
+	}
+
+textate("The machine finally quiets down.");
+

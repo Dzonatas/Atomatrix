@@ -1,0 +1,249 @@
+o72 p72 c217 s0 l222 c0 w0 p0 v13
+name	(220,877)	$ Droids
+random_do	(220,585)	A 2
+A 2
+$ parse
+# 100
+A 2
+$ action
+# 3
+wait_time	(72,365)	# 932274238
+task	(72,511)	# 4
+speech_emote	(17,73)	$ %w says%direct, '%speech'
+action_emote	(17,73)	$ nothing
+desc	(17,365)	?
+gender	(17,73)	$ male
+droid	(17,73)	# 1
+_msgs	(17,73)	A 1
+A 4
+$ movedir
+$ %w walks %dir.
+$ up=%w climbs %dir.
+$ down=%w crawls %dir.
+speech	(17,73)	?
+action	(17,73)	?
+dexterity	(75,73)	# 999
+.
+_track (0)
+who=.attacking; .attacking=2;
+$util db(.name," starts to track ",avatar().name);
+[.location <> who.location] {
+   $program sleep(5);
+   i=0; w=.location.exits;
+   [ i; w[1]] {
+      i==who.location ? .;
+   }
+   ~~i ? {
+      [ i; w[3]] {
+         i==who.location ? .;
+      }
+   }
+   ~~i ? {
+      o= $crtl random(w[1] length());
+      i=w[1][o-1];
+   }
+   _moveto(i);
+   $util db(.name," moves to ",i.name);
+}
+$util db(.name," finished tracking ",avatar().name);
+
+
+
+
+_summons (0)
+to=avatar().location;
+from=.location;
+~~_moveto(to) ? textate(.name," cannot come to you.")!
+from announce_all(.name," leaves the room.");
+to announce_all(.name," enters the room and says, 'I obey your summons, ",
+    avatar().name,"!'");
+
+
+emote (0)
+~~argv ? !
+str=$util wrap(70,$util pronoun_sub(argv join(""),this));
+[ o; .location.objects] 
+	isAvatar( o ) ?
+		o tell(str);
+
+speak (0)
+argv -> speech, direct;
+~~speech ? .location announce_x(this,.name," mumbles something.");
+str=.speech_emote;
+dstr=""; direct ? dstr=" [to "+$util name(direct,"",1)+"]";
+str= str replace("%direct",dstr);
+str= str replace("%speech",speech);
+str=$util pronoun_sub(str,this);
+.location announce_x(this,$util wrap(70,str));
+/*.wait_time= $crtl time()+10;*/
+
+parse (0)
+~~args=_parse(this) ? 0!
+args -> src, words;
+~~(match=this match("vocab",+words)) ? {
+        sorry(p);
+        1!
+        }
+
+~~match[0][1] ? 1!
+str=$util pronoun_sub(match[0][1]);
+.location announce($util wrap(70,str));
+
+sorry (0)
+action();
+1!
+
+action (0)
+/* do some random action/speech */
+~~.action && ~~.speech ? 0!
+.wait_time= $crtl time()+5;
+argv -> chance; /* % chance droid will do action */
+~~chance ? { chance=80; }
+$crtl random(100)>chance ? 0!
+ok=0;
+[ o; .location.objects] {
+	isAvatar( o ) && ~~(o.status @# "sleeping") ? { ok=1; .; }
+	}
+~~ok ? 0!
+
+actions={};
+[ what; {"speech","action"}] .(what) ? pushr(actions,what);
+v = .(what=actions[$crtl random(actions length())]);
+~~v ? !
+
+what=="speech" ? {
+	str=v[$crtl random(v length())];
+	str @ $varray ?
+	{
+	/* _this_ talking to another droid.. just put it in .commands */
+		_command(this, this, str);
+		1!
+		}
+	str substring(0,2)=="> " ? str= str substring(2);
+	speak(str);
+	1!
+	}
+
+what=="action" ? {
+	str=.action[$crtl random(.action length())];
+	emote(str);
+	1!
+	}
+
+_command (0)
+/* add directed str to command queue */
+argv -> p, this, cmd;
+/*p==this ? { commanding myself is ok!  }*/
+.commands @~ $varray ?
+	{
+	/* droid doesnt accept commands */
+	action(100);
+	!
+	}
+cmd @ $string ?
+	{
+	[ c; {".",",","?","!"}]
+		cmd= cmd replace(c," "+c+" ");
+	}
+pushr(.commands, { p, this, cmd });
+
+match (0)
+argv -> vlist;
+vocab=.(vlist);
+words=argv[1..-1];
+~~words ? !
+m={};
+vocab[0] @~ $varray ?
+	{ 	/* vocab is list of known words */
+	[ w; words] { w @# vocab ? m=pushr(m,w); }
+	17 db("--#",this," vmatches ", m join( "  "));
+	m!
+	}
+, {	/* vocab is array of vocab words and answers to word matches */
+	[ w; words] {
+		[ v; vocab] {
+			w==v[0] ? pushr(m,v);
+			}
+		}
+	m ? 17 db("--#",this," amatches ",m[0][0]);
+	m!
+	}
+
+tell (0)
+who=avatar() serinteger();
+~~.roomgen precesses(caller) ? who=caller;
+who==this ? { /* Talking to myself again.. */ ! }
+who.robot ? { 0! }
+sentence = argv join( " " ) ;
+[ c; {",", "?", ".", "!", "\"", "'"}]
+	sentence= sentence replace(c," "+c+" ");
+words= sentence split(" ");
+.name @# words ? _command(who,this,sentence);
+/*"enters" @# words ?
+	_command(who,this,sentence);*/
+
+_parse (0)
+argv -> droid; ~~droid.droid ? !
+droid.wait_time= $crtl time()+5;
+~~droid.commands ? 0!
+args=popl(droid.commands);
+args -> src, dest, cmd;
+this <> dest ? 0!
+~~cmd ? 0!
+cmd @ $varray ?
+	{
+	droid.wait_time += 20; /* a little busy, having a conversation! */
+/*	17 tell("\t",droid,":do command:\n",56 ary_to_str(cmd));*/
+	mycmd = cmd[0];
+	othercmd = { +cmd[1..-1] };
+	direct=1; /* use speech direction "[to %w]" */
+	[ cmdtype; {"<",">","*"}] {
+		(i= mycmd index( cmdtype )) @ $integer && i<19 ?
+			{
+			obj= mycmd substring(0,i);
+			mycmd=cmdtype+" "+ mycmd substring(i+1);
+			cmdtype==">" ? direct=0;
+			<;
+			}
+		}
+	obj && ~~to_obj=$util findobj(obj,droid.location) ? 0!
+	to_obj ? {
+		to_obj _command(droid,to_obj,othercmd);
+		to_obj.wait_time= $crtl time()+10; /* force response after n seconds */
+		}
+	cmd=mycmd;
+	}
+cmd substring(0,2)=="> " || cmd substring(0,2)=="< " ? {
+	droid speak( cmd substring(2),to_obj*direct);
+	0!
+	}
+cmd substring(0,2)=="* " ? {
+	droid emote( cmd substring(2) );
+	0!
+	}
+[ c; {",", "?", ".", "!", "\"", "'"}]
+	cmd= cmd(c," "+c+" ");
+words=cmd split(" ");
+
+({ src, words })!
+
+_recycle (0)
+.doing=0;
+0!
+
+die (0)
+/* Droid die routine */
+avatar().wait_time= $crtl time()+$util rolld("3d6");
+avatar().hp=0;
+avatar().attacking=0;
+/*avatar() droptreasure(avatar() serinteger());*/
+$crtl random(100)<10 ? {	/* chance to resurrect */
+	avatar().doing="";
+	avatar().hp=avatar().mhp;
+	}
+, {
+	avatar().doing="die";
+	}
+1!
+
+

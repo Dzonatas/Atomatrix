@@ -1,0 +1,18 @@
+o6 p4 c0 s154 l0 c0 w0 p0 v3
+name	(155,877)	$ Burger King
+desc	(155,877)	$ Hmm... no one is around...
+Moldy food...
+Horrible Stinch...
+Bugs and little creatures slithering around...
+Stuff on the floor that you don't want to know what it is...
+(You really feel like you want to leave)
+exits	(4,219)	A 4
+A 1
+# 10
+A 1
+M 148
+A 0
+A 0
+.
+_moved_in (0)
+

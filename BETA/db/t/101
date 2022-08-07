@@ -1,0 +1,12 @@
+o6 p4 c0 s85 l0 c68 w0 p0 v3
+name	(101,877)	$ Bathroom
+desc	(101,877)	$ Sweet smell lingers in the room.
+(try: wash, use)
+exits	(4,219)	A 4
+A 1
+# 3
+A 1
+M 7
+A 0
+A 0
+.

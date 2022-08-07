@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{3e3eeb71-8d03-42b4-b2e5-017cf79d72aa}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d2482603-ddf0-475d-9de6-f7ee9e553478}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{99a9c0de-4c48-4ca2-8ddd-814f44d6f6c4}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="aCRTL.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aCRTL_localTime.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aCRTL_random.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aCRTL_sleep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aCRTL_structor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aCRTL_time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="structor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

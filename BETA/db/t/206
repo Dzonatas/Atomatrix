@@ -1,0 +1,17 @@
+o17 p4 c0 s205 l0 c145 w0 p0 v5
+name	(206,877)	$ Forest Pond
+desc	(206,877)	$ The fast moving river flows into a deep pond behind a large dam here.  
+The beach expands in all directions except to the north, where a 
+trail leads into the forest.
+exits	(4,219)	A 4
+A 1
+# 1
+A 1
+M 205
+A 0
+A 0
+_south_ok_omsg	(162,91)	$ SPLASH!  %w swims out into the pond.
+
+_south_ok_msg	(162,91)	$ You splash out into the pond.
+
+.

@@ -1,0 +1,8 @@
+o6 p443 c444 s0 l443 c0 w0 p0 v3
+name	(449,895)	$ Vista
+aliases	(449,895)	?
+desc	(449,895)	?
+.
+event (0)
+:event(argv[0]);
+

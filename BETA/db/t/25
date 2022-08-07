@@ -1,0 +1,29 @@
+o17 p4 c0 s24 l0 c0 w0 p0 v4
+name	(17,73)	$ Rock Ledge
+desc	(25,877)	$ The ledge continues off to the west, and a cavern lies below.
+A rope swing hangs suspended from up above.
+(Try: swing)
+verbs	(20,0)	A 1
+A 6
+$ swing
+# -1
+# -1
+# -1
+# -1
+$ swing
+exits	(4,219)	A 4
+A 2
+# 6
+# 4
+A 2
+M 18
+M 27
+A 0
+A 0
+.
+swing (0)
+textate("You swing out over a yawning abyss..");
+intertextate(avatar().name," takes a running leap and swings out over the ledge!\n");
+$program sleep(3);
+textate("..and swing back to meet the ledge!");
+

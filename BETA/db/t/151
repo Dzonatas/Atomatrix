@@ -1,0 +1,11 @@
+o6 p4 c0 s149 l0 c17 w0 p0 v3
+name	(151,877)	$ O' Weapon Smithy
+desc	(151,877)	$ Nobody seems to be tending this dusty shop.
+exits	(4,219)	A 4
+A 1
+# 4
+A 1
+M 148
+A 0
+A 0
+.

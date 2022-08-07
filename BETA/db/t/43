@@ -1,0 +1,15 @@
+o6 p4 c0 s39 l0 c49 w0 p0 v3
+name	(43,877)	$ Front Porch
+desc	(43,877)	$ A big oak door looms before you.  A walkway goes east and southeast.
+exits	(4,219)	A 4
+A 3
+# 9
+# 4
+# 3
+A 3
+M 46
+M 49
+M 44
+A 0
+A 0
+.

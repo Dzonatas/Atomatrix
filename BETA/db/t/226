@@ -1,0 +1,19 @@
+o17 p4 c0 s225 l0 c227 w0 p0 v3
+name	(226,877)	$ Temple of Ne''ack
+desc	(226,877)	$ The inside of the temple seems infinitely more peaceful than the
+frightening entrance (south).  A large circle of marble supports an
+ebony altar in the center of this room.  Off to the west is a
+sparkling blue fountain, and off to the east a red silk curtain acts
+as a door to a large archway.
+exits	(4,219)	A 4
+A 3
+# 4
+# 3
+# 2
+A 3
+M 279
+M 236
+M 225
+A 0
+A 0
+.

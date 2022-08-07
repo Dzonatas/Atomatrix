@@ -1,0 +1,12 @@
+o6 p10 c0 s443 l478 c446 w451 p0 v5
+name	(445,895)	$ program editor
+aliases	(445,895)	?
+desc	(445,895)	?
+window	(6,219)	# 446
+obj	(6,219)	# 444
+.
+edit (0)
+argv[0] ? .obj = argv[0] integer() ;
+.window create();
+.window show();
+

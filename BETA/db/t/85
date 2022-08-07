@@ -1,0 +1,26 @@
+o6 p4 c128 s71 l0 c111 w0 p0 v4
+name	(85,877)	$ backroom
+desc	(85,877)	$ A sign reads "STAY OUT!".
+verbs	(20,0)	A 1
+A 6
+$ equip*ment
+# -1
+# -1
+# -1
+# 75
+$ equip
+exits	(4,219)	A 4
+A 3
+# 10
+# 3
+# 1
+A 3
+M 84
+M 128
+M 222
+A 0
+A 0
+.
+_accept (0)
+avatar() serinteger() @# { 6 , 17 } ? 1 !
+

@@ -1,0 +1,18 @@
+o17 p4 c0 s204 l0 c0 w0 p0 v3
+name	(205,877)	$ Forest River
+desc	(205,877)	$ Directly to the south is a large pond, where a forest river swells behind
+a large beaver dam.  The forest trail turns to the east here and follows
+the river down a rocky slope.  To the north, the same trail ventures deep
+into the trees.
+exits	(4,219)	A 4
+A 3
+# 3
+# 2
+# 1
+A 3
+M 207
+M 206
+M 204
+A 0
+A 0
+.

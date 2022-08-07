@@ -1,0 +1,24 @@
+o6 p29 c0 s210 l47 c0 w97 p0 v6
+name	(267,1023)	$ chalkboard
+aliases	(267,1023)	$ ch*alk|board
+desc	(267,877)	$ This is where the programmers list their projects and status.
+note	(267,1023)	$ PROJECT			MANAGER		STATUS
+
+VR server/client	Asmodeus	ongoing
+time event scheduler	Asmodeus	starting
+portals			Asmodeus	ongoing
+battle objects		Asmodeus	near completion
+monsters		Dazed/Asmodeus	(confused)
+droids			Dazed/Asmodeus	ongoing
+in-db parser		Asmodeus	near completion
+Immortality		Dazed		very near completion
+Room .exits		Dazed		starting
+Shopkeepers		Dazed		real soon now
+New Rooms/Areas		??		??
+
+nomove	(267,73)	# 1
+write_accept	(267,73)	A 3
+# 6
+# 17
+# 9
+.

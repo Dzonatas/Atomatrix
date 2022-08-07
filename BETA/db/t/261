@@ -1,0 +1,31 @@
+o17 p221 c259 s258 l222 c439 w258 p0 v5
+type	(17,73)	?
+generic	(17,73)	$ forest
+types	(17,73)	A 4
+A 3
+$ squirrel
+$ basic_squirrel
+$ name=squirrel;home=206
+A 5
+$ wolf
+$ basic_wolf
+$ name=black wolf;home=228;mhp=15
+$ name=large wolf;home=228;mhp=20
+$ name=brown wolf;home=228;mhp=25;poison=10;class=claw
+A 3
+$ snake
+$ basic_snake
+$ home=192
+A 3
+$ small bear
+$ basic_rat
+$ name=small bear;home=207;mhp=10
+random_do	(17,73)	A 2
+A 2
+$ attack
+# 60
+A 2
+$ wander
+# 20
+wander_bounds	(17,73)	$ forest
+.

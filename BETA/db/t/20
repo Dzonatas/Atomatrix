@@ -1,0 +1,422 @@
+o6 p1 c0 s68 l254 c0 w242 p0 v2
+name	(6,73)	$ parser
+args	(6,73)	A 10
+$ verb
+$ argstr
+$ +argv
+$ argv
+$ dobj
+$ dobjstr
+$ prepcode
+$ prepstr
+$ iobj
+$ iobjstr
+.
+delete_verb (0)
+o = argv[0];
+verbs=verbs(o);
+num= argv[1] integer() - 1 ;
+len=verbs length();
+
+~~verbs ? 
+	textate("No verbs defined for this object.") !
+
+~~verbs[num] ?
+	textate("No such verb defined.") !
+
+pull(verbs,num);
+e=(o.verbs = verbs) ?
+	textate("Verb deleted."); ,
+	textate("Verb not deleted.");
+
+editverb (0)
+argv -> m , verbn ;
+verbn <> "new" ?
+	{
+	verbn @ $string ?
+		verbn = verbn integer() ;
+	verbn = verbn - 1 ; // UPDATE: verbn	-= 1 ;
+	m variant( "verbs" ) orbit() <> m
+		|| m.verbs[verbn] @ $error ?
+			textate("No such verb.") !
+	v=m.verbs[verbn];
+	v length()==6 ? pushr(v,{});
+	}
+, v={"",-1,-1,-1,-1,"func",{-102}};
+v -> verb, dobj, prepcode, iobj, obj, exec, args;
+
+[1] {
+	vi = verbinfo(+v);
+	vi -> sd, sp, si, se;
+	textate("\n[v]erb: ", verb);
+	textate("[d]obj: ", sd);
+	textate("[p]rep: ", sp);
+	textate("[i]obj: ", si);
+	textate("[eo|ep|ea]exec: ", se);
+	textate("[s]ave");
+	textate("\nChange ? \\c");
+	input= avatar() input();
+	i= input index( "=" ) ;
+	i ?	{
+		c	= input[0..(i-1)] ;
+		str	= input[(i+1)..-1] ;
+		}
+	,	{
+		c	= input ;
+		str	= 0 ;
+		}
+	( i = ( c @# { "v", "d", "p", "i", "eo", "ep", "ea", "s" } ) ) @~ $integer ? 
+		{
+		textate( c , i ) ;
+		. ;
+		}
+	c=="v" ? {
+		str==0 ? {
+			textate("Verb[s]? \\c");
+			str= avatar() input();
+			}
+		verb=str;
+		}
+	, c=="d" ? {
+		str==0 ? {
+			textate("Direct Object? [n]one [a]ny [t]his or obj#:\\c");
+			str= avatar() input();
+			}
+		( n=(str[0] @# {"n","a","t"}) ) @ $integer ? n-=1;
+		, { (n= str integer() )<1 ? n=-1; }
+		dobj=n;
+		}
+	, c=="i" ? {
+		str==0 ? {
+			textate("Indirect Object? [n]one [a]ny [t]his or obj#:\\c");
+			str= avatar() input();
+			}
+		( n = str[0] @# {"n","a","t"} ) @ $integer ?
+			n -= 1 ;
+		,	{ ( n = str integer() ) < 1 ?
+				n = -1 ;
+			}
+		iobj=n;
+		}
+	, c=="p" ? {
+		str==0 ? {
+			l=0;
+			textate("\n");
+			[ w; $preps] {
+				textate(l+1,") ",$preps[l]);
+				l+=1;
+				}
+			textate("\nPrepcode? [n]one [a]ny or #:\\c");
+			str= avatar() input() ;
+			}
+		l=$preps length();
+		( n= str[0] @# {"n","a"} ) @ $integer ? n-=1;
+		, { (n= str integer() )<1 || n>l ? n=-1; }
+		prepcode=n;
+		}
+	, c=="eo" ? {
+		str==0 ? {
+			textate(
+				"Executed Program on Object # or [t]his :\\c");
+			str= avatar() input() ;
+			}
+		str[0]=="t" ? n=-1;
+		, { (n= str integer() )<1 ? n=-1; }
+		obj=n;
+		textate();
+		}
+	, c=="ep" ? {
+		str==0 ? {
+			textate("Execute Program name: \\c");
+			str=avatar() input() ;
+			}
+		exec=str;
+		}
+	, c=="ea" ? {
+		i=0;
+		str==0 ? {
+			s="";
+			[ w; .args] s += (i+=1) string() + ") " + w + "\n" ;
+			textate("Args Available are:\n",s);
+
+			textate("Program args [#,#,#,...]: \\c");
+			str=avatar() input() ;
+			}
+		a={};
+		[ i ; str split(",") ]
+			pushr(a,(- i integer() )-99);
+		args=a;
+		a={};
+		}
+	, c=="s" ?
+		{
+		verbn <> "new" ?
+			{
+			m.verbs[verbn] = v ;
+			textate("Saved.") ;
+			!
+			}
+		m variant( "verbs" ) orbit() <> m ?
+			{
+			z = m addVariant( "verbs" ) ;
+			z principal( $parse ) ;
+			z security( 0 ) ;
+			}
+		pushr( m.verbs , v ) ;
+		textate("Saved."); 
+		!
+		}
+	}
+textate("Not Changed.");
+
+quoted (0)
+s	=  argv[0] split( "\"" ) ;
+len	= s length() ;
+qargs	= {} ;
+i	= 0 ;
+[i<len] {
+	/* unquoted */
+	[ w ; s[i] split(" ") ] w ?
+		pushr( qargs , w ) ;
+	i += 1 ;
+	i => len ? .;
+	/* quoted */
+	pushr(qargs,s[i]);
+	i += 1 ;
+	}
+qargs !
+
+find_verb (0)
+
+match_verb (0)
+argv	-> objs, pi;
+pi	-> verb, argstr, dobj, dobjstr, prepcode, iobj, iobjstr ;
+cobjs	= {} ;
+[ o ; objs ]
+	{
+	~~iobj && ~~iobjstr ?
+		IT = -1 ;
+	, iobj == o ?
+		IT = 1 ;
+	,
+		IT = 0 ;
+	~~dobj && ~~dobjstr ?
+		DT = -1 ;
+	, dobj == o ?
+		DT = 1 ;
+	,
+		DT = 0 ;
+	vo = o variance( "verbs" ) orbit() ;
+	[ vo @~ $error ]
+		{
+		vo @# cobjs ?
+			. ;
+		[ v ; vo.verbs ]
+			{
+			v -> vv, dv, pv, iv, ov, ev, av;
+			~~rverb= $vreality match(verb,vv) ?
+				< ;
+			((~~dv) || dv==DT )
+			 && ((~~iv) || iv==IT)
+			 && ((~~pv) || pv==prepcode) ? 
+				ov==-1 ?
+					({o,rverb,o,ev,av})!
+				,
+					({o,rverb,ov,ev,av})!
+			}
+		pushr(cobjs,vo);
+		vo = vo precessant() variance( "verbs" ) orbit() ;
+		} 
+	}
+({})!
+
+_parser (0)
+input	= argv[0];
+~~input ?
+	({ 0 , "" , {} }) !
+
+parseinfo = {undef,undef,undef,undef,-1,undef,undef} ;
+parseinfo -> verb, argstr, dobj, dobjstr, prepcode, iobj, iobjstr ;
+
+input[0]=="\"" ?
+	({ avatar().location, "say", { input[1..-1] } }) !
+input[0]==":" ?
+	({ avatar() , "eval", { input[1..-1] } }) !
+
+iargs	= quoted(input);
+
+( i = input index( " " ) ) @ $integer ?
+	argstr	= input[i+1..-1] ;
+
+len	= iargs length();
+verb	= iargs[0];
+i	= 1;
+pc	= 0;
+pstart	= 0;
+[i<len] {
+	p	= {} ;
+	lpc	= pc ;
+	( pc = (iargs[i] @# $prepcodes[0][ pc .. -1 ]) ) @ $integer ?
+		{
+		p	= $prepcodes[ pc += lpc + 1 ] ;
+		p[1] == 1 ?
+			. ;
+		p[1] == 3 && ~~( iargs[i+2] == p[3] ) ?
+			< ;
+		~~( iargs[i+1] == p[2] ) ?
+			< ;
+		. ;
+		}
+	i+=1;
+	pc=0;
+	}
+/* ------------------ */
+p ?	{
+	prepcode= p[0];
+	pstart	= i;
+	pend	= i + p[1] - 1; 
+	pend <> len-1 ?
+		iobjstr= iargs[pend+1..-1] join( " " ) ;
+	}
+pstart == 0 ?
+	dobjstr = iargs[1..-1] join( " " ) ;
+, pstart > 1 ?
+	dobjstr = iargs[1..pstart-1] join( " " ) ;
+dobjstr ?
+	dobj = obj_name(dobjstr);
+iobjstr ?
+	iobj = obj_name(iobjstr);
+
+objs	= {} ;
+iobj ?
+	pushr( objs , iobj ) ;
+dobj ?
+	pushr( objs , dobj ) ;
+avatar().location ?
+	{
+	objs =	{
+		+objs ,
+		avatar().location ,
+		+avatar().location.objects ,
+		+avatar().objects ,
+		avatar()
+		} ;
+	}
+,	{
+	objs =	{
+		+objs ,
+		+avatar().objects ,
+		avatar()
+		} ;
+	}
+p	= match_verb(objs,parseinfo) ;
+~~p ?
+	({ 0, "", {verb,+iargs[1..-1]}}) !
+args	= {} ;
+[ i ; p[4] ]
+	{
+	i > -100 ?
+		pushr(args,i);
+	,	{
+		i== -100 ? pushr(args,p[1]);
+		, i== -101 ? pushr(args,argstr);
+		, i== -102 ? args={+args,+iargs[1..-1]};
+		, i== -103 ? pushr(args,iargs[1..-1]);
+		, i== -104 ? pushr(args,dobj);
+		, i== -105 ? pushr(args,dobjstr);
+		, i== -106 ? pushr(args,prepcode);
+		, i== -107 ?
+			{
+			pstart ?
+				pushr(args,iargs[pstart..pend] join(" "));
+			,
+				pushr(args,"");
+			}
+		, i== -108 ? pushr(args,iobj);
+		, i== -109 ? pushr(args,iobjstr);
+		, i== -110 ? pushr(args,p[0]);
+		, i== -111 ? pushr(args,avatar());
+		}
+	}
+({ p[2] , p[3] , args }) !
+
+obj_name (0)
+~~( name = argv[0] ) ?
+	!
+name == "me" ?
+	avatar() !
+name == "here" ?
+	avatar().location !
+name[0] == "#" && name[1] ?
+	$module serialed( name[1..-1] integer() ) !
+[ o ; avatar().objects ]
+	{
+	name == o.name ?
+		o !
+	o.aliases && $vreality match( name , o.aliases ) ?
+		o !
+	o _aliases( name ) ?
+		o !
+	}
+[ o ; avatar().location.objects ]
+	{
+	name == o.name ?
+		o !
+	o.aliases && $vreality match( name , o.aliases ) ?
+		o !
+	o _aliases( name ) ?
+		o !
+	}
+
+verbs (0)
+argv[0] variant( "verbs" ) @~ $error ?
+	argv[0].verbs !
+({})!
+
+setverbs (0)
+argv -> o, verbs;
+m	= $module serialed( o ) ;
+m @ $error ?
+	m !
+v	= m addVariant( "verbs" ) ;
+v @ $error ?
+	v !
+,	{
+	v security( 0 ) ;
+	v principal( $parse ) ;
+	}
+textate( m.verbs = verbs , "   " , m.verbs ) ;
+( m.verbs = verbs ) @ $error ?
+	$error !
+1!
+
+verbinfo (0)
+argv -> verb, dobj, prepcode, iobj, obj, exec, args;
+
+onat={ " ", "<any>", "<this>" };
+pnat={ " ", "<any>" };
+
+sd=onat[dobj+1] || "#" + dobj string() ;
+si=onat[iobj+1] || "#" + iobj string() ;
+sp=pnat[prepcode+1] || $preps[prepcode-1];
+obj==-1 ?
+	se="this ";
+,	se="#"+ obj string() + " " ;
+	se+=exec+"(";
+	l= args length();
+	i=0;
+	[i<l] {
+		i>0 ? se+=",";
+		a=args[i];
+		a @ $integer ?
+			{
+			a > -100 ? se+= a string() ;
+			, se+= .args[(-args[i])-100];
+			}
+		,
+			se+="\""+a+"\"";
+		i+=1;
+		}
+	se+=")";
+({sd,sp,si,se})!
+

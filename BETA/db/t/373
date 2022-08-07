@@ -1,0 +1,23 @@
+o373 p2 c0 s303 l233 c167 w0 p0 v16
+name	(373,877)	$ Edge
+aliases	(373,877)	?
+password	(0,292)	$ chaos
+login_time	(2,381)	# 759330391
+logoff_time	(2,381)	# 759330585
+uid	(2,292)	# 3895
+gender	(373,877)	$ male
+desc	(373,877)	$ A cloaked stranger. He walks with a slight limp.
+
+status	(373,27)	A 2
+$ smirking
+A 2
+$ sleeping
+# 759330649
+verbose	(56,27)	# 1
+hp	(75,219)	# 3
+mhp	(75,219)	# 10
+attacking	(75,219)	?
+armour	(75,219)	A 0
+ready_weapon	(75,219)	# 186
+dexterity	(6,91)	# 70
+.

@@ -1,0 +1,16 @@
+o17 p74 c0 s120 l74 c0 w0 p0 v5
+name	(122,73)	$ ARMOUR-NECK
+desc	(122,73)	$ A new leather cap.
+worn	(6,73)	$ n
+types	(6,73)	A 3
+A 2
+$ cc
+$ sc
+A 2
+$ choker chain
+$ +1
+A 2
+$ spiked chain
+$ +2
+type	(6,73)	$ neck
+.

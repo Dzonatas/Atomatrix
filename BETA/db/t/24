@@ -1,0 +1,10 @@
+o17 p4 c0 s18 l0 c0 w0 p0 v2
+name	(17,73)	$ Cavern Ledge
+exits	(4,219)	A 4
+A 1
+# 6
+A 1
+M 18
+A 0
+A 0
+.

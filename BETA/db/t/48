@@ -1,0 +1,9 @@
+o6 p40 c0 s0 l32 c0 w0 p0 v7
+name	(48,877)	$ door
+aliases	(48,877)	?
+desc	(48,877)	$ The oak door has some deep scratches on it's surface, perhaps from avatars running into it.
+portal	(48,877)	# 1
+locked	(48,877)	# 0
+other_side	(48,877)	M 49
+open	(48,877)	# 1
+.

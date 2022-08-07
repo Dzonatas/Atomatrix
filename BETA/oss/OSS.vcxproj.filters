@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{67e6c093-d749-4412-b546-c57f46455106}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\aAtomatrix">
+      <UniqueIdentifier>{5827ca1f-f33e-4bfd-87a4-a88c982f8da3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\elemental">
+      <UniqueIdentifier>{92c18d54-ada0-4ce7-9628-b47b347a4375}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\elemental\aUnicode">
+      <UniqueIdentifier>{5ca2fd6c-4196-47e6-9672-43145b5244f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\elemental\aUnicode\aASCII">
+      <UniqueIdentifier>{2384d43a-5898-4022-a4ab-67436dd65a8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b5f65efd-c4e2-45dd-a01c-dd6c3b84ae9f}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{8c0581b3-37a9-4dfa-bd8d-2e569517617d}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EXIT.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addSymbol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="console.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getSymbol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="library.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="series.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sgnl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="structor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="symbol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aAtomatrical.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="aAtomatrix.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="aAtomatrix_exit.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="aAtomatrix_input.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="aAtomatrix_output.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="atomatrix.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="atomethodate.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="atomethodize.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="atomine.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="atomize.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="atomogen.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="atomorphize.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="construct.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="destruct.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="detach.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="duplicate.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="interatomize.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="intratomize.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="memory.c">
+      <Filter>Source Files\aAtomatrix</Filter>
+    </ClCompile>
+    <ClCompile Include="aArray.c">
+      <Filter>Source Files\elemental</Filter>
+    </ClCompile>
+    <ClCompile Include="aChronogram.c">
+      <Filter>Source Files\elemental</Filter>
+    </ClCompile>
+    <ClCompile Include="aChronograph.c">
+      <Filter>Source Files\elemental</Filter>
+    </ClCompile>
+    <ClCompile Include="aInteger.c">
+      <Filter>Source Files\elemental</Filter>
+    </ClCompile>
+    <ClCompile Include="aVarray.c">
+      <Filter>Source Files\elemental</Filter>
+    </ClCompile>
+    <ClCompile Include="aVarrayReferent.c">
+      <Filter>Source Files\elemental</Filter>
+    </ClCompile>
+    <ClCompile Include="aXML.c">
+      <Filter>Source Files\elemental</Filter>
+    </ClCompile>
+    <ClCompile Include="aUnicode.c">
+      <Filter>Source Files\elemental\aUnicode</Filter>
+    </ClCompile>
+    <ClCompile Include="aUnicodeEntity.c">
+      <Filter>Source Files\elemental\aUnicode</Filter>
+    </ClCompile>
+    <ClCompile Include="aUnicodeString.c">
+      <Filter>Source Files\elemental\aUnicode</Filter>
+    </ClCompile>
+    <ClCompile Include="aAscii.c">
+      <Filter>Source Files\elemental\aUnicode\aASCII</Filter>
+    </ClCompile>
+    <ClCompile Include="aAsciiCharacter.c">
+      <Filter>Source Files\elemental\aUnicode\aASCII</Filter>
+    </ClCompile>
+    <ClCompile Include="aAsciiString.c">
+      <Filter>Source Files\elemental\aUnicode\aASCII</Filter>
+    </ClCompile>
+    <ClCompile Include="add_s.c">
+      <Filter>Source Files\elemental\aUnicode\aASCII</Filter>
+    </ClCompile>
+    <ClCompile Include="str.c">
+      <Filter>Source Files\elemental\aUnicode\aASCII</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ATOMATRIX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="atom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\buildserial\buildserial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cmp_s.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fibers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="method.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objvar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="perms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="program.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sobjvar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tlsp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unicode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="var.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="variable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="variant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="varray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version_matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

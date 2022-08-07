@@ -1,0 +1,178 @@
+o12 p10 c0 s144 l478 c0 w213 p0 v1
+name	(6,219)	$ xml
+.
+translate (0)
+argv[0] @ $string ? aString_to_aModule( argv[0] ) !
+argv[0] @ $module ? aModule_to_aString( argv[0] ) !
+
+
+aString_to_aModule (0)
+t = 0 ;
+d = "" ;
+m = mm = atomize( {} , "" ) ;
+m addProgram( "atomize" ) source( "
+	m = $module atomize() ;
+	m reprecessize( this ) ;
+	m addVariant( \"set\" ) security ( \"a+r\" ) ;
+	m addVariant( \"identifier\" ) security( \"a+r\" ) ;
+	m.set = {} ;
+	m.identifier = \"\" ;
+	m !
+	" ) ;
+m addProgram( "_accept" ) source( "1 !" ) ;
+z = { } ;
+
+
+[ c ; argv[0] ]
+	{
+	t	?
+		{
+		s ?	{
+			c == "\"" ?
+				{
+				attribute_equals( m , d ) ;
+				s = 0 ;
+				d = "" ;
+				< ;
+				}
+			d += c ; // 3
+			< ;
+			}
+		c == ">" ?
+			{
+			t == 3 ?
+				{
+				m = popr( z ) ;
+				d = "" ;
+				t = 0 ;
+				< ;
+				}
+			t == 2 ?
+				{
+				m.identifier = d ;
+				t = 0 ;
+				d = "" ;
+				< ;
+				}
+			attribute( m , d ) ;
+			d = "" ;
+			t = 0 ;
+			< ;
+			}
+		c == "=" ?
+			{
+			attribute( m , d )  ;
+			d = "" ;
+			< ;
+			}
+		c == "\"" ?
+			{
+			attribute( m , d )  ;
+			d = "" ;
+			s = 1 ;
+			< ;
+			}
+		c == "/" && ~~d && t == 4 ?
+			{
+			t = 3 ;
+			< ; 
+			}
+		c == " " ?
+			{
+			t == 2 ?
+				{
+				m.identifier = d ;
+				m addVariant( "attributes" ) ;
+				m.attributes = {} ;
+				t = 1 ;
+				}
+			,	attribute( m , d )  ;
+			d = "" ;
+			< ;
+			}
+		t == 4 ?
+			{
+			c == "?" ?
+				{
+				t = 0 ;
+				d = "<!" ;
+				< ;
+				}
+			c == "!" ?
+				{
+				t = 0 ;
+				d = "<!" ;
+				< ;
+				}
+			a = mm atomize() ;
+			pushr( m.set , a )  ;
+			a reintermodulize( m ) ;
+			pushr( z , m ) ;
+			m = a ;
+			d = "" ;
+			t = 2 ;
+			a = 0 ;
+			}
+		d += c ;  // 1
+		< ;
+		}
+	c == "<" ?
+		{
+		t = 4 ;
+		d ? pushr( m.set , d )  ;
+		d = "" ;
+		< ;
+		}
+	d += c ;  // 2
+	}
+t == 0 && d ? pushr( m.set , d )  ;
+
+mm !
+atomize (0)
+m = $module atomize() ;
+m addVariant( "set" ) security( "a+r" ) ;
+m addVariant( "identifier" ) security( "a+r" );
+m.set = {} ;
+m.identifier = "" ;
+m !
+attribute (0)
+m = argv[0] ;
+d = argv[1] ;
+
+d ?	{
+	m addVariant( "attribute_" + d ) security( "a+r" ) ;
+	pushr( m.attributes , d ) ;
+	}
+attribute_equals (0)
+m = argv[0] ;
+d = argv[1] ;
+
+m.attributes ?
+	{
+	pushr( m.attributes , a = popr( m.attributes ) ) ;		// UPDATE: a = peek( m.attributes ) ;
+	m.("attribute_"+a) = d ;
+	}
+
+aModule_to_aString (0)
+m = argv[0] ;
+
+m.identifier ?
+	{
+	s = "<" + m.identifier ;
+	m.attributes ?
+		[ a ; m.attributes ]
+			{
+			s += " " + a ;
+			m.("attribute_"+a) ? s+= "=\"" + m.("attribute_"+a) + "\"" ;
+			}
+	s += ">" ;
+	}
+,	s = "" ;
+[ a ; m.set ]
+	{
+	a @ $string ? s += a ;
+	a @ $module ? s += aModule_to_aString( a ) ;
+	}
+m.identifier ?
+	s + "</" + m.identifier + ">" !
+,	s !		

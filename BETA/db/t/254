@@ -1,0 +1,10 @@
+o6 p1 c0 s242 l477 c50 w256 p0 v5
+name	(6,511)	$ IONIX System Computer
+aliases	(6,511)	$ ionix|computer
+desc	(6,365)	$ The IONIX System Computer internetworks cybernetic enviornments.
+display	(6,219)	M 50
+io	(6,219)	M 255
+.
+_accept (0)
+1! $wizard precesses(caller) ? 1!
+

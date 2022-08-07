@@ -1,0 +1,14 @@
+o4 p4 c0 s305 l384 c202 w316 p0 v3
+name	(4,219)	$ KMAL 9TH
+desc	(4,219)	$ K street mall
+east to west and west to east trade
+exits	(4,219)	A 2
+A 3
+# 4
+# 3
+# 2
+A 3
+M 305
+M 316
+M 175
+.

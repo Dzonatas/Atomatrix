@@ -1,0 +1,37 @@
+o6 p73 c214 s127 l73 c214 w0 p0 v8
+name	(73,73)	$ Body Parts
+desc	(73,73)	?
+damage	(73,73)	?
+bodypart	(6,219)	# 1
+defense	(6,219)	?
+type	(6,219)	?
+types	(6,219)	A 6
+A 5
+$ hand
+$ small-claws
+$ large-claws
+$ teeth
+$ fangs
+A 2
+$ fist
+$ d3;hitstr=punch;ohitstr=punches
+A 2
+$ claws
+$ d3;hitstr=claw;ohitstr=claws
+A 2
+$ claws
+$ d4;hitstr=claw;ohitstr=claws
+A 2
+$ teeth
+$ d3;hitstr=bite;ohitstr=bites
+A 2
+$ fangs
+$ d4;hitstr=bite;ohitstr=bites
+created	(281,219)	A 2
+A 2
+$ hand
+$ small-claws
+A 2
+M 287
+M 214
+.

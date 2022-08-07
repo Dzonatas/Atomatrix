@@ -1,0 +1,44 @@
+o6 p10 c0 s382 l478 c443 w442 p0 v6
+name	(441,895)	$ X11
+aliases	(441,895)	?
+desc	(441,895)	$ X11 Protocol Interface
+window	(441,91)	M 443
+task	(441,27)	# 1
+root	(441,219)	?
+.
+_initialize (0)
+443.eventors = {{},{}};
+443.grey = $X.color(128,128,128);
+start();
+/* .main shell(); */
+
+start (0)
+pushr($module serialed(0)._keywords, { "x", $atomatrix.attach("X11") } );
+
+$atomatrix.attach( "X11_window" );
+$atomatrix.attach( "X11_gc" );
+$atomatrix.attach( "X11_event" ); 
+$atomatrix.attach( "X11_font" );
+$atomatrix.attach( "X11_color" ); 
+$atomatrix.attach( "X11_root" );
+$atomatrix.attach( "X11_screen" );
+$atomatrix.attach( "X11_client" );
+
+stop (0)
+tasks(.task)==$X11 ? {
+	textate("Shutting down X11 task.");
+	kill(.task);
+	}
+,	textate("X11 task wasn't started.");
+
+task (0)
+[1]	{
+	e = $X.event();
+	( l = e.window @# 443.eventors[0] ) @ $integer ?
+		443.eventors[1][l] event(e);
+	}
+
+redirect (0)
+.root = $x.root();
+.root redirect();
+

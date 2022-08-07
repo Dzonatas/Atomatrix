@@ -1,0 +1,11 @@
+o6 p4 c0 s87 l0 c0 w0 p0 v3
+name	(88,877)	$ Dungeon Arena
+desc	(88,877)	$ The floor stain blood red.  (s)
+exits	(4,219)	A 4
+A 1
+# 2
+A 1
+M 87
+A 0
+A 0
+.

@@ -1,0 +1,7 @@
+o73 p281 c0 s0 l281 c0 w0 p0 v5
+name	(73,585)	$ fist
+type	(73,585)	$ hand
+hitstr	(73,585)	$ punch
+ohitstr	(73,585)	$ punches
+damage	(73,585)	$ d3
+.

@@ -1,0 +1,15 @@
+o6 p4 c0 s246 l0 c0 w0 p0 v6
+name	(247,877)	$ Sewer
+desc	(247,877)	$ East end of a large tunnel splits into a few smaller ones from here.
+Gross noises and liquids flow out the smaller holes.
+_east_fail_msg	(6,73)	$ You can't fit into them.
+_north_fail_msg	(6,73)	$ You can't fit into them.
+_south_fail_msg	(6,73)	$ You can't fit into them.
+exits	(4,219)	A 4
+A 1
+# 4
+A 1
+M 246
+A 0
+A 0
+.

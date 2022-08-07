@@ -1,0 +1,30 @@
+o17 p73 c123 s0 l73 c130 w74 p0 v9
+name	(129,73)	$ Hand-Held Weapons
+aliases	(129,73)	$ 
+desc	(129,73)	?
+damage	(129,73)	?
+hitstr	(17,73)	$ hit
+ohitstr	(17,73)	$ hits
+types	(6,73)	A 7
+A 6
+$ club
+$ knife
+$ s-sword
+$ l-sword
+$ 2hsword
+$ s-axe
+A 1
+M 135
+A 1
+M 133
+A 1
+M 132
+A 1
+M 131
+A 1
+M 130
+A 1
+M 123
+held	(6,73)	$ rh
+type	(6,73)	$ handw
+.

@@ -1,0 +1,22 @@
+o12 p10 c0 s263 l479 c0 w144 p0 v2
+name	(6,219)	$ timepiece
+aliases	(6,27)	$ timepiece
+.
+_lookat (0)
+t = $atomatrix.chronograph presentime() ;
+
+s = $unicode string( "" ) ;
+
+
+s+= "The timepiece has a cronogram, \"" + t unicode() + ".\"\n" ;
+s+= "It's an " ;	// UPDATE: an Earth ..., a Venus ...
+a = t simplify() ;
+s+= a.yearOfPlanet + " time: " ;
+s+= unicode( a.year , "-" , a.month , "-" , a.day ) ;
+s+= " " + unicode( a.hour , ":" , a.minutes ) ;
+a.afternoon ?
+	s+= " PM.\n" ;
+,	s+= " AM.\n" ;
+s!
+_name (0)
+unicode( "timepiece [currently " , $atomatrix.chronograph presentime() unicode() , "]" ) !

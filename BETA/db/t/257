@@ -1,0 +1,14 @@
+o17 p243 c0 s0 l179 c0 w184 p0 v9
+name	(257,877)	$ bowl
+aliases	(257,877)	$ fish*|cracker*
+desc	(257,877)	$ Just looking at the %type of %inside makes you hungry.
+status	(17,511)	?
+type	(17,511)	$ bowl
+effect	(17,511)	?
+inside	(17,511)	$ fish crackers
+amount	(17,73)	$ infinite
+addroomdesc	(17,27)	A 1
+A 2
+$ Weary Player's Bar
+$ A bowl of _fish crackers_ sits on the bar.
+.

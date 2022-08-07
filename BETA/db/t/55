@@ -1,0 +1,161 @@
+o6 p10 c0 s159 l478 c0 w29 p0 v4
+name	(6,219)	$ glo
+verbs	(20,0)	A 1
+A 7
+$ gl
+# -1
+# -1
+# -1
+# -1
+$ gl
+A 1
+# -102
+displaylistinited	(6,27)	?
+doublebuffer	(6,27)	# 1
+.
+gl (0)
+1!
+
+// .snglBuf	= { $gl.x_rgba, $gl.x_depth_size, 16, none};
+//.dblBuf		= { $gl.x_rgba, $gl.x_depth_size, 16, $gl.x_doublebuffer, none};
+
+// .xAngle		= '42.0';
+// .yAngle		= '82.0';
+// .zAngle		= '112.0';
+.doubleBuffer	= 1;
+
+/*
+    XVisualInfo    *vi;
+    Colormap        cmap;
+    XSetWindowAttributes swa;
+    GLXContext      cx;
+    XEvent          event;
+    GLboolean       needRedraw = GL_FALSE, recalcModelView = GL_TRUE;
+    int		    dummy;
+*/
+
+$x ? evoke();
+
+redraw (0)
+.displaylistinited ? {
+	$gl.calllist(1);
+	!
+	}
+
+$gl.newlist(1, $gl.compile_and_execute);
+$gl.clear($gl.color_buffer_bit | $gl.depth_buffer_bit);
+
+$gl.begin(GL_QUADS);
+$gl.color3f(0.0, 0.7, 0.1);	/* green */
+$gl.vertex3f(-1.0, 1.0, 1.0);
+$gl.vertex3f(1.0, 1.0, 1.0);
+$gl.vertex3f(1.0, -1.0, 1.0);
+$gl.vertex3f(-1.0, -1.0, 1.0);
+
+$gl.color3f(0.9, 1.0, 0.0);	/* yellow */
+$gl.vertex3f(-1.0, 1.0, -1.0);
+$gl.vertex3f(1.0, 1.0, -1.0);
+$gl.vertex3f(1.0, -1.0, -1.0);
+$gl.vertex3f(-1.0, -1.0, -1.0);
+
+$gl.color3f(0.2, 0.2, 1.0);	/* blue */
+$gl.vertex3f(-1.0, 1.0, 1.0);
+$gl.vertex3f(1.0, 1.0, 1.0);
+$gl.vertex3f(1.0, 1.0, -1.0);
+$gl.vertex3f(-1.0, 1.0, -1.0);
+
+$gl.color3f(0.7, 0.0, 0.1);	/* red */
+$gl.vertex3f(-1.0, -1.0, 1.0);
+$gl.vertex3f(1.0, -1.0, 1.0);
+$gl.vertex3f(1.0, -1.0, -1.0);
+$gl.vertex3f(-1.0, -1.0, -1.0);
+$gl.end();
+$gl.endlist();
+.displaylistinited = 1;
+
+.doublebuffer ?
+	$gl.xswapbuffers(dpy, win);
+,
+	$gl.flush();
+
+.needredraw = 0;
+
+evoke (0)
+~~$gl.xqueryextension(&dummy, &dummy) ?
+	textate("X server has no GLX extension") !
+vi = $gl.xchoosevisual(DefaultScreen(dpy), dblBuf);
+vi == NULL ? {
+	vi = $gl.xchoosevisual(dpy, DefaultScreen(dpy), snglBuf);
+	vi == NULL ?
+		textate("no RGB visual with depth buffer") !
+	.doubleBuffer = 0;
+	}
+vi.class <> $x.truecolor ?
+	textate("TrueColor visual required for this program") !
+cx = $gl.xcreatecontext( vi, /* no sharing of display lists */ None, /* direct rendering if possible */ 1);
+cx == NULL ?
+	textate("could not create rendering context") !
+cmap = $x.createcolormap(dpy, RootWindow(dpy, vi->screen), vi->visual, AllocNone);
+swa.colormap = cmap;
+swa.border_pixel = 0;
+swa.event_mask = $x.exposuremask | $x.buttonpressmask | $x.structurenotifymask;
+win = $x.createwindow( RootWindow(dpy, vi->screen), 0, 0, 300, 300, 0, vi->depth, InputOutput, vi->visual, CWBorderPixel | CWColormap | CWEventMask, &swa);
+$x.setstandardproperties(win, "glxsimple", "glxsimple", None, argv, argc, NULL);
+
+$gl.xmakecurrent(win, cx);
+
+$x.mapwindow(win);
+
+$gl.enable($gl.depth_test); /* enable depth buffering */
+$gl.depthfunc($gl.less);    /* pedantic, GL_LESS is the default */
+$gl.cleardepth(1.0);       /* pedantic, 1.0 is the default */
+
+$gl.clearcolor(0.0, 0.0, 0.0, 0.0);
+
+$gl.matrixmode(GL_PROJECTION);
+$gl.loadidentity();
+$gl.frustum(-1.0, 1.0, -1.0, 1.0, 1.0, 10.0);
+
+$gl.viewport(0, 0, 300, 300); /* pedantic, full window size is default viewport */
+
+[1] {
+	event = $x nextevent();
+	event.type == $x.buttonpress ? {
+		recalcmodelview = 1;
+		event.xbutton.button == 1 ? { xAngle += 10.0; .; }
+		,
+		event.xbutton.button == 2 ? { yAngle += 10.0; .; }
+		,
+		event.xbutton.button == 3 ? { zAngle += 10.0; .; }
+		.;
+		}
+	,
+	event.type == $x.configurenotify ? {
+		$gl.viewport(0, 0, event.xconfigure.width, event.xconfigure.height);
+		/* fall through... */
+		}
+	,
+	event.type == $x.expose ? {
+		.needredraw = 1;
+		.;
+	  	}
+	recalcModelView ? {
+		$gl.matrixmode($gl.modelview);
+
+	    /* reset modelview matrix to the identity matrix */
+		$gl.loadidentity();
+
+	    /* move the camera back three units */
+		$gl.translatef(0.0, 0.0, -3.0);
+
+	    /* rotate by X, Y, and Z angles */
+		$gl.rotatef(xAngle, 0.1, 0.0, 0.0);
+		$gl.rotatef(yAngle, 0.0, 0.1, 0.0);
+		$gl.rotatef(zAngle, 0.0, 0.0, 1.0);
+		recalcmodelview = 0;
+		.needredraw = 1;
+		}
+	.needredraw ?
+		redraw();
+	}
+

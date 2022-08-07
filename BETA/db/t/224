@@ -1,0 +1,15 @@
+o17 p4 c0 s222 l0 c30 w0 p0 v3
+name	(17,877)	$ Sunrise Crt.
+desc	(224,877)	$ Sunrise Blvd. becomes a very large court here, turning into a wide
+street to the south.  To the north is an immense temple, dark and 
+omninous.
+exits	(4,219)	A 4
+A 2
+# 2
+# 1
+A 2
+M 148
+M 225
+A 0
+A 0
+.

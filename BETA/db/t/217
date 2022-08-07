@@ -1,0 +1,20 @@
+o17 p220 c0 s237 l138 c70 w0 p0 v9
+name	(217,877)	$ drunken adventurer
+aliases	(217,893)	?
+desc	(217,877)	$ A foul smell emanates from the drunk, part alcohol, part sewer, and part
+vomit.  He seems barely conscious, yet he mumbles continually.
+wait_time	(72,219)	# 932274238
+speech	(17,73)	A 2
+$ yashouldn' go in there, th' barman threwm' out!
+$ iff I had a shword I'd go shash a few monshters forsh ya.
+speech_emote	(17,73)	$ The drunk says%direct, '%speech'
+commands	(220,219)	A 0
+task	(72,73)	# 5
+addroomdesc	(17,27)	A 1
+A 2
+$ Saloon Entrance
+$ A drunken adventurer sits here, groaning against the wall.
+.
+sorry (0)
+action();
+

@@ -1,0 +1,38 @@
+o6 p10 c0 s77 l175 c0 w125 p0 v3
+name	(6,219)	$ bus schedule
+verbs	(20,0)	A 1
+A 7
+$ read
+# 1
+# -1
+# -1
+# -1
+$ read
+A 1
+# -102
+aliases	(6,27)	$ schedule
+.
+read (0)
+info = $url.get("http://www.sacrt.com/Service_Info/Routes_Schedules/Current/routes/R088.htm");
+
+i = 0;
+l = info length();
+iq = 0;
+buf = "";
+[i < l] {
+	iq  && info[i]==">" ? {
+		iq = 0;
+		i += 1;
+		<;
+		}
+	info[i] == "<" || iq ? {
+		iq = 1;
+		i += 1;
+		<;
+		}
+	buf += info[i];
+	i += 1;
+	}
+
+textate(buf);
+

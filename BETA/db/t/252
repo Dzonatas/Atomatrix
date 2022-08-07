@@ -1,0 +1,48 @@
+o6 p4 c251 s248 l0 c0 w0 p0 v4
+name	(252,877)	$ Sewer
+desc	(252,877)	$ Dark section of the tunnel.
+exits	(4,219)	A 4
+A 0
+A 0
+A 0
+A 0
+map	(6,91)	A 4
+A 3
+M 249
+M 250
+M 251
+A 2
+A 2
+$ south
+$ east
+A 2
+M 250
+M 248
+A 2
+A 2
+$ west
+$ north
+A 2
+M 251
+M 249
+A 2
+A 2
+$ east
+$ down
+A 2
+M 250
+M 253
+.
+_moved_in (0)
+/*avatar().editmode=0;*/
+
+_dir (0)
+argv -> d;
+here = this @# .map[0] ;
+here = here + 1 ;
+( to = d @# .map[here][0] ) @ $integer ?
+	.map[here][1][to] !
+loc = .map[0];
+pull(loc,xx=(this @# loc));
+loc[$crtl random(loc length())]!
+

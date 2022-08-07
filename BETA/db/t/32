@@ -1,0 +1,22 @@
+o6 p4 c0 s27 l0 c48 w0 p0 v3
+name	(32,877)	$ Front Hallway
+desc	(32,877)	$ A big oak door leads out to the east.  There is also a kitchen west,
+living room north, and a garage south.  Stairs go up from here.
+exits	(4,219)	A 4
+A 5
+# 5
+# 4
+# 3
+# 2
+# 1
+A 5
+M 7
+M 37
+M 48
+M 47
+M 38
+A 1
+$ stairs
+A 1
+M 7
+.

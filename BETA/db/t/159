@@ -1,0 +1,16 @@
+o6 p10 c0 s302 l478 c0 w434 p0 v6
+name	(6,219)	$ abstractWindow
+id	(6,219)	?
+x	(6,219)	?
+y	(6,219)	?
+width	(6,219)	?
+height	(6,219)	?
+.
+inquir (0)
+o = $x.getgeometry( argv[0] );
+.id	= argv[0];
+.x	= o.x;
+.y	= o.y;
+.width	= o.width;
+.height	= o.height;
+

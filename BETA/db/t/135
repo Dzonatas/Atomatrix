@@ -1,0 +1,22 @@
+o17 p129 c379 s133 l129 c0 w123 p0 v7
+name	(73,73)	$ CLUB
+desc	(73,73)	?
+damage	(73,73)	$ d5
+type	(73,73)	$ club
+hitstr	(73,73)	$ pound
+ohitstr	(73,73)	$ pounds
+types	(6,73)	A 4
+A 3
+$ s
+$ wc
+$ ic
+A 2
+$ stick
+$ d2
+A 2
+$ wooden club
+$ d3
+A 2
+$ iron club
+$ d4
+.

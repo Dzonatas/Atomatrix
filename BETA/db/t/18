@@ -1,0 +1,15 @@
+o17 p4 c0 s15 l0 c31 w0 p0 v3
+name	(17,73)	$ Windy Cavern
+desc	(18,877)	$ A very windy cavern which narrows at the end, making the way impassible.
+You can climb up to a rock ledge from here, or return west to the play rooms.
+
+exits	(4,219)	A 4
+A 2
+# 5
+# 4
+A 2
+M 25
+M 14
+A 0
+A 0
+.

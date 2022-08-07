@@ -1,0 +1,11 @@
+o4 p4 c0 s200 l107 c0 w459 p0 v3
+name	(4,219)	$ 810 level three
+desc	(4,219)	?
+exits	(4,219)	A 2
+A 2
+# 5
+# 6
+A 2
+M 459
+M 200
+.

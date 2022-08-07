@@ -1,0 +1,20 @@
+o303 p2 c0 s270 l14 c311 w211 p0 v14
+name	(303,877)	$ Silver Cat
+aliases	(303,877)	?
+password	(0,292)	$ Diamonds
+login_time	(2,381)	# 757586041
+logoff_time	(2,381)	# 757586055
+uid	(2,292)	# 3845
+gender	(303,877)	$ male
+desc	(303,877)	$ A short silver furred cat-were looks up at you curiously.
+
+status	(303,27)	A 1
+A 2
+$ sleeping
+# 757586119
+hp	(75,27)	?
+mhp	(75,27)	?
+attacking	(75,27)	?
+armour	(75,27)	?
+ready_weapon	(75,27)	# 287
+.

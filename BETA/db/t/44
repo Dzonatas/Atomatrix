@@ -1,0 +1,18 @@
+o6 p4 c0 s43 l0 c0 w0 p0 v3
+name	(44,877)	$ Sunrise Blvd.
+desc	(44,877)	$ A walkway leads west to a mansion. The street goes north and south.
+To the east is a building with a neon sign reading "Weary Player's Saloon".
+exits	(4,219)	A 4
+A 4
+# 4
+# 3
+# 2
+# 1
+A 4
+M 43
+M 138
+M 45
+M 67
+A 0
+A 0
+.

@@ -1,0 +1,82 @@
+o17 p220 c0 s0 l179 c0 w178 p0 v11
+name	(189,877)	$ Fred
+aliases	(189,877)	$ fred
+desc	(189,877)	$ He is a big, round, bearded man who seems glued to his barstool.  His
+beer mug always seems full, no matter how much he has gulped down.
+vocab	(17,73)	A 8
+A 2
+$ hello
+$ Fred nods and sips his beer.
+A 2
+$ hi
+$ Fred nods.
+A 2
+$ beer
+$ Fred looks at his beer and says, 'Yup.'
+A 2
+$ drink
+$ Fred looks up and grins.
+A 2
+$ thank
+$ Fred grins and takes a gulp from his stein.
+A 2
+$ fight
+$ Fred shakes his head slowly.
+A 2
+$ refill
+$ Fred says, 'Yup, about time for another beer. Slide one down, Jake.'
+A 2
+$ Jake
+$ Fred nods.
+wait_time	(72,219)	# 932274238
+commands	(220,219)	A 0
+speech	(17,73)	A 8
+A 3
+$ Jake<Seen that virgin in the back?  Ornery wench.
+$ Jake*%w nods.
+$ >She's nice enough, as long as you have some gold.
+$ You visited that dungeon yet?  Heh heh heh.
+$ Nice armor ya got there.
+$ Ah, nothing like a nice beer after some dungeon slaying.
+$ That reminds me, I gotta pick up my battleax from the blacksmith.
+It was getting dull.
+A 2
+$ Jake<Why don't you get Hagga to whip us up a couple potions of
+invisibility? There's some fun.
+$ Fred<She's been in a bad mood lately.
+A 2
+$ Jake>I remember once when me and Jake here were in that dungeon and got
+attacked by three stone gargoyles---it wasn't pretty, I tell ya.
+How many stitches did they give you again, Jake?
+$ Fred>Fifty-seven, I think.  Those were the days, eh?
+A 4
+$ Jake>You hear what happened to that new guy who came in here, 
+what's his name, ah--Cyan?
+$ Fred>Nope.
+$ Jake>Messing around in the forest, started following a nymph around.
+Next thing ya know, she lures him over the waterfall and he jumps
+off the bridge, insane with love.
+$ Fred<Terrible thing to happen to a guy.
+action	(17,73)	A 4
+$ %w folds his beer coaster into a tidy square.
+$ %w smooths out his beer coaster.
+$ %w eats a fish cracker.
+$ %w contemplates his beer.
+huh	(17,73)	$ %w grunts and shakes his head slowly.
+task	(72,73)	# 3
+addroomdesc	(17,27)	A 1
+A 2
+$ Weary Player's Bar
+$ Sitting on a barstool and sipping an enternally full beer stein, _Fred_ watches everyone intently.
+.
+sorry (0)
+.location announce_all(.name+" grunts and shakes his head slowly.");
+$program sleep(10);
+barman=.location.barman;
+/*
+$crtl random(100)<50 ? {
+	.location announce_all(.name+" nods to ",barman.name,".");
+	barman _command(this,"beer");
+	}
+*/
+

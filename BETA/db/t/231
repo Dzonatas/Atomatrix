@@ -1,0 +1,19 @@
+o17 p4 c0 s230 l0 c0 w0 p0 v5
+name	(231,877)	$ Waterfall Bridge
+desc	(231,877)	$ The waterfall thickens here, near it's impact, and you are sprayed by 
+a drenching downpour.  The wooden boards of the bridge, badly weathered
+and warped, seem barely able to support you.
+exits	(4,219)	A 4
+A 3
+# 6
+# 2
+# 1
+A 3
+M 357
+M 232
+M 230
+A 0
+A 0
+_down_ok_msg	(162,91)	$ SPLASH!
+_down_ok_omsg	(162,91)	$ %W jumps into the river
+.

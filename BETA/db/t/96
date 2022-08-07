@@ -1,0 +1,17 @@
+o6 p1 c81 s56 l0 c0 w0 p0 v5
+name	(96,877)	$ Generic Button
+aliases	(96,877)	$ button
+desc	(96,877)	?
+do	(6,877)	?
+verbs	(20,0)	A 1
+A 6
+$ push|pull
+# 1
+# -1
+# -1
+# -1
+$ evoke
+.
+evoke (0)
+.evoke _button(this);
+

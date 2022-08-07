@@ -1,0 +1,13 @@
+o6 p29 c0 s0 l224 c0 w0 p0 v4
+name	(30,877)	$ note
+aliases	(30,877)	?
+desc	(30,877)	$ 'read' me!
+note	(30,877)	$ Hi.  Welcome to Virtual Realities!
+Sorry this place is a mess.  It is under development.  But feel free to mess
+with it right now and explore.  Use the 'help' command.  Try doing something
+to anything that is in a room.
+
+Use the Post-It-Note Board for ideas and such.  Try the commands 'browse'
+and 'post'.  To read a note use 'browse ##' where ## is the note number.
+
+.

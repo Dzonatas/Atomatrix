@@ -1,0 +1,12 @@
+o6 p242 c0 s435 l255 c0 w0 p0 v1
+id	(6,219)	# 4988
+.
+spawn (0)
+/*
+p = fork();
+p @ $error ? p!
+p ? p!
+*/
+.location task();
+!
+

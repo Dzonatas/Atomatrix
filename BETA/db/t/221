@@ -1,0 +1,211 @@
+o6 p72 c261 s220 l222 c0 w220 p0 v20
+name	(221,877)	$ mimi
+generic	(17,73)	$ monster
+types	(17,73)	?
+dungeon	(17,73)	M 258
+forest	(17,73)	M 261
+basic_rat	(17,219)	A 4
+$ name=rat
+$ mhp=11
+$ dexterity=80
+$ desc=An angry %type with black, empty eyes.
+random_do	(17,73)	A 2
+A 2
+$ attack
+# 100
+A 2
+$ wander
+# 50
+hp	(75,73)	# -66
+mhp	(75,73)	?
+wait_time	(72,73)	# 759048739
+doing	(72,73)	?
+type	(17,73)	?
+generics	(17,73)	A 2
+$ dungeon
+$ forest
+basic_lion	(17,73)	A 4
+$ name=lion
+$ mhp=7
+$ dexterity=50
+$ desc=The lion growls at you in a low, angry tone.
+basic_goblin	(17,73)	A 4
+$ name=goblin
+$ mhp=11
+$ dexterity=80
+$ desc=An ugly, wickedly grinning goblin.
+basic_bear	(17,73)	A 5
+$ name=bear
+$ mhp=10
+$ dexterity=70
+$ class=claw
+$ desc=The bear rears up on its hind legs and slashes its claws at you.
+basic_wolf	(17,219)	A 4
+$ name=wolf
+$ mhp=15
+$ dexterity=80
+$ desc=The angry wolf growls at you.
+basic_snake	(17,219)	A 4
+$ name=snake
+$ mhp=5
+$ dexterity=30
+$ desc=An angry snake with black, empty eyes.
+task	(72,73)	# 8
+default_weapon	(6,73)	$ body.small-claws
+.
+isdemand (0)
+argv -> this;
+chance = $area_list area_expand(.generic) length();
+chance += .objects length() * 5;
+chance -=  $module serialed(this) successants() length();
+chance > $crtl random(100) ? 1!
+0!
+
+act_dead (0)
+.location announce_all($util name(this,"A")," dissolves into dust.");
+_recycle();
+
+make (0)
+argv -> areatype, basic, difficulty;
+/* ( "dungeon", "rat", 1 ) */
+~~areatype ? 0! /* areatype="dungeon"/"forest" */
+genericobj=$npc_class.monsters.(areatype);
+~~genericobj ?
+	0 !
+~~(monster=genericobj gettype(basic, difficulty)) ?
+	0 !
+
+/*
+genericobj.objects length() ? {
+	obj=genericobj.objects[0];
+	}
+, {
+*/
+
+genericobj successants() length() > 5 ?
+	{
+	$util db("221 make  hit 5 monster max");
+	0!
+	}
+obj=$npc_class _create(genericobj);
+
+/*
+	obj=create(genericobj);
+	~~obj ? 0!
+	}
+chobjown(obj,genericobj);
+*/
+
+genericobj update(obj,+monster);
+obj _moveto(genericobj);
+ok=obj _moveto(obj.home);
+ok ?
+	obj !
+,	$util db("Error moving #",obj," to obj.home #",obj.home,"   ",ok);
+0!
+
+_name (0)
+this==$npc_class.monsters ? "GENERIC MONSTER CLASS"!
+generictype=.generic;
+this==$npc_class.monsters.(generictype) ?
+	"MONSTERCLASS_"+generictype!
+suffix="";
+.status && .status @ $string ? suffix=" "+.status;
+.name+suffix!
+
+update (0)
+argv -> obj, basictype, attribs;
+m = $module serialed( obj ) ;
+genericstr=m.generic;
+genericobj=$npc_class.monsters.(genericstr);
+basic_attribs=m.(basictype);
+all_attribs={ +basic_attribs, +attribs };
+~~basic_attribs || ~~all_attribs ? 0!
+
+$battle register(obj);  
+$battle.object make(m.default_weapon);
+
+m.hp=m.mhp=9;
+[all_attribs]
+	{
+	var = popl(all_attribs) ;
+	var index( ";" ) && vars = var split( ";" ) ?
+		{
+		[ v; vars] { pushr(all_attribs,v); }
+		<;
+		}
+	( i = var index( "=" ) ) @ $integer ?
+		{
+		objvar	= var[0..i-1];
+		val	= var[i+1..-1] replace( "\n" , "" ) ;
+		m addVariant( objvar ) ;
+		num	= val integer() ? val=num;
+		val == "0" ?
+			val=0;
+		m.(objvar) = val ;
+		}
+	}
+m.type=basictype;
+/*obj.aliases=basictype+"|"+obj.type;*/
+m.hp=obj.mhp;
+/*dstr=obj.(basictype+"_desc") || "The %type growls at you.";
+dstr= dstr replace("%type",obj.type);
+m.desc=dstr;*/
+
+m start(obj);
+$util db("created #",obj,"  ",$util name(obj));
+
+_recycle (0)
+.wait_time= $crtl time()+20;
+$util db(this," _recycle");
+$npc_class _recycle(this); 
+!
+
+/* other recycle makes this obsolete */
+.doing="_recycle";
+generic=.generic;
+genericobj=$npc_class.monsters.(generic);
+.location==genericobj ? { /* already recycled */
+	isdemand(this) ? 
+		make(generic)!
+	!
+	}
+/*stop();*/
+savelist={"name","wait_time","doing"};
+[ v ; variants() ] /* delete all attribs */
+	~~(v identifier() @# savelist) ?
+		v delete() ;
+
+_moveto(genericobj)!
+
+gettype (0)
+argv -> basictype, difficulty;
+/*		"lion"		0-3  3=harder*/
+~~difficulty ? difficulty=0;
+~~basictype ? basictype=.types[$crtl random(.types length())][0];
+[ types; .types] {
+	basictype==types[0] ? {
+		basicvar=types[1];
+		~~$npc_class.monsters.(basicvar) ? {
+			/* $util db("221 gettype  no monster basictype ",basictype); */
+			0!
+			}
+		montypes=types[2..-1];
+		maxdiff=montypes length()-1;
+		difficulty>maxdiff ? difficulty=maxdiff;
+		({ basicvar, montypes[difficulty] })!
+		}
+	}
+0!
+
+_accept (0)
+obj=argv[0];
+generic=obj.generic;
+$npc_class.monsters.(generic) precesses(argv[0]) ? 1! /*monster*/
+146 precesses(argv[0]) ? 1! /*gold*/
+$battle.object precesses(argv[0]) ? 1!
+0!
+
+recycle_all (0)
+objs = $module serialed(221) successants() ;
+

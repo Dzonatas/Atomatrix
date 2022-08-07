@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{93c07c8a-2f7a-4c7e-a7bd-762f25ee0062}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d764491d-7976-4dca-b073-1784362be646}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{5440f085-e713-4f0e-b74c-d7b7364f4061}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="aVReality.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aVReality_canonicalize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aVReality_edit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aVReality_format.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aVReality_match.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aVReality_repository.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="structor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

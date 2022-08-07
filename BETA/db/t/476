@@ -1,0 +1,15 @@
+o4 p4 c0 s475 l107 c0 w203 p0 v3
+name	(4,219)	$ 810 level twenty one
+desc	(4,219)	?
+exits	(4,219)	A 4
+A 1
+# 6
+A 1
+M 475
+A 2
+$ cybertronix
+$ classroom
+A 2
+M 477
+M 480
+.

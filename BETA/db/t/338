@@ -1,0 +1,11 @@
+o17 p4 c0 s337 l-1 c0 w0 p0 v3
+name	(338,877)	$ Denser Forest
+desc	(338,877)	$ This forest is very dense.
+exits	(338,219)	A 4
+A 1
+# 7
+A 1
+M 337
+A 0
+A 0
+.

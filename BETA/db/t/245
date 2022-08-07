@@ -1,0 +1,21 @@
+o6 p4 c0 s236 l0 c0 w0 p0 v6
+name	(245,877)	$ Sewer
+desc	(245,877)	$ Tunnels run east, north, and west from here.
+Dots of light make out a sewer cover above.
+_up_ok_msg	(6,73)	$ You quickly push up on the cover and go up.
+
+_up_ok_omsg	(6,73)	$ %W pulls %r up and out of the sewer.
+
+_north_fail_msg	(6,73)	$ The tunnel is to small for you.
+exits	(4,219)	A 4
+A 3
+# 5
+# 4
+# 3
+A 3
+M 45
+M 248
+M 246
+A 0
+A 0
+.

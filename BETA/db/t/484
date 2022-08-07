@@ -1,0 +1,11 @@
+o4 p4 c0 s483 l107 c491 w483 p0 v3
+name	(4,219)	$ Microsoft
+desc	(4,219)	?
+exits	(4,219)	A 4
+A 0
+A 0
+A 1
+$ exit
+A 1
+M 475
+.

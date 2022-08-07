@@ -1,0 +1,58 @@
+o6 p10 c0 s100 l479 c0 w0 p0 v2
+name	(6,219)	$ Project Documentation
+desc	(6,91)	$ documentation for Alchematrix and ATOMATRIX
+.
+help (0)
+type= argv[0] lowercase() ;
+~~type ? 
+	textate("
+Enter one line of text that is within single quotes yet do not type the single quotes.
+
+	'help beginner'
+	'help commands'
+	'help atomatrix'
+
+Enter 'help beginner'
+")!
+
+program( d = argv[0] + "_document" ) @ $program ?
+	this:( d )() ;
+alchematrix_document (0)
+textate("
+Alchematrix is the packaged installation of ATOMATRIX for users of the Microsoft Windows system.
+");
+
+beginner_document (0)
+textate("
+
+This document briefly explains to the reader about the ATOMATRIX environment.
+
+The theory of \"object orientation\", when applied, made a significant advancement to the methodology of cybernetics, devices that relate an interface between human actions or senses to the computer hardware and software.
+
+We invite the reader to experience this cybernetic environment.  You are able to discover the abilities within the environment by interactive usage more so than by explanation.  Because one of our goals is to allow communication between diverse individuals, we do not want to depend on a literal explanation of the environment that is written in only one language.  The primary cybernetic method, however, to interact with the environment is the command line interface.  You are able to type simple phrases or clauses to cause action.  Your actions are, then, bound by a perspective reference within the cybernetic environment, known as the avatar.  Your avatar acts as an extension to the environment here.
+
+For example, if you type \"look\", you should receive a description of the virtual area around your avatar.
+
+As you discover the environment, notice how you are able to sense the objects around your avatar.  Those objects within your avatar's perspective interact by a method of \"object orientation\" being applied.
+
+Enter \"help commands\" to receive further instruction.
+");
+
+commands_document (0)
+textate("
+
+The area decription, after you type \"look\", usually includes the text \"Exits:\" that lists the possible commands you could enter to move from one area to another.
+
+If you notice an object, like the IONIX PC, use the command \"look at IONIX PC\" to receive a decrtipion of it.  Usually, the command \"look at OBJECT\" (where OBJECT is the object you specify), returns a description.
+") ;
+
+atomatrix_document (0)
+textate("
+
+ATOMATRIX is a cybernetic environment that provides an atomical, object-orientated program environment with a distributive, clustering, multitasking virtual engine, run-time dynamic libraries, and networked objects.
+
+The Gnutella network is accessible from this environment.  ATOMATRIX uses the Gnutella network, as implemented by the project Gnucleus, with the GnucDNA component.
+");
+
+changelog_document (0)
+

@@ -1,0 +1,13 @@
+o6 p4 c0 s46 l0 c42 w0 p0 v3
+name	(47,877)	$ 3 Car Garage
+desc	(47,877)	$ The garage door is east and a door to inside is north.
+exits	(4,219)	A 4
+A 2
+# 3
+# 1
+A 2
+M 94
+M 32
+A 0
+A 0
+.

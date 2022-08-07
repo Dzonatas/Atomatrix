@@ -1,0 +1,36 @@
+o6 p1 c0 s34 l7 c0 w34 p0 v4
+name	(35,877)	$ clock
+aliases	(35,877)	$ time
+
+desc	(35,877)	$ It looks like a little house with a door for a birdie to come out.
+(try 'time');
+
+verbs	(20,0)	A 2
+A 6
+$ time
+# -1
+# -1
+# -1
+# -1
+$ time
+A 6
+$ read
+# 1
+# -1
+# -1
+# -1
+$ time
+.
+time (0)
+vrtime=$weather_task.vr_time;
+vrtime -> h, m;
+time= $crtl localTime( $crtl time() );
+time[2]>12 ? time[2]=time[2]-12;
+textate("The clock has two readings.  One shows Virtual Realities time\n",
+	"and one shows real time.");
+textate("\nVR time reads ",m," minutes after ",h,".");
+textate("Real time reads ",time[1]," minutes after ",time[2],".");
+/*
+textate("The clock points to ",$vreality format("^2:^2:^2.",time[2],time[1],time[0]));
+*/
+

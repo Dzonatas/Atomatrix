@@ -1,0 +1,893 @@
+o0 p0 c12 s0 l0 c0 w0 p0 v29
+root	(0,73)	M 1
+name	(0,877)	$ Something
+weather_task	(0,73)	M 191
+area_list	(0,73)	M 111
+portal	(0,73)	M 40
+cpu	(0,73)	M 452
+mail	(0,73)	M 147
+_keywords	(6,219)	A 24
+A 2
+$ vreality
+?
+A 2
+$ url
+?
+A 2
+$ crtl
+?
+A 2
+$ wnd
+?
+A 2
+$ avatar
+M 2
+A 2
+$ object_class
+M 10
+A 2
+$ parse
+M 20
+A 2
+$ wizard
+M 163
+A 2
+$ util
+M 56
+A 2
+$ battle
+M 75
+A 2
+$ npc_class
+M 72
+A 2
+$ wizard
+M 163
+A 2
+$ programmer
+M 162
+A 2
+$ parse
+M 20
+A 2
+$ access
+M 21
+A 2
+$ weather_task
+M 191
+A 2
+$ area_list
+M 111
+A 2
+$ portal
+M 40
+A 2
+$ mail
+M 147
+A 2
+$ compass_dirs
+A 10
+$ north
+$ south
+$ east
+$ west
+$ up
+$ down
+$ northeast
+$ northwest
+$ southeast
+$ southwest
+A 2
+$ compass_odirs
+A 10
+$ south
+$ north
+$ west
+$ east
+$ down
+$ up
+$ southwest
+$ southeast
+$ northwest
+$ northeast
+A 2
+$ prepcodes
+A 30
+A 29
+$ in
+$ on
+$ out
+$ inside
+$ from
+$ off
+$ beside
+$ through
+$ for
+$ about
+$ off
+$ behind
+$ with
+$ using
+$ to
+$ in
+$ inside
+$ into
+$ at
+$ on
+$ onto
+$ upon
+$ over
+$ as
+$ is
+$ from
+$ under
+$ underneath
+$ beneath
+A 4
+# 11
+# 3
+$ front
+$ of
+A 4
+# 13
+# 3
+$ top
+$ of
+A 3
+# 14
+# 2
+$ of
+A 3
+?
+?
+$ of
+A 3
+# 14
+# 2
+$ inside
+A 3
+# 9
+# 2
+$ of
+A 2
+# 6
+# 1
+A 2
+# 7
+# 1
+A 2
+# 8
+# 1
+A 2
+# 8
+# 1
+A 2
+# 9
+# 1
+A 2
+# 5
+# 1
+A 2
+# 10
+# 1
+A 2
+# 10
+# 1
+A 2
+# 4
+# 1
+A 2
+# 12
+# 1
+A 2
+# 12
+# 1
+A 2
+# 12
+# 1
+A 2
+# 4
+# 1
+A 2
+# 13
+# 1
+A 2
+# 13
+# 1
+A 2
+# 13
+# 1
+A 2
+# 3
+# 1
+A 2
+# 2
+# 1
+A 2
+# 1
+# 1
+A 2
+# 14
+# 1
+A 2
+# 15
+# 1
+A 2
+# 15
+# 1
+A 2
+# 15
+# 1
+A 2
+$ preps
+A 15
+$ is
+$ as
+$ over
+$ at/to
+$ behind
+$ beside
+$ through
+$ for/about
+$ off/off of
+$ with/using
+$ in front of
+$ in/inside/into/inside of
+$ on/onto/upon/on top of
+$ out of/from inside/from
+$ under/underneath/beneath
+A 2
+$ root
+M 1
+x11	(6,91)	M 441
+maxon	(0,73)	# 512
+access	(0,73)	M 21
+parse	(0,73)	M 20
+to_be_recycled	(0,73)	A 0
+lost	(0,73)	?
+programmer	(0,73)	M 162
+wizard	(0,73)	M 163
+object_class	(0,73)	M 10
+npc_class	(0,73)	M 72
+battle	(0,73)	M 75
+avatar	(0,73)	M 2
+util	(0,73)	M 56
+roomgen	(6,219)	M 4
+process	(6,27)	?
+prepcodes	(0,73)	A 30
+A 29
+$ in
+$ on
+$ out
+$ inside
+$ from
+$ off
+$ beside
+$ through
+$ for
+$ about
+$ off
+$ behind
+$ with
+$ using
+$ to
+$ in
+$ inside
+$ into
+$ at
+$ on
+$ onto
+$ upon
+$ over
+$ as
+$ is
+$ from
+$ under
+$ underneath
+$ beneath
+A 4
+# 11
+# 3
+$ front
+$ of
+A 4
+# 13
+# 3
+$ top
+$ of
+A 3
+# 14
+# 2
+$ of
+A 3
+?
+?
+$ of
+A 3
+# 14
+# 2
+$ inside
+A 3
+# 9
+# 2
+$ of
+A 2
+# 6
+# 1
+A 2
+# 7
+# 1
+A 2
+# 8
+# 1
+A 2
+# 8
+# 1
+A 2
+# 9
+# 1
+A 2
+# 5
+# 1
+A 2
+# 10
+# 1
+A 2
+# 10
+# 1
+A 2
+# 4
+# 1
+A 2
+# 12
+# 1
+A 2
+# 12
+# 1
+A 2
+# 12
+# 1
+A 2
+# 4
+# 1
+A 2
+# 13
+# 1
+A 2
+# 13
+# 1
+A 2
+# 13
+# 1
+A 2
+# 3
+# 1
+A 2
+# 2
+# 1
+A 2
+# 1
+# 1
+A 2
+# 14
+# 1
+A 2
+# 15
+# 1
+A 2
+# 15
+# 1
+A 2
+# 15
+# 1
+preps	(0,73)	A 15
+$ is
+$ as
+$ over
+$ at/to
+$ behind
+$ beside
+$ through
+$ for/about
+$ off/off of
+$ with/using
+$ in front of
+$ in/inside/into/inside of
+$ on/onto/upon/on top of
+$ out of/from inside/from
+$ under/underneath/beneath
+compass_dirs	(0,73)	A 10
+$ north
+$ south
+$ east
+$ west
+$ up
+$ down
+$ northeast
+$ northwest
+$ southeast
+$ southwest
+compass_odirs	(0,73)	A 10
+$ south
+$ north
+$ west
+$ east
+$ down
+$ up
+$ southwest
+$ southeast
+$ northwest
+$ northeast
+verbs	(20,0)	A 3
+A 7
+$ l*ook
+# -1
+# 4
+# 1
+# -1
+$ look
+A 0
+A 7
+$ l*ook
+# 1
+# -1
+# -1
+# -1
+$ look
+A 0
+A 7
+$ clue
+# 0
+# -1
+# -1
+# -1
+$ getclue
+A 1
+# -101
+recyclebin	(1,219)	A 123
+M 284
+M 286
+M 288
+M 289
+M 292
+M 293
+M 294
+M 295
+M 296
+M 297
+M 298
+M 299
+M 300
+M 301
+M 307
+M 308
+M 309
+M 317
+M 318
+M 319
+M 320
+M 321
+M 322
+M 323
+M 324
+M 325
+M 327
+M 328
+M 329
+M 330
+M 332
+M 333
+M 334
+M 335
+M 336
+M 339
+M 340
+M 341
+M 342
+M 343
+M 344
+M 345
+M 346
+M 348
+M 349
+M 350
+M 353
+M 354
+M 355
+M 356
+M 357
+M 358
+M 359
+M 360
+M 361
+M 365
+M 366
+M 367
+M 369
+M 370
+M 371
+M 372
+M 385
+M 386
+M 387
+M 388
+M 389
+M 390
+M 391
+M 392
+M 393
+M 394
+M 395
+M 396
+M 397
+M 398
+M 399
+M 400
+M 401
+M 402
+M 403
+M 404
+M 405
+M 406
+M 407
+M 414
+M 415
+M 416
+M 417
+M 418
+M 419
+M 420
+M 421
+M 422
+M 423
+M 424
+M 425
+M 426
+M 427
+M 428
+M 429
+M 431
+M 432
+M 433
+M 436
+M 495
+M 496
+M 497
+M 498
+M 499
+M 500
+M 501
+M 502
+M 503
+M 504
+M 505
+M 506
+M 507
+M 508
+M 509
+M 510
+M 511
+M 512
+.
+input (0)
+$atomatrix input() replace( "\n" , "" ) !
+
+_lookat (0)
+.desc!
+
+_input (0)
+/*caller <> player ? !*/
+exec=$parse _parser(argv[0]);
+exec -> obj, func, args;
+obj @ $integer && obj <> 0 ?
+	obj = $module serialed( obj ) ;
+obj ?	{
+	obj:(func)(+args)!
+	}
+,	{
+	~~args ? !
+	~~avatar().location huh(+args) ?
+		avatar() huh(+args);
+	}
+
+_recycle (0)
+$root to_be_recycled(this)!
+
+_omsg (0)
+argv[1] ?
+	s="ok";,
+	s="fail";
+$util pronoun_sub(.("_"+argv[0]+"_"+s+"_omsg"))!
+
+_msg (0)
+argv[1] ?
+	s="ok";,
+	s="fail";
+v = .("_"+argv[0]+"_"+s+"_msg");
+v ? $util pronoun_sub(v)!
+
+_moveto (0)
+this reintermodulize(argv[0])!
+
+look (0)
+msg	= _lookat() || "Undescript object.";
+msg ?	textate(msg);
+str	= $util objlist(.objects);
+str ?	{
+	.gender ?
+		textate( $util pronoun_sub("%S has "+str+".",this)); ,
+		textate("Inside there is "+str+".");
+	}
+
+_accept (0)
+1!
+
+_addvar (0)
+
+_chname (0)
+.name=argv[0];
+
+_addroomdesc (0)
+s = argv[0].name ;
+.addroomdesc @~ $varray ?
+	 0 !
+[ room ; .addroomdesc ] $vreality match( s , room[0] ) ?
+		room[1] !
+0 !
+
+_lookin (0)
+.desc !
+
+getclue (0)
+.clues @ $varray ?
+	{
+	c= $crtl random(.clues length());
+	textate(.clues[c]);
+	1!
+	}
+textate("There are no '",.name,"' clues.");
+0!
+/*  
+clues=.clues;
+clue=clues length()-1;
+[clue>-1] {
+
+   clues[clue][0] ? {
+      msg=clues[clue][1];
+      p <> owner ? print msg;
+   }
+   clue =- 1;
+}
+msg!
+*/
+
+textate (0)
+avatar() tell(+argv) ;
+
+spawn (0)
+from	= argv[0];
+o	= popl(.recyclebin);
+~~o ?
+	{
+	o = $module spawn( from ) ;
+	}
+,	{
+	w = $wizard ;
+	w strip( o ) ;
+	w _chobjown( o , avatar() ) ;
+	o reprecessize( from ) ;
+	}
+o !
+
+isAvatar (0)
+$avatar precesses( argv[0] ) ?
+	~~( argv[0] successants() ) ?
+		1 !
+
+enumerateAvatars (0)
+$avatar _enumerateAvatars( $avatar successants() ) !
+
+findAvatarNamed (0)
+( s = argv[0] ) @ $string ?
+	[ i ; enumerateAvatars() ]
+		i.name == s ?
+			i !
+
+textPrompt (0)
+textate(+argv,"\\c") ;
+input() !
+
+intertextate (0)
+z = { avatar() , caller } ;
+[ i ; avatar().location.objects ]
+	~~ i @# z ?
+		i tell(+argv) ;
+
+textateExclusion (0)
+( x = argv[0] ) @ $integer ?
+	x = { x } ;
+[ i ; avatar().location.objects ]
+	~~i @# x ?
+		i tell( + argv[1..-1] ) ;
+
+textateLocals (0)
+[ i ; avatar().location.objects ]
+	i tell(+argv) @ $error ?
+		< ;
+
+avatar (0)
+$processity.avatar !
+
+create (0)
+~~( o = popl(.recycled) ) ?
+	$module create(+argv) !
+o !
+
+do_recycle (0)
+[ o= popl(.to_be_recycled) ] $root _recycle(o);
+
+edit (0)
+argv[0] @~ $string ?
+	textate( "Error: edit( not string )" ) !
+t = argv[0] replace( "\n" , "\r\n" ) ;
+a = $vreality edit( t ) ;
+a replace( "\r\n" , "\n" ) !
+
+_recycle (0)
+obj=argv[0];
+obj<2 ? 0!
+obj @# $root.recyclebin ? 1!
+m = $module serialed( obj ) ;
+m1 = $root ;
+p = m precessant() ;
+m reprecessize( m1 ) ;
+[ o; obj.objects] { o reintermodulize(undefined); pushr(.lost,o); }
+p @~ $module ?
+	p = m1 ;
+[ o; m successants() ]
+	o reprecessize( p ) ;
+obj reintermodulize(undefined);
+[ o ; m variants() ]
+	o delete() ;
+[ o ; m programs()]
+	o delete() ;
+m principal( m0 ) ;
+pushr($root.recyclebin,obj);
+1!
+
+_create (0)
+0!  /* 0 == does not pull from recycled */
+
+to_be_recycled (0)
+/* put obj on the waiting list till further notice :) */
+obj=argv[0];
+m = $module serialed( obj ) ;	// UPDATE: change to module, not integer
+m principal() <> caller ? 0!
+obj @# .to_be_recycled ? 1!
+/* hope that the caller did something to the objects inside if they
+/* are needed */
+p = m precessant() ;
+p @ $module ?
+	[ c; m successants() ]
+		c reprecessize( p ) ;
+m reprecessize( $root ) ;
+pushr(.to_be_recycled,obj);
+1!
+
+_auto (0)
+._keywords={};
+attach("vReality") ;
+// attach("Editor");
+// attach("Curses");
+attach("URL") ;
+// attach("io");
+// attach("proc");
+// attach("net");
+// attach("gl");
+// attach("yacc");
+attach("CRTL") ;
+attach("wnd") ;
+//attach("GDNA") ;
+classify("avatar") ;
+classify("object_class") ;
+classify("parse") ;
+classify("wizard") ;
+classify("util") ;
+classify("battle") ;
+classify("npc_class") ;
+classify("wizard") ;
+classify("programmer") ;
+classify("parse") ;
+classify("access") ;
+classify("weather_task") ;
+classify("area_list") ;
+classify("portal") ;
+classify("mail") ;
+classify("compass_dirs") ;
+classify("compass_odirs") ;
+classify("prepcodes") ;
+classify("preps") ;
+classify("root") ;
+.cpu kernel() ;
+._keywords={};
+
+attach (0)
+o = $atomatrix attach(argv[0]);
+/*
+o @ $error ?
+	$atomatrix output("err: " + argv[0] + " " + o.message string() + "\n");
+*/
+o @~ $error ?
+	pushr(._keywords, { argv[0] lowercase() , o })!
+
+classify (0)
+pushr(._keywords, { argv[0] , .(argv[0]) })!
+
+ascii (0)
+s = "" ;
+[ a ; argv ] s += _ascii( a ) ;
+s !
+
+_ascii (0)
+argv -> v ;
+v @ $error ?
+	"[ERROR]"!  /* UPDATE */
+v @ $integer ?
+	v string() !
+v @ $string ?
+	v !
+v @ $unicoded ?
+	v canonicalize() !
+v @ $varray ?
+	_ascii_array( v ) !
+v @ $module ?
+	{
+	v serinteger() @ $error ?
+		"[#virtual]" !
+	,	"[#" + v serinteger() string() + "]" !
+	}
+"[UNDEFINED]" !
+
+_ascii_array (0)
+argv -> ary;
+str = "" ;
+[ e ; ary ]
+	{
+	str ? str += ", " ;
+	e @ $string ?
+		str += "\"" + e replace( "\n" , "\\n" ) replace( "\"" , "\\\"" ) + "\"" ;
+	,	str += _ascii( e ) ;
+	}
+"{" + str + "}" !
+
+unicode (0)
+s = $unicode string( "" ) ;
+[ a ; argv ] s += _unicode( a ) ;
+s !
+
+_unicode (0)
+argv -> v ;
+v @ $error ?
+	$unicode string( "[ERROR]" ) !  /* UPDATE */
+v @ $integer ?
+	$unicode string( v string() ) !
+v @ $unicoded ?
+	$unicode string( v ) !
+v @ $varray ?
+	_unicode_array( v ) !
+v @ $module ?
+	$unicode entity( 65532 ) !
+$unicode entity( 65533 ) !
+
+_unicode_array (0)
+argv -> ary;
+str = $unicode string( "" ) ;	// UPDATE: should not need other $unicode string() in this method
+[ e ; ary ]
+	{
+	str ? str += $unicode string( ", " ) ;
+	e @ $string ?
+		str += $unicode string( "\"" ) + e replace( $unicode string( "\n" ) , $unicode string( "\\n" ) ) replace( $unicode string( "\"" ) , $unicode string( "\\\"" ) ) + $unicode string( "\"" ) ;
+	,	str += _unicode( e ) ;
+	}
+$unicode string( "{" )  + str + $unicode string( "}" ) !
+

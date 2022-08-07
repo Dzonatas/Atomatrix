@@ -1,0 +1,14 @@
+o17 p4 c0 s158 l0 c217 w0 p0 v3
+name	(138,877)	$ Saloon Entrance
+desc	(138,877)	$ The large wooden door to the east leads into The Weary Player's Saloon.
+A tacky neon sign blinks "Always Open".  Sunrise Blvd. lies west.
+exits	(4,219)	A 4
+A 2
+# 4
+# 3
+A 2
+M 44
+M 179
+A 0
+A 0
+.

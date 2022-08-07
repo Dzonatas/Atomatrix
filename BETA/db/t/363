@@ -1,0 +1,9 @@
+o73 p112 c0 s312 l373 c0 w376 p0 v4
+name	(73,585)	$ leather shirt
+type	(73,585)	$ ls
+defense	(73,585)	$ +2
+using	(73,80)	A 2
+# 373
+A 1
+$ ub
+.

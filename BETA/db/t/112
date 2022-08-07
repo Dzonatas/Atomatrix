@@ -1,0 +1,32 @@
+o17 p74 c363 s110 l74 c0 w109 p0 v5
+name	(112,73)	$ ARMOUR-UPPER-BODY
+desc	(112,73)	$ A new pair of leather boots.
+worn	(6,73)	$ ub
+types	(6,73)	A 7
+A 6
+$ b
+$ bj
+$ ls
+$ sj
+$ rj
+$ pj
+A 2
+$ blouse
+$ +1
+A 2
+$ bomber jacket
+$ +2
+A 2
+$ leather shirt
+$ +2
+A 2
+$ scaled-mail jacket
+$ +3
+A 2
+$ ring-mail jacket
+$ +4
+A 2
+$ plated-mail jacket
+$ +5
+type	(6,73)	$ u-body
+.

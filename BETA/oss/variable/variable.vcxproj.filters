@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c5179432-f1ce-4c09-a6d8-eb7570a87372}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8efc0040-ea62-44e6-8602-16feef748cd7}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{3f614411-48da-45a2-ab65-61ad2f284a12}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="addASCII.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addAtom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addByte.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addInteger.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addLong.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addVariant.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addWord.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getASCII.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getAtom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getByte.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getInteger.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getLong.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getVariable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getVariable_A_S.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getWord.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="o_Set.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="structor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,29 @@
+o72 p221 c351 s0 l222 c351 w72 p0 v2
+generic	(17,73)	$ dungeon
+types	(17,73)	A 5
+A 4
+$ monst-name
+$ basic_type   on $npc_class.monsters
+$ attribute modifiers  var1=val1;var0=val0
+$ listed in order of increasing difficulty
+A 5
+$ rat
+$ basic_rat
+$ name=grey rat;home=90;mhp=10
+$ name=giant rat;home=90;mhp=15
+$ name=sewer rat;home=90;mhp=10;poison=30
+A 4
+$ lion
+$ basic_lion
+$ name=lion;home=90;mhp=10
+$ name=red lion;home=90;mhp=15
+A 3
+$ goblin
+$ basic_goblin
+$ name=goblin;home=90
+A 4
+$ bear
+$ basic_bear
+$ name=Owlbear;home=90;mhp=12;dexterity=40;ohitstr=squeezes
+$ name=black bear;home=90;mhp=15;dexterity=50;ohitstr=claws
+.

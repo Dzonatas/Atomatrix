@@ -1,0 +1,20 @@
+o17 p4 c0 s64 l0 c9 w0 p0 v3
+desc	(17,73)	$ There is a few stores to the north. The street continues to the south.
+To the east there is a cave with a sign reading "Dungeon Arena".
+name	(67,877)	$ Sunrise Blvd.
+exits	(4,219)	A 4
+A 3
+# 3
+# 2
+# 1
+A 3
+M 84
+M 44
+M 148
+A 0
+A 0
+.
+_accept (0)
+$npc_class precesses(argv[0]) ? 0!
+1!
+

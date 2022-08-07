@@ -1,0 +1,276 @@
+o6 p10 c213 s92 l478 c0 w265 p0 v2
+name	(6,219)	$ wnd
+constructed	(100,91)	?
+.
+wnd (0)
+o = .output ;
+
+w	= .wnd ;
+w	caret() ;
+w	erase() ;
+
+o	= .map ;
+~~o ? !
+[ a ; o ] w textOut(+a) ;
+z = o[o length()-1] ;
+s = w getTextExtentPoint( z[2] ) ;
+w caret( z[1] , s.cx + z[0] ) ;
+		
+//textate( (w getRectangle()).right ) ;   // UPDATE: fixit
+w update() ;
+cli (0)
+~~.output ?
+	.output = { { 0 , 0 , "" } } ;
+.t	= $wnd event() ;
+.task	= 1 ;
+$atomatrix addTask( program( "task" ) ) ;
+avatar() setIO( this ) ;
+
+.t wait() ;
+f = $wnd font( 24 , 0 , 0 , 0 , $wnd.FW_NORMAL , 0 , 0 , 0 ,
+	$wnd.DEFAULT_CHARSET , $wnd.OUT_DEFAULT_PRECIS , $wnd.CLIP_DEFAULT_PRECIS ,
+	$wnd.DEFAULT_QUALITY , $wnd.DEFAULT_PITCH | $wnd.FF_DONTCARE ,
+	"Arial"
+	) ;
+
+//f = $wnd font( 16 , 16 , 0 , 0 , $wnd.FW_NORMAL , 0 , 0 , 0 ,
+//	$wnd.DEFAULT_CHARSET , $wnd.OUT_DEFAULT_PRECIS , $wnd.CLIP_DEFAULT_PRECIS ,
+//	$wnd.DEFAULT_QUALITY , $wnd.DEFAULT_PITCH | $wnd.FF_DONTCARE , 0
+//	) ;
+
+
+.wnd select( f ) ;
+
+output( "Alchematrix " + ascii( $processity.alchematrix ) + "\ntype 'help'\n" ) ;
+
+[1]	{
+	output( "] " ) ;
+	( s = input() ) @ $error ? s !
+	output( "\n" ) ;
+	s == "quit\n" || s == ".\n" || s == "." ? . ;
+	s == ".." ?
+		{
+		.output = { { 0 , 0 , "" } } ;
+		.wnd destruct() ;
+		avatar() setIO( ) ;
+		$error !
+		}
+	s = s replace( "\n" , "" ) ;
+	( e = avatar() _input( s ) ) @~ $undefined ?
+		output( ascii(e) ) ;
+	}
+avatar() setIO( ) ;
+.wnd destruct() ;
+.task	= 0 ;
+.t	= 0 ;
+output (0)
+~~( .wnd getCharWidth( "M" ) ) ?	// UPDATE:  .wnd ?
+	$error !
+
+w	= .wnd ;
+
+tm	= w getTextMetrics() ;
+tab	= tm.AveCharWidth * 8 ;
+xx = x	= 0 ;
+r	= w getRectangle() ;
+s	= "" ;
+t	= {} ;
+q	= popr( .output ) ;
+xx = x	= q[0] + 0 ;
+yy = y	= q[1] + 0 ;
+s	= q[2] + "" ;
+s ?	{
+	p = w getTextExtentPoint( s ) ;
+	x = xx + p.cx ;
+	}
+
+[ a ; unicode(+argv) ]
+	{
+	a == "\n" ?
+		{
+		x = 0 ;
+		y = y + tm.Height ;
+		}
+	, a == "\t" ?
+		{
+		( x = ( ( x / tab ) + 1 ) * tab ) => r.right ?
+			{
+			x = 0 ;
+			y = y + tm.Height ;
+			}
+		}
+	, ( x += w getCharWidth( a ) ) < r.right ?
+		{
+		s += a ;
+		< ;
+		}
+	, x = 0 ;
+	
+	pushr( .output , { xx , yy , s } ) ;
+	s = "" ;
+	xx = x ;
+	yy = y ;
+	}
+pushr( .output , { xx , y , s } ) ;
+y => r.bottom ?
+	{
+	y -= r.bottom ;
+	y += tm.Height ;
+	[ a ; .output ] a[1] = a[1] - y ;
+	}
+o	= {} ;
+[ a ; .output ] a[1] => 0 ? pushr( o , a ) ;
+.map = o ;
+.output = o ;
+wnd() ;
+
+input (0)
+x	= 0 ;
+y	= 0 ;
+c	= 0 ;
+s = "" ;
+p	= .wnd position() ;
+//.wnd position( $wnd rectangle( 0 , 0 , p.right , p.bottom ) ) ;
+
+[1]	{
+	.t wait() ;
+	( m = popl( .input ) ) @ $undefined ?
+		$error !
+	.input ? .t set() ;
+	m.message == m.WM_CHAR ?
+		{
+		m.ascii ?
+			{
+			s += m.ascii ;
+			output( m.ascii ) ;
+			< ;
+			}
+		m.pparam == 13 ?
+			s !
+		m.pparam == 10 ?
+			s !
+		m.pparam == 8 ?
+			{
+			s ?	{
+				backspace() ;
+				s = s substring( 0 , s length() - 1 ) ;
+				wnd() ;
+				}
+			< ;
+			}
+		< ;
+		}
+	m.message == m.WM_SYSCOMMAND ?
+		( m.pparam & 65520 ) == m.SC_SIZE ?
+			{
+			x = m.x ;
+			y = m.y ;
+			c = m.pparam - m.SC_SIZE ;
+			o = p ;
+			.wnd setCapture() ;
+			}
+	m.message == m.WM_LBUTTONUP ?
+		c	?
+			{
+			.wnd releaseCapture() ;
+			c = 0 ;
+			}
+//	m.message == m.WM_LBUTTONDOWN ?
+//		$atomatrix output( "md=" +  ascii( m.x ) + "," + ascii( m.y ) + "\n" ) ;
+	m.message == m.WM_MOUSEMOVE ?
+		c	?
+			{
+			mx = p.left + m.x - x ;
+			my = p.top + m.y - y ;
+			c == m.WMSZ_LEFT ?
+				r = $wnd rectangle( o.left + mx , o.top , o.right - mx , o.bottom ) ;
+			, c == m.WMSZ_RIGHT ?
+				r = $wnd rectangle( o.left , o.top , o.right + mx , o.bottom ) ;
+			, c == m.WMSZ_TOP ?
+				r = $wnd rectangle( o.left , o.top + my , o.right , o.bottom - my ) ;
+			, c == m.WMSZ_TOPLEFT ?
+				r = $wnd rectangle( o.left + mx , o.top + my , o.right - mx , o.bottom - my ) ;
+			, c == m.WMSZ_TOPRIGHT ?
+				r = $wnd rectangle( o.left , o.top + my , o.right + mx , o.bottom - my ) ;
+			, c == m.WMSZ_BOTTOM ?
+				r = $wnd rectangle( o.left , o.top , o.right , o.bottom + my ) ;
+			, c == m.WMSZ_BOTTOMLEFT ?
+				r = $wnd rectangle( o.left + mx , o.top , o.right - mx , o.bottom + my ) ;
+			, c == m.WMSZ_BOTTOMRIGHT ?
+				r = $wnd rectangle( o.left , o.top , o.right + mx , o.bottom + my ) ;
+			, 
+				$atomatrix output( "mousemove c=" + ascii( c ) + "\n" ) ;
+			r.right > 150 && r.bottom > 150 ?
+				.wnd position( r ) ;
+			}
+	m.message == m.WM_WINDOWPOSCHANGED ?
+		{
+		p = m.position ;
+		}
+	}
+$error !
+backspace (0)
+w = popr( .output ) ;
+w[2] ?	{
+	w[2] = w[2] substring( 0 , w[2] length( ) - 1 ) ;
+	pushr( .output , w ) ;
+	}
+,	~~.output ? .output = { { 0 , 0 , "" } } ;
+.map	= .output ;
+task (0)
+w = argv[0] ;
+[ m = w getMessage() ]
+	{
+	m.message == m.WM_SYSCOMMAND ?		{ mSYSCOMMAND( m ) ; < ; }
+	m.message == m.WM_CHAR ?		{ mCHAR( m ) ; < ; }
+	m.message == m.WM_LBUTTONUP ?		{ mLBUTTONUP( m ) ; < ; }
+	m.message == m.WM_LBUTTONDOWN ?		{ mLBUTTONDOWN( m ) ; < ; }
+	m.message == m.WM_MOUSEMOVE ?		{ mMOUSEMOVE( m ) ; < ; }
+	m.message == m.WM_WINDOWPOSCHANGED ?	{ mWINDOWPOSCHANGED( m ) ; < ; }
+	m.message == m.WM_CLOSE ?		{ mCLOSE( m ) ; < ; }
+	m.message == m.WM_CAPTURECHANGED ?	{ mCAPTURECHANGED( m ) ; < ; }
+	}
+reformat (0)
+p = argv[0] ;
+
+w	= .wnd ;
+
+.output = { { 0 , 0 , "" } } ;
+[ a ; .scroll ] output( a ) ;
+mCHAR (0)
+
+mSYSCOMMAND (0)
+
+mLBUTTONUP (0)
+
+mLBUTTONDOWN (0)
+
+mMOUSEMOVE (0)
+
+mWINDOWPOSCHANGED (0)
+
+mCLOSE (0)
+.wnd destruct() ;
+construct (0)
+//.constructed ? .constructed !
+
+p = { "CAPTURECHANGED" , "CLOSE" , "WINDOWPOSCHANGED" , "MOUSEMOVE" ,
+	"LBUTTONDOWN" , "LBUTTONUP" , "SYSCOMMAND" , "CHAR" } ;
+
+m = $module atomize() ;
+
+[ a ; p ] m addProgram( "m" + a ) source( "!" ) ;
+
+s		= "w = argv[0] ; [ m = w getMessage() ]\n\t{\n" ;
+[ a ; p ] s	+= "\tm.message == m.WM_" + a + " ? { m" + a + "( m ) ; < ; }\n" ;
+s		+= "	}" ;
+m addProgram( "task" ) source( s ) ;
+
+m addProgram( "atomize" ) source( "m = $module atomize() ; m reprecessize( this ) ; m !" ) ;
+
+m addVariant( "_keywords" ) security( "a+r" ) ;
+m._keywords = {{"wnd",$wnd}} ;
+
+.constructed = m !
+mCAPTURECHANGED (0)
+

@@ -1,0 +1,15 @@
+o17 p4 c0 s231 l0 c0 w0 p0 v3
+name	(232,877)	$ Waterfall Bridge
+desc	(232,877)	$ The bridge gently touches the ground here, swinging a little in the wind.
+To the north, it crosses the face of the waterfall and points upwards into
+dense forest.  To the south, a trail leads into a field of clover.
+exits	(4,219)	A 4
+A 2
+# 2
+# 1
+A 2
+M 233
+M 231
+A 0
+A 0
+.

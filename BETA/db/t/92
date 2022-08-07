@@ -1,0 +1,557 @@
+o6 p10 c0 s494 l478 c0 w215 p0 v14
+name	(6,219)	$ network
+verbs	(20,0)	A 2
+A 7
+$ start
+# 1
+# -1
+# -1
+# -1
+$ start
+A 0
+A 7
+$ stop
+# 1
+# -1
+# -1
+# -1
+$ stop
+A 0
+_keywords	(6,219)	A 1
+A 2
+$ gdna
+?
+gdna	(6,27)	?
+loop	(6,27)	# 0
+wnd	(6,27)	# 0
+url	(6,219)	A 251
+$ http://65.108.133.31/Gnu/gcache.php
+$ http://209.197.225.202/gcache.php
+$ http://dannyj.dynip.com/gwebcache/gcache.php
+$ http://nicky-eggert.com/cache/gcache.php
+$ http://www.thzclan.com/cache/gcache.php
+$ http://raphael.manfredi.free.fr/gwc/gcache.php
+$ http://mitglied.lycos.de/godfire/gnucache/gcache.php
+$ http://www.asiinfo.net/gwebcache/gcache
+$ http://www.atomwire.com/cache/lynn.asp
+$ http://66.78.61.146
+$ http://borednow.net/GWebCache/GCache.asp
+$ http://members.lycos.co.uk/wheelzoff/gwebcache/gcache.php
+$ http://zetafleet.com/gWebCache.php
+$ http://bd-home-comp.no-ip.org/gcache.php
+$ http://www.globalspot.net/gcache.php
+$ http://icewolf.homeip.net/webcache/gcache.php
+$ http://www.apexo.de/gnucache/gcache.php
+$ http://www.x3k6a2.net/gnetcache/index.php
+$ http://www.yumyum.ws/GnuCache/gcache.php
+$ http://www.flatface.net/~morbid/gnutella/gcache.php
+$ http://jwalzer.dynu.com/~iq/gwebcache/gcache.php
+$ http://gwebcache2.jonatkins.com/cgi-bin/gwebcache.cgi
+$ http://www.hottdeals.com/postNuke7/gWebCache/
+$ http://www.humboldt.edu/~dns11/gwebcache/gcache.php
+$ http://www.arne-nickel.de/gnucleus/gcache.php
+$ http://www.nyetech.com.au/gwebcache/gcache.php
+$ http://www.easypublish.net/gwebcache/gcache.asp
+$ http://godfella.host.sk/gwebcache/gcache.php
+$ http://www.camnetworking.com/gnucache/gcache.php
+$ http://mitglied.lycos.de/versus167/gnetcache/index.php
+$ http://www.kayaman.net/gweb
+$ http://mitglied.lycos.de/waryde/
+$ http://codered2.www2.dotnetplayground.com/gcache.asp
+$ http://www.waddell.ch/cache/
+$ http://www.commontology.de/andreas/gwebcache/gcache.php
+$ http://www.markus-wolf-home.de/GNetCache/index.php
+$ http://www.engle-enterprises.com/gcache/gcache.php
+$ http://grupaprojektor.host.sk/gcache.php
+$ http://members.lycos.nl/killerarnold/gcache.php
+$ http://ixm.goquest.com/gnu/gcache.php
+$ http://members.lycos.co.uk/gcache/cache/gcache.php
+$ http://194.109.226.113/gnucleus/gcache.asp
+$ http://gwyden.dyndns.org/MyGCache/gcache.php
+$ http://www.toms-world.org/Gnutella/gcache.php
+$ http://www12.brinkster.com/chris5g/gwebcache/index.asp
+$ http://www.markus-wolf-home.de/GWebCache/gcache.php
+$ http://www.kayaman.net/gweb/default.asp
+$ http://www.mcadatacenter.com/gwebcache/gcache.php
+$ http://aoj.net/gcache/gcache.php
+$ http://server925.gisol.com/~enhance/search/files/cache/gcache.php
+$ http://www.bstsystems.com/gwebcache/gcache.php
+$ http://racewaylube.com/gcache.php
+$ http://members.lycos.nl/jocat3/gcache.php
+$ http://www.x3k6a2.net/gnetcache/
+$ http://g-web-cache1.paonet.org/gcache/gcache.php
+$ http://members.lycos.co.uk/espinhoso/Gcache/gcache.php
+$ http://stroker.dhs.org/gwebcache/gcache.php
+$ http://www.racewaylube.com/gcache.php
+$ http://g2cache.theg2.net/gwcache/lynnx.asp
+$ http://www.apexo.de/gnucache/gcache.ph
+$ http://mitglied.lycos.de/netzzwerge/gcache.php
+$ http://www.inerciasensorial.com.br/gwebcache/gcache.php
+$ http://home.no.net/dforsb/gnet/gcache.php
+$ http://www.x3k6a2.net/GnuCache_0.5.2/gcache
+$ http://home.no.net/dforsb/gnet/index.php
+$ http://gwebcache.mypuppet.net/gcache.php
+$ http://www.xolox.nl/gwebcache/default.asp
+$ http://inerciasensorial.com.br/gwebcache/gcache.php
+$ http://kioan.users.uth.gr/GnucleusWebCache/gcache.php
+$ http://members.lycos.co.uk/gressen/gcache/gcache.php
+$ http://members.lycos.nl/silvermaster59/gcache.php
+$ http://www.tigersden.co.uk/gwebcache/gcache.php
+$ http://www.gbwebpro.com/guo/lynn/cache/lynn.asp
+$ http://www.linuxator.com/gcache/gcache.phphttp://www.xolox.nl/gwebcache/default.asphttp://www.inthetrunk.com/gcache/gcache.phphttp://borednow.net/GWebCache/gcache.asphttp://cs-people.bu.edu/leith/gnuCache/gcache.phphttp://members.lycos.nl/baafie/gcache.phphttp://www.x3k6a2.net/GnuCache_0.5.2/gcache.phphttp://gwebcache2.jonatkins.com/cgi-bin/gwebcache.cgihttp://www.gbwebpro.com/guo/lynn/cache/lynn.asphttp://kjellman.com/gcache/gcache.php
+$ http://www.php.ee/gcache/index.php
+$ http://www.thzclan.com/cache/gcache.php/
+$ http://www.hottdeals.com/postNuke7/gWebCache
+$ http://borednow.net/gwebcache/gcache.asp
+$ http://mitglied.lycos.de/h2flow/gwc/gcache.php
+$ http://www.rodage.net/gnetcache/gcache.php
+$ http://www.frosty522.kicks-ass.net/gnu/gcache.php
+$ http://www.gouder.com/gnetcache/index.php
+$ http://members.lycos.co.uk/petera2003/cache_thingy/gcache.php
+$ http://kolecke.net/gwebcache/gcache.php
+$ http://freenet.dyndns.org/gwebcache/gcache.php
+$ http://www.emixode.com/gcache/hipe.dll
+$ http://calamity.panda.clarkey.net:46787/doris.php
+$ http://cgi.rz.tu-ilmenau.de/~mifl-ii/gcache.php
+$ http://www.clubchat.com/gcache.php
+$ http://www.p2pchat.net/gwebcache/gcache.php
+$ http://www.zetafleet.com/gWebCache.php
+$ http://www.inthetrunk.com/gcache/gcache.php
+$ http://raphael.manfredi.free.fr/gwc/gcache
+$ http://utenti.lycos.it/gcache/gcache.php
+$ http://www.bruring.com/gnet/gcache.php
+$ http://www.hottdeals.com/postNuke7/gWebCache/index.php
+$ http://mitglied.lycos.de/kleiner86/gwebcache/gcache.php
+$ http://mach2.com/gc/gc.php
+$ http://www.sonic.net/~oceanowl/gcache.php
+$ http://gcache.planetjumpgate.net/gcache.php
+$ http://members.lycos.nl/baafie/gcache.php
+$ http://im1ru12.org/GWebCache/
+$ http://www.visualcave.com/gcache/gcache.php
+$ http://intranet.ktg.se/~andbje/gnutella/gcache.php
+$ http://www.blar.de/cache/gwebcache/gcache.php
+$ http://theccu.org/webservices/GnuCache/index.php
+$ http://www.llamaporn.org/gcache.php
+$ http://gwc.collie.net/gcache.php
+$ http://www.justthefaqs.org/gnu/gcache.php
+$ http://iriedog.homelinux.org/gnu/gcache.php
+$ http://www21.brinkster.com/codered2/lynn.asp
+$ http://mitglied.lycos.de/danacho/gwebcache/gcache.php
+$ http://mitglied.lycos.de/waryde/index.php
+$ http://gcache.i-networx.de/gcache/index.php
+$ http://www21.brinkster.com/icarus2de/lynn.asp
+$ http://xpx.ath.cx/static/gwebcache/gcache.php
+$ http://www.wtndrifters.org/gcache.php
+$ http://www.sermo.net/gnuwebcache/gcache.php
+$ http://www.click4profit.com/gnucleus/gcache.php
+$ http://www.ontheside.net/gcache/gcache.php
+$ http://gwebcache.jonatkins.com/cgi-bin/gwebcache.cgi
+$ http://www.torg.org/gwebcache/gcache.php
+$ http://www.inet-one.com/gwebcache-0.7.5/gcache.php
+$ http://www.julianfamily.org/gcache.php
+$ http://members.lycos.nl/icarus2de/gcache.php
+$ http://www.universalopps.com/gcache/gcache.php
+$ http://junkyjunk.com/gwebcache/gcache.php
+$ http://free.7host03.com/komplike/gwebcache/lynn.asp
+$ http://mitglied.lycos.de/netzzwerge/gwc1/gcache.php
+$ http://www.progoth.com/gwc/gcache.php
+$ http://heypete.safepages.com/gwebcache/gcache.php
+$ http://81.2.115.194/GWebCache/gcache.php
+$ http://corky.net/gcache/gcache.php
+$ http://membres.lycos.fr/waryde/gnuc/gcache.php
+$ http://www.linuxator.com/gcache/gcache.php
+$ http://www.lostdaemon.net/gwebcache/gcache.php
+$ http://www.theholt.net/cache.php
+$ http://members.lycos.co.uk/jokattack/cache/index.php
+$ http://www.asiinfo.net/gwebcache/gcache.php
+$ http://g.dumbek.net/gcache.php
+$ http://home.no.net/dforsb/gnet
+$ http://www.donutz.de/GWebCache/gcache.php
+$ http://www.netsoc.ucd.ie/~roberth/GnuCache/gcache.php
+$ http://www.venturellas.com/gnutella/cache/index.php
+$ http://members.lycos.co.uk/coolebra/gwebcache-0.7.4/gcache.php
+$ http://66.78.61.146/
+$ http://gattinger.org/gcache/gcache.php
+$ http://cache.mynapster.com/index.php
+$ http://rhjent.com/gnucache/gcache.php
+$ http://www.melissazone.com/gwebcache/gcache.php
+$ http://mitglied.lycos.de/netzzwerge/gwc2/gcache.php
+$ http://www.triarch.de/gwebcache/gcache.php
+$ http://borednow.net/GWebCache/gcache.asp
+$ http://www.puterdocs.com/gcache/gcache.php
+$ http://www.jetzweb.de/metacyborg/gc/gcache.php
+$ http://mezman.sdf-eu.org/gwebcache/gcache.php
+$ http://   -clan.org/gwebcache/gcache.php
+$ http://66.78.61.146/index.php
+$ http://gwebcache3.jonatkins.org.uk/perlgcache.cgi
+$ http://mahowald.no-ip.info/gwebcache/gcache.php
+$ http://www.cowboysofjustice.com/gwebcache/gcache.php
+$ http://lunaris.neomain.com/gwc/gcache.php
+$ http://r3dk0w.dyndns.org/gwebcache/gcache.php
+$ http://gwebcache.bearshare.net/gcache.php
+$ http://cgi-bin.spaceports.com/~rctforum/gwebcache/gcache.php
+$ http://www.tonehog.net/gwebcache/gcache.php
+$ http://www.id.net/gwebcache/gcache.php
+$ http://www.tekkno4u.de/gwebcache/gcache.php
+$ http://zilched.com/gnucleus/gcache.php
+$ http://www.mikepryor.34sp.com/gcache/gcache.php
+$ http://www.riverstyx.com/gcache.php
+$ http://www.theholt.net/gcache.php
+$ http://gwebcache.amateur-hour.net/gcache.php
+$ http://kirk.homeip.net/php/gwebcache/gcache.php
+$ http://www.paonet.org/rpao/pub/gwebcache/gcache.php
+$ http://broneer.free.fr/gcache/gcache.php
+$ http://heiwww.unige.ch/~gander/gwebcache/gcache.php
+$ http://parallel.hpc.unsw.edu.au/~duraid/gwebcache-0.7.4/gcache.php
+$ http://www.aoj.net/gcache/gcache.php
+$ http://www.versus167.de/gwebcache/gcache.php
+$ http://www.propension.net/gwebcache/gcache.php
+$ http://www.codeauction.com/tolis/gnut/docs/gcache.php
+$ http://ads-clan.org/gwebcache/gcache.php
+$ http://www.salocin.com/gcache/gcache.php
+$ http://membres.lycos.fr/tium2000/gcache.php
+$ http://www.curioussymbols.com/gwebc/gcache.php
+$ http://www.infowebmaster.com/gnutella/gcache.php
+$ http://cgi.verplant.org/octoGCache.pl
+$ http://www.equineservice.biz/cgi-bin/gcache.php
+$ http://www.dstylus.com/GWebCache/gcache.asp
+$ http://gnutella.boimorto.com/gnocilla/
+$ http://www.donutz.de/GNetCache
+$ http://cs-people.bu.edu/leith/gnuCache/gcache.php
+$ http://www.puxie.nl/gwebcache/gcache.php
+$ http://membres.lycos.fr/jalb/gnetcache/index.php
+$ http://usuarios.lycos.es/coolebra/gwebcache/gcache.php
+$ http://www.warwick.ac.uk/~csvbn/gcache/gcache.php
+$ http://unknown.pingtime.com/gwebcache/gcache.php
+$ http://mitglied.lycos.de/cucurucucu/gcache.php
+$ http://www.geeknik.net/gnucache/gcache.php
+$ http://security-on.net/gcache/gcache.php
+$ http://www.mapbridge.org/cache
+$ http://www.linuxator.com/gcache/gcache.ph
+$ http://gnutella.hedges.net/gcache.php
+$ http://www.videoblaster.it/gcache.php
+$ http://www.hottdeals.com/postNuke7/gWebCache/gcache.php
+$ http://64.172.191.185/gcache.php
+$ http://bbs.robertwoolley.co.uk/GWebCache/gcache.php
+$ http://www.jonsonn.de/gwebcache/gcache.php
+$ http://www.sebastianmendel.de/gwebcache/gcache.php
+$ http://mitglied.lycos.de/waryde
+$ http://goodwid.feather.net/gweb/gcache.php
+$ http://bl0x.com:8888/gcache/gcache.php
+$ http://napshare.sourceforge.net/cache/gcache.php
+$ http://members.lycos.co.uk/digitaldimensions/gwebcache/gcache.php
+$ http://www.pik.org/GWebCache/gcache.php
+$ http://www.bitmonster.org/gwebcache/gcache.php
+$ http://www.x3k6a2.net/GnuCache_0.5.2/gcache.php
+$ http://www.mindless-crap.com/gcache/gcache.php
+$ http://www.celeborn.dnsalias.org/gwebcache/gcache.php
+$ http://ath0.net/gwebcache/gcache.php
+$ http://www.christophkempen.com/gweb/gcache.php
+$ http://im1ru12.org/GWebCache/index.php
+$ http://etomi.com/gcache/gcache.php
+$ http://cgi-bin.spaceports.com/~gnucache/gcache.php
+$ http://www.gaultopia.org/gcache/gcache.php
+$ http://www.perser.org/gcache/gcache.php
+$ http://www.polarhome.com/~sirjr/gcache.php
+$ http://207.71.250.4/gcache/gcache.php
+$ http://www.etomi.com/gcache/gcache.php
+$ http://www.the-hairy-one.com/gcache.php
+$ http://gwebcache.bearshare.net/
+$ http://cfx.domainchen.de/gwebc/gcache.php
+$ http://plexicode.com/gwebcache/gcache.php
+$ http://aphasia.cc.gatech.edu:8080/gcache.php
+$ http://www.cgs-services.de/gwebcache/gcache.php
+$ http://read.the.disastrous.info/gwebcache/gcache.php
+$ http://members.tripod.co.uk/jokattack/cache/index.php
+$ http://www.xolox.nl/gwebcache
+$ http://www.math.uconn.edu/~buchbind/gcache/gcache.php
+$ http://cathas.dyndns.org:8080/GWebCache/gcache.asp
+$ http://www.xmission.com/~mcintyre/gcache/gcache.php
+$ http://www.waddell.ch/cache
+$ http://home.zk3d.com/gwebcache/gcache.php
+$ http://xplosiveweb.com/gcache.php
+$ http://moby.sis.it/~marchino/gcache.php
+$ http://s91.tku.edu.tw/~291510500/gwebcache/gcache.php
+$ http://www.nofetish.com/gwebcache/gcache.php
+$ http://kjellman.com/gcache/gcache.php
+$ http://burgwinkel.com/gcache.php
+$ http://gwebcache.mrhightek.net/gcache.php
+url_reserve	(6,27)	A 3
+$ http://www.gnucleus.net/gcache/gcache.php
+$ http://gwebcache.jonatkins.com/cgi-bin/gwebcache.cgi
+$ http://corky.net/gcache/gcache.php
+desc	(6,91)	$ The module is connected to the Gnutella network
+nodes	(6,219)	A 16
+$ 68.115.49.127:5166
+$ 218.242.97.169:2500
+$ 172.157.196.150:6347
+$ 209.195.154.102:6346
+$ 24.194.51.135:6346
+$ 213.114.148.74:6346
+$ 68.194.86.6:5205
+$ 146.203.126.192:17789
+$ 66.65.166.37:6346
+$ 199.35.180.65:3058
+$ 66.241.78.227:15899
+$ 216.77.201.107:8708
+$ 63.159.152.247:12577
+$ 66.176.165.149:6346
+$ 172.198.160.244:7780
+$ <ADDRESS>Apache/1.3.27 Server at burgwinkel.com Port 80</ADDRESS>
+connected	(6,219)	# 0
+version	(6,219)	$ client=Alchematrix&version=0.1.0.7
+buildurl	(6,219)	# 0
+preconnect	(6,219)	# 6
+.
+start (0)
+~~ .gdna ?
+	{
+	.gdna = $atomatrix attach( "GDNA" ) ;
+	.gdna @ $error ?
+		output( "Could not start network." ) !
+	this._keywords = { { "gdna" , .gdna } } ;
+	}
+.version	= "client=Alchematrix&version=" + $processity.alchematrix ;
+.wnd		= $module serialed( 260 ) construct() ;
+.loop		= 1 ;
+.connected	= 0 ;
+.nodes		= {} ;
+
+.wnd.wnd setTitle( ascii( "GnucDNA " , .gdna core_getCoreVersion() ) ) ;
+
+$atomatrix addTask( program( "webcache" ) ) ;
+$atomatrix addTask( program( "network" ) ) ;
+$atomatrix addTask( program( "connect" ) ) ;
+
+network (0)
+.preconnect = 0 ;
+$gdna core_connect() ;
+wnd = $module serialed( 260 ) construct() ;
+wnd.wnd position( $wnd rectangle( 10 , 10 , 300 , 200 ) ) ;
+wnd.wnd update() ;
+/*
+[ .loop ]
+	{
+	s = "" ;
+	[ n ; a = $gdna network_getNodeIDs( ) ]
+		{
+		s += ascii( n , "\t" , port( n ) , "\n" ) ;
+		}
+	s ? output( s ) ;
+	.connected = a length() ;
+	$crtl sleep(1) ;
+	}
+$gdna core_disconnect() ;
+*/
+
+nodes = {} ;
+.loop = 1 ;
+b = 1 ;
+[ .loop ]
+	{
+//	output(
+//		"ncc=\t" , $gdna network_getNormalConnectedCount( ) ,
+//		"\t wcs=\t" , $gdna cache_getWebCacheSize( ) ,
+//		"\t ncs=\t" , $gdna cache_getNodeCacheSize( ) ,
+//		"\t ucs=\t" , $gdna cache_getUltraNodeCacheSize( ) ) ;
+
+//	[ n ; a = $gdna network_getNodeIDs( ) ]
+//		{
+//		pushr( u , $gdna network_getNodeIP( n ) + ":" + ( $gdna network_getNodePort( n ) string() ) ) ;
+//		output( "node=" , n ,
+//			"  " , $gdna network_getNodeIP( n ) , ":" , $gdna network_getNodePort( n ) ,
+//			"\t agent= " , $gdna network_getNodeAgent( n ) ,
+//			"\t mode= " , $gdna network_getNodeMode( n ) ) ;
+//		}
+//	[ n ; $gdna network_getChildNodeIDs( ) ]
+//		output( "cnode=" , n ,
+//			"  " , $gdna network_getNodeIP( n ) , ":" , $gdna network_getNodePort( n ) ,
+//			"\t agent= " , $gdna network_getNodeAgent( n ) ,
+//			"\t mode= " , $gdna network_getNodeMode( n ) ) ;
+
+	u = {} ;
+	d = {} ;
+	a = {} ;
+	wnd.output = { { 0 , 0 , "" } } ;
+//	wnd erase() ;
+	c = 0 ;
+	[ n ; $gdna network_getNodeIDs( ) ]
+		{
+		$gdna network_getNodeState( n ) == 3 ? < ;
+		c += 1 ;
+		wnd output( ascii( n , "   " , port(n) , "      " , $gdna network_getNodeState( n ) ,
+			"   " , $gdna network_getNodeMode( n ) , 
+				$gdna network_getNodeHandshake(n) , "\n" ) ) ;
+		$gdna network_getNodeState( n ) <> 2 ? < ;
+		$gdna getNodeMode( n ) <> 2 ?
+			{
+			output( "r " , port( n ) ) ;
+			$gdna network_removeNode( n ) ;
+			< ;
+			}
+		push( u , port( n ) ) ;
+		push( a , n ) ;
+		}
+	.preconnect = c ;
+	.connected = a length() ;
+//	.connected ? $gdna core_connect() ;
+	wnd output( ascii( "connected=" , .connected , "\n" ) ) ;
+	[ n ; nodes ]
+		{
+		( i = ( n @# u ) ) @ $integer ?
+			pull( u , i ) ;
+		,	pushr( d , n ) ;	
+		}
+	[ n ; d ]
+		{
+		( i = ( n @# nodes ) ) @ $integer ?
+			pull( nodes , i ) ;
+		output( "---- " , n ) ;
+		}
+	[ n ; u ]
+		{
+		output( "++++ " , n ) ;
+		pushr( nodes , n ) ;
+		}
+	b ? .connected ?
+		{
+		$atomatrix addTask( this program( "search" ) ) ;
+		b = 0 ;
+		}
+	$crtl sleep( 1 ) ;
+	}
+
+$gdna core_disconnect() ;
+stop (0)
+$atomatrix addTask( program( "_stop" ) ) ;
+webcache (0)
+.buildurl = 0 ;
+[ .loop ]
+	{
+	.connected < 5 ? .preconnect < 5 ?
+		{
+		~~.buildurl ?
+			$atomatrix addTask( program("buildurl") ) ;
+		}
+	$crtl sleep(1) ;
+	}
+/*
+. ;
+
+pingpong() ;
+				// UPDATE: randomize order of url list
+buildurl() ;
+
+output( "webcache buildurl end\n" ) ;
+
+. ;
+[ a ; .url ]
+		{
+		~~.loop ? . ;
+		output( "--- " , a ) ;
+		o = $url get( a + "?" + version + "&hostfile=1" , 15000 ) ;
+		[ u ; o replace( "\r\n" , "\n" ) split( "\n" ) ]
+			{
+			n = u split( ":" ) ;
+			n[0] split( "." ) length() <> 4 ?
+				< ;
+			u @# .nodes ?
+				< ;
+			pushr( .nodes , u ) ;
+// 			$gdna network_connectNode( n[0] , n[1] integer() ) ;
+			}
+		}
+output( "webcache ended" ) ;
+*/
+search (0)
+s = $gdna search_startSearch( "mp3" ) ;
+output( "search " , s ) ;
+[ .loop ]
+	{
+	$crtl sleep( 1 ) ;
+	a = $gdna search_getResultIDs( s ) ;
+	~~a ? < ;
+	output( "+" , a length() ) ;
+//	[ i ; a ] output( "search=" , i , "\t" , $gdna search_getResultName( s , i ) ) ;
+	}
+$gdna search_endSearch( s ) ;
+output( "search stopped" ) ;
+	
+output (0)
+.wnd ? .wnd output( ascii( +argv ) , "\n" ) ;
+initialize (0)
+.url_reserve =	{
+	"http://www.gnucleus.net/gcache/gcache.php" ,
+	"http://gwebcache.jonatkins.com/cgi-bin/gwebcache.cgi" ,
+	"http://corky.net/gcache/gcache.php"
+	} ;
+
+pingpong (0)
+.wnd output( "webcache ping\n" ) ;
+~~.url ? .url = .url_reserve ;
+u	= {} ;
+[ a ; .url ]
+	{
+	~~.loop ? . ;
+	output( "--- " , a ) ;
+	a @# u ? < ;
+	$url get( a + "?client=ATOMATRIX VE&version=20030116.0&ping=1" , 15000 ) index( "PONG" ) integer() <> 0 ? < ;
+	pushr( u , a ) ;
+	}
+.url = u ;
+buildurl (0)
+.buildurl = 1 ;
+a = popl( .url ) ;
+pushr( .url , a ) ;
+output( "webcache " , a ) ;
+o = $url get( a + "?" + .version + "&urlfile=1" , 15000 ) ;
+[ u ; o replace( "\r\n" , "\n" ) split( "\n" ) ]
+	{
+	u @# .url ? < ;
+	u substring( 0 , 7 ) lowercase() <> "http://" ? < ;
+	output( "add " , u ) ;
+//	$url get( u + "?" + version + "&ping=1" , 15000 ) index( "PONG" ) integer() <> 0 ? < ;
+	pushr( .url , u ) ;
+	}
+~~.loop ? 
+	{
+	.buildurl = 0 ;
+	. ;
+	}
+o = $url get( a + "?" + .version + "&hostfile=1" , 15000 ) ;
+[ u ; o replace( "\r\n" , "\n" ) split( "\n" ) ]
+	{
+	n = u split( ":" ) ;
+	n[0] split( "." ) length() <> 4 ?
+		< ;
+	u @# .nodes ?
+		< ;
+	pushr( .nodes , u ) ;
+//	$gdna network_connectNode( n[0] , n[1] integer() ) ;
+	}
+.buildurl = 0 ;
+_stop (0)
+.loop = 0 ;
+
+output( "\n\nnetwork stop\n" ) ;
+
+$crtl sleep( 10 ) ;
+.wnd = 0 ;
+
+connect (0)
+[ .loop ]
+	{
+	.connected > 5 ? { $crtl sleep( 1 ) ; < ; }
+	.preconnect > 5 ? { $crtl sleep( 1 ) ; < ; }
+	u = popl( .nodes ) ;
+	~~u ? { $crtl sleep( 1 ) ; < ; }
+//	pushr( .nodes , u ) ;
+	n = u split( ":" ) ;
+	$gdna network_connectNode( n[0] , n[1] integer() ) ;
+	output( "c " , u ) ;
+	$crtl sleep( 1 ) ;
+	}
+
+port (0)
+$gdna network_getNodeIP( argv[0] ) + ":" + ( $gdna network_getNodePort( argv[0] ) string() )  !
+

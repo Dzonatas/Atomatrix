@@ -1,0 +1,590 @@
+o6 p10 c0 s456 l36 c0 w440 p0 v11
+name	(457,895)	$ padd
+aliases	(457,895)	?
+desc	(457,895)	$ shaped like usual cybernetic handhelds
+type
+	'read'			- HELLO WORLD
+	'read new'		- SourceForge New Releases
+
+verbs	(20,0)	A 1
+A 7
+$ read
+# 0
+# -1
+# -1
+# -1
+$ read
+A 1
+# -102
+buf	(6,27)	$ <HTML><B>HELLO WORLD!</B><HTML>
+
+new	(6,219)	$ 
+s	(6,27)	?
+input	(6,27)	$ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!-- Server: sf-web4 -->
+<html lang="en">
+  <head><link rel="stylesheet" type="text/css" href="http://sourceforge.net/cssdef.php">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <TITLE>SourceForge.net: New File Releases</TITLE>
+	<SCRIPT language="JavaScript" type="text/javascript">
+	<!--
+	function help_window(helpurl) {
+		HelpWin = window.open( 'http://sourceforge.net' + helpurl,'HelpWindow','scrollbars=yes,resizable=yes,toolbar=no,height=400,width=400');
+	}
+	// -->
+	</SCRIPT>
+
+		<link rel="SHORTCUT ICON" href="/images/favicon.ico">
+<!-- This is temp javascript for the jump button. If we could actually have a jump script on the server side that would be ideal -->
+<script language="JavaScript" type="text/javascript">
+<!--
+	function jump(targ,selObj,restore){ //v3.0
+	if (selObj.options[selObj.selectedIndex].value) 
+		eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+	if (restore) selObj.selectedIndex=0;
+	}
+	//-->
+</script>
+
+<style type="text/css">
+<!--
+A:link { text-decoration:none }
+A:visited { text-decoration:none }
+A:active { text-decoration:none }
+A:hover { text-decoration:underline; color:#0066FF; }
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" link="#003399" vlink="#003399" alink="#003399">
+
+
+<!--
+
+OSDN navbar
+
+-->
+<form action="http://www.osdn.com/osdnsearch.pl" method="POST">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+<tr bgcolor="#000000">
+<td colspan="5"><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="1" height="1"></td>
+</tr>
+<tr bgcolor="#eeeeee">
+<td nowrap class="osdn-navtext"  background="http://images.sourceforge.net/images/navbar.gif" >
+<small class="osdn-navtext">&nbsp;&nbsp;<a href="http://www.osdn.com" class="osdn-navtext" title="The Open Source Development Network"><b>OSDN:</b></a>&nbsp;
+	<a href="http://osdn.com/gallery/"><font color=#ffffff>Our Network</font></a> - 
+		<a href="http://devchannel.org"><font color=#ffffff>DevChannel</font></a> - 
+		<a href="http://osdn.com/newsletters/"><font color=#ffffff>Newsletters</font></a> - 
+		<a href="http://osdn.com/advertise/"><font color=#ffffff>Advertise</font></a> - 
+		<a href="http://thinkgeek.com"><font color=#ffffff>Shop</font></a>&nbsp;&nbsp;&nbsp;</small>
+</td>
+<td align="right" valign="middle" width="100%" class="osdn-navtext"  background="http://images.sourceforge.net/images/navbar.gif" >
+<b><font color="#ffffff"><small>SEARCH:&nbsp;</small></font></b>
+</td>
+<td align="right" valign="middle" nowrap  background="http://images.sourceforge.net/images/navbar.gif" >
+<small>
+<select name="site" class="osdn-search">
+<option value="Slashdot">Slashdot</option>
+<option value=""> ----------- </option>
+<option value="all" SELECTED> All OSDN Sites </option>
+
+<option value="Freshmeat">freshmeat</option>
+<option value="DevChannel">DevChannel</option>
+<option value="Linux.com">Linux.com</option>
+<option value="LinuxGram">LinuxGram</option>
+<option value="NewsForge">NewsForge</option>
+<option value="OSDN">OSDN.com</option>
+
+<option value="OSDN PriceCompare">OSDN PriceCompare</option>
+<option value="Slashcode">Slashcode</option>
+<option value="SourceForge.net">SourceForge.net</option>
+</select></small>
+</td>
+<td nowrap valign="middle"  background="http://images.sourceforge.net/images/navbar.gif" >
+<small>&nbsp;<input type="text" name="query" size="12" class="osdn-search">&nbsp;</small>
+</td>
+<td nowrap width="35"  background="http://images.sourceforge.net/images/navbar.gif" >
+<input type="image" border="0" name="Submit" value="GO" src="//images.sourceforge.net/osdn_nav_go.gif" alt="Go" width="30" height="20" align="middle">
+</td>
+</tr>
+<tr bgcolor="#999999">
+<td colspan="5"><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="1" height="1"></td>
+</tr>
+</form>
+</table>
+
+
+
+
+
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+               <td bgcolor="#000000" valign="middle" align="center">
+
+
+      <IFRAME SRC="http://sfads.osdn.com/1.html" width="728" height="90" frameborder="0" border="0" MARGINWIDTH="0" MARGINHEIGHT="0" SCROLLING="no"><A HREF="http://sfads.osdn.com/cgi-bin/ad_default.pl?click"><IMG SRC="http://sfads.osdn.com/cgi-bin/ad_default.pl?display" border=0 height="60" width="468"></A>
+      </IFRAME>
+    </td>
+       </tr>
+</table>
+<!--
+
+
+End OSDN NavBar
+gid: 0 
+keywords:  
+
+--><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr bgcolor="#003399">
+<td rowspan="3" height="52"  background="http://images.sourceforge.net/images/head_bgx.gif"  valign="bottom" bgcolor="#000000"><a href="/"><img border=0 src="//images.sourceforge.net/head_bg_new.gif" width="200" height="52" alt="SourceForge.net Home"></a></td>
+<td rowspan="2" width="50%"  background="http://images.sourceforge.net/images/head_bgx.gif"  height="41" bgcolor="#000000">&nbsp;</td>
+<td colspan="10" align="center" nowrap valign="top"  background="http://images.sourceforge.net/images/head_bgx.gif"  height="22" bgcolor="#000000">&nbsp;</td>
+<td rowspan="2" width="50%"  background="http://images.sourceforge.net/images/head_bgx.gif"  height="41" bgcolor="#000000">&nbsp;</td>
+<td rowspan="3" align="right" valign="bottom"  background="http://images.sourceforge.net/images/head_bgx.gif"  height="41" bgcolor="#000000">
+<!-- begin SF.net jump menu -->
+<table border="0" cellspacing="0" cellpadding="0">
+<form>
+<tr bgcolor="#003399">
+<td align="right" valign="bottom"  background="http://images.sourceforge.net/images/head_bgx.gif"  height="41" bgcolor="#000000">
+<small>
+<select name="navmenu" onChange="jump('parent',this,1)" class="smfc0b"><option value="">My Favorites</option>
+<option value="/">SF.net Home</option>
+<option value=""> </option>
+<option value="">---- My Projects ----</option>
+<option value="/projects/atomatrix">atomatrix</option>
+<option value="/projects/mywm">mywm</option>
+<option value=""> </option>
+<option value="">---- My Bookmarks ----</option>
+<option value="/my/bookmark_add.php?bookmark_url=%2Fnew%2F&amp;bookmark_title=New+File+Releases">(Bookmark this page)</option>
+<option value=""> </option>
+<option value="">---- Foundries ----</option>
+<option value="http://clustering.foundries.sourceforge.net">Clustering</option>
+<option value="http://distributed.foundries.sourceforge.net">Distributed Computing</option>
+<option value="http://large.foundries.sourceforge.net">Linux on Large Systems</option>
+</select>
+</small>
+</td>
+<td valign="bottom"  background="http://images.sourceforge.net/images/head_bgx.gif"  height="41" bgcolor="#000000">
+<input type="image" border="0" name="Submit" value="GO" alt="Go" width="30" height="20" src="//images.sourceforge.net/go.gif">
+</td>
+</tr>
+<tr>
+<td  background="http://images.sourceforge.net/images/chrome_bar.png"  colspan="2" bgcolor="#dddddd"><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="1" height="11"></td>
+</tr>
+</form>
+</table>
+<!-- end SF.net jump menu -->
+</td>
+</tr>
+<!-- begin SF.net main navbar -->
+<tr> <td  background="http://images.sourceforge.net/images/menubar_bg.png"  bgcolor="#eeeeee" align="left" height="20" valign="middle"><img src="//images.sourceforge.net/menubar_l.png" width="3" height="20" alt=""></td>
+<td  background="http://images.sourceforge.net/images/menubar_bg.png"  bgcolor="#eeeeee" nowrap valign="middle" align="center" height="20">&nbsp;&nbsp;&nbsp;&nbsp;<b class="mdfc0b"><a href="/my/" style="text-decoration:none">my&nbsp;sf.net</a></b>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td  background="http://images.sourceforge.net/images/menubar_bg.png"  bgcolor="#dddddd" height="20"><img src="//images.sourceforge.net/div.png" width="6" height="20" alt="|"></td>
+<td  background="http://images.sourceforge.net/images/menubar_bg.png"  bgcolor="#eeeeee" nowrap valign="middle" align="center" height="20">&nbsp;&nbsp;&nbsp;&nbsp;<b class="mdfc0b"><a href="/softwaremap/" style="text-decoration:none">software&nbsp;map</a></b>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td  background="http://images.sourceforge.net/images/menubar_bg.png"  bgcolor="#dddddd" nowrap height="20"><img src="//images.sourceforge.net/div.png" width="6" height="20" alt="|"></td>
+<td  background="http://images.sourceforge.net/images/menubar_bg.png"  bgcolor="#eeeeee" nowrap valign="middle" align="center" height="20">&nbsp;&nbsp;&nbsp;&nbsp;<b class="mdfc0b"><a href="//foundries.sourceforge.net" style="text-decoration:none">foundries</a></b>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td  background="http://images.sourceforge.net/images/menubar_bg.png"  bgcolor="#dddddd" height="20"><img src="//images.sourceforge.net/div.png" width="6" height="20" alt="|"></td>
+<td  background="http://images.sourceforge.net/images/menubar_bg.png"  bgcolor="#eeeeee" nowrap valign="middle" align="center" height="20">&nbsp;&nbsp;&nbsp;&nbsp;<b class="mdfc0b"><a href="/docman/display_doc.php?docid=6025&amp;group_id=1" style="text-decoration:none">about sf.net</a></b>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td  background="http://images.sourceforge.net/images/menubar_bg.png"  bgcolor="#eeeeee" align="right" height="20"><img src="//images.sourceforge.net/menubar_r.png" width="3" height="20" alt=""></td>
+</tr>
+<!-- end SF.net main navbar -->
+<tr>
+<td  background="http://images.sourceforge.net/images/chrome_bar.png"  colspan="13" bgcolor="#dddddd"><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="1" height="11"></td>
+</tr>
+</table>
+<!-- end SF.net header -->
+
+<!-- begin SF.net content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="8">
+  <tr>
+  <!-- begin left column -->
+    <td valign="top"> <!-- begin SF.net sub nav global -->
+      <table width="165" border="0" cellspacing="0" cellpadding="0">
+
+	<!-- menus -->
+	
+			<tr align="center">
+					<td height="20" colspan="2"><small>welcomes&nbsp;californiakidd (<a href="/account/logout.php">Logout</a>)</small><br><small>We <a href='/docman/display_doc.php?docid=759&amp;group_id=1#semilogin'>remember you</a></small></td>
+					</tr>
+
+										<tr align="center">
+					<td height="20" colspan="2"><small><b>
+					<a href="/register/">Register New Project</a>
+					</b></small></td>
+					</tr>
+					<tr>
+					<td align="right" colspan="2" bgcolor="#003399"><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="150" height="4"></td>
+					</tr><FORM action="/search/" method="POST">
+ 	<tr height=4>
+		<td align="right" colspan="2" bgcolor="#003399" height=4><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="150" height="4"></td>
+        </tr>
+        <tr>
+		<td colspan="2" bgcolor="#dddddd" align="left"><b>&nbsp;&nbsp;&nbsp;Search</b></td>
+        </tr>
+	<tr>
+		<td colspan="2" align="left" bgcolor="#eeeeee">
+
+
+		<br>
+	    <center>
+		<small>
+		<SELECT name="type_of_search">
+		<OPTION value="soft">Software/Group</OPTION>
+		<OPTION value="people">People</OPTION>
+		<OPTION value="freshmeat">Freshmeat.net</OPTION>
+		</SELECT></small></center></TD></TR><tr> <td align="center" bgcolor="#eeeeee"> <small>
+		<INPUT TYPE="text" SIZE="12" NAME="words" VALUE=""></small></td><td align="right" bgcolor="#eeeeee"><small><input type="image" border="0" name="imageField" src="/images/search.gif" width="50" height="20" align="middle">&nbsp;&nbsp;&nbsp;</small>
+  		</td>
+	</tr>
+	<tr>
+		<td colspan="2" bgcolor="#eeeeee">&nbsp;</td>
+	</tr>
+
+</FORM>
+ 	<tr height=4>
+		<td align="right" colspan="2" bgcolor="#003399" height=4><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="150" height="4"></td>
+        </tr>
+        <tr>
+		<td colspan="2" bgcolor="#dddddd" align="left"><b>&nbsp;&nbsp;&nbsp;SF.net Resources</b></td>
+        </tr>
+	<tr>
+		<td colspan="2" align="left" bgcolor="#eeeeee">
+
+	<b>&nbsp;&middot;&nbsp;</b><A href="/docman/?group_id=1"><b>Site Docs</b></A><br>	<b>&nbsp;&middot;&nbsp;</b><A href="/docman/display_doc.php?docid=2352&amp;group_id=1">Site Status</A><br>	<b>&nbsp;&middot;&nbsp;</b><A href="/docman/display_doc.php?docid=11372&amp;group_id=1">Site Map</A><br>	<b>&nbsp;&middot;&nbsp;</b><A href="/docman/display_doc.php?docid=762&amp;group_id=1">Compile Farm</A><br>	<b>&nbsp;&middot;&nbsp;</b><A href="/people/">Project Help Wanted</A><br>	<b>&nbsp;&middot;&nbsp;</b><A href="/new/">New Releases</A><br>	<b>&nbsp;&middot;&nbsp;</b><A href="/docman/display_doc.php?docid=7632&amp;group_id=1">Contact SF.net Support</A><br>
+  		</td>
+	</tr>
+	<tr>
+		<td colspan="2" bgcolor="#eeeeee">&nbsp;</td>
+	</tr>
+
+  <tr align="center">  <td align="right" colspan="2"><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="150" height="4"></td></tr>  <tr align="center"><td colspan="2">  <a href="http://www.ibm.com/db2/linux"><img src="//images.sourceforge.net/images/DB2powered.gif" width="101" height="41" alt="Powered by IBM DB2" border="0"></a>  </td></tr>
+<tr>
+	<td colspan=2>
+	<!-- begin sub section title-->
+	<table width="100%" border="0" cellspacing="1" cellpadding="3">
+		<tr> <td colspan=2><font size="-1" face="verdana, arial, sans-serif"><b>Most Active</b></font></td>
+		</tr>
+		<tr> <td colspan=2 background="//images.sourceforge.net/div_grad_blue.gif"><IMG src="//images.sourceforge.net//images/blank.gif" alt="" border=0 width=1 height=4></td>
+		</tr><TR align=left>
+					<TD colspan=2><!-- end sub section title--><b>1</b> <A HREF="/projects/gaim/">Gaim</A><BR>
+<b>2</b> <A HREF="/projects/phpmyadmin/">phpMyAdmin</A><BR>
+<b>3</b> <A HREF="/projects/xbplayer/">XboxMediaPlayer</A><BR>
+<b>4</b> <A HREF="/projects/dcplusplus/">DC++</A><BR>
+<b>5</b> <A HREF="/projects/jboss/">JBoss.org</A><BR>
+<b>6</b> <A HREF="/projects/lmule/">eMule for Linux</A><BR>
+<b>7</b> <A HREF="/projects/miranda-icq/">Miranda IM Client</A><BR>
+<b>8</b> <A HREF="/projects/zentrack/">zenTrack</A><BR>
+<b>9</b> <A HREF="/projects/compiere/">Compiere ERP + CRM Business Solution</A><BR>
+<b>10</b> <A HREF="/projects/popfile/">POPFile - Automatic Email Classification</A><BR>
+<p align=right><A href="/top/mostactive.php?type=week">More Activity</A>&gt;&gt;
+
+					</TD>
+					</TR>
+					</TABLE>
+					
+	</td>
+</tr>
+<tr>
+	<td colspan=2>
+	<!-- begin sub section title-->
+	<table width="100%" border="0" cellspacing="1" cellpadding="3">
+		<tr> <td colspan=2><font size="-1" face="verdana, arial, sans-serif"><b>Top Downloads</b></font></td>
+		</tr>
+		<tr> <td colspan=2 background="//images.sourceforge.net/div_grad_blue.gif"><IMG src="//images.sourceforge.net//images/blank.gif" alt="" border=0 width=1 height=4></td>
+		</tr><TR align=left>
+					<TD colspan=2><!-- end sub section title--><b>1</b> <A href="/projects/emule/">eMule</A><BR>
+<b>2</b> <A href="/projects/dcplusplus/">DC++</A><BR>
+<b>3</b> <A href="/projects/jboss/">JBoss.org</A><BR>
+<b>4</b> <A href="/projects/dropline-gnome/">Dropline GNOME</A><BR>
+<b>5</b> <A href="/projects/jedit-plugins/">jEdit Plugin Central</A><BR>
+<b>6</b> <A href="/projects/cdexos/">CDex</A><BR>
+<b>7</b> <A href="/projects/virtualdub/">VirtualDub</A><BR>
+<b>8</b> <A href="/projects/corefonts/">Smart package of Microsoft's core fonts</A><BR>
+<b>9</b> <A href="/projects/emuleplus/">eMule Plus</A><BR>
+<b>10</b> <A href="/projects/webadmin/">Webmin</A><BR>
+<p align=right><A href="/top/">More Statistics</A>&gt;&gt;
+					</TD>
+					</TR>
+					</TABLE>
+					
+	</td>
+</tr>		<P>
+	
+ 	<tr height=4>
+		<td align="right" colspan="2" bgcolor="#003399" height=4><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="150" height="4"></td>
+        </tr>
+        <tr>
+		<td colspan="2" bgcolor="#dddddd" align="left"><b>&nbsp;&nbsp;&nbsp;Sponsored Content</b></td>
+        </tr>
+	<tr>
+		<td colspan="2" align="left" bgcolor="#eeeeee">
+
+
+<!-- AD POSITION Text --> <iframe src="//sfads.osdn.com/7.html" height="125" width="140" frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="no">
+<a href="http://sfads.osdn.com/cgi-bin/ad_default.pl?click&position=7"><img src="//sfads.osdn.com/cgi-bin/ad_default.pl?display&position=7" border=0 alt=""></a>
+</iframe>
+<!-- end ad position2 -->
+
+  		</td>
+	</tr>
+	<tr>
+		<td colspan="2" bgcolor="#eeeeee">&nbsp;</td>
+	</tr>
+
+      </table>
+    </td>
+<!-- begin center column -->
+<td width="100%" valign="top" align="left">
+
+<BR>
+
+<TABLE width="100%" cellpadding="0" cellspacing="0" border="0"><TR valign="top"><TD colspan="2"><A href="/projects/hosxp/"><B>Hospital DBMS Project</B></A></TD><TD nowrap>Released By: <A href="/users/manoi_rx/">manoi_rx</A><TD></TR><TR><TD>Package: hosxp-mysql</TD><TD>Release: win32-client-2.46.3.16</TD><TD>2003-03-15 22:37</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>Hospital DBMS Project, Programming in Delphi and also Kylix Goal is OS independent Hospital DBMS Software currently in Win9x and Linux</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=57503&amp;release_id=146752">Download</A> (Total downloads for this project: 5370) | <A href="/project/shownotes.php?release_id=146752">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/bexpred/"><B>The Boolean Expression Reducer (BExpred)</B></A></TD><TD nowrap>Released By: <A href="/users/bbiron/">bbiron</A><TD></TR><TR><TD>Package: bexpred</TD><TD>Release: BExpred v0.6</TD><TD>2003-03-15 21:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>The Boolean Expression Reducer will provide the user with tools to help in the simplification of boolean expressions. Eventually, it may even reduce them for you!</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=72627&amp;release_id=146751">Download</A> (Total downloads for this project: 20) | <A href="/project/shownotes.php?release_id=146751">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/triplea/"><B>Strategic gaming engine</B></A></TD><TD nowrap>Released By: <A href="/users/sgbridges/">sgbridges</A><TD></TR><TR><TD>Package: triplea</TD><TD>Release: 0.2.4</TD><TD>2003-03-15 00:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>A gameing engine and axis and allies clone</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=44492&amp;release_id=146748">Download</A> (Total downloads for this project: 3748) | <A href="/project/shownotes.php?release_id=146748">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/applecommander/"><B>AppleCommander</B></A></TD><TD nowrap>Released By: <A href="/users/robgreene/">robgreene</A><TD></TR><TR><TD>Package: applecommander</TD><TD>Release: AppleCommander 1.2.2</TD><TD>2003-03-14 22:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>AppleCommander is a tool that manipulates Apple ][ disk images. Files may be imported or exported with various file filters.</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=67414&amp;release_id=146747">Download</A> (Total downloads for this project: 161) | <A href="/project/shownotes.php?release_id=146747">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/few/"><B>File Explorer on the Web (FeW)</B></A></TD><TD nowrap>Released By: <A href="/users/mcdes/">mcdes</A><TD></TR><TR><TD>Package: few</TD><TD>Release: 1.25</TD><TD>2003-03-15 05:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>FeW (File Explorer on the Web)  is a php script that allow users to manage their files via the web. Users can create, delete, rename, zip, upload and download files and directories. Being serverside, makes it easily viewable by light/old browsers. </TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=66671&amp;release_id=146745">Download</A> (Total downloads for this project: 52) | <A href="/project/shownotes.php?release_id=146745">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/ou-cs442-542/"><B>OU Distributed Process Management System</B></A></TD><TD nowrap>Released By: <A href="/users/ruch/">ruch</A><TD></TR><TR><TD>Package: Monitor (Qt) by ruch</TD><TD>Release: 2.2</TD><TD>2003-03-15 21:19</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>OUDPMS is an educational tool that visualizes the process of global process management and resource allocation. It is also a simulation and evaluation tool for various distributed process scheduling and resource allocation algorithms.</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=67768&amp;release_id=146744">Download</A> (Total downloads for this project: 265) | <A href="/project/shownotes.php?release_id=146744">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/stxx/"><B>stxx Struts for Transforming XML and XSL</B></A></TD><TD nowrap>Released By: <A href="/users/mrdon/">mrdon</A><TD></TR><TR><TD>Package: stxx</TD><TD>Release: 1.1rc1</TD><TD>2003-03-15 02:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>Struts for transforming XML with XSL (stxx) is an extension of the struts framework to support XML and XSL without changing the functionality of struts. 
+
+stxx sit\'s on top of struts, extending it\'s existing functionality to allow Action classes </TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=48439&amp;release_id=146743">Download</A> (Total downloads for this project: 1207) | <A href="/project/shownotes.php?release_id=146743">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/sablevm/"><B>SableVM</B></A></TD><TD nowrap>Released By: <A href="/users/egagnon/">egagnon</A><TD></TR><TR><TD>Package: sablevm</TD><TD>Release: 1.0.8</TD><TD>2003-03-14 21:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>SableVM is a portable bytecode interpreter. Its goals are to be
+reasonably small, fast, and efficient, as well as providing a well-designed
+and robust platform for conducting research.
+</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=5523&amp;release_id=146742">Download</A> (Total downloads for this project: 12122) | <A href="/project/shownotes.php?release_id=146742">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/meta-tools/"><B>Meta Tools for Developers</B></A></TD><TD nowrap>Released By: <A href="/users/blunck2/">blunck2</A><TD></TR><TR><TD>Package: wxnet</TD><TD>Release: 0.2</TD><TD>2003-03-14 21:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>Tools that facilitate information sharing, indexing, or gathering.</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=52646&amp;release_id=146741">Download</A> (Total downloads for this project: 19) | <A href="/project/shownotes.php?release_id=146741">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/evntmon/"><B>Enterprise Monitoring, Windows Systems</B></A></TD><TD nowrap>Released By: <A href="/users/gmin/">gmin</A><TD></TR><TR><TD>Package: evntmon</TD><TD>Release: v0.74</TD><TD>2003-03-15 16:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>1.Collects eventlog entries from remote hosts and keeps them into a relational database.
+2.Defines email lists to receive alerts on specific events.
+3.Defines filters for individual list.
+4.Opens/Updates tickets automatically in Mantis (mantisbt.sourc</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=53924&amp;release_id=146740">Download</A> (Total downloads for this project: 49) | <A href="/project/shownotes.php?release_id=146740">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/scottsnewos/"><B>Scott'sNewOS</B></A></TD><TD nowrap>Released By: <A href="/users/s_parlane/">s_parlane</A><TD></TR><TR><TD>Package: ScottsNewOS</TD><TD>Release: v0.10</TD><TD>2003-03-15 19:12</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>Scott'sNewOS is a totally new operating system not based on anything i have seen yet with full graphics surport although the screen can be totatly disabled ie headless mode i hope to include servers and clients for all protocols using ports below 1024</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=43699&amp;release_id=146739">Download</A> (Total downloads for this project: 52) | <A href="/project/shownotes.php?release_id=146739">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/newfile/"><B>newfile</B></A></TD><TD nowrap>Released By: <A href="/users/alane/">alane</A><TD></TR><TR><TD>Package: newfile</TD><TD>Release: 1.0.7 The Renaming</TD><TD>2003-03-14 21:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>Newfile is a "filestarter": it generate starter files using a full featured template preprocessor. It can also generate new project trees, e.g., for a FreeBSD port.</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=69408&amp;release_id=146738">Download</A> (Total downloads for this project: 742) | <A href="/project/shownotes.php?release_id=146738">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/suxserv/"><B>Multithreaded IRC services w/SQL backend</B></A></TD><TD nowrap>Released By: <A href="/users/vjt/">vjt</A><TD></TR><TR><TD>Package: Core Services</TD><TD>Release: Sux Services 0.2.8</TD><TD>2003-03-15 15:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>Sux services are the new-generation IRC services, which aim to be robust, flexible and scalable. They are modular, multi-threaded and use an SQL backend (mySQL) to store their databases.</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=70725&amp;release_id=146736">Download</A> (Total downloads for this project: 148) | <A href="/project/shownotes.php?release_id=146736">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/doumo/"><B>Doumo</B></A></TD><TD nowrap>Released By: <A href="/users/seidos/">seidos</A><TD></TR><TR><TD>Package: Doumo Sources</TD><TD>Release: 0.1</TD><TD>2003-03-15 18:24</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>Doumo is a Windows application that allows users to view, listen and share TV, Video, Pictures and Audio through a single interface. It contains PVR functions like recording TV, EPG and pause live TV. It is optimized for use with a remote and TV.</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=74452&amp;release_id=146735">Download</A> (Total downloads for this project: 187) | <A href="/project/shownotes.php?release_id=146735">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/formproc/"><B>FormProc - Form Processing API</B></A></TD><TD nowrap>Released By: <A href="/users/aeden/">aeden</A><TD></TR><TR><TD>Package: formproc</TD><TD>Release: FormProc-1.3</TD><TD>2003-03-14 21:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>FormProc is an form processing and validation API for Java.  Forms (HTML or otherwise) are represented as objects and can be validated by a multitude of validators.</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=27030&amp;release_id=146732">Download</A> (Total downloads for this project: 10043) | <A href="/project/shownotes.php?release_id=146732">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/ggt/"><B>Generic Graphics Toolkit</B></A></TD><TD nowrap>Released By: <A href="/users/nonchocoboy/">nonchocoboy</A><TD></TR><TR><TD>Package: Generic Math Template Library</TD><TD>Release: 0.2.1</TD><TD>2003-03-14 22:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>The Generic Graphics Toolkit is a library of generic programming primitives that allow applications to be written that adapt to whatever underlying graphics system the developer is using.</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=43735&amp;release_id=146731">Download</A> (Total downloads for this project: 1447) | <A href="/project/shownotes.php?release_id=146731">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/gcc-g95/"><B>GNU Fortran 95 Compiler for GCC</B></A></TD><TD nowrap>Released By: <A href="/users/paul_brook/">paul_brook</A><TD></TR><TR><TD>Package: gcc-g95</TD><TD>Release: g95-static-20030316</TD><TD>2003-03-15 18:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>A free Fortran 95 compiler and runtime library for eventual integration with GCC.</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=70680&amp;release_id=146730">Download</A> (Total downloads for this project: 213) | <A href="/project/shownotes.php?release_id=146730">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR valign="top"><TD colspan="2"><A href="/projects/phaonet/"><B>phaonet - Photoalbum on the net</B></A></TD><TD nowrap>Released By: <A href="/users/sitron/">sitron</A><TD></TR><TR><TD>Package: phaonet</TD><TD>Release: phaonet-0.2</TD><TD>2003-03-15 15:00</TD></TR><TR valign="top"><TD colspan="2">&nbsp;<BR>Photoalbum on the net (phaonet) is an easy way to publish your
+photoalbum on your homepage. phaonet includes a set of PHP-coded files to make it easy to include and administer one complete photoalbum. Uses PostgreSQL or MySQL as database.</TD><TD align="center" nowrap border="1">&nbsp;</TD></TR><TR><TD colspan="3">&nbsp;<BR><A href="/project/showfiles.php?group_id=72806&amp;release_id=146729">Download</A> (Total downloads for this project: 35) | <A href="/project/shownotes.php?release_id=146729">Release Notes and ChangeLog</a><HR SIZE="1" NOSHADE></TD></TR><TR BGCOLOR="#EEEEEE"><TD>&nbsp;</TD><TD COLSPAN="2" ALIGN="RIGHT"><FONT face="Arial, Helvetica" SIZE="3" STYLE="text-decoration: none"><B><A HREF="/new/?offset=20"><B>Older Releases <IMG src="http://images.sourceforge.net/images/t.gif" border="0" align="middle" alt="" width="15" height="15"></A></B></FONT></TD></TR></TABLE><p><a href="http://sourceforge.net/export/rss_sfnewreleases.php"><IMG src="http://images.sourceforge.net/images/xml.png" border="0" alt="RSS Feed Available" width="36" height="14"></a> &nbsp; <a href="/export/rss.php?site=main&amp;feed=sfnewreleases"><IMG src="http://images.sourceforge.net/images/xml_pill.png" border="0" alt="Add Channel to AmphetaDesk" width="36" height="36"></a> &nbsp; <a href="http://www.w3.org/RDF/" title="RDF Resource Description Framework"><IMG src="http://images.sourceforge.net/images/rdf_w3c_button.png" border="0" alt="RDF Resource Description Framework icon" width="76" height="32"></a><br><br>
+ <td valign="top" class="smfc0n">
+<!-- AD POSITION 2 --> <iframe src="//sfads.osdn.com/2.html" height="600" width="125" frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="no">
+<a href="http://sfads.osdn.com/cgi-bin/ad_default.pl?click&position=2"><img src="//sfads.osdn.com/cgi-bin/ad_default.pl?display&position=2" border=0 alt=""></a>
+</iframe>
+<!-- end ad position2  for /new/ -->
+</td>
+<!-- end right column -->
+</tr>
+</table>
+<p align=center>
+<!-- begin OSDN Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr bgcolor="#999999">
+<td><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="1" height="1"></td>
+</tr>
+<tr align="center" valign="middle">
+<td height="50" class="osdn-foottext">
+<a href="http://www.vasoftware.com">Powered by SourceForge(tm) collaborative software development tools from VA Software</a><br>
+&copy; Copyright 2003 - <a href="http://www.osdn.com/" class="legallink">OSDN</a> Open Source Development Network, All Rights Reserved<br>
+<a href="/docman/display_doc.php?docid=6025&amp;group_id=1" class="legallink">About SourceForge.net</a>
+&nbsp;&#149;&nbsp;
+<a href="http://www.osdn.com/about.shtml"  class="legallink">About OSDN</a> &nbsp;&#149;&nbsp; <a href="/docman/display_doc.php?docid=6049&amp;group_id=1" class="legallink">Privacy Statement</a>
+&nbsp;&#149;&nbsp; <a href="/docman/display_doc.php?docid=6048&amp;group_id=1" class="legallink">Terms of Use</a> &nbsp;&#149;&nbsp;
+<a href="http://www.osdn.com/advertise" class="legallink">Advertise</a> &nbsp;&#149;&nbsp;
+<a href="http://selfserve.osdn.com/introduction.html" class="legallink">Self Serve Ad System</a> &nbsp;&#149;&nbsp;
+<a href="/docman/display_doc.php?docid=7632&amp;group_id=1" class="legallink">Contact Us</a></td>
+</tr>
+
+
+<tr bgcolor="#999999">
+<td><IMG src="http://images.sourceforge.net/images/blank.gif" alt="" border="0" width="1" height="1"></td>
+</tr>
+</table>
+<!-- done with OSDN Footer -->
+
+
+
+
+<LAYER SRC="//sfads.osdn.com/1.html" width=468 height=60 visibility='hide' onLoad="moveToAbsolute(adlayer.pageX,adlayer.pageY); clip.height=60; clip.width=468; visibility='show';"></LAYER>
+</body>
+</html>
+	
+output	(6,27)	$ 2003-03-15 22:37 Hospital DBMS Project                              hosxp-mysql
+2003-03-15 21:00 The Boolean Expression Reducer (BExpred)               bexpred
+2003-03-15 00:00 Strategic gaming engine                                triplea
+2003-03-14 22:00 AppleCommander                                  applecommander
+2003-03-15 05:00 File Explorer on the Web (FeW)                             few
+2003-03-15 21:19 OU Distributed Process Management System  Monitor (Qt) by ruch
+2003-03-15 02:00 stxx Struts for Transforming XML and XSL                  stxx
+2003-03-14 21:00 SableVM                                                sablevm
+2003-03-14 21:00 Meta Tools for Developers                                wxnet
+2003-03-15 16:00 Enterprise Monitoring, Windows Systems                 evntmon
+2003-03-15 19:12 Scott'sNewOS                                       ScottsNewOS
+2003-03-14 21:00 newfile                                                newfile
+2003-03-15 15:00 Multithreaded IRC services w/SQL backend         Core Services
+2003-03-15 18:24 Doumo                                            Doumo Sources
+2003-03-14 21:00 FormProc - Form Processing API                        formproc
+2003-03-14 22:00 Generic Graphics Toolkit         Generic Math Template Library
+2003-03-15 18:00 GNU Fortran 95 Compiler for GCC                        gcc-g95
+2003-03-15 15:00 phaonet - Photoalbum on the net                        phaonet
+
+data	(6,27)	A 2
+$ /html
+$ 
+	
+odata	(6,27)	A 3
+$ phaonet - Photoalbum on the net
+$ phaonet
+$ 2003-03-15 15:00
+.
+read (0)
+argv[0] == "new" ? readnew()!
+html(.buf);
+/*
+~~ .buf ?
+	.buf = $url.get("http://messages.yahoo.com/?action=q&board=BLDP");
+
+html(.buf);
+
+*/
+
+html (0)
+info = argv[0];
+
+i = 0;
+l = info length();
+iq = 0;
+buf = "";
+[i < l] {
+	iq  && info[i]==">" ? {
+		iq = 0;
+		i += 1;
+		<;
+		}
+	info[i] == "<" || iq ? {
+		iq = 1;
+		i += 1;
+		<;
+		}
+	buf += info[i];
+	i += 1;
+	}
+
+textate(buf);
+
+readnew (0)
+print("New Releases from SourceForge.net");
+.input	= $url.get("http://sourceforge.net/new/");
+microprocess();
+print(.output);
+
+previous_readnew (0)
+new = $url.get("http://sourceforge.net/new/");
+
+textate("New Releases from SourceForge.net:");
+x=1;
+[ l; new split("<") ] {
+	s = l split(">");
+	x == 1 ? { s[0] == "h2" ? x=2; <; }
+	x == 2 ? {
+		s[0] == "B" ? {
+			s[1] == $error.range ? { x=0; <; }
+			textate(s[1] + "  \\c");
+			x=4; <;
+			}
+		s[0] == "/TABLE" ? x=0;
+		}
+	x == 3 ? s[0] == "TD" ? { x=4; <; }
+	x == 4 ? s[0] == "TD" ? {
+		textate("   -> ",s[1]);
+		x=2; <;
+		}
+	}
+	
+!
+info = argv[0];
+
+i = 0;
+l = info length();
+iq = 0;
+buf = "";
+[i < l] {
+	iq  && info[i]==">" ? {
+		iq = 0;
+		i += 1;
+		<;
+		}
+	info[i] == "<" || iq ? {
+		iq = 1;
+		i += 1;
+		<;
+		}
+	buf += info[i];
+	i += 1;
+	}
+
+textate(buf);
+argv -> o, str;
+o[0]=="#" ?
+	o = o[1..-1] integer() ;,
+	o = $util findobj(o,avatar().location);
+textate(o);
+[ p; o programs()] {
+	l=1;
+	[ line; p source() split("\n")] {
+		line index( str ) ?
+			{
+			line= line replace(str,"#"+str+"!");
+			textate(p identifier(),":",l,") ",line);
+			}
+		l+=1;
+		}
+	}
+
+microprocess (0)
+x	= 1;
+l	= 0;
+.output	= "";
+[ l; .input split("<" ) ]
+	{
+	.data	=  l split( ">" );
+	x	= this:( "_" + x string() )();
+	}
+
+_1 (0)
+.data[0] == "!-- begin center column --" ?
+	2!
+1!
+
+_2 (0)
+.data[0] == "/TABLE" ?
+	!
+.data[0] == "B" ?
+	{
+	.data[1] == $error.range ?
+		!
+	.odata	= { .data[1] };
+	6!
+	}
+2!
+
+_3 (0)
+.data[0] == "TD" ?
+	5!
+3!
+
+_4 (0)
+.data[0] == "TD" ?
+	{
+	a = .data[1] split(": ");
+	pushr(.odata,a[1]);
+	3!
+	}
+4!
+
+print (0)
+textate( +argv );
+
+_5 (0)
+s="                                                                     ";
+.data[0] == "TD" ?
+	{
+	pushr(.odata,.data[1]);
+	o = .odata[2] + " " + .odata[0];
+	o += s substring(0, 79 - o length() - .odata[1] length() );
+	o += .odata[1];
+	.output += o + "\n";
+	2!
+	}
+5!
+
+_6 (0)
+.data[0] == "TD" ?
+	4!
+6!
+

@@ -1,0 +1,47 @@
+o17 p4 c0 s25 l0 c19 w0 p0 v4
+name	(17,73)	$ Lava Pit's rocky shore
+desc	(27,877)	$ This secret lava pool generates a hot wind throughout the entire
+cavern.  Lava laps at the shore while fire fish jump at buzzing
+fireflies.  The only exit is back the way you came, east.
+Try: fish, skip
+
+verbs	(20,0)	A 2
+A 6
+$ fish
+# -1
+# -1
+# -1
+# -1
+$ fish
+A 6
+$ skip
+# -1
+# -1
+# -1
+# -1
+$ skip
+exits	(4,219)	A 4
+A 1
+# 3
+A 1
+M 25
+A 0
+A 0
+.
+skip (0)
+textate("You skip a rock across the lava's molten surface.");
+announce(avatar().name,
+		" skips a rock across the lava's molten surface.");
+x=$crtl random(5)+2;
+$program sleep(x);
+announce_all("The rock skips ",x," times before melting with a flash!");
+
+fish (0)
+textate(
+"You take hold of the fishing pole and catch yourself a fire fish...");
+$program sleep(2);
+textate("...but it proves too hot for you to hold!");
+announce(
+avatar().name, " grabs the fishing pole and tries to catch a fire fish
+but burns his hands instead!");
+

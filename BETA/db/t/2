@@ -1,0 +1,1330 @@
+o0 p1 c440 s4 l0 c0 w0 p0 v23
+name	(0,877)	$ avatarigen
+aliases	(2,877)	?
+password	(0,292)	$ hi
+login_time	(2,381)	# 0
+logoff_time	(2,381)	# 0
+uid	(2,292)	?
+gender	(2,877)	$ male
+desc	(2,877)	$ An undescribed avatar.
+_leave_msg	(6,73)	?
+_leave_omsg	(6,73)	?
+_arrive_msg	(6,73)	?
+_arrive_omsg	(6,73)	?
+actions	(6,73)	A 65
+A 3
+$ pout
+$ pout quietly
+$ pouts quietly
+A 3
+$ shriek
+$ shriek as if in pain
+$ shrieks as if in pain
+A 3
+$ slap obj
+$ slap
+$ slaps
+A 3
+$ stiffen
+$ stiffen in fright
+$ stiffens in fright
+A 3
+$ tremble
+$ tremble with fear
+$ trembles with fear
+A 3
+$ shake
+$ shake with fear
+$ shakes in fear
+A 3
+$ quake
+$ quake in fight
+$ quakes in fright
+A 3
+$ roll
+$ roll playfully on the ground
+$ rolls playfully on the ground
+A 3
+$ pat obj
+$ pat
+$ pats
+A 3
+$ yell
+$ yell at the top of your lungs
+$ yells at the top of (%p) lungs
+A 3
+$ scream
+$ scream as if possessed
+$ screams as if possessed
+A 3
+$ howl
+$ howl an ear-piercing wail
+$ howls with an ear-pearcing wail
+A 3
+$ sneer
+$ sneer skeptically
+$ sneers skeptically
+A 3
+$ fumble
+$ fumble about clumsily
+$ fumbles about clumsily
+A 3
+$ wheeze
+$ wheeze painfully
+$ wheezes painfully
+A 3
+$ guffaw
+$ guffaw loudly, clutching your stomach!
+$ guffaws wholeheartedly, clutching (%p) stomach!
+A 3
+$ think
+$ look thoughtful
+$ looks thoughful
+A 3
+$ stumble
+$ stumble stupidly and fall to the floor
+$ stumbles clumsily and falls to the floor
+A 3
+$ stand
+$ stand
+$ stands
+A 3
+$ sit
+$ sit
+$ sits
+A 3
+$ rest
+$ rest quietly
+$ rests quietly
+A 3
+$ grin
+$ grin evilly
+$ grins evilly
+A 3
+$ sigh
+$ sigh heavily
+$ sighs heavily
+A 3
+$ applaud
+$ applaud wholeheartedly
+$ applauds wholeheartedly
+A 3
+$ fart
+$ fart loudly
+$ farts audibly
+A 3
+$ purr
+$ purr warmly
+$ purrs warmly
+A 3
+$ smile
+$ smile happily
+$ smiles happily
+A 3
+$ laugh
+$ roll on the floor laughing
+$ rolls on the floor laughing
+A 3
+$ stare
+$ stare coldly
+$ stares coldly
+A 3
+$ blush
+$ blush
+$ blushes
+A 3
+$ hiccup
+$ *HHIIIIIIICC-CUP*
+$ (%w) *HHIIIIIIICC-CUP*
+A 3
+$ yawn
+$ *YYYYYAAAAAAWWWWNNNNN*
+$ (%w) *YYYYYAAAAAAWWWWNNNNN*
+A 3
+$ sneeze
+$ *AAAAACCCCHHHHHHHHOOOOOOO*
+$ (%w) *AAAAAACCCCCCHHHHHHHHHOOOOOOOO*
+A 3
+$ dance
+$ dance wildly
+$ dances wildly
+A 3
+$ bounce
+$ bounce happily
+$ bounces happily
+A 3
+$ growl
+$ G-G-R-R-R-R-R-R-R
+$ (%w) G-G-R-R-R-R-R-R-R
+A 3
+$ burp
+$ burp loudly
+$ burps loudly
+A 3
+$ chuckle
+$ chuckle
+$ chuckles
+A 3
+$ frown
+$ frown sadly
+$ frowns sadly
+A 3
+$ shrug
+$ shrug indifferently
+$ shrugs indifferently
+A 3
+$ curse
+$ curse angerly
+$ curses angerly
+A 3
+$ cackle
+$ cackle wickedly
+$ cackles wickedly
+A 3
+$ clap
+$ clap wholeheartedly
+$ claps wholeheartedly
+A 3
+$ gasp
+$ gasp
+$ gasps
+A 3
+$ moan
+$ moan loudly
+$ moans loudly
+A 3
+$ wave
+$ wave
+$ waves
+A 3
+$ cringe
+$ cringe in fright
+$ cringes in fright
+A 3
+$ cough
+$ cough loudly
+$ coughs loudly
+A 3
+$ glare
+$ glare
+$ glares
+A 3
+$ spit
+$ spit violently
+$ spits violently
+A 3
+$ whistle
+$ whistle nonchalantly
+$ whistles nonchalantly
+A 3
+$ giggle
+$ giggle
+$ giggles annoyingly
+A 3
+$ nod
+$ nod solemnly
+$ nods solemnly
+A 3
+$ groan
+$ groan miserably
+$ groans miserably
+A 3
+$ smirk
+$ smirk evilly
+$ smirks evilly
+A 3
+$ fume
+$ fume angerly
+$ fumes angerly
+A 3
+$ whine
+$ whine sadly
+$ whines annoyingly
+A 3
+$ whimper
+$ whimper sadly
+$ whimers sadly
+A 3
+$ bow
+$ bow solemnly
+$ bows solemnly
+A 3
+$ cry
+$ cry softly
+$ puddles tears
+A 3
+$ wink
+$ wink
+$ winks
+A 3
+$ snarl
+$ snarl
+$ snarls
+A 3
+$ grovel
+$ grovel humbly
+$ grovels humbly
+A 3
+$ tap
+$ tap your foot
+$ taps %p foot impatiently
+A 3
+$ jump
+$ jump excitedly
+$ jumps excitedly
+status_args	(17,603)	A 24
+A 2
+$ stand
+$ standing
+A 2
+$ sit
+$ sitting
+A 2
+$ rest
+$ resting
+A 2
+$ grin
+$ grinning
+A 2
+$ applaud
+$ applauding
+A 2
+$ purr
+$ purring
+A 2
+$ smile
+$ smiling
+A 2
+$ blush
+$ blushing
+A 2
+$ dance
+$ dancing
+A 2
+$ growl
+$ growling
+A 2
+$ chuckle
+$ chuckling
+A 2
+$ frown
+$ frowning
+A 2
+$ moan
+$ moaning
+A 2
+$ cough
+$ coughing
+A 2
+$ glare
+$ glaring
+A 2
+$ whistle
+$ whistling
+A 2
+$ giggle
+$ giggling
+A 2
+$ groan
+$ groaning
+A 2
+$ smirk
+$ smirking
+A 2
+$ fume
+$ fuming
+A 2
+$ whimper
+$ whimpering
+A 2
+$ cry
+$ crying
+A 2
+$ snarl
+$ snarling
+A 2
+$ grovel
+$ grovelling
+verbs	(20,0)	A 15
+A 6
+$ quit|bye
+# -1
+# -1
+# -1
+# -1
+$ quit
+A 6
+$ i*nventory
+# -1
+# -1
+# -1
+# -1
+$ inventory
+A 7
+$ get|take
+# 1
+# -1
+# -1
+# -1
+$ get
+A 1
+# -104
+A 7
+$ create
+# 0
+# -1
+# -1
+# -1
+$ create
+A 1
+# -101
+A 7
+$ h*it|kill|hack|slash|a*ttack
+# 1
+# -1
+# -1
+# -1
+$ hit
+A 1
+# -104
+A 7
+$ hit|kill|hack|slash
+# 1
+# 10
+# 0
+# -1
+$ hit
+A 2
+# -104
+# -108
+A 6
+$ mail
+# -1
+# -1
+# -1
+# 147
+$ read_message
+A 7
+$ mail
+# 0
+# -1
+# -1
+# 147
+$ write_message
+A 1
+# -105
+A 6
+$ chat
+# -1
+# -1
+# -1
+# -1
+$ dochat
+A 7
+$ *,
+# 0
+# 0
+# 0
+# -1
+$ direct
+A 2
+# -100
+# -101
+A 7
+$ describe
+# 0
+# -1
+# -1
+# -1
+$ describe
+A 1
+# -104
+A 7
+$ name
+# 0
+# 2
+# 0
+# -1
+$ name
+A 2
+# -104
+# -109
+A 7
+$ realias
+# 0
+# -1
+# -1
+# -1
+$ alias
+A 1
+# -104
+A 7
+$ +wrap
+# 0
+# -1
+# -1
+# -1
+$ setwrap
+A 1
+# -101
+A 7
+$ help
+# 0
+# -1
+# -1
+# 144
+$ help
+A 1
+# -101
+body	(75,73)	A 2
+A 19
+$ h
+$ n
+$ ub
+$ ra
+$ la
+$ rh
+$ lh
+$ c
+$ b
+$ lb
+$ ll
+$ rl
+$ lf
+$ rf
+$ d
+$ bh
+$ bf
+$ ba
+$ bl
+A 19
+$ head
+$ neck
+$ upper-body
+$ right-arm
+$ left-arm
+$ right-hand
+$ left-hand
+$ chest
+$ back
+$ lower-body
+$ left-leg
+$ right-leg
+$ left-foot
+$ right-foot
+$ finger
+$ hands
+$ feet
+$ arms
+$ legs
+actions1	(17,73)	A 24
+A 1
+$ ## These are player actions  a-g
+A 3
+$ blush
+$ blush
+$ blushes
+A 3
+$ dance
+$ dance wildly
+$ dances wildly
+A 3
+$ bounce
+$ bounce happily
+$ bounces happily
+A 3
+$ growl
+$ G-G-R-R-R-R-R-R-R
+$ (%w) G-G-R-R-R-R-R-R-R
+A 3
+$ burp
+$ burp loudly
+$ burps loudly
+A 3
+$ chuckle
+$ chuckle
+$ chuckles
+A 3
+$ frown
+$ frown sadly
+$ frowns sadly
+A 3
+$ curse
+$ curse angerly
+$ curses angerly
+A 3
+$ cackle
+$ cackle wickedly
+$ cackles wickedly
+A 3
+$ clap
+$ clap wholeheartedly
+$ claps wholeheartedly
+A 3
+$ gasp
+$ gasp
+$ gasps
+A 3
+$ cringe
+$ cringe in fright
+$ cringes in fright
+A 3
+$ cough
+$ cough loudly
+$ coughs loudly
+A 3
+$ glare
+$ glare
+$ glares
+A 3
+$ giggle
+$ giggle
+$ giggles annoyingly
+A 3
+$ groan
+$ groan miserably
+$ groans miserably
+A 3
+$ fume
+$ fume angerly
+$ fumes angerly
+A 3
+$ bow
+$ bow solemnly
+$ bows solemnly
+A 3
+$ cry
+$ cry softly
+$ puddles tears
+A 3
+$ grovel
+$ grovel humbly
+$ grovels humbly
+A 3
+$ grin
+$ grin evilly
+$ grins evilly
+A 3
+$ applaud
+$ applaud wholeheartedly
+$ applauds wholeheartedly
+A 3
+$ fart
+$ fart loudly
+$ farts audibly
+actions2	(17,73)	A 9
+A 1
+$ ## These are player actions  h-p
+A 3
+$ pout
+$ pout quietly
+$ pouts quietly
+A 3
+$ pat obj
+$ pat
+$ pats
+A 3
+$ howl
+$ howl an ear-piercing wail
+$ howls with an ear-pearcing wail
+A 3
+$ purr
+$ purr warmly
+$ purrs warmly
+A 3
+$ laugh
+$ roll on the floor laughing
+$ rolls on the floor laughing
+A 3
+$ hiccup
+$ *HHIIIIIIICC-CUP*
+$ (%w) *HHIIIIIIICC-CUP*
+A 3
+$ moan
+$ moan loudly
+$ moans loudly
+A 3
+$ jump
+$ jump excitedly
+$ jumps excitedly
+actions3	(17,73)	A 32
+A 1
+$ ## These are player actions  q-z
+A 3
+$ shriek
+$ shriek as if in pain
+$ shrieks as if in pain
+A 3
+$ slap obj
+$ slap
+$ slaps
+A 3
+$ stiffen
+$ stiffen in fright
+$ stiffens in fright
+A 3
+$ tremble
+$ tremble with fear
+$ trembles with fear
+A 3
+$ shake
+$ shake with fear
+$ shakes in fear
+A 3
+$ quake
+$ quake in fight
+$ quakes in fright
+A 3
+$ roll
+$ roll playfully on the ground
+$ rolls playfully on the ground
+A 3
+$ yell
+$ yell at the top of your lungs
+$ yells at the top of %p lungs
+A 3
+$ scream
+$ scream as if possessed
+$ screams as if possessed
+A 3
+$ sneer
+$ sneer skeptically
+$ sneers skeptically
+A 3
+$ wheeze
+$ wheeze painfully
+$ wheezes painfully
+A 3
+$ think
+$ look thoughtful
+$ looks thoughful
+A 3
+$ stumble
+$ stumble stupidly and fall to the floor
+$ stumbles clumsily and falls to the floor
+A 3
+$ stand
+$ stand
+$ stands
+A 3
+$ sit
+$ sit
+$ sits
+A 3
+$ rest
+$ rest quietly
+$ rests quietly
+A 3
+$ sigh
+$ sigh heavily
+$ sighs heavily
+A 3
+$ smile
+$ smile happily
+$ smiles happily
+A 3
+$ stare
+$ stare coldly
+$ stares coldly
+A 3
+$ yawn
+$ *YYYYYAAAAAAWWWWNNNNN*
+$ (%w) *YYYYYAAAAAAWWWWNNNNN*
+A 3
+$ sneeze
+$ *AAAAACCCCHHHHHHHHOOOOOOO*
+$ (%w) *AAAAAACCCCCCHHHHHHHHHOOOOOOOO*
+A 3
+$ shrug
+$ shrug indifferently
+$ shrugs indifferently
+A 3
+$ wave
+$ wave
+$ waves
+A 3
+$ spit
+$ spit violently
+$ spits violently
+A 3
+$ whistle
+$ whistle nonchalantly
+$ whistles nonchalantly
+A 3
+$ smirk
+$ smirk evilly
+$ smirks evilly
+A 3
+$ whine
+$ whine sadly
+$ whines annoyingly
+A 3
+$ whimper
+$ whimper sadly
+$ whimers sadly
+A 3
+$ wink
+$ wink
+$ winks
+A 3
+$ snarl
+$ snarl
+$ snarls
+A 3
+$ tap
+$ tap your foot
+$ taps %p foot impatiently
+task	(6,27)	# -1
+task_wait	(6,91)	# -1
+name_def	(6,219)	A 1
+$ pn
+default_weapon	(6,219)	$ body.hand
+.
+_summons (0)
+w=argv[0];
+~~w ? textate("Strange mystical forces assault you!");
+,	{
+	loc=w.location;
+	textate(w.name," calls to you magically to come to ",loc.name,".");
+	}
+
+
+eval (0)
+seval="here=avatar().location;me=avatar();\n";
+str=argv[0];
+$program evaluate(seval+str+";")!
+
+offline (0)
+~~status=.status[0] ? !
+status -> what, when;
+what=="sleeping" ? {
+	next=4;
+	t= $crtl time()-when;
+	t<=5 ? 
+		textateLocals(avatar().name," falls asleep.");
+	, t<10 ? 
+		textateLocals(avatar().name," starts to snore.");
+	, t<90 ? {
+		next=10;
+		textateLocals(avatar().name," snores.");
+		}
+	, next=0;
+	}
+next ? {
+	pushr(.tasks,{ $crtl time()+next,6,"offline",0});
+	.task_wait=0;
+	}
+
+setwrap (0)
+l	= argv[0] integer() ;
+m	= avatar() ;
+argv[0] lowercase()=="off" || ~~(l>0) ?
+	{ 
+	m variant( "wrap_length" ) delete() ;
+	m variant( "line_length" ) delete() ;
+	m tell("Word wrap is now OFF.");
+	!
+	}
+m variant( "wrap_length" ) @ $error ?
+	{
+	m addVariant( "wrap_length" ) ;
+	m addVariant( "line_length" ) ;
+	m.line_length = 0 ;
+	}
+m.wrap_length = l ;
+m tell( "Word margin wrap set to " , m.wrap_length , "." ) ;
+
+_status (0)
+/* add/remove a status to avatar() */
+argv -> cmd, type, time, args;
+p	= avatar() ;
+args ?
+	pushr( statusary , args ) ;
+p.status @~ $varray ?
+	{
+	p addVariant( "status" ) ;
+	p.status={};
+	}
+cmd=="+" ? { /* add status */
+	time <> 0 ? 
+		wait_time=time;
+	,
+		wait_time= $crtl time()+60;
+	statusary={ type,wait_time };
+	pushr(p.status,statusary);
+	1!
+	}
+cmd=="-" ? { /* remove status */
+	now= $crtl time();
+	nstatus={};
+	~~type ? { /* check by time */
+		[ s; p.status] {
+			s -> stype, stime, sargs;
+			stime <> -1 && stime>now ?
+				pushl(nstatus,s);
+			}
+		p.status=nstatus;
+		}
+	, {
+		[ s; p.status] {
+			s -> stype, stime, sargs;
+			stype <> type ?
+				pushl(nstatus,s);
+			}
+		p.status=nstatus;
+		}
+	1!
+}
+cmd=="?" ? { /* is status turned on? */
+	rval=0;
+	[ s; p.status] {
+		s -> stype, stime, sargs;
+		stype==type ?
+			rval=1;
+		}
+	rval!
+	}
+cmd=="=" ? { /* basic status */
+	p.status[0][0]!
+	}
+
+_effect (0)
+argv -> who, obj, verbose;
+e=obj.effect;
+~~e ? 1!
+$object_class.cup precesses(obj) ? { 
+	who _status("+",e);
+	e=="sugar" ? {
+		str="feel suddenly energetic";
+		}
+	, e=="caffeine" ? {
+		str="feel instantly alert";
+		}
+	, e=="alcohol" ? {
+		str="feel warm inside";
+		}
+	str!
+	}
+
+
+
+alias (0)
+dobj	= argv[0];
+dobj.aliases = $util trim( edit( dobj.aliases ) ) ;
+
+realias (0)
+
+name (0)
+dobj	= argv[0];
+iobjstr	= argv[1];
+~~$wizard precesses(avatar())
+	&& dobj <> avatar()
+	&& avatar() <> $module serialed(dobj) principal() ?
+	{
+	textate("You can only name yourself or your own objects.");
+	0!
+	}
+name = iobjstr || "obj"+ dobj serinteger() string() ;
+dobj _chname(name);
+
+describe (0)
+dobj=argv[0];
+~~dobj ?
+	textate("Try: describe objectname") !
+dobj <> avatar() && dobj principal() <> avatar() ?
+	textate("You can only describe yourself or your own objects.") !
+$module serialed( dobj ) addVariant( "desc" ) ;
+dobj.desc = $util trim( $root edit( dobj.desc ) ) ;
+textate("Ok.\n");
+
+
+_recycle (0)
+o=this;
+~~$wizard precesses(caller) ? 0!
+o==avatar() serinteger() || ~~isAvatar( o ) ? 0!
+textate("(recycling avatar())");
+[ c; .objects]
+	~~c _moveto(avatar() serinteger()) && ~~c reintermodulize(avatar()) ?
+		textate("(",c.name," lost)");
+0 _recycle(o)!
+
+drop (0)
+textate("drop what?");
+
+get (0)
+textate("This is not a pick up joint!");
+dobj tell(avatar().name," tried to pick you up!");
+
+create (0)
+n	= argv[0];
+n @~ $string ?
+	textate(
+		"Try: create objecttype\nObjecttypes you can create: note, object\n") !
+n=="room" ?
+	{ obj= .roomgen ; }
+, n=="object" ?
+	{ obj=$object_class; }
+,	{
+	n = ( "generic_" + n ) lowercase() ;
+	obj=($object_class).(n);
+	}
+textate("Creating ",n,"..");
+~~obj ?
+	textate("No such object type.") !
+//~~$module serialed( obj ) ?
+//	textate("Invalid generic object type.") !
+nobj = spawn(obj);
+~~nobj ?
+	textate("Can't seem to create "+n+".") !
+v = nobj addVariant( "name" ) ;
+v security( "a+rw" ) ;
+nobj.name = "object" + nobj serinteger() string() ;
+textateLocals(avatar().name,
+	" created '" , nobj.name , "'") ;
+nobj reintermodulize( avatar().location ) ;
+~~$wizard precesses( avatar() ) ?
+	textate(
+		"Use: describe "+nobj.name+"   to describe the object.\n" ,
+		"Use: name "+nobj.name+" as \"newobjname\"   to rename the object."
+		) ;
+
+_accept (0)
+1!
+
+quit (0)
+disconnect();
+
+_disconnect (0)
+.logoff_time= $crtl time();
+/*
+addtask(this,"_zombie");
+*/
+!
+
+_connect (0)
+.location look();
+.mail ?
+	textate("You have mail.");
+.desc == 2.desc ?
+	textate( "\nPlease enter avatar description.\n"
+		+ "Type:  describe me\n" ) ;
+.status	= {} ;
+
+huh (0)
+avatar().location _dir(argv[0]) ? {
+	avatar().location movedir(argv[0]);
+	!
+	}
+textate( "dunno\ntype 'help'");
+
+inventory (0)
+str=$util wrap(70,$util objlist(.objects));
+str ? textate("You have ",str,".");
+, textate("You aren't carrying anything.");
+
+actions (0)
+[ i; 2.actions]		// UPDATE:
+	{
+        argv[0]==i[0] split(" ")[0] ?
+		{
+		action=i;
+		.;
+		}
+	}
+~~action ? 0!
+
+iobj=0;
+prepstr=argv[1];
+verb=action[0];
+a=verb split(" ");
+a[1]=="obj" ? {
+	verb=a[0];
+	to_obj=1;
+	prepstr="";
+	}
+
+ps="";
+[ j; 2.status_args]		// UPDATE: 
+	{
+	verb==j[0] ?
+		{
+		ps=j[1];
+		.;
+		}
+	}
+ps ? { avatar().status = { ps }; }
+
+to_obj ? {
+	~~argv[1] ? iobjstr="me";
+	, iobjstr=argv[1];
+	prepstr="";
+	}
+, { iobjstr=argv[2]; }
+
+iobjstr ? {
+	iobjstr=="me" || iobjstr=="myself" || iobjstr==avatar().name ?
+		iobj=this;
+	, iobjstr substring(0,1)=="#" ?
+		iobj= iobjstr substring(1) integer() ;  // UPDATE:
+	,
+		iobj=$util findobj(iobjstr,.location);
+	}
+
+str={"You",action[1]};
+ostr={avatar().name,action[2]};
+pstr={avatar().name,action[2]};
+
+prepstr ? {
+	str={+str,prepstr};
+	ostr={+ostr,prepstr};
+	pstr={+pstr,prepstr};
+	}
+
+to_obj && ~~iobj ? {
+	textate( {+str,"who?"} join(" ") );
+	1!
+	}
+iobjstr && ~~iobj ? {
+	textate( {+str,"who?"} join(" ") );
+	1!
+	}
+
+iobj ? {
+	iobjname=iobj.name;
+	iobj==avatar() ? {
+		str={+str,"yourself"};
+		ostr={+ostr,"himself"};
+		}
+	, {
+		str={+str,iobjname};
+		ostr={+ostr,iobjname};
+		pstr={+pstr,"you"};
+		}
+	}
+
+str=$util pronoun_sub( str join( " " ) );
+ostr=$util pronoun_sub( ostr join( " " ) );
+pstr=$util pronoun_sub( pstr join( " " ) );
+
+[ o; avatar().location.objects] {
+	o==avatar() ?
+		textate(str,".");
+	, o==iobj && o <> avatar() ?
+		iobj tell(pstr,".");
+	,
+		o tell(ostr,".");
+	}
+
+1!
+
+tell_exits (0)
+1!
+
+hit (0)
+$battle hit(this);
+
+_prompt (0)
+$atomatrix output("} ");
+
+io (0)
+($processity.debug || avatar().cli cli() @ $error ) ?
+	{
+	avatar() setIO() ;
+	textate( "ATOMATRIX " , $processity.atomatrix ) ;
+//	b = $atomatrix.atomized() ;
+//	a = $atomatrix.atomized() ;
+	[1]	{
+		.line_length=0 ;
+//		a = $atomatrix.atomized() ;
+//		 _notify_subroutine( "aaa bbb ddd hhh j j ik k djdjdjdh dhd hd hd hdh d" ) ;
+//		b = $atomatrix.atomized() ;
+//		textate( $atomatrix memory() , " " , a , " " , a[0]-a[2] , "=1" ) ;
+//		textate( $atomatrix memory() , " " , b , " " , b[0]-b[2] , "=2" ) ;
+//		a = $atomatrix.atomized() ;
+//		textate( $atomatrix memory() , " " , a , " " , ( a[0]-a[2] ) - ( b[0]-b[2] ) , " " ) ;
+		textate( "] \\c" ) ;
+		b = a ;
+		a = $atomatrix.atomized() ;
+//		$atomatrix atomogenBalance() ;
+		( s = $atomatrix input() ) @ $error
+			|| s == "quit\n"
+			|| s == ".\n"
+			|| s == "." ?
+			. ;
+		s = s replace( "\n" , "" ) ;
+		( e = avatar() _input( s ) ) @~ $undefined ?
+			textate( ascii(e) ) ;
+		( e @ $error ) ? e.message ?
+			textate( e.message ) ;
+			, textate( "An error occurred with the previous command." ) ;
+		}       
+	}
+
+tell (0)
+( str	= unicode(+argv) ) substring( -1 ) == "\n" ?
+	this notify( str ) ;
+, str substring( -2 ) == "\\c" ?
+	this notify( str substring( 0 , -2 ) ) ;
+,
+	this notify( str + "\n" );
+
+dochat (0)
+textateLocals( avatar().name , " sits down to talk." ) ;
+avatar() _status( "+" , "chatting" , -1 ) ;
+textate(
+  "Type \".\" on a line by itself to exit.\n"
++ "Type  who  on a line by itself to see who is logged on.\n"
++ "Type  !something   to emote something." ) ;
+n	= 79 - avatar().name length() ;
+[ ( str = textPrompt( "* " ) ) <> "." ]
+	{
+	str == "who" ?
+		$roomgen who();
+	, str substring(0,1)=="!" ?
+		textateLocals("\n", avatar().name," ", str substring(1));
+	, str <> "" ?
+		textateLocals("\n",$util wrap(n,avatar().name+"> "+str));
+}
+textateLocals( avatar().name , " stands up." ) ;
+avatar() _status( "-" , "chatting" ) ;
+
+direct (0)
+verb=argv[0];
+name= verb substring(0,-1);
+obj=$util findobj(name,avatar().location);
+~~obj ? {
+	textate("Who is ",name,"?");
+	!
+	}
+str=argv[1];
+~~str ? {
+	textate("Use: ",name,", whatever you want to say.");
+	!
+	}
+obj tell(avatar().name," says, '",str,"'");
+[ o; avatar().location.objects] {
+	o==obj ? <;
+	o tell(avatar().name," says [to ",$util name(obj,"",1),"], '",str,"'");
+	}
+obj _command(avatar() serinteger(), obj, str); /* do this last */
+
+_login_init (0)
+p=argv[0];
+p.login_time= $crtl time();
+p.logoff_time=0;
+p.desc == 2.desc || p.desc == "" ?
+        p tell("\nPlease enter a description for yourself.\n",
+		"Type:  describe me\n");
+p _status("-");
+
+_notify_subroutine (0)
+str="" ;
+//b = $atomatrix.atomized() ;
+//a = $atomatrix.atomized() ;
+		l=.line_length;
+		[ word; argv[0] split(" ")] {
+			(l+word length()+1)<=.wrap_length ? {
+				l>0 ? str+=" ";
+				str+=word;
+				l=l+word length()+1;
+				}
+			,	{
+				str+="\n"+word;
+				l=word length();
+				}
+			}
+		.line_length=l;
+//b = $atomatrix.atomized() ;
+//$atomatrix output( 0 ) ;
+//$atomatrix output( ascii( $atomatrix memory() , " " , a , " " , a[0]-a[2] , "+\n" ) ) ;
+//$atomatrix output( ascii( $atomatrix memory() , " " , b , " " , b[0]-b[2] , "-\n" ) ) ;
+str !
+
+notify (0)
+($processity.debug || avatar().cli notify(+argv) @ $error ) ?
+	{
+	
+~~.wrap_length || .wrap_length<=0 ?
+	{
+	$atomatrix output(argv[0]);
+	!
+	}
+
+str="";
+on=0;
+nolines= (lines=argv[0] split("\n")) length();
+
+[ line; lines] {
+	l=line length()+.line_length;
+	.line_length=0;
+	l<=.wrap_length ? { str+=line; }
+	, { str += _notify_subroutine(line) ; }
+	on+=1;
+	on<nolines ? { str+="\n"; .line_length=0; }
+	}
+argv[0] substring(-1)=="\n" ? { str+="\n"; .line_length=0; }
+, { .line_length=line length(); }
+line=0 ;
+lines=0 ;
+.io output(str) @ $error ?
+	$atomatrix output( ascii( str ) ) ;
+str=0;
+
+	}
+
+task (0)
+now= $crtl time();
+s={};
+[t=popl(.tasks)] {
+	t->when,who,what,with;
+	when<=now ? {
+		who:(what)(+with);
+		}
+	, {
+		pushr(s,t);
+		}
+	}
+s ? {
+	min=s[0][0];
+	[ t; s ] { min>t[0] ? min=t[0]; pushr(.tasks,t); }
+	.task_wait=min;
+	}
+
+read (0)
+s="";
+xl={ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+xu={ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+[1] {
+	c = $tty.i();
+	c == 13 ?.;
+	c == 10 ?.;
+	c == 32 ? {
+		s = s + " ";
+		<;
+		}
+	c >  97 && c < 123 ? {
+		s = s + xl[c-97];
+		<;
+		}
+	c >  65 && c < 91 ? {
+		s = s + xu[c-65];
+		<;
+		}
+	6 tell(c);
+	}
+s!
+
+_enumerateAvatars (0)
+z	= {} ;
+[ o ; argv[0] ]
+	{
+	( a = o successants() ) ?
+		{
+		( x = $avatar _enumerateAvatars( a ) ) ?
+			[ y ; x ]
+				pushr( z , y ) ;
+		}
+	,	pushr( z , o ) ;
+	}
+z !
+

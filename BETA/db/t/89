@@ -1,0 +1,13 @@
+o6 p4 c0 s88 l0 c0 w0 p0 v3
+name	(89,877)	$ Dungeon Arena
+desc	(89,877)	$ Its really reaks of rotten flesh here.  (w/s)
+exits	(4,219)	A 4
+A 2
+# 4
+# 2
+A 2
+M 87
+M 90
+A 0
+A 0
+.

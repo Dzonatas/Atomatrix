@@ -1,0 +1,15 @@
+o437 p2 c0 s373 l148 c0 w0 p0 v9
+name	(437,877)	$ Adam
+aliases	(437,877)	?
+password	(0,292)	$ 1234
+login_time	(2,381)	# 772696157
+logoff_time	(2,381)	# 772697685
+uid	(2,292)	?
+gender	(437,877)	$ male
+desc	(437,877)	$ New user.
+
+status	(437,27)	A 1
+A 2
+$ sleeping
+# 772697745
+.

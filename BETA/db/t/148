@@ -1,0 +1,36 @@
+o6 p4 c0 s134 l0 c219 w0 p0 v4
+name	(148,877)	$ Sunrise Blvd.
+desc	(148,877)	$ You are surrounded by various buildings.  Sunrise Blvd. continues to the 
+north and south.
+Sunrise shops:
+west          Armoury
+east          O' Weapon Smithy
+south west    Post Office
+north west    Zaul's Inn
+south east    Fresh Brew, Inc.
+north east    Burger King
+_down_fail_msg	(6,73)	$ The Bank is bolted up.
+exits	(4,219)	A 4
+A 9
+# 10
+# 9
+# 8
+# 7
+# 6
+# 4
+# 3
+# 2
+# 1
+A 9
+M 149
+M 154
+M 153
+M 155
+M 158
+M 152
+M 151
+M 67
+M 224
+A 0
+A 0
+.

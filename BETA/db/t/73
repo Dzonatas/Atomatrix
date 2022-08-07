@@ -1,0 +1,334 @@
+o6 p10 c410 s70 l85 c410 w191 p0 v8
+name	(73,365)	$ Battle Objects
+desc	(73,365)	?
+damage	(73,365)	?
+types	(6,73)	A 5
+A 4
+$ handw
+$ armour
+$ rings
+$ body
+A 1
+M 129
+A 1
+M 74
+A 1
+M 127
+A 1
+M 281
+defense	(6,73)	?
+recycled	(73,731)	A 24
+M 278
+M 313
+M 362
+M 364
+M 315
+M 282
+M 413
+M 374
+M 216
+M 411
+M 314
+M 409
+M 283
+M 212
+M 124
+M 368
+M 185
+M 276
+M 273
+M 274
+M 183
+M 118
+M 412
+M 410
+verbs	(20,0)	A 2
+A 6
+$ ready
+# 1
+# -1
+# -1
+# 75
+$ ready
+A 6
+$ unready
+# 1
+# -1
+# -1
+# 75
+$ unready
+on_demand	(73,603)	A 39
+M 276
+M 273
+M 274
+M 183
+M 118
+M 186
+M 214
+M 277
+M 278
+M 216
+M 185
+M 282
+M 283
+M 212
+M 124
+M 285
+M 98
+M 76
+M 121
+M 311
+M 312
+M 313
+M 314
+M 315
+M 362
+M 363
+M 364
+M 368
+M 374
+M 375
+M 376
+M 379
+M 380
+M 381
+M 409
+M 410
+M 411
+M 412
+M 413
+.
+find_type (0)
+$util db(this," find_type(",argv[0],")");
+( i = argv[0] @# .created[0]) @ $integer ?
+	.created[1][i] !
+0 !
+
+get_type (0)
+obj	= argv[0] ;
+str	= obj.type ;
+[ i; $module serialed(obj) precessants() ]
+	{
+	$battle.object == i serinteger() ?
+		. ;
+	str = i.type + "." + str ;
+	}
+str !
+
+_recycle_ok (0)
+
+_moveto (0)
+.using ? unready();
+this reintermodulize(argv[0])!
+
+_accept (0)
+$battle.object precesses(argv[0])!
+
+_recycle (0)
+argv -> o;
+~~o ? o=this;
+~~$battle.object precesses(o) ? 0!
+$battle.object unuse(o);
+$util lock($battle.object,"rlock");
+	o @# $battle.object.recycled ? {
+	$util unlock($battle.object,"rlock");
+	1!
+	}
+o @# $battle.object.on_demand ? {
+	$util db($util name(o)," RECYCLED");
+	$module serialed(o) reprecessize( $battle.object ) ;
+	[ v; o variants(o)] v delete() ;
+	pushr($battle.object.recycled,o);
+	o _moveto( $battle.object );
+	}
+,	{
+	o _moveto( $module serialed(o) precessant() ) ;
+	$util db($util name(o)," recycled->retained");
+	}
+$util unlock($battle.object,"rlock");
+1!
+
+make (0)
+argv -> stype, where;
+o	= this ;
+t	= 0 ;
+$util db("$battle.object make(",stype,",",where,")") ;
+[ w ; argv[0] split( "." ) ]
+	{
+	~~( t = o types(w) ) ?
+		0 !
+	t[0] @ $module ?
+		{
+		o = t[0] ;
+		t = 0;
+		<;
+		}
+	t[0] @~ $string ?
+		0 !
+	. ;
+	}
+~~ $battle.object precesses(o) ?
+	0 !
+o.bodypart ?
+	o find_type(w) !
+~~ where ?
+	where = o ;
+/* weed out wrong objects... */
+[obj=popl($battle.object.recycled)]
+	$battle.object precesses(obj) ?
+		. ;
+
+~~ obj ?
+	{  /* no object to use.. create one */
+	obj = create( o , $battle.object ) ;
+	~~ obj ?
+		0 !
+	pushr( $battle.object.on_demand , obj) ;
+	obj reintermodulize( $battle.object ) ;
+	}
+, obj reprecessize( o ) ;
+
+[ v ; {"name", "type"} ]
+	( e = obj addVariant( v ) security( "a=rc" ) ) @ $error ?
+		{
+		$util db(v,"-",e) ;
+		obj _recycle() ;
+		0 !
+		}
+obj.name = t[0] ;
+obj.type = w ;
+
+anyvar	= { "damage", "defense", "worn", "held", "hitstr", "ohitstr" };
+obj.held ?
+	default = "damage" ;
+,	default = "defense" ;
+[ w; t[1] split( ";" ) ]
+	{
+	s= w split("=");
+	s length()>1 ? { 
+		~~(s[0] @# anyvar) ? { obj _recycle(); 0! }
+		var=s[0]; 
+		valarg=s[1];
+		}
+	, { var=default; valarg=s[0]; }
+	obj addVariant( var ) security( "a=rc" ) @ $error ?
+		{
+		obj _recycle() ;
+		0 !
+		}
+	( valargs = valarg split(",") ) length() > 1 ?
+		[ val ; valargs ] 
+			pushr( obj.(var) , val ) ;
+	,	obj.(var) = valarg ;
+	}
+~~obj _moveto(where) ? { obj _recycle(); 0! }
+$util db("object #",obj," created");
+obj !
+
+types (0)
+( t = argv[0] @# .types[0] ) @ $integer ?
+	.types[t+1] !
+0 !
+
+_aliases (0)
+/* this code will split the input string.  If each word in the input
+/*  string is found in the name (or partial word) then true 
+/*  e.g.   name="Sword of Sharpness"  input="sharp sword" matches
+*/
+argv[0]==.name ? 1!
+w	= argv[0] lowercase() split(" ") ;
+l	= w length() - 1 ;
+lw	= w[0] length() ;
+[ i ; .name lowercase() split(" ") ]
+	{
+	w[0]== i substring(0,lw) ?
+		{
+		w[1] ? { _aliases( w[1..l] join(" ") ) ? 1! }
+		, 1!
+		}
+	}
+0!
+
+_damage (0)
+($util rolld(.damage))!
+
+unready (0)
+~~dobj ? obj=argv[0];
+, obj=dobj;
+~~obj ? obj=this;
+
+narmour={}; ok=0;
+~~$battle.object precesses(obj) ? {
+	textate("Don't know how to remove that.");
+	!
+	}
+~~obj.using ? {
+	textate("Your not using that.");
+	!
+	}
+$battle.object unuse(obj,avatar() serinteger());
+textate("Ok.");
+
+ready (0)
+/* ready a weapon and change stats accordingly */
+~~dobj ? obj=argv[0];
+, obj=dobj;
+~~obj ? obj=this;
+
+~~$battle.object precesses(obj) ? {
+	textate("I don't know how to ready that.");
+	0!
+	}
+obj.using ? {
+	textate("It's already in use.");
+	1!
+	}
+obj.held ? where=obj.held; , obj.worn ? where=obj.worn;
+~~where ? {
+	textate("I don't know where to use that!");
+	$util db("ready(",obj,") dunno where");
+	0!
+	}
+$battle.object use(obj,avatar() serinteger(),where);
+obj.held ? $battle ready_weapon_is(obj);
+textate("Ok.");
+1!
+
+use (0)
+/* mark a object as being used */
+argv -> o, who, where;
+~~$battle.object precesses(o) ? $error.perm!
+o variant( "using" ) @ $error ?
+	o addVariant( "using" ) security( "=erotw" ) ;
+~~o _use(+argv) ? o.using={who,{where}};
+$battle update_mods(who);
+$util db(who.name," using ",o.name," on ",where);
+
+unuse (0)
+/* mark a object as being used */
+argv -> o;
+~~$battle.object precesses(o) ? $error.perm!
+~~o.using ? 0!
+who=o.using[0];
+$util db(who.name," unused ",o.name);
+o==who.ready_weapon ? $battle ready_weapon_is(0,who);
+~~o _unuse(+argv) ? o variant( "using") delete() ;
+$battle update_mods(who);
+1!
+
+hasready (0)
+argv -> who;
+objs={};
+[ o; who.objects] {
+	~~$battle.object precesses(o) ? <;
+	o.using ? pushr(objs,o);
+	}
+objs!
+
+defenses (0)
+num= .defense[1..-1] integer() ;
+({ { "blunt", num } })!
+
+damages (0)
+({.damage, {"blunt"}})!
+

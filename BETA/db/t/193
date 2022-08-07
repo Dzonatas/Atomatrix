@@ -1,0 +1,15 @@
+o17 p4 c0 s192 l0 c0 w0 p0 v3
+name	(193,877)	$ Large Oak
+desc	(193,877)	$ An ancient oak towers above the other trees here.  Judging from the
+gaping hole in its side it has survived several fires through the ages.
+The forest grows sparse to the northwest.
+exits	(4,219)	A 4
+A 2
+# 9
+# 8
+A 2
+M 194
+M 192
+A 0
+A 0
+.

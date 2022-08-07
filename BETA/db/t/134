@@ -1,0 +1,13 @@
+o17 p4 c0 s91 l0 c0 w0 p0 v3
+name	(134,877)	$ Swordroom
+desc	(134,877)	$ Welcome to the Sword room.  There are many racks of weapons here.
+exits	(4,219)	A 4
+A 1
+# 2
+A 1
+M 128
+A 0
+A 0
+.
+types (0)
+

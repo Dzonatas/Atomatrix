@@ -1,0 +1,19 @@
+o17 p29 c0 s150 l179 c0 w0 p0 v5
+name	(184,877)	$ sign
+aliases	(184,877)	?
+desc	(17,877)	$ The wooden sign is old and battered, but still quite readable.
+note	(184,877)	$ _________________________
+
+The Weary Player's Saloon
+ (please tip the barman!)
+
+We are proud to serve the
+   following drinks.
+_________________________
+
+
+dark	(6,73)	# 1
+.
+_end_read (0)
+[ d; 178.drinks]  textate("   "+d);
+

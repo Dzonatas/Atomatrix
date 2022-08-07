@@ -1,0 +1,11 @@
+o6 p4 c0 s152 l0 c0 w0 p0 v3
+name	(153,877)	$ Zaul's Inn
+desc	(153,877)	$ Currently nobody seems to be around.
+exits	(4,219)	A 4
+A 1
+# 9
+A 1
+M 148
+A 0
+A 0
+.

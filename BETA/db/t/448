@@ -1,0 +1,162 @@
+o6 p449 c0 s0 l447 c0 w444 p0 v9
+display	(448,895)	M 444
+name	(448,895)	$ Command Line Interface
+window	(6,27)	?
+font	(6,27)	?
+cx	(6,27)	# 296
+cy	(6,27)	# 0
+buf	(6,27)	A 37
+$ =
+$ 1
+$ -
+$ 0
+$ =
+$ -
+$ )
+$ +
+$ _
+$ )
+$ (
+$ )
+$ (
+$ &
+$ *
+$ !
+$ (
+$ *
+$ &
+$ ^
+$ *
+$ &
+$ ^
+$ %
+$ &
+$ (
+$ ^
+$ %
+$ @
+$ 6
+$ 2
+$ 7
+$ 6
+$ 5
+$ 2
+$ 7
+$ 6
+pos	(6,27)	# 37
+gc	(6,219)	?
+.
+create (0)
+:testmsg();
+.window		= $X.window();
+.window.x	= 4;
+.window.y	= 400 + 5;
+.window.width	= 640;
+.window.height	= 20;
+.window create(447.window);
+
+enableevents();
+:setactive(this);
+
+.gc	= $X.gc(.window);
+.font	= $X.font("8x16");
+
+c = $X.color(255,255,0);
+
+.gc setforeground(c);
+.gc setfont(.font);
+
+.buf	= {};
+.pos	= 0;
+
+show();
+updatecursor();
+prompt();
+
+showcursor (0)
+.gc fillrectangle(.cx, .cy, .font.width, .font.height);
+
+hidecursor (0)
+.gc cleararea( .cx, .cy, .font.width, .font.height);
+.gc drawstring(.cx, .cy + .font.ascent, .text[.y][.x]);
+
+keypress (0)
+~~argv[0].key ? {
+	argv[0].keycode == 36 ? {
+		hidecursor();
+		.dsiaply notify( ascii(+.buf));
+		.buf = {};
+		.pos = 0;
+		clear();
+		updatecursor();
+		showcursor();
+		flush();
+		}
+	argv[0].keycode == 9 ? {
+		destroy();
+		!
+		}
+	argv[0].keycode == 22 ? {
+		.buf length() == 0 ? !
+		.x == 0 ? !
+		hidecursor();
+		.pos -= 1;
+		popr(.buf);
+		delch();
+		updatecursor();
+		showcursor();
+		flush();
+		!
+		}
+	!
+	}
+
+hidecursor();
+
+addch(argv[0].key);
+
+pushr(.buf,argv[0].key);
+.pos += 1;
+
+updatecursor();
+showcursor();
+flush();
+
+show (0)
+.sub map();
+.window map();
+flush();
+
+hide (0)
+.window unmap();
+.siub unmap();
+flush();
+
+destroy (0)
+disableevents();
+:destroy();
+
+expose (0)
+y = 0;
+.gc drawstring(0, .font.ascent, ascii(+.buf));
+showcursor();
+flush();
+
+updatecursor (0)
+.cx = .pos * .font.width;
+.cy = .y * .font.height;
+
+addch (0)
+.gc drawstring(.cx, .cy + .font.ascent, argv[0]);
+updatecursor();
+
+delch (0)
+.x == 0 ? !
+.x -= 1;
+updatecursor();
+.gc cleararea(.cx, .cy + .font.ascent, .font.width, .font.height);
+.text[.y][.x] = " ";
+
+clear (0)
+.gc cleararea(0, 0, .window.width, .window.height);
+

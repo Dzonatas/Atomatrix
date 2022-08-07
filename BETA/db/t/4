@@ -1,0 +1,557 @@
+o0 p1 c487 s21 l0 c0 w0 p0 v5
+name	(4,877)	$ roomgen
+desc	(4,877)	$ This room seems very plain.
+verbs	(20,0)	A 10
+A 7
+$ n*orth|s*outh|w*est|e*ast|sw|nw|ne|se|northwest|southwest|northeast|southeast|u*p|d*own
+# -1
+# -1
+# -1
+# -1
+$ movedir
+A 1
+# -100
+A 6
+$ l*ook
+# -1
+# -1
+# -1
+# -1
+$ look
+A 7
+$ say
+# 0
+# 0
+# 0
+# -1
+$ say
+A 1
+# -101
+A 7
+$ who
+# 0
+# -1
+# -1
+# -1
+$ who
+A 1
+# -101
+A 7
+$ shout
+# 0
+# -1
+# -1
+# -1
+$ shout
+A 1
+# -101
+A 6
+$ emote
+# 0
+# 0
+# 0
+# -1
+$ emote
+A 6
+$ myrooms
+# -1
+# -1
+# -1
+# -1
+$ myrooms
+A 7
+$ exits
+# -1
+# -1
+# -1
+# -1
+$ show_exits
+A 0
+A 6
+$ equip
+# -1
+# -1
+# -1
+# 75
+$ equip
+A 7
+$ verbose
+# -1
+# -1
+# -1
+# 56
+$ toggle
+A 1
+# -100
+name_def	(6,219)	A 1
+$ pn
+exits	(17,27)	?
+.
+clue (0)
+dobj ? msg=dobj getclue();
+~~msg ? {
+   i= argv[0] index(":");
+   i ? {
+      obj=/* first part of argument = object */
+      which=/* second part of argument = which clue */
+      o=$util findobj(obj);
+      o ? {
+         which="new" && avatar()== $module serialed(o) principal) ? {
+            avatar() editary(o.clues)!
+         }
+      }
+   }
+   textate("clues <any>/nSyntax:/n/tclues obj --> prints a clue on an
+object");
+   textate("/t/t/t/t(prints all clues for object owner)/n/tclues obj:new
+--> adds a new clue to an object you own/n/tclues ? --> prints this help
+message.");
+   !
+}
+textate(msg);
+
+lookat (0)
+lstr	= "";
+objs	= {};
+pobjs	= {};
+str	= "";
+
+avatar().editmode==1 ?
+	str="(#" + this serinteger() string() +")";
+
+lstr	= .name + str + "\n";
+.desc ?
+	lstr += .desc + "\n";
+sstr	= "" ;
+[ i ; .objects ]
+	{
+	i.dark ?
+		<;
+	isAvatar( i ) ?
+		{
+		i <> avatar() ?
+			pushr( pobjs , i ) ;
+		}
+	,	{
+		l = i _addroomdesc( i.location ) ?
+			{
+			l substring(1,1)=="+" ?
+				pushr(objs,i);
+			sstr += l + "  ";
+			}
+		,	{
+			pushr(objs,i);
+			}
+		}
+	}
+sstr ?
+	lstr += sstr + "\n";
+objs ?
+	lstr += "You see " + $util objlist(objs) + ".\n";
+nostat	= {};
+stats	= {}; 
+stypes	= {};
+[ o; pobjs ]
+	{
+	s=o.status[0] @~ $varray || ( (s=s[0]) @~ $string || ~~s) ?
+		{
+		pushr(nostat,o);
+		<;
+		}
+	i=(s @# stypes) ? pushr(stats[i],o);
+	,	{ pushr(stypes,s); pushr(stats,{o}); }
+	}
+i=0;
+sstr="";
+[ s; stats] { 
+	sstr ? sstr+=".  ";
+	s length()==1 ? isare="is"; , isare="are";
+	sstr+=$util objlist(s)+" "+isare+" "+stypes[i];
+	i+=1; 
+	}
+i=nostat length() ? {
+	sstr ? sstr+=".  ";
+	i==1 ? isare="is"; , isare="are";
+	sstr+=$util objlist(nostat)+" "+isare;
+	}
+
+sstr ? lstr+=sstr+" here.\n";
+
+lstr!
+
+chroom (0)
+argv -> o, to, dir, odir;
+to ?	{
+	$portal precesses( to ) ?
+		{
+		ok = to evoke( o ) ;
+		to = o.location ;
+		}
+	,	{
+		ok = o _moveto( to ) ;
+		}
+	ok ?	{
+		msg = _msg( dir , 1 ) ?
+			o tell( msg ) ;
+		msg = _omsg( dir , 1 ) ?
+			{
+			$util db( msg ) ;
+			announce_x( o , msg ) ;
+			}
+		,	announce_x( o , o.name , " goes " , dir , "." ) ;
+		to announce_x( o , o.name , " enters the room." ) ;
+		to !
+		}
+	}
+o tell( _msg( dir , 0 ) || "You can't go that way." ) ;
+msg	= _omsg( dir , 0 ) ?
+	announce_x( o , msg ) ;
+$error.invobj !
+
+verbose (0)
+avatar() addVariant( "verbose" ) ;
+avatar().verbose ?
+	{
+	textate("Verbose mode OFF.");
+	avatar().verbose=0;
+	}
+,	{
+	textate("Verbose mode ON.");
+	avatar().verbose=1;
+	}
+
+
+rooms_owned_by (0)
+[ i; $module serialed(.roomgen) successants() ]
+	i principal) serinteger() == argv[0] ?
+		pushr( objs , i serinteger() ) ;
+objs!
+
+myrooms (0)
+textate("List of rooms you own:");
+robjs= .roomgen rooms_owned_by(avatar() serinteger());
+~~robjs ? textate("-none-");
+, [ i; robjs] {
+	textate($vreality format("^4:",i),i.name);
+	}
+
+tell_all (0)
+/*  UPDATE:
+[ i; logins()] {
+	notify(i,argv[0] + "\n");
+	}
+*/
+
+_accept (0)
+1!
+
+who (0)
+argc==1 && argv[0] lowercase()=="played" ?
+	{
+	times	= {} ;
+	textate( "Log of people who played:" ) ;
+	[ i ; enumerateAvatars() ]
+		pushr( times , { i , i.login_time } ) ;
+	times = $util rsort(times,1) ;
+	[ i ; times ]
+		{
+		time= $crtl localTime(i[1]) ;
+		i[1]	?
+			textate($vreality format("^2/^2/^2 ^02:^02   ^-30   ^-29" ,
+			time[4]+1 , time[3] , time[5] ,
+			time[2] , time[1] ,
+			$util name( i[0] ) ,
+			i[0].location.name ) ) ;
+		}
+	}
+,	argc==1 && argv[0] lowercase()=="plays" ?
+	{
+	textate( "List of current players:" ) ;
+	[ i ; enumerateAvatars() ]
+		textate($util name( i )); // UPDATE:
+	}
+, argc==1 && argv[0] lowercase()=="npc" ? {
+ textate("List of current NPC's:");
+ loc={};
+ inloc={};
+ [ o; $npc_class.active] {
+	n=$util name(o.location,"",1);
+	i=(n @# loc) ? { pushr(inloc[i],o); }
+	, { pushr(loc,n); pushr(inloc,{o}); }
+	}
+ i=0;
+ s={};
+ [ l; loc] {
+	[ o; inloc[i]] {
+		pushr(s, ($util name(o,"",1) + "....................") substring(0,20)
+			 + "|" + ( l + "                    ") substring(0,17));
+		}
+	i+=1;
+	}
+ i=s length()/2;
+ x=i;
+ o=0;
+ [o<x] { textate(s[o]+" "+s[o+i]); o+=1; }
+ }
+, {
+ [ i; logins()] {
+  s=""; /*i.status <> {} ? { s = i.status[0] + " "; }*/
+  textate($util name(i), " is ",s,"in ",$util name(i.location));
+  }
+ }
+
+say (0)
+~~argv ? !
+str= argv join(" ") ;
+textate("You say, '",str,"'");
+[ i; avatar().location.objects] {
+	i <> avatar() serinteger() ? {
+		i tell(avatar().name," says '",str,"'");
+		}
+	}
+
+announce_all (0)
+[ i; .objects] { i tell(+argv); }
+
+look (0)
+textate(lookat());
+/*avatar().editmode ? */show_exits();
+
+movedir (0)
+obj	= avatar() ;
+// UPDATE: function avatar() does not work for non player characters
+isAvatar( obj ) ?
+	{
+	"sitting" @# avatar().status ?
+		{
+		textate("But you're sitting down!");
+		0!
+		}
+	"resting" @# avatar().status ?
+		{
+		textate("But you're still resting!");
+		0!
+		}
+	}
+~~verb ? verb=argv[0];
+verb=="nw" ? verb="northwest";
+, verb=="sw" ? verb="southwest";
+, verb=="ne" ? verb="northeast";
+, verb=="se" ? verb="southeast";
+exit	= _dir(verb) ;
+exit	= chroom(obj,exit,verb,0/*odir*/) ?
+	{
+	isAvatar( avatar() ) ?
+		{
+		avatar() _status("-"); /* update */
+		exit look();
+		!
+		}
+	1 !
+	}
+
+emote (0)
+~~argv ? {
+	textate("Emote what?  [emote <action>]");
+	!
+	}
+str= argv join(" ");
+~~(str substring(-1,1) @# {".","!",":",";","?","-"}) ? { 
+	str += ".";
+	}
+textateLocals(avatar().name," ",str);
+
+what (0)
+dobj || (dobj=$util findobj(argv[0])) ? {
+	textate(dobj.name,"(#",dobj serinteger(),")   loc=",dobj.location); 
+	textate("Name seen: '",$util name(dobj),"'");
+	}
+, 
+	textate("Usage:\nwhat NAME\nwhat #NUMBER");
+
+announce (0)
+[ i; .objects] avatar() serinteger() <> i && caller <> i ?
+	i tell(+argv) ;
+
+_connect (0)
+tell_all("\n" + avatar().name + " logged in.");
+
+_disconnect (0)
+avatar() _status("+","sleeping");
+tell_all(avatar().name + " disconnected.");
+
+shout (0)
+str=" \"" + argv join( " " ) + "\"";
+~~argv ? str="!";
+avatar().location tell_all(avatar().name + " shouts" + str);
+
+_moved_in (0)
+
+_moved_out (0)
+
+_easy_create (0)
+textate("To create a room:");
+[notdone] {
+	textate("Name? \\c"); name=input();
+	textate("
+
+
+announce_x (0)
+/* announce to all excluding obj */
+argv -> exclude;
+exclude @ $integer ? exclude={exclude};
+[ i; .objects] {
+	~~i @# exclude ? { i tell(+argv[1..-1]); }
+	}
+
+_dir (0)
+/* exit to _this_ for direction dir */
+argv -> dir;
+i	= dir @# {"nw","ne","sw","se"} ?
+	{
+	tmp={"northwest","northeast","southwest","southeast"};
+	dir=tmp[i];
+	}
+( p = dir @# $compass_dirs ) @ $integer ?
+	( i = (p+1) @# .exits[0]) @ $integer ?
+		.exits[1][i] !
+( i = dir @# .exits[2] ) @ $integer ?
+		.exits[3][i] !
+
+show_exits (0)
+/* tell avatar() all exits in room */
+/* .exits = { {index,..}, {loc,..}, {"string",..}, {strlocs,..} } */
+loc	= dobj || argv[0] || this;
+//debug	= .roomgen @# avatar().debug;
+debugstr= "";
+~~loc.exits ?
+	textate("exits:") !
+exitstr	= "";
+exits	= {};
+i	= 0;
+[p=loc.exits[0][i]]
+	{
+	pushl(exits, ascii(loc.exits[1][i]) + " " + $compass_dirs[p-1] ) ;
+	i+=1;
+	}
+i	= 0;
+[loc.exits[3][i]]
+	{
+	pushl(exits, ascii(loc.exits[3][i]) + " " + loc.exits[2][i] ) ;
+	i+=1;
+	}
+exits	= $util sort(exits,0);
+i	= 0;
+prev	= 0;
+[exits[i]]
+	{
+	exit=exits[i] split(" ");
+	exit[0]==prev ?
+		{
+		exitstr+="/"+exit[1];
+		}
+	,	{
+		exitstr+="  "+debugstr+exit[1];
+		prev=exit[0];
+		}
+	i+=1;
+	}
+textate("exits:  ",exitstr);
+
+_unlinkroom (0)
+/* delete an .exits link from one room to another */
+
+argv -> from, how;
+to=from _dir(how);
+~~to ? {
+	textate(how," link doesn't exist.");
+	0!
+	}
+
+textate("Deleting link from room #",from," to room #",to," using ",how);
+~~i= how @# $compass_dirs ? {
+	~~p=how@#from.exits[2] ? {
+		textate("Hmm.. named link not found.");
+		0!
+		}
+	pull(from.exits[2],p);
+	pull(from.exits[3],p);
+	}
+, {
+	~~(p=i+1) @# from.exits[0] ?
+		{
+		textate("Hmm.. link not found.");
+		0!
+		}
+	pull(from.exits[0],p);
+	pull(from.exits[1],p);
+	}
+
+
+_linkroom (0)
+/* make an .exits link from "from" to "to" */
+/* NOTE that it doesn't make a link from "to" back to "from"! */
+
+argv -> from, how, to;
+~~4 precesses(from) ? { 
+	textate(from," is not a room!");
+	0!
+	}
+~~4 precesses(to) ? { 
+	textate(to," is not a room!");
+	0!
+	}
+i=how@#{"ne","nw","se","sw"} ? {
+	tmp={"northeast","northwest","southeast","southwest"};
+	how=tmp[i];
+	}
+from _dir(how) ? {
+	from unlinkroom(from,how);
+	}
+
+from.exits @~ $varray ?
+	{
+	v = from addVariant( "exits" ) ;
+	v principal $module serialed(from) ) ;
+	v security( "arw" ) ;
+	from.exits={ {}, {}, {}, {} };
+	}
+to.exits @~ $varray ?
+	{
+	v = to addVariant( "exits" ) ;
+	v principal $module serialed(to) ) ;
+	v security( "arw" ) ;
+	to.exits={ {}, {}, {}, {} };
+	}
+from.exits[2] @~ $varray ?
+	{
+	from.exits={ from.exits[0], from.exits[1], {}, {} };
+	}
+to.exits[2] @~ $varray ?
+	{
+	to.exits={ to.exits[0], to.exits[1], {}, {} };
+	}
+
+dirnum=how@#$compass_dirs;
+textate("Making link from room #",from," to room #",
+		to," using ",how," (dir ",dirnum,")");
+
+~~dirnum ? {
+	textate(pushl(from.exits[2],how));
+	pushl(from.exits[3],to);
+	}
+, {
+	textate(pushl(from.exits[0],dirnum));
+	pushl(from.exits[1],to);
+	}
+
+spawn (0)
+o = $program inherit(4);
+163 _chobjown(o,4);
+textate("spawned ", o);
+m = $module serialed( o ) ;
+[ n ; { "name" , "desc" , "exits" } ]
+	m addVariant( n ) security( "a+rw" ) ;
+o.name = argv[0];
+o!
+

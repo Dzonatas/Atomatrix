@@ -1,0 +1,311 @@
+o6 p10 c0 s378 l222 c0 w261 p0 v8
+name	(382,895)	$ NPC_DB
+aliases	(382,895)	$ db
+desc	(382,895)	$ A place to store the npc types.
+
+{ level [a-z], domain|{domains}, size [tsmlh], name, { settings } }
+
+Name:
+Level:
+Domain:
+Size:
+Body:
+Treasure Type:
+Dex:
+db	(6,27)	A 0
+domains	(6,27)	?
+sizes	(6,27)	?
+body	(6,27)	A 36
+$ t_h
+$ t_n
+$ t_b
+$ t_f
+$ t_t
+$ b_u
+$ b_l
+$ l
+$ l_b
+$ l_r
+$ l_l
+$ f
+$ f_b
+$ f_r
+$ f_l
+$ h
+$ h_b
+$ h_r
+$ h_l
+$ a
+$ a_b
+$ a_r
+$ a_l
+$ al
+$ al_fr
+$ al_fl
+$ al_fb
+$ al_br
+$ al_bl
+$ al_bb
+$ human
+$ animal
+$ bird
+$ fish
+$ plant
+$ ?
+body_info	(6,27)	A 36
+A 1
+$ head
+A 1
+$ neck
+A 1
+$ back
+A 1
+$ chest
+A 1
+$ tail
+A 1
+$ upper-body
+A 1
+$ lower-body
+A 1
+$ leg
+A 2
+$ legs
+A 2
+$ l_r
+$ l_l
+A 2
+$ right-leg
+A 1
+$ l
+A 2
+$ left-leg
+A 1
+$ l
+A 1
+$ foot
+A 2
+$ feet
+A 2
+$ f_r
+$ f_l
+A 2
+$ right-foot
+A 1
+$ f
+A 2
+$ left-foot
+A 1
+$ f
+A 1
+$ hand
+A 2
+$ hands
+A 2
+$ h_r
+$ h_l
+A 2
+$ right-hand
+A 1
+$ h
+A 2
+$ left-hand
+A 1
+$ h
+A 1
+$ arm
+A 2
+$ arms
+A 2
+$ a_r
+$ a_l
+A 2
+$ right-arm
+A 1
+$ a
+A 2
+$ left-arm
+A 1
+$ a
+A 1
+$ leg
+A 1
+$ front-right leg
+A 1
+$ front-left leg
+A 1
+$ front legs
+A 1
+$ back-right leg
+A 1
+$ back-left leg
+A 1
+$ behind legs
+A 2
+$ Human
+A 8
+$ a_b
+$ h_b
+$ f_b
+$ l_b
+$ t_h
+$ t_n
+$ t_b
+$ t_f
+A 1
+$ 4-legged Animal
+A 1
+$ Bird
+A 1
+$ Fish
+A 1
+$ Plant
+A 1
+$ Unknown
+.
+edit_attr (0)
+argv -> attr, val, arg;
+
+attr=="body" ? get_body(arg)!
+attr=="size" ? get_size(arg)!
+arg[0]=="$" ? arg substring(1)!
+arg[0]=="#" ? arg substring(1) integer() !
+~~arg ? $error.varnf!
+
+textate("
+Unreconzied attribute must start with '$' for strings and '#' for numbers.
+Use -no value- to delete an attribute.");
+
+arg!
+
+body_to_str (0)
+str="";
+[ p; argv[0]] {
+	i= p @# .body;
+	str ? str+=",";
+	i @ $integer ? str+=.body_info[i][0]; , str+=p+"(?)";
+	}
+str!
+
+get_domain (0)
+
+get_body (0)
+argv -> arg;
+~~arg ? { textate("
+Common names used for bodies are: 
+	human		- human form
+	animal		- four legged animal like
+	?		- unkown form
+
+You can use also parts of bodies:
+	t_h	- head
+	t_n	- neck
+	h	- hand
+	t_c	- chest
+	h_r	- right hand
+	h_b	- both hands ( or two handed )
+
+Example: human,t_t,h	- human form with tail and a 3rd hand
+
+Body?: \\c");
+		body=input(); }
+, { body=arg; }
+body=body split(",");
+expand_body(body) ? body!
+textate("Couldn't figure out that body form.\n\n");
+$error.varnf!
+
+get_size (0)
+argv -> arg;
+~~arg ? { textate("
+[T]iny		- fly, insect, spider, etc
+[S]mall 	- rodent, plants, fish
+[M]edium	- halfing, dwarf, dolphin, orc, goblin
+[N]ormal	- normal human size
+[L]arge		- troll, bugbear, dragon
+[H]uge		- hill giant, mech, tree
+
+Which? \\c");
+	size= input()[0] lowercase() ;
+	}
+, { size=arg; arg=0; }
+size @# {"t","s","m","n","l","h"} ? size!
+$error.varnf!
+
+editnpc (0)
+~~argv ? !
+argv -> npc;
+npc -> level, code, name, attrs;
+
+
+st="end";
+[1] {
+	textate("
+[N]ame: ",name,"
+[C]ode: ",code,"
+[L]evel: ",level,"
+Attributes:");
+[ a; attrs] { 
+	a -> attr, val;
+	textate("[",attr,"]: \\c");
+	attr=="body" ?
+		textate(body_to_str(val));
+	,	textate(ascii(val)); 
+	}
+textate(
+"[A]dd Attribute
+E[X]it
+");
+	textate("\nChange: \\c");
+	st=$util ltrim(input());
+	i = st index( "=" ) ) ?
+		{
+		arg	= st substring(i+1) ;
+		st	= st substring(0,i) ;
+		saweq	= 1 ;
+		}
+	,	{ arg=""; saweq=0; }
+	st=="x" ? 0!
+	st=="n" ? { ~~arg ? { textate("Name: \\c"); arg=input(); }
+		name=arg;
+		}
+	, st=="c" ? { ~~arg ? { textate("Code: \\c"); arg=input(); }
+		~~arg ? arg=0;
+		code=arg;
+		}
+	, st=="l" ? { ~~arg ? { textate("Level: \\c"); arg=input(); }
+		level= arg integer() ;
+		}
+	, { i=0; l = attrs length();
+		[i<l] { 
+			st <> attrs[i][0] ? { i+=1; <; }
+			~~saweq ? { textate("Value: \\c"); arg=input(); }
+			arg=edit_attr(+attrs[i],arg);
+			arg==$error.varnf ? pull(attrs,i);
+			, attrs[i][1]=arg;
+			.;
+			}
+		i==l ? {
+			~~saweq ? { textate("Value: \\c"); arg=input(); }
+			arg=edit_attr(st,$error.varnf,arg);
+			~~(arg==$error.varnf) ? pushr(attrs,{st,arg});
+			}
+		}
+	}
+
+expand_body (0)
+argv -> body;
+body @ $string ? body={body} ;
+parts={};
+[body] {
+	nbody={};
+	[ p; body] {
+		( i= p @# .body) @~ $integer ? 0!
+		ps=.body_info[i][1] ?
+			nbody={+nbody,+ps}; ,
+			pushr(parts,p);
+		}
+	body=nbody;
+	}
+parts!
+

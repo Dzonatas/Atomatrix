@@ -1,0 +1,45 @@
+o6 p2 c0 s269 l235 c0 w0 p0 v3
+name	(270,729)	$ Player Task
+aliases	(270,713)	?
+task	(6,27)	# 1
+.
+start (0)
+tasks(.task)==this ? {
+	textate("Player Task Scheduler already started.");
+	!
+	}
+.task=addtask(this,"scheduler");
+textate("Player Task Scheduler started.");
+
+stop (0)
+task(.task)==this ? {
+	kill(.task);
+	textate("Player Task Scheduler killed!");
+	!
+	}
+textate("Hasn't been started.");
+
+scheduler (0)
+[1]	{
+	t	= {} ;
+	now	= $crtl time() ;
+	[ o ; enumerateAvatars() ]
+		{
+		o.task_wait== -1 ?
+			< ;
+		tasks( o.task )==o || o.task_wait > now ?
+			< ;
+		pushr(t,o) ;
+		}
+	~~t	?
+		{
+		$program sleep(1);
+		< ;
+		}
+	[ o ; t ]
+		{
+		o.task_wait = -1 ;
+		o.task = addtask( o , "task" ) ;
+		}
+	}
+

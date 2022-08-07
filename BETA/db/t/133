@@ -1,0 +1,26 @@
+o17 p129 c277 s132 l129 c0 w135 p0 v7
+name	(73,73)	$ KNIFE
+desc	(73,73)	?
+damage	(73,73)	$ d4
+type	(73,73)	$ knife
+hitstr	(73,73)	$ cut
+ohitstr	(73,73)	$ cuts
+types	(6,73)	A 5
+A 4
+$ pk
+$ bk
+$ sb
+$ dg
+A 2
+$ plastic knife
+$ d2
+A 2
+$ butter knife
+$ d3
+A 2
+$ steel blade
+$ d4
+A 2
+$ dagger
+$ d5
+.

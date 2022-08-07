@@ -1,0 +1,24 @@
+o6 p4 c0 s8 l0 c218 w0 p0 v5
+name	(14,877)	$ Play Rooms
+desc	(14,877)	$ Secret rooms can be found in here.
+
+_up_ok_msg	(17,73)	$ You climb up a ladder.
+_up_ok_omsg	(17,73)	$ %W climbs up the ladder.
+exits	(4,219)	A 4
+A 6
+# 6
+# 5
+# 4
+# 3
+# 2
+# 1
+A 6
+M 15
+M 69
+M 64
+M 18
+M 7
+M 58
+A 0
+A 0
+.

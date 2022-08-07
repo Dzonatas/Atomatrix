@@ -1,0 +1,107 @@
+o6 p100 c0 s0 l478 c0 w100 p0 v9
+name	(6,219)	$ sfnews
+verbs	(20,0)	A 1
+A 7
+$ rss
+# -1
+# -1
+# -1
+# 171
+$ process
+A 1
+# -102
+wnd	(6,27)	# 0
+position	(6,27)	?
+exposition	(6,27)	?
+mc	(6,27)	?
+mx	(6,27)	?
+my	(6,27)	?
+sync	(6,27)	?
+.
+process (0)
+$atomatrix addTask( program( "task" ) ) ;
+
+task (0)
+.wnd	= $wnd construct() ;
+//.position @~ $undefined ?
+	.wnd position( .position ) ;
+.wnd show() ;
+.wnd focus() ;
+.wnd front() ;
+.wnd update() ;
+.wnd setTitle( "news" ) ;
+//.input	= { } ;
+//.sync set() ;
+$atomatrix addTask( program( "read" ) ) ;
+.position = .wnd position() ;
+.exposition = .wnd position() ;
+$program inherit( .wnd ) ;
+.wnd	= 0 ;
+
+mSYSCOMMAND (0)
+m	= argv[0] ;
+( m.pparam & 65520 ) == m.SC_SIZE ?
+	{
+	.mx = m.x ;
+	.my = m.y ;
+	.mc = m.pparam - m.SC_SIZE ;
+	.exposition = .position ;
+	.wnd setCapture() ;
+	!
+	}
+( m.pparam & 65520 ) == m.SC_CLOSE ?
+	{
+	mCLOSE( m ) ;
+	!
+	}
+
+read (0)
+f = $wnd font( 24 , 0 , 0 , 0 , $wnd.FW_NORMAL , 0 , 0 , 0 ,
+	$wnd.DEFAULT_CHARSET , $wnd.OUT_DEFAULT_PRECIS , $wnd.CLIP_DEFAULT_PRECIS ,
+	$wnd.DEFAULT_QUALITY , $wnd.DEFAULT_PITCH | $wnd.FF_DONTCARE ,
+	"Arial"
+	) ;
+.wnd select( f ) ;
+.wnd textOut( 10, 10 , "..." ) ;
+.wnd update() ;
+.wnd erase() ;
+
+n = $url get("http://sourceforge.net/export/rss2_projnews.php?group_id=40636") ;
+
+//n = $module serialed( 6 ) .xmltest ;
+
+xml = $module serialed( 215 ) ;
+
+m = xml translate( n ) ;
+
+x = 0 ;
+xtab = .wnd getTextMetrics() ;
+xtab = xtab.Height ;
+
+
+[ a ; m.set ] a @ $module ? a.identifier == "rss" ?
+ [ b ; a.set ] b @ $module ? b.identifier == "channel" ?
+  [ c ; b.set ] c @ $module ?
+	c.identifier == "title" ?
+		.wnd setTitle( c.set join("") ) ;
+	, c.identifier == "item" ?
+		{
+		title = "" ;
+		pubDate = "" ;
+		[ d ; c.set ] d @ $module ?
+			d.identifier == "title" ?
+				title = d.set[0] ;
+			, d.identifier == "pubDate" ?
+				pubDate = d.set[0] ;
+		.wnd textOut( 10 , x , pubDate + "  " + title ) ;
+		x += xtab ;
+		}
+
+.wnd update() ;
+construct (0)
+m = precessant() construct() atomize() ;
+p = { "mSYSCOMMAND" , "process" , "read" , "task" } ;
+[ a ; p ] m addProgram( a ) source( program( a ) source() ) ;
+v = { "exposition" , "mc" , "mx" , "my" , "position" , "sync" , "verbs" , "wnd" } ;
+[ a ; v ] m addVariant( a ) security( "a+rw" ) ;
+m !

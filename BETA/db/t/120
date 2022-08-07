@@ -1,0 +1,16 @@
+o17 p74 c0 s115 l74 c0 w122 p0 v5
+name	(120,73)	$ ARMOUR-LEGS
+desc	(120,73)	$ A new set of leather armbands.
+worn	(6,73)	$ bl
+types	(6,73)	A 3
+A 2
+$ ls
+$ kp
+A 2
+$ leather shin gaurd
+$ +1
+A 2
+$ knee pads
+$ +1
+type	(6,73)	$ legs
+.

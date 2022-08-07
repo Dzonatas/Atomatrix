@@ -1,0 +1,15 @@
+o6 p261 c0 s264 l261 c0 w0 p0 v13
+name	(72,219)	$ black wolf
+task	(72,219)	# 5
+doing	(72,219)	# 0
+wait_time	(72,219)	# 932274242
+status	(72,219)	?
+hp	(75,219)	# 15
+mhp	(75,219)	# 15
+attacking	(75,219)	?
+armour	(75,219)	?
+ready_weapon	(75,219)	# 214
+dexterity	(261,27)	# 80
+desc	(261,27)	$ The angry wolf growls at you.
+home	(261,27)	# 228
+.

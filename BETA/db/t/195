@@ -1,0 +1,12 @@
+o17 p4 c0 s194 l0 c0 w0 p0 v3
+name	(195,877)	$ Oak room
+desc	(195,877)	$ Someone seems to live here.  You see a small bed, a table, and a candle.
+The exit is north.
+exits	(4,219)	A 4
+A 1
+# 1
+A 1
+M 194
+A 0
+A 0
+.

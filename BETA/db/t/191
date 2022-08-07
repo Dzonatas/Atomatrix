@@ -1,0 +1,110 @@
+o17 p10 c0 s111 l85 c0 w75 p0 v10
+name	(191,877)	$ Weather_Task
+aliases	(191,877)	$ weather*
+desc	(191,877)	$ This is the weather task.  It controls time of day and weather conditions.
+scheduler	(17,73)	# 3
+wait_time	(17,73)	# 754388856
+vr_time	(17,73)	A 2
+# 9
+# 41
+vr_day	(17,73)	A 5
+# 1
+# 0
+# 0
+# 0
+# 0
+barometer	(17,73)	A 2
+# 2967
+# -4
+condition	(17,73)	$ cloudy
+severity	(17,73)	# -83
+.
+weather_report (0)
+doreport=argv[0];
+~~doreport ? !
+	
+
+
+scheduler (0)
+[1] {
+	$program sleep(10);
+	$crtl time() < .wait_time ? <;
+	.wait_time= $crtl time()+60; /* every minute */
+	clock();
+	weather();
+	}
+
+start (0)
+tasks(.scheduler)==this ? {
+        textate($util name(this)," already started.");
+        !
+        }
+.scheduler=addtask(this,"scheduler");
+textate($util name(this)," started!  (",.scheduler,")");
+
+
+stop (0)
+tasks(.scheduler)==this ? {
+        textate("Shutting down ",.name);
+        kill(.scheduler);
+        }
+, textate(.name," wasn't started!");
+
+
+clock (0)
+vr_time=.vr_time;
+vr_day=.vr_day;
+vr_time -> hour, minute;
+vr_day  -> month, day, year, century, millenium;
+ 
+minute += 1;
+minute>59 ?
+	{
+	hour += 1; minute=0;
+	xstr="chime"; hour>1 ? xstr="chiming";
+	str="You hear a distant "+xstr+".";
+	[ pobj ; enumerateAvatars() ]
+		pobj tell(str) ;
+	}
+hour   => 10 ? { day += 1; hour=0; }
+day    => 7  ? { month +=1; day=0; }
+month   > 10 ? { year +=1; month=1; }
+year    > 99 ? { century += 1; year=0; }
+century > 99 ? { millenium += 1; century=0; }
+ 
+.vr_time=vr_time;
+.vr_day=vr_day;
+
+
+weather (0)
+median=3050;
+bar=.barometer[0];
+dir=.barometer[1];
+limits_n = { 2850, 		2950, 	3050, 	3150,	3250 };
+limits_d = { "stormy", "cloudy", "fair", "dry", "very dry" };
+bar<limits_n[0] || bar>limits_n[limits_n length() - 1] ? {
+	bar=median; dir=0; .severity=0;
+	}
+/* "harshness" variables: */
+dice_n = 3;	/* bigger = less vacilation */
+dice_s = 6;
+odds=$util roll(dice_n,dice_s,0);
+limit_upper=(dice_n-1)*dice_s;
+limit_lower=dice_s;
+odds> limit_upper ? dir += odds-limit_upper;
+odds< limit_lower ? dir -= odds;
+bar += dir;
+
+index=(bar-limits_n[0])/100;
+cond=limits_d[index];
+.severity = bar - median;
+change=1;
+.condition==cond ? { change=0; }
+change ? .condition=cond;
+.barometer={ bar, dir };
+
+/*17 tell("\t\tbarometer ",bar,"  ",dir,"  = ",cond,"/", .severity,
+		"\tdieroll=",odds);*/
+
+weather_report(change);
+

@@ -1,0 +1,14 @@
+o17 p4 c0 s188 l0 c264 w0 p0 v3
+name	(180,877)	$ Dirt trail
+desc	(180,877)	$ This dirt trail continues to the south where it leads into a forest.
+exits	(4,219)	A 5
+A 2
+# 2
+# 1
+A 2
+M 192
+M 187
+A 0
+A 0
+A 0
+.

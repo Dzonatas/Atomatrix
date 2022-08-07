@@ -1,0 +1,1091 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta content="Microsoft Visual Studio.NET 7.0" name="GENERATOR">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	</head>
+	<body text="#8abef5" vLink="#8abef5" aLink="#8abef5" link="#aadef5" bgColor="#3a4e95">
+		<H1 align="center">Alchematrix</H1>
+		<H2 align="left">0.1.0.10</H2>
+		<UL>
+			<LI>
+				<DIV align="left">
+					<DIV style="MARGIN-RIGHT: 0px" align="left">Run-Time Code Libraries</DIV>
+				</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">
+							<DIV style="MARGIN-RIGHT: 0px" align="left">integer [ merged into oss ]</DIV>
+						</DIV>
+					<LI>
+						<DIV align="left">
+							<DIV style="MARGIN-RIGHT: 0px" align="left">array [ merged into oss ]</DIV>
+						</DIV>
+					<LI>
+						<DIV align="left">
+							<DIV style="MARGIN-RIGHT: 0px" align="left">object</DIV>
+						</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">removed ReadObjVar.c</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">added aModuleXML as placeholder for modules 
+										that are in the XML repository and not active in memory</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">added aModuleXML_element 
+										and&nbsp;aModuleXML_attribute for&nbsp;the XML module content</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">added aModuleXML_serialString for the XML 
+										filename or likewise serial identifier</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">added aModuleXML_atomorhpize() to load the 
+										XML module and intratomize it to an aModuleAlpha</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">updated MOBJ() to use 
+										aModuleXML_atomorphize()</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">updated o_atomize() to use 
+										aModuleXML_atomize() with a unicode parameter</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">updated many procedures to handle 
+										aModuleXML to load on demand&nbsp;like aModuleSerinteger</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">updated aModuleAlpha to use aXML</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">updated o_save() to process aModuleAlpha</DIV>
+								</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">
+							<DIV style="MARGIN-RIGHT: 0px" align="left">oss</DIV>
+						</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">added aAtomatrical.c: contains 
+										aAtomatrical_{preconstructent,destruct_a,constructent,destructor} to handle 
+										simple atomatric references</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">added aXML.c: XML translations</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">updated aChronogram, aAsciiString, 
+										aAsciiCharacter, aUnicodedString, and aUnicodedEntity&nbsp;to translate XML</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">updated hierarchy structures for aUnicode 
+										and its intratoms</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">updated *_preconstructent() procedures to 
+										*_pregeneration() procedures</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">added aInteger.c [ from merged integer code 
+										library&nbsp;]</DIV>
+								</DIV>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">added aVarray.c, aVarrayReferent.c, and 
+										aArray.c [ from merged array code library ]</DIV>
+								</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV style="MARGIN-RIGHT: 0px" align="left">Atomatrix Modules</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">
+							<DIV style="MARGIN-RIGHT: 0px" align="left">Alchematrix(#275) [added]</DIV>
+						</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">
+									<DIV style="MARGIN-RIGHT: 0px" align="left">added source() to initialize the&nbsp;XML 
+										repository</DIV>
+								</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.9</H2>
+		<UL dir="ltr">
+			<LI>
+				<DIV style="MARGIN-RIGHT: 0px" align="left">Run-Time Code Libraries</DIV>
+				<UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">aVarray</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated all procedures for aUnicode</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">error</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated all procedures for aUnicode</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">integer</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated all procedures for aUnicode</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">URL</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated all procedures for aUnicode</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">machine</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">moved o_attach to oss as 
+									aAtomatrix$attach()</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated all procedures&nbsp;for aUnicode, 
+									tagged where to apply more extensive updates
+								</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">object</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated all procedures&nbsp;for aUnicode, 
+									tagged where to apply more extensive updates</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated SaveVar() and ReadVar() to handle 
+									aAsciiCharacter, aUnicodedString, aUnicodedEntity, and aChronogram</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">oss</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated aAsciiCharacter_pAdd() to correctly 
+									handle the expression:&nbsp;$unicode entity( 65 ) + $unicode entity( 65533 )</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated aUnicodedString_canoncalize() to 
+									optimize dynamic allocation</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated procedure names, like 
+									aUnicodedString__canonicalize() to aUnicodedString$canonicalize()</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated aAsciiStringIterum_pIterate() to 
+									use [return]&nbsp;aAsciiCharacter instead of aAsciiString</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aUnicodedString_decanonicalize() and 
+									aUnicodedString$decanonicalize()</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated aUnicode$string() to return 
+									aUnicodeString or aUnicodeEntity types</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated aUnicodedEntity_pAdd() to correctly 
+									handle the expression:&nbsp;$unicode entity( 65533 ) + "- "</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated aUnicode__* procedures names to 
+									aUnicode$* names</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aChronograph and aChronogram with 
+									constructors and destructors</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aChronograph$presentime() to return a 
+									chronogram of present universal time</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aChronogram$simplify() to convert the 
+									chronogram to an array with local time details</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aChronogram_atomize_utc() to convert 
+									utc numbers to a chronogram</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aChronogram$unicode() to convert raw 
+									chronogram to unicode: planetarySymbol+year<SUB>36</SUB>:day<SUB>36</SUB>:milliseconds<SUB>36</SUB></DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">variable</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated preconstructor() to&nbsp;put 
+									addAtom()&nbsp;on aVariable</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV style="MARGIN-RIGHT: 0px" align="left">Atomatrix Modules</DIV>
+				<UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">Something(#1)</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated unicode() and _unicode() to 
+									translate ascii to unicode</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated textate() to use unicode instead of 
+									ascii</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">cli(#213)</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated reformat(), task(), backspace(), 
+									output(), wnd(),&nbsp;and cli(), to handle unicode output</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">timepiece(#271)</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added _lookat() and _name() to display the 
+									cronogram of the present time&nbsp;and its translation to universal time</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV style="MARGIN-RIGHT: 0px" align="left">Build version equals "20031229.4"</DIV>
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.8</H2>
+		<UL dir="ltr">
+			<LI>
+				<DIV style="MARGIN-RIGHT: 0px" align="left">Run-Time Code Libraries</DIV>
+				<UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">string : moved aString&nbsp;modules to 
+							library "oss" ; removed library "string"&nbsp;&nbsp; (for optimization and 
+							primitive dependencies, see aUnicode intratoms)</DIV>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">oss</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">increased&nbsp;pregeneration 
+									size&nbsp;from&nbsp;one megabyte to&nbsp;two megabytes</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">removed aString modules</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aAsciiString module [ from updated 
+									aString modules ]&nbsp;[ temporarily aliased aString ]</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aAsciiCharacter module</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aUnicodeEntity module&nbsp;</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aUnicodeString module</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aUnicode module</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">programmed aUnicode as the radical to 
+									aAsciiString, aAsciiCharacter, aUnicodeEntity, and aUnicodeString</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">programmed inratomicals&nbsp;from aUnicode 
+									to work extensibly to each other (such as unicode 'a' equals ascii 'a')</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">aUnicode extensibility&nbsp;could 
+									use&nbsp;further optimization as only a few common routines do the conversions 
+									(yet much is optimized, already)</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">aAsciiString</DIV>
+								<UL>
+									<LI>
+										<DIV style="MARGIN-RIGHT: 0px" align="left">added 
+											aAsciiString_p{GreaterThan,LessThan,GreaterOrEqual,LessOrEqual} procedures</DIV>
+									</LI>
+								</UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">aAsciiCharacter</DIV>
+								<UL>
+									<LI>
+										<DIV style="MARGIN-RIGHT: 0px" align="left">added 
+											aAsciiCharacter_p{GreaterThan,LessThan,GreaterOrEqual,LessOrEqual} procedures</DIV>
+									<LI>
+										<DIV style="MARGIN-RIGHT: 0px" align="left">added 
+											aAsciiCharacter__{integer,uppercase,lowercase,index,endex,join,length,split,replace,substring} 
+											procedures</DIV>
+									</LI>
+								</UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">aUnicodedEntity</DIV>
+								<UL>
+									<LI>
+										<DIV style="MARGIN-RIGHT: 0px" align="left">
+											<DIV style="MARGIN-RIGHT: 0px" align="left">added 
+												aUnicodedEntity_p{GreaterThan,LessThan,GreaterOrEqual,LessOrEqual} procedures</DIV>
+										</DIV>
+									<LI>
+										<DIV style="MARGIN-RIGHT: 0px" align="left">added&nbsp; 
+											aUnicodedEntity__{integer,uppercase,lowercase,index,endex,join,length,split,replace,substring} 
+											procedures</DIV>
+									</LI>
+								</UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">aUnicodedString</DIV>
+								<UL>
+									<LI>
+										<DIV style="MARGIN-RIGHT: 0px" align="left">added 
+											aUnicodedString_p{GreaterThan,LessThan,GreaterOrEqual,LessOrEqual} procedures</DIV>
+									<LI>
+										<DIV style="MARGIN-RIGHT: 0px" align="left">added 
+											aUnicodedString__{integer,uppercase,lowercase,index,endex,join,length,split,replace,substring} 
+											procedures</DIV>
+									</LI>
+								</UL>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">wnd</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">textOut(), getCharWidth(), 
+									getTextExtentPoint()&nbsp;&nbsp;-&nbsp; works&nbsp;with aUnicode intratoms 
+									(ascii&nbsp;| unicode, strings | characters)</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">aWND_getMessage() - uses 
+									aAsciiString_atomize() instead of oString()</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">aWND_queue :&nbsp;updated deallocation 
+									procedure, corrected&nbsp;byte movement, removed debug code,&nbsp;and optimized</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">machine</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated opLT(), opLE(), opGT(), and opGE() 
+									to invoke modular procedures</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated parseBuffer() to 
+									deallocate&nbsp;Exec-&gt;linep&nbsp;on compilation error (was experimental 
+									run-time debugger)</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added e_number() to&nbsp;enumerate similar 
+									aInteger atoms on&nbsp;an executant</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated doParse() to allusion tokens</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added C_STACK</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">removed opPUSH_OBJ(), opPUSH_NUM(), 
+									opPUSH_STR(), C_PUSH_NUM, C_PUSH_OBJ, C_PUSH_STR (replaced by C_STACK)</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">removed Code_Obj_Func()</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">removed second compilation phase; 
+									implemented tokenizer and atomic stack</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">optimized parser state switches</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">removed err_s() [it sent parser error 
+									text&nbsp;directly to the&nbsp;console]</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated doParse() to return token stack 
+									or&nbsp;error&nbsp;data with stack</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated Execute(), Inherit(), and 
+									Evaluate() to allusions executables, which keeps them compiled in memory [as 
+									earlier versions did]</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">integer</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added 
+									integer_oprand{GreaterThan,LessThan,GreaterOrEqual,LessOrEqual} procedures</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">gdna</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added unicode options to vaious procedures 
+									such that&nbsp;any passed aUnicodedString is automatically canonicalized to 
+									aAsciiString</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">error</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added aError_atomize_a() procedure</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">vreality</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated aVReality_edit()&nbsp;to use 
+									unicode</DIV>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">updated aVRreality_repository() to use 
+									unicode with automatic canonicalization</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV style="MARGIN-RIGHT: 0px" align="left">ATOMATRIX Modules</DIV>
+				<UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">Something(#1)</DIV>
+						<UL>
+							<LI>
+								<DIV style="MARGIN-RIGHT: 0px" align="left">added unicode(),&nbsp;_unicode(), and 
+									_unicode_array() as similar to ascii(), _ascii(), and _ascii_array()</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV style="MARGIN-RIGHT: 0px" align="left">Build version equals "20031222.4"</DIV>
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.7</H2>
+		<UL>
+			<LI>
+				<DIV align="left">Run-Time Code Libraries</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">vReality</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">added temporary functions to support XML canonical characterization : 
+									$vreality canonicalize(), $vreality decanonicalize()</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">machine</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">Remove_Program() :&nbsp;destructs executable structures with no 
+									allusions (removes&nbsp;previous algorhtym to buffer compiled programs)</DIV>
+							<LI>
+								<DIV align="left">executable_destructor() : interatomizes aString structures off 
+									executeable structure if more than one allusion exists</DIV>
+							<LI>
+								<DIV align="left">removed Pull()</DIV>
+							<LI>
+								<DIV align="left">opSPLIT(), opPUSHL(), opPUSHR(), opPULL(), opPOPL(), opPOPR() : 
+									updated to&nbsp;invoke modular procedures</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">gdna</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">aGDNA_GetNodeIP() : updated to convert addresses</DIV>
+							<LI>
+								<DIV align="left">updated _bstr_t initializations</DIV>
+							<LI>
+								<DIV align="left">sets RunPath</DIV>
+							<LI>
+								<DIV align="left">added getNodeState(), getNodeHandshake(),&nbsp; removeNode(), 
+									addWebCache()
+								</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">array</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">updated the aVarray push, pop, and pull&nbsp;procedures to reindex 
+									aVarrayReferent</DIV>
+							<LI>
+								<DIV align="left">moved aVarray_* procedures to aVarray.c</DIV>
+							<LI>
+								<DIV align="left">aVarrayReferent_* procedures updated to return aUndefined if not in 
+									aVarray orbit</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">object</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">moved sobjvar_* procedures to aSObjVar.c</DIV>
+							<LI>
+								<DIV align="left">added sobjvar_oprand{PushLeft,PopLeft,Pull,PopRight,PushRight} 
+									procedures</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV align="left">ATOMATRIX Modules</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">cli(#213)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">output() :&nbsp;updated&nbsp;simple text wrap</DIV>
+							<LI>
+								<DIV align="left">eadded notify() : implemented word wrap bound by wnd size</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">avatarigen(#2)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">notify() : passes text to cli(#213) notify()</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">wndgen(#260) : created, constructs output window modules with basic 
+							text display functions</DIV>
+					<LI>
+						<DIV align="left">network(#92)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">updated to use wndgen(#260)</DIV>
+							<LI>
+								<DIV align="left">updated webcache procedures : network(), buildurl(), connect(), 
+									webcache()</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV align="left">Installation Package</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">GnucDNA is at SourceForge.NET,&nbsp;<A href="http://gnucleus.sourceforge.net/GnucDNA/download/download.html">GnucDNA 
+								download</A></DIV>
+					</LI>
+				</UL>
+			<LI>
+				<DIV align="left">Build version equals "20030622.20"</DIV>
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.6</H2>
+		<UL>
+			<LI>
+				<DIV align="left">ATOMATRIX Modules</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">xml(#215)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">translates XML&nbsp;data, in ASCII format,&nbsp;to/from 
+									modular&nbsp;XML content : xml translate()&nbsp;</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV align="left">Run-Time Code Libraries</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">error</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">included&nbsp;aError_aUndefined to differentiate the undefined 
+									logical and the undefined illogical events</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">vReality</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">included simple repository procedures to index, read, and write files 
+									to ".../ATOMATRIX/db/m"&nbsp;: $vreality repository()</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">object</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">$module addVariant() and $module addProgram() only accepts 
+									ASCII[33..126]&nbsp; (GraphicASCII)</DIV>
+							<LI>
+								<DIV align="left">autodestructs non serialed modules when no allusionments exist even 
+									if they are set within a hierarchy structure</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">oss</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">updated the task sequence</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">machine</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">moved run-time source code placeholders into production</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV align="left">Build version equals "20030604.1"</DIV>
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.5</H2>
+		<UL dir="ltr">
+			<DIV style="MARGIN-RIGHT: 0px" align="left">
+				<LI>
+					<DIV style="MARGIN-RIGHT: 0px" align="left">Data Structures</DIV>
+					<UL>
+						<LI>
+							<DIV style="MARGIN-RIGHT: 0px" align="left">_var</DIV>
+							<UL>
+								<LI>
+									<DIV style="MARGIN-RIGHT: 0px" align="left">eliminated; increased overall performance 
+										by elimination</DIV>
+								</LI>
+							</UL>
+						</LI>
+					</UL>
+				<LI>
+					Run-Time Code Libraries</LI></DIV>
+			<UL>
+				<LI>
+					<DIV style="MARGIN-RIGHT: 0px" align="left">overall&nbsp;source code cleanup</DIV>
+					<UL>
+						<LI>
+							<DIV style="MARGIN-RIGHT: 0px" align="left">eliminated unused functions</DIV>
+						<LI>
+							<DIV style="MARGIN-RIGHT: 0px" align="left">optimized some flow loops</DIV>
+						<LI>
+							<DIV style="MARGIN-RIGHT: 0px" align="left">removed _var references</DIV>
+						<LI>
+							<DIV style="MARGIN-RIGHT: 0px" align="left">modified parameters&nbsp;for method calls 
+								from 5 to 3; sframe_datum() and sframe_return() handle the additional status 
+								information that was passed</DIV>
+						</LI>
+					</UL>
+				<LI>
+					<DIV style="MARGIN-RIGHT: 0px" align="left">included static link run-time libraries 
+						instead of dynamc link-libraries; installation into older versions of windows 
+						should not&nbsp;result with&nbsp;a message like "Could not find a required DLL"</DIV>
+				<LI>
+					<DIV style="MARGIN-RIGHT: 0px" align="left">object</DIV>
+					<UL>
+						<LI>
+							<DIV style="MARGIN-RIGHT: 0px" align="left">matches&nbsp;serialization 
+								dependency&nbsp;of two modules for:</DIV>
+							<UL>
+								<LI>
+									<DIV style="MARGIN-RIGHT: 0px" align="left">$module reintermodulize()</DIV>
+								<LI>
+									<DIV style="MARGIN-RIGHT: 0px" align="left">$module reprecessize()</DIV>
+								</LI>
+							</UL>
+						</LI>
+					</UL>
+				</LI>
+			</UL>
+			<LI>
+				<DIV style="MARGIN-RIGHT: 0px" align="left">Alchematrix.exe</DIV>
+				<UL>
+					<LI>
+						menu shortcut reset to run Alchematrix.exe instead of winmain.exe
+					</LI>
+				</UL>
+			<LI>
+				Alchematrix Modules
+				<UL>
+					<LI>
+						implementation: [of repository]
+						<UL>
+							<LI>
+								expect version 0.1.0.6 to create the directory, to install the "root" modules, 
+								and to process simple XML&nbsp;data (0.1.0.5 is released early to resolve DLL 
+								issue)</LI></UL>
+					</LI>
+				</UL>
+			<LI>
+				Build version equals "20030407"
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.4</H2>
+		<UL>
+			<LI>
+				<DIV align="left"><FONT size="3">
+						<DIV align="left">Data Structures</DIV>
+					</FONT>
+				</DIV>
+				<UL>
+					<LI>
+						<DIV align="left"><FONT size="3">
+								<DIV align="left">_sframe</DIV>
+							</FONT>
+						</DIV>
+						<UL>
+							<LI>
+								<DIV align="left"><FONT size="3">
+										<DIV align="left">references modules by _atom instead of serial number&nbsp; (element 
+											"this" became "scope", "pobj" became "from" ); affected <EM>machine</EM> and <EM>object</EM>
+											libraries which were updated; overall performance enhanced</DIV>
+									</FONT>
+								</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left"><FONT size="3">
+								<DIV align="left">_objvar</DIV>
+							</FONT>
+						</DIV>
+						<UL>
+							<LI>
+								<DIV align="left"><FONT size="3">
+										<DIV align="left">references principals by _atom instead of serial number (element 
+											"owner" became "principal", eliminated element "oo")</DIV>
+									</FONT>
+								</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<FONT size="3">
+					<DIV align="left">Run-Time Code Libraries</DIV>
+				</FONT>
+				<UL>
+					<LI>
+						<DIV align="left">object</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">references modules by _atom instead of serial numbers for modular 
+									principality</DIV>
+							<LI>
+								<DIV align="left">fixed error with passed parameter for $program inherit()</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">machine</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">eliminated the module serial number dependencies; allows for modular 
+									programs&nbsp;other than those defined in the&nbsp;main serialed database</DIV>
+							<LI>
+								<DIV align="left">implemented serialess module ability (&nbsp;example: Alchematrix 
+									specific modules&nbsp;are now detachable from the&nbsp;ATOMATRIX&nbsp;modules )</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">wnd</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">improved message sequencer</DIV>
+								<UL>
+									<LI>
+										<DIV align="left">avoids wait state&nbsp;with aWND_getMessage() if possible</DIV>
+									<LI>
+										<DIV align="left">implemented exclusive critical data manipulation procedure</DIV>
+									</LI>
+								</UL>
+							<LI>
+								<DIV align="left">forwards more messages</DIV>
+								<UL>
+									<LI>
+										<DIV align="left">WM_CLOSE</DIV>
+									<LI>
+										<DIV align="left">WM_SYSCOMMAND</DIV>
+									<LI>
+										<DIV align="left">WM_CAPTURECHANGED</DIV>
+									</LI>
+								</UL>
+							<LI>
+								<DIV align="left">added aWND_QUEUE, a simplified data queue structure that easily 
+									handles multitasking syncronization</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV align="left">ATOMATRIX Modules</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">wnd(#100)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">analysis: basis construct of cybernetic input &amp; output with 
+									Microsoft Windows graphic interface deteremined practical</DIV>
+							<LI>
+								<DIV align="left">design: modular abstraction for definitions of generic 
+									components&nbsp;and specific implementations</DIV>
+							<LI>
+								<DIV align="left">implementation: previous implementation immediately abstracted to 
+									#171 and #213, expect further abstraction for a robust aspect</DIV>
+							<LI>
+								<DIV align="left">maintenance: normal</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">sfnew(#171)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">graphic interface composite to report RSS data from SourceForge.NET</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">cli(#213)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">cybernetic command matrix interface composite</DIV>
+							<LI>
+								<DIV align="left">limited as a command line interface until completion of lower-level 
+									code&nbsp;dependencies</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">Battle Objects(#73)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">updated make()&nbsp;to handle serialess modules</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV align="left">Alchematrix Modules</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">plan: create and use a&nbsp;repository&nbsp;of modules within the 
+							local filesystem&nbsp;of the Alchematrix installation</DIV>
+					<LI>
+						<DIV align="left">analysis:</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">we need modular data that is not&nbsp;serialized into one central 
+									database</DIV>
+							<LI>
+								<DIV align="left">maintenance&nbsp;to ATOMATRIX modules should not overwrite&nbsp;local 
+									site instances of modular data (hence: upgrades reverted customization)</DIV>
+							<LI>
+								<DIV align="left">enable seperate installation procedure for application specifc 
+									modules (hence:&nbsp;the ATOMATRIX bundle included all available application 
+									baggage)</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">design:</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">create and use use directory "modules" (example: "\Program 
+									Files\Alchematrix\modules")</DIV>
+							<LI>
+								<DIV align="left">format&nbsp;modular data into files&nbsp;with the eXtensive Markup 
+									Language&nbsp;standard and&nbsp;with ".xml" after the filename</DIV>
+							<LI>
+								<DIV align="left">module filenames are either serializable or indexable</DIV>
+							<LI>
+								<DIV align="left">if the centralProgramUnit(#452) detects Alchematrix, process the 
+									"root" modules of the repository</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">implementation:</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">version 0.1.0.4 includes low-level data structures and procedures to 
+									process the new modular data</DIV>
+							<LI>
+								<DIV align="left">expect version 0.1.0.5 to create the directory, to install the "root" 
+									modules, and to process simple XML&nbsp;data</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV align="left">Installation Package</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">removed GnucDNA.dll from the installation package; we presume 
+							individuals are able to&nbsp;retrieve it, at&nbsp;<A href="http://www.gnucleus.net/GnucDNA/download/download.html">www.gnucleus.net 
+								GnucDNA download</A>, until a module is made to automate the process</DIV>
+					</LI>
+				</UL>
+			<LI>
+				<DIV align="left">Build version equals "20030405.6"</DIV>
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.3</H2>
+		<UL dir="ltr">
+			<LI>
+				<DIV align="left">optimizations enhanced on compiled release</DIV>
+			<LI>
+				<DIV align="left">Run-Time Code Libraries</DIV>
+				<UL>
+					<LI>
+						<DIV align="left">oss</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">improved multitasking performance with a dynamic thread pool for 
+									asynchronus multitasking</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">wnd</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">detects errors after&nbsp;DestroyWindow()</DIV>
+							<LI>
+								<DIV align="left">improved "wnd" message sequencer:</DIV>
+								<UL>
+									<LI>
+										<DIV align="left">multiple windows, single thread,</DIV>
+									<LI>
+									on-demand asynchronus queue (multithreading)
+									<LI>
+										forwards more messages
+										<UL>
+											<LI>
+											WM_WINDOWPOSCHANGED
+											<LI>
+											WM_CHAR
+											<LI>
+											WM_SETFOCUS
+											<LI>
+											WM_KILLFOCUS
+											<LI>
+											WM_DESTROY=&gt;WM_QUIT
+											<LI>
+												WM_FIRSTMOUSE to WM_LASTMOUSE</LI></UL>
+									</LI>
+								</UL>
+							<LI>
+								improved "event" waits with on-demand asychronus waits</LI></UL>
+					<LI>
+						string
+						<UL>
+							<LI>
+								added an iterum function to iterate each element of a string</LI></UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV style="MARGIN-RIGHT: 0px" align="left">Modules</DIV>
+				<UL>
+					<LI>
+						<DIV style="MARGIN-RIGHT: 0px" align="left">wnd(#100)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">plan: to implement a basis for many features of graphic windows</DIV>
+							<LI>
+								<DIV align="left">analysis: need construction of a Microsoft Windows graphic interface 
+									for cybernetic input and output flow</DIV>
+							<LI>
+								design:
+								<UL>
+									<LI>
+										<DIV align="left">ATOMATRIX DLL interface&nbsp;to Win32 functions, library "wnd"</DIV>
+									<LI>
+										<DIV align="left">module&nbsp;wnd(#100)&nbsp;tests the interface,</DIV>
+									</LI>
+								</UL>
+							<LI>
+								<DIV align="left">implementation: started with 0.1.0.2 as a basic command line 
+									interface, finish as a basic&nbsp;CLI model</DIV>
+							<LI>
+								<DIV align="left">maintenance: not critical in&nbsp;test model</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">Utilities(#56)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">pronoun_sub() modified to display either "a noun" or "the Noun" based 
+									on capitalization if no preference is set.</DIV>
+							<LI>
+								<DIV align="left">capitalize() updated</DIV>
+							</LI>
+						</UL>
+					<LI>
+						<DIV align="left">level two(#200)</DIV>
+						<UL>
+							<LI>
+								<DIV align="left">added to the release package, it was absent</DIV>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			<LI>
+				<DIV align="left">Build version equals "20030320"</DIV>
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.2</H2>
+		<UL>
+			<LI>
+				<DIV align="left">Improved multitasking performance.</DIV>
+			<LI>
+				<DIV align="left">Upgraded library "wnd" functionality.&nbsp; Library "wnd" 
+					incorporates Microsoft's windows, fonts, device context, bitmaps, and other 
+					related win32 functions.</DIV>
+			<LI>
+				<DIV align="left">Added module wnd(#100) to&nbsp;test new "wnd" functionality.&nbsp; 
+					Module wnd(#100) is the temporary basis for the planned command line interface.</DIV>
+			<LI>
+				<DIV align="left">Modified&nbsp;module avatarigen(#2)&nbsp;to redirect input and output 
+					to another module.</DIV>
+			<LI>
+				<DIV align="left">Removed previous command line interface.</DIV>
+			<LI>
+				<DIV align="left">Build version&nbsp;equals "20030309".</DIV>
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.1r</H2>
+		<UL>
+			<LI>
+				<DIV align="left">Compiled as a release version.</DIV>
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.1</H2>
+		<UL>
+			<LI>
+				<DIV align="left">Compiled as a debug version.</DIV>
+			<LI>
+				<DIV align="left">Updated code that&nbsp;allusions an array of variants. 
+					[aVarrayReferent]</DIV>
+			<LI>
+				<DIV align="left">Improved multitasking performance.</DIV>
+			</LI>
+		</UL>
+		<H2 align="left">0.1.0.0</H2>
+		<UL>
+			<LI>
+				<DIV align="left">Initial release of the Alchematrix package.</DIV>
+			</LI>
+		</UL>
+		<P>&nbsp;</P>
+	</body>
+</html>

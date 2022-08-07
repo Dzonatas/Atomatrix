@@ -1,0 +1,64 @@
+o6 p220 c0 s178 l37 c0 w0 p0 v9
+name	(60,877)	$ Robot
+aliases	(60,877)	$ bot|robot
+desc	(60,877)	$ Friggin-buggin-walkin-talkin-clunkin...
+task	(72,1023)	# 4
+verbs	(20,0)	A 2
+A 6
+$ start
+# 1
+# -1
+# -1
+# -1
+$ start
+A 6
+$ stop
+# 1
+# -1
+# -1
+# -1
+$ stop
+random_do	(6,73)	A 3
+A 2
+$ update
+# 100
+A 2
+$ wander
+# 15
+A 2
+$ action
+# 30
+wait_time	(72,219)	# 772696189
+ticks	(6,219)	# 21
+speech	(17,73)	A 10
+$ bunch of jibber jabber.
+$ why do you say that?
+$ what are you doing?
+$ what is your name?
+$ been there done did.
+$ he made me to annoy you!.
+$ why do you not go yet explore!
+$ what up dude?
+$ seen any flying cows lately?
+$ wow!
+.
+tell (0)
+caller == this ? !
+words	= ascii(+argv) ;
+~~( i = words index( " enters" ) ) ?
+	i = words index(" logged") ;
+i ?	{
+	$program sleep(5);
+	speak("Hi "+words[0..(i-1)]);
+	.wait_time=0;
+	start();
+	}
+
+update (0)
+( .ticks += 1 ) > 20 ? stop();
+0!
+
+_command (0)
+argv[0]=="stop" ? stop();
+argv[0]=="start" ? start();
+

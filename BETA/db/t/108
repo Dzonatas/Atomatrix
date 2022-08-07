@@ -1,0 +1,17 @@
+o1 p4 c0 s454 l0 c198 w0 p0 v3
+exits	(6,219)	A 4
+A 2
+# 3
+# 4
+A 2
+M 454
+M 26
+A 1
+$ tree
+A 1
+M 199
+name	(6,27)	$ dirt trail
+desc	(6,27)	$ a large tree nearby
+power plant is west
+dirt trail goes east
+.

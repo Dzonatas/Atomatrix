@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{d3ae1876-57f2-42ad-a72a-c2a97ece0e58}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\aObjVar">
+      <UniqueIdentifier>{2849da3e-293f-4886-ad72-93f748881b0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\aModule">
+      <UniqueIdentifier>{e9b340e3-6c75-46e0-8b23-ac784c17efa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\aProgram">
+      <UniqueIdentifier>{2e8b2f24-7a43-4fea-8f47-4b26af2d5a5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b91ef2d1-9334-4e6f-bc31-4afe08c1b9d1}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{9ed94d48-0a8e-4767-ae58-2268bb816e77}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Active_Follow.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Create_Obj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Load.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Obj_Var.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="POBJ.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadStr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadVar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveStr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveVar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aSObjVar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="isValid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="security.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="structor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aObjVar.c">
+      <Filter>Source Files\aObjVar</Filter>
+    </ClCompile>
+    <ClCompile Include="addObjVar.c">
+      <Filter>Source Files\aObjVar</Filter>
+    </ClCompile>
+    <ClCompile Include="getObjVar.c">
+      <Filter>Source Files\aObjVar</Filter>
+    </ClCompile>
+    <ClCompile Include="v_delete.c">
+      <Filter>Source Files\aObjVar</Filter>
+    </ClCompile>
+    <ClCompile Include="v_identifier.c">
+      <Filter>Source Files\aObjVar</Filter>
+    </ClCompile>
+    <ClCompile Include="v_orbit.c">
+      <Filter>Source Files\aObjVar</Filter>
+    </ClCompile>
+    <ClCompile Include="v_principal.c">
+      <Filter>Source Files\aObjVar</Filter>
+    </ClCompile>
+    <ClCompile Include="v_security.c">
+      <Filter>Source Files\aObjVar</Filter>
+    </ClCompile>
+    <ClCompile Include="aModule.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="aModuleXML.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_active.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_addProgram.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_addVariant.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_atomize.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_grammance.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_intermodulance.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_load.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_owner.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_precessant.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_precessants.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_precesses.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_program.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_programs.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_reintermodulize.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_reprecessize.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_save.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_security.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_serialed.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_serinteger.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_spawn.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_successant.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_successants.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_variance.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_variant.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="o_variants.c">
+      <Filter>Source Files\aModule</Filter>
+    </ClCompile>
+    <ClCompile Include="aProgram.c">
+      <Filter>Source Files\aProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="addProgram.c">
+      <Filter>Source Files\aProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="getProgram.c">
+      <Filter>Source Files\aProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="p_delete.c">
+      <Filter>Source Files\aProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="p_evaluate.c">
+      <Filter>Source Files\aProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="p_identifier.c">
+      <Filter>Source Files\aProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="p_inherit.c">
+      <Filter>Source Files\aProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="p_orbit.c">
+      <Filter>Source Files\aProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="p_sleep.c">
+      <Filter>Source Files\aProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="p_source.c">
+      <Filter>Source Files\aProgram</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

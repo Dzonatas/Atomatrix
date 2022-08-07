@@ -1,0 +1,9 @@
+o73 p110 c0 s121 l373 c0 w0 p0 v4
+name	(73,585)	$ halloween mask
+type	(73,585)	$ hm
+defense	(73,585)	$ +1
+using	(73,80)	A 2
+# 373
+A 1
+$ h
+.

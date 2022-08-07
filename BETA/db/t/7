@@ -1,0 +1,22 @@
+o6 p4 c0 s5 l0 c35 w0 p0 v3
+name	(7,877)	$ Hallway
+desc	(7,877)	$ Large room off to the north and a dark one to the south.  Stairs go down to
+the east.  A small room is to the west.
+exits	(4,219)	A 4
+A 5
+# 6
+# 4
+# 3
+# 2
+# 1
+A 5
+M 32
+M 101
+M 32
+M 5
+M 14
+A 1
+$ stairs
+A 1
+M 32
+.

@@ -1,0 +1,596 @@
+o6 p2 c9 s31 l0 c0 w0 p16384 v2
+name	(0,365)	$ Programmer
+verbs	(20,0)	A 21
+A 7
+$ pmv|pcp
+# 0
+# 4
+# 0
+# 162
+$ moveprog
+A 2
+# -105
+# -109
+A 7
+$ edit
+# 0
+# -1
+# -1
+# -1
+$ edit
+A 1
+# -105
+A 7
+$ ev
+# 0
+# 13
+# 0
+# 20
+$ editverb
+A 2
+# -108
+# -105
+A 7
+$ list
+# 0
+# -1
+# -1
+# 162
+$ list
+A 1
+# -105
+A 7
+$ print
+# 0
+# -1
+# -1
+# 162
+$ print
+A 1
+# -101
+A 7
+$ dv
+# 0
+# 13
+# 0
+# 20
+$ delete_verb
+A 2
+# -108
+# -105
+A 7
+$ verbs
+# 0
+# -1
+# -1
+# 162
+$ nverbs
+A 1
+# -104
+A 7
+$ progs|prog*rams
+# 0
+# -1
+# -1
+# 162
+$ progs
+A 2
+# -104
+# -105
+A 7
+$ anc*estors
+# 0
+# -1
+# -1
+# 162
+$ ancestors
+A 1
+# -104
+A 7
+$ vars|var*ibles
+# 0
+# -1
+# -1
+# 162
+$ vars
+A 1
+# -104
+A 7
+$ objnames
+# 0
+# -1
+# -1
+# 162
+$ objnames
+A 1
+# -102
+A 7
+$ info
+# 0
+# -1
+# -1
+# 162
+$ info
+A 2
+# -104
+# -105
+A 7
+$ editmode|emode
+# -1
+# -1
+# -1
+# 56
+$ toggle
+A 1
+# -100
+A 7
+$ save
+# 0
+# -1
+# -1
+# -1
+$ saveobj
+A 1
+# -105
+A 7
+$ delverb
+# 0
+# 13
+# 0
+# -1
+$ dverb
+A 2
+# -108
+# -105
+A 7
+$ dig
+# 0
+# -1
+# -1
+# -1
+$ dig
+A 1
+# -101
+A 7
+$ +msg
+# 0
+# -1
+# -1
+# -1
+$ config_msg
+A 1
+# -102
+A 7
+$ debug
+# 0
+# -1
+# -1
+# 56
+$ toggleary
+A 2
+# -100
+# -102
+A 7
+$ +vars
+# 0
+# -1
+# -1
+# -1
+$ ext-vars
+A 1
+# -104
+A 7
+$ map
+# -1
+# -1
+# -1
+# 348
+$ read
+A 1
+# -102
+A 7
+$ linkroom
+# 0
+# 4
+# 0
+# -1
+$ linkroom
+A 2
+# -105
+# -109
+.
+dig (0)
+o = .roomgen spawn(argv[0]);
+o ? o reintermodulize(avatar().location);
+
+nverbs (0)
+( m = argv[0] ) @~ $module ?
+	textate( "Invalid Object." ) !
+verbs = $parse verbs( argv[0] ) ;
+~~verbs length() ?
+	textate( "No verbs defined for this object." ) !
+x = 1 ;
+[ v; verbs] {
+	vi= $parse verbinfo(+v);
+	vi -> sd, sp, si, se;
+	textate( $vreality format("^2 ^20 ^7 ^7 ^7  ",x,v[0],
+		sd,sp,si)+se);
+	x=x+1;
+	}
+
+dverb (0)
+iobj=argv[0];
+dobjstr=argv[1];
+verbs=verbs(iobj);
+num= dobjstr integer() - 1 ;
+len=verbs length();
+
+~~verbs ? { textate("No verbs defined for this object."); ! }
+~~verbs[num] ? { textate("No such verb defined."); ! }
+
+pull(verbs,num);
+setverbs(iobj,verbs) ? {
+	textate("Verb deleted.");
+} ,	{
+	textate("Verb not deleted.");
+	}
+
+edit (0)
+argv -> arg;
+arg == "." ?
+	e = .previousedit ;
+,	e = arg ;
+( i= e index( ":" ) ) @ $integer ?
+	{
+	.previousedit = e ;
+	o = $program evaluate($util var( e substring(0,i) )+"!");
+	editprog(o,e[i+1..-1])!
+	}
+i=e endex( "." ) ?
+	{
+	.previousedit = e ;
+	o	= $program evaluate($util var( e substring(0,i))+"!");
+	v	= e[i+1..-1];
+	a	= o.(v) ;
+	o.(v) @ $varray ?
+		editarray(o,v)!
+	, o.(v) @ $string ?
+		o.(v) = $root edit( o.(v) ) !
+	}
+textate("try: edit OBJ PROGRAMnAME  or  edit OBJ.VAR");
+
+list (0)
+( i= argv[0] index( ":" ) ) @~ $integer ?
+	textate("usage: list OBJ:PROGRAM_NAME",i) !
+name	= argv[0] substring(i+1) ;
+obj	= $util var( argv[0] substring(0,i) ) ;
+m	= $program evaluate($util var( argv[0] substring(0,i) )+"!") ;
+( p	= m grammance( name ) ) @~ $error ?
+	{
+	( z = p orbit() ) <> m ?
+			textate("Program found at (precessant) \\c") ;
+	textate(z.name,"(#",z serinteger(),"):",name,"()");
+	textate( p source() );
+	!
+	}
+textate("Program not found.");
+
+print (0)
+//iobjstr ? var=iobjstr+"."+dobjstr;
+ var=argv[0];
+var= $program evaluate($util var(var)+"!");
+textate(ascii(var));
+
+editarray (0)
+~~dobjstr ? argv -> o, v;
+, { v=dobjstr; o=iobj; }
+a=o.(v);
+
+a=="" || a==0 ? a={};
+a @~ $varray ?
+	textate("Not an array.") !
+s=$util ary_to_str(a);
+intertextate(avatar().name," edits an array.");
+s= $root edit(s);
+intertextate(avatar().name," finishes editing.");
+a=$util str_to_ary(s);
+a @~ $varray _ARY ?
+	textate("Error in Array format. Not changed.") !
+ok=(o.(v)=a);
+ok @ $error ? textate(ok);
+, textate("Changed.");
+
+moveprog (0)
+from = argv[0] split(":");
+from[0] = from[0] integer() ;
+to = argv[1] split(":");
+to[0] = to[0] integer() ;
+to length()==1 ?
+	pushr( to , from[1] ) ;
+~~( mt = $module serialed( to[0] ) ) ?
+	textate("Invalid serial number.") !
+~~( mf = $module serialed( from[0] ) ) ?
+	textate("Invalid serial number.") !
+( pt = mt addProgram( to[1] ) ) @ $error ?
+	{
+	pt @ $error.exists ?
+		{
+		textate( to[0] , ":" , to[1] , " exists, overwrite?[n]: \\c" ) ;
+		yn = input() ;
+		yn <> "y" ?
+			textate("Program not copied.") !
+		}
+	,	
+		textate( "Could not add program '" , to[1] , "' :" , pt ) !
+	}
+( pf = mf program( from[1] ) ) @ $error ?
+		textate( "Could not read source program '" , from[1] , "' :" , pf ) !
+( e = pt source( pf source() ) ) @ $error ?
+	textate("Could not copy source program to destination program :" , e ) !
+verb=="pmv" ?
+	{
+	pf delete() ;
+	textate("Moved.");
+	}
+,	{
+	textate("Copied.");
+	}
+
+progs (0)
+dobj = argv[0];
+dobjstr = argv[1];
+argv[0] ?
+	m = argv[0] ;
+,
+dobjstr ?
+	~~( m = $util findobj(dobjstr) ) ?
+		textate( "No such object." ) !
+a = {} ;
+[ p ; m programs() ]
+	pushr( a , { p identifier() , p } ) ;
+a length() == 0 ?
+	textate("No programs defined for this object") !
+a = $util sort( a , 0 ) ;
+[ p ; a ] textate( "  " , p[0] ) ;
+
+mem (0)
+textate("Memory used: ",memory());
+
+ancestors (0)
+[ i; $module serialed( argv[0] ) precessant() ]
+	textate("   ", i.name ," (#", i serinteger() ,")");
+
+vars (0)
+argv[0] == undefined ?
+	textate( "Undefined module specified." ) ;
+,
+	m = o = argv[0] ;
+a = {} ;
+[ v ; m variants() ]
+	pushr( a , { v identifier() , v } ) ;
+a length() == 0 ?
+	textate("No variables defined for this object.") !
+textate( m.name , "(#" , o , "):" ) ;
+a = $util sort( a , 0 ) ;
+[ i ; a ]
+	{
+	v	= i[1] ;
+	val	= ascii( m.(i[0]) ) substring( 0 , 57 ) ;
+	textate( $vreality format( ".^-17 " , i[0] , v principal().name ,
+		$util perm_to_str( v security() )) , val ) ;
+	}
+
+objnames (0)
+first= argv[0] integer() ;
+last= argv[1] integer() ;
+
+l=first;
+textate(first," ",last);
+[l<=last] {
+	m = $module serialed( l ) ?
+		textate("(#",l,",loc=#",m.location,")",m.name);
+	l=l+1;
+	}
+
+info (0)
+dobj	= argv[0];
+dobjstr	= argv[1];
+~~dobj && dobjstr ?
+	dobj = $util findobj(dobjstr) ;
+~~dobj ?
+	textate( "No such object." ) !
+// m	= $module serialed( dobj ) ;
+m	= dobj ;
+// $atomatrix output( -1 ) ;
+textate( "#" , m serinteger(), " Name: \"" , dobj.name , "\"" ) ;
+textate( "named: \"" , $util name( dobj ) , "\"" ) ;
+textate( "owner: " , $util name( m principal() ) ) ;
+	loc = "\"" + $util name( m.location ) + "\"" ;
+	m.location== -1 ? loc="-1";
+textate("location: ",loc);
+a	= {} ;
+[ o ; m precessants() ] pushr( a , o ) ;
+textate( $util wrap(75,"precessants: ",$util objlist(a)) );
+a	= {} ;
+[ o ; m successants() ] pushr( a , o ) ;
+textate( $util wrap(75,"successants: ",$util objlist(a)) );
+textate( $util wrap(75,"objects: ",$util objlist(dobj.objects)) );
+str	= "" ;
+[ v; dobj variants() ]
+	str += "." + v identifier() + "\t" ;
+textate( "variants: " , str ) ;
+str	= "" ;
+[ p ; dobj programs()]
+	str += p identifier() + "\t" ;
+textate( "programs: " , str ) ;
+
+config_msg_usage (0)
+textate(
+"Usage:
+	+msg ?			print all messages here") ;
+//	+msg DIR TYPE		edits the message
+textate("
+	+msg DIR TYPE \"STR\"	changes the message to STR
+	+msg DIR TYPE .		deletes the message
+
+DIR is a direction string.  TYPE is \"ok\", \"fail\", \"ook\", or \"ofail\".
+Example: +msg east fail \"You bonk your head.\"
+");
+
+config_msg (0)
+argv -> m, typestr, str;
+o=avatar().location;
+types={"_ok_msg","_fail_msg","_ok_omsg","_fail_omsg"};
+~~m ?
+	config_msg_usage() !
+m == "?" ?
+	{
+	textate("Messages set here are:");
+	[ d; $compass_dirs] {
+		[ t; types] {
+			v="_"+d+t;
+			o.(v) ? textate(v,"\t",o.(v));
+			}
+		}
+	!
+	}
+~~typestr ?
+	config_msg_usage() !
+( type = typestr @# {"ok","fail","ook","ofail"}) ) @ $integer ?
+	textate("Type must be ok, fail, ook, or ofail.") !
+~~m @# $compass_dirs ?
+	textate("Direction must be an valid exit.") !
+z = o variant( v = "_"+m+types[type] ) ;
+str == "." ?
+	{
+	z @~ $error && z delete() @~ $error ?
+		textate("Deleted ",v,".");
+	,	textate("Could not delete ",v,".");
+	!
+	}
+~~str ?
+	config_msg_usage() !
+//~~str ? str= $root edit(o.(v));
+z @ $error ?
+	{
+	( z = o addVariant( v ) ) @ $error ?
+		{
+		textate( z ) ;
+		!
+		}
+	z security( "=orwtrwer" ) ;
+	}
+o.(v)=str ?
+	textate(v," set to \"",str,"\".");
+,	textate("Couldn't set.");
+
+ext-vars (0)
+m = argv[0] ;
+( a = m variants() ) length() == 0 ?
+	textate("No variables defined for this object.") !
+astr="";
+[ i ; m precessants() ]
+	astr += " " + i serinteger() string() ;
+textate( m.name , "(#", m serinteger(),")  loc=" , m.location ,
+		"   precessants: " , astr ,
+		"     owner: " , m principal() ) ;
+[ v ; a ]
+	{
+	val= ascii( m.(v identifier()) ) substring( 0 , 23 ) ;
+	textate( $vreality format( ".^-17 (^-17,^11)   " , v identifier() ,
+		v principal().name , $util perm_to_str(v security()) ) , val ) ;
+	}
+
+linkroom (0)
+dobjstr = argv[0];
+iobjstr = argv[1];
+from=avatar().location;
+cmd= dobjstr lowercase() ;
+to=iobjstr;
+i=index(":",dobjstr);
+i @ $integer ? {
+	from= cmd[0..i] integer() ;
+	dir=cmd[i+1..-1];
+	}
+, {
+	from=avatar().location;
+	dir=cmd;
+	}
+
+( i = dir @# {"nw","ne","sw","se"} ) @ $integer ? { 
+	tmp={"northwest","northeast","southwest","southeast"};
+	dir=tmp[i];
+	}
+dirnum=dir @# $compass_dirs;
+~~$roomclass precesses(from) ? from=$util findobj(from);
+~~$roomclass precesses(to) ? to=$util findobj(to);
+
+~~dobjstr || ~~iobjstr || ~~.roomgen precesses(from) ? {
+	textate("Usage 1: linkroom DIRECTION to DESTINATION\t",
+				"(uses current location)");
+	textate("Usage 2: linkroom OBJECT:DIRECTION to DESTINATION");
+	}
+
+dirnum @~ $integer ?
+	{
+	textate("Make an aliased exit called '",dir,"'? y/n: \\c");
+	i=input();
+	i substring(0,1) lowercase() <> "y" ? 0!
+	}
+, {
+	odir=$compass_odirs[dirnum];
+	}
+
+~~to ? { 
+	textate("Creating new room named ",iobjstr);
+	$module serialed(n=spawn( .roomgen, avatar() serinteger())) @~ $module ?
+		{
+		textate("Can't create room object.  ",n);
+		0!
+		}
+	n _chname(iobjstr);
+	to=n;
+	}
+~~.roomgen precesses(to)
+	|| $module serialed(to) @~ $module
+	|| $module serialed(from) @~ $module ?
+		textate("Hmm.. error.") !
+from _linkroom(from,dir,to);
+odir ?
+	to _linkroom(to,odir,from);
+to _moveto(-1);
+to	= from _dir(dir);
+to ?
+	textate($util name(to)," is linked to the ",dir);
+,
+	textate("Error, can't make link.");
+
+unlinkroom (0)
+
+editprog (0)
+~~dobjstr ?
+	argv -> iobj, dobjstr;
+,	textate("hmmm.");
+( p = iobj program( dobjstr ) ) @ $error ?
+	textate("Program not found.") !
+( text = p source() ) @ $error ?
+	textate("Could not edit program source.") !
+intertextate( avatar().name , " starts program editor." ) ;
+ntext = $root edit(text) ;
+text <> ntext ?
+	{
+	p source( ntext ) @ $error ?
+		textate("Could not reprogram.");
+	,	textate("Reprogrammed.");
+	intertextate(avatar().name," finishes the edit.");
+	}
+
+saveobj (0)
+( m = $module serialed( o= argv[0] integer() ) ) @ $module
+	{
+	m save() ;
+	textate( "Saved " , o ) ;
+	}
+
+editstr (0)
+

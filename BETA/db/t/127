@@ -1,0 +1,8 @@
+o17 p73 c0 s74 l73 c0 w281 p0 v5
+name	(127,73)	$ Magic Rings
+desc	(127,73)	$ 
+protects	(6,73)	A 1
+$ legs
+worn	(6,73)	$ d
+type	(6,73)	$ rings
+.

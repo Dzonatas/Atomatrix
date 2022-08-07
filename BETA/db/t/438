@@ -1,0 +1,15 @@
+o261 p261 c0 s93 l261 c0 w93 p0 v13
+name	(72,219)	$ snake
+task	(72,219)	# 5
+doing	(72,219)	# 0
+wait_time	(72,219)	# 932274241
+status	(72,219)	?
+hp	(75,219)	# 5
+mhp	(75,219)	# 5
+attacking	(75,219)	?
+armour	(75,219)	?
+ready_weapon	(75,219)	# 214
+dexterity	(261,27)	# 30
+desc	(261,27)	$ An angry snake with black, empty eyes.
+home	(261,27)	# 192
+.

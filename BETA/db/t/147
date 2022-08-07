@@ -1,0 +1,51 @@
+o6 p1 c0 s82 l149 c0 w0 p0 v3
+name	(0,365)	$ Mail Handler
+aliases	(0,365)	?
+desc	(0,365)	?
+.
+read_message (0)
+i=avatar().mail length();
+~~i ?
+	textate("No mail.") !
+x=0;
+saved={};
+[x<i] {
+	textate(avatar().mail[x]);
+	$atomatrix output("\nSave Message [n]:");
+	yesno=input();
+	yesno[0] lowercase() == "y" ?
+		{
+		pushr(saved,avatar().mail[x]);
+		textate("Saved.");
+		}
+	,
+		textate("Deleted.");
+	x=x+1;
+	}
+avatar().mail=saved;
+
+write_message (0)
+msg		= "" ;
+to_str		= "" ;
+subject_str	= "" ;
+dobjstr	?
+	to_str = dobjstr ;
+,	argv	?
+		to_str = argv[0] ;
+	,	to_str = textPrompt( "To: " ) ;
+~~( to	= findAvatarNamed( to_str ) ) ?
+	textate("Player not found.") !
+subject_str	= textPrompt( "Subject: " ) ;
+msg = $editor.edit(msg);
+~~msg ?
+	textate("Message not sent.") !
+msg	= "From: " + avatar().name
+	+ "\nSubject: " +  subject_str
+	+ "\n" + msg ;
+pushr(to.mail,msg);
+/*to store_mail(msg);*/
+textate("Message sent.");
+to tell("You have new mail.");
+
+mail_headers (0)
+

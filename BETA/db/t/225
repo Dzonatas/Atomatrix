@@ -1,0 +1,17 @@
+o17 p4 c0 s224 l0 c0 w0 p0 v3
+name	(225,877)	$ Temple of Ne''ack Entrance
+desc	(225,877)	$ Omninous walls tower above you and statues of demons, Medusas, and
+wizards glare coldly at you from every direction.  Two large stone
+doors are open, allowing your entrance.  Upon the face of each door,
+inscribed, is a mysterious looking amulet.  The doors open to the
+north, Sunrise Court is to the south.
+exits	(4,219)	A 4
+A 2
+# 2
+# 1
+A 2
+M 224
+M 226
+A 0
+A 0
+.

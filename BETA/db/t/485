@@ -1,0 +1,11 @@
+o4 p4 c0 s484 l107 c492 w486 p0 v3
+name	(4,219)	$ Linux
+desc	(4,219)	?
+exits	(4,219)	A 4
+A 0
+A 0
+A 1
+$ exit
+A 1
+M 475
+.

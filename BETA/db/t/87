@@ -1,0 +1,15 @@
+o6 p4 c0 s86 l0 c0 w0 p0 v3
+name	(87,877)	$ Dungeon Arena
+desc	(87,877)	$ Bone fragments scatter the floor.  (n/w/e)
+exits	(4,219)	A 4
+A 3
+# 4
+# 3
+# 1
+A 3
+M 86
+M 89
+M 88
+A 0
+A 0
+.

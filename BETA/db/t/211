@@ -1,0 +1,13 @@
+o211 p2 c0 s162 l14 c0 w177 p0 v9
+name	(0,365)	$ Cyberdelic
+aliases	(211,877)	?
+password	(0,292)	$ BLVT
+login_time	(2,603)	# 751532905
+logoff_time	(2,603)	# 0
+uid	(2,365)	# 3773
+gender	(211,877)	$ male
+desc	(211,877)	$ I'm not GODOT!
+
+status	(0,73)	A 1
+$ sleeping
+.

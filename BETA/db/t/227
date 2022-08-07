@@ -1,0 +1,57 @@
+o17 p220 c0 s161 l226 c0 w269 p0 v9
+name	(227,877)	$ Devteem
+wait_time	(72,511)	# 932274238
+task	(72,511)	# 5
+desc	(17,73)	$ The (seemingly) only priest of this temple, Devteem busies himself with
+leading adventurers astray, chidding them to hack and slash monsters,
+and inviting them to explore the darkest recesses of dungeon misery.
+His right hand tightly grips a thick book which he often points to,
+and his left hand's fingers are ornamented with many rings.
+speech	(17,219)	A 5
+$ An adventurer's only true loyalty is to the temple!  Hack, Slash,
+and sacrafice, yea gods!
+$ Sacrafices take place every Sunday at noon.  Don't miss a single one!
+$ Brave adventurers never flee an enemy, no matter what their injury.
+$ Dungeon's are an adventurer's only home...  also his only place of 
+employment.
+$ Never be swayed by false deities.  Ne''ack is the only true immortal!
+action	(17,73)	?
+vocab	(17,219)	A 8
+A 2
+$ hello
+$ %w says, 'Welcome, welcome!'
+A 2
+$ -hi
+$ %w says, 'Yes, yes!  Another adventurer, ready for the quest, ready to find
+treasure!'
+A 2
+$ enters
+$ %w says, 'Greetings, my fellow adventurer.  Dost thou take part in
+ritual slaying?'
+A 2
+$ kill
+$ %w says, 'Killing monsters is a fine preoccupation.  And it does well for the
+treasure purse as well!'
+A 2
+$ monsters
+$ %w says, 'The dungeon is full of monsters, my friend.  And treasure, too.'
+A 2
+$ go
+$ %w says, 'The forest is another place to explore.  Although the denser
+regions take courage.  But I'm sure you're fit enough, aren't you?'
+A 2
+$ sacrafice
+$ %w says, 'Anything can be sacraficed.  Monsters, virgins, players..'
+A 2
+$ misses
+$ %w says, 'Come, friend.  Slay monsters, not priests.'
+commands	(220,219)	A 0
+addroomdesc	(17,27)	A 1
+A 2
+$ Temple of*
+$ _Devteem_, the dedicated priest of Ne''ack, is busy recruiting disciples here.
+.
+sorry (0)
+action(100);
+1!
+

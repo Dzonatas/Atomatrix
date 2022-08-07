@@ -1,0 +1,14 @@
+o6 p4 c0 s247 l0 c0 w0 p0 v3
+name	(248,877)	$ Sewer
+desc	(248,877)	$ East-west tunnel, there is a message scrawled here:
+	... a maze of twisty little passages, all alike.
+exits	(4,219)	A 4
+A 2
+# 4
+# 3
+A 2
+M 249
+M 245
+A 0
+A 0
+.

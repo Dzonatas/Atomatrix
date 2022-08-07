@@ -1,0 +1,28 @@
+o17 p74 c376 s0 l74 c0 w136 p0 v5
+name	(137,73)	$ ARMOUR-FEET
+desc	(137,73)	$ A new pair of canvas boots.
+worn	(6,73)	$ bf
+types	(6,73)	A 6
+A 5
+$ cb
+$ air
+$ lb
+$ mb
+$ pb
+A 2
+$ cowboy boots
+$ +1
+A 2
+$ Air Jordans
+$ +1
+A 2
+$ leather boots
+$ +2
+A 2
+$ metal boots
+$ +3
+A 2
+$ plated boots
+$ +4
+type	(6,73)	$ feet
+.

@@ -1,0 +1,27 @@
+o17 p220 c0 s66 l236 c0 w0 p0 v8
+name	(237,877)	$ zen monk
+wait_time	(72,511)	# 932274238
+desc	(17,73)	$ The monk seems to realize your presence here, although he makes no
+motion and his figure never moves.  His expression is slightly
+wise and slightly happy, as if he had obtained some internal peace.
+speech	(17,73)	A 5
+$ All confusion, indecision, and suffering come from fear of death.
+Rid yourself of it, and you will be free.
+$ The only thing which remains unchanged is change itself.
+$ If you sniff a rose for many, many minutes, does it lose
+its fragrance?
+$ The wise man once said, "It is better to know your feet, of all parts,
+if it is your feet upon which you carry all your weight."
+$ Form is emptiness and the very emptiness is form.
+speech_emote	(17,73)	$ The monk expresses, '%speech'
+action	(17,73)	A 4
+$ The monk blinks.
+$ The monk breaths softly.
+$ The monk's smile broadens briefly.
+$ The monk blinks.
+task	(72,73)	# 3
+addroomdesc	(17,27)	A 1
+A 2
+$ Temple Garden
+$ A _zen monk_ is meditating here in full lotus.
+.

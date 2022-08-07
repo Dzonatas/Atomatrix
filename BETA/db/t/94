@@ -1,0 +1,26 @@
+o6 p40 c95 s49 l47 c0 w0 p0 v7
+name	(94,877)	$ garage door
+aliases	(94,877)	$ door
+desc	(94,877)	$ A large roll up door.
+locked	(94,73)	?
+open	(94,73)	# 1
+other_side	(94,73)	M 95
+clues	(6,91)	A 3
+$ It's electric.
+$ Have you used the button?
+$ You can only enter and exit when the door is open.
+.
+rolldoor (0)
+.location announce_all("(from the garage door you here a 'click')");
+.other_side.location announce_all("(from the garage door you here a 'click')");
+.location announce_all("(rrrRRRRrrrRRRRrrrrRRRR)");
+.other_side.location announce_all("(rrrRRRRrrrRRRRrrrrRRRR)");
+$program sleep(1); 
+.open ? close();, open();
+$program sleep(1);
+.location announce_all("(rrrRRRRrrrRRRRrrrrRRRR)");
+.other_side.location announce_all("(rrrRRRRrrrRRRRrrrrRRRR)");
+
+_button (0)
+addtask(this,"rolldoor");
+

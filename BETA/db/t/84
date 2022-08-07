@@ -1,0 +1,26 @@
+o6 p4 c0 s101 l0 c0 w0 p0 v3
+name	(84,877)	$ Dungeon Arena
+desc	(84,877)	$ Blood stained walls surround you.  (s/w/e)
+exits	(4,219)	A 4
+A 4
+# 7
+# 4
+# 3
+# 2
+A 4
+M 85
+M 67
+M 91
+M 86
+A 0
+A 0
+.
+_mode_in (0)
+
+_moved_in (0)
+isAvatar( argv[0] ) ?
+	{
+	i=0;
+	[i<5 && 221 make("dungeon")] i+=1;
+	}
+

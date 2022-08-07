@@ -1,0 +1,22 @@
+o17 p4 c0 s182 l0 c0 w0 p0 v4
+name	(187,877)	$ Dirt trail
+desc	(187,877)	$ This dirt trail continues into a forest to the south.  To the north is
+the dead end of Sunrise Blvd.
+npc	(4,219)	M 221
+exits	(4,219)	A 4
+A 2
+# 2
+# 1
+A 2
+M 180
+M 45
+A 0
+A 0
+.
+_moved_in (0)
+isAvatar( argv[0] ) ?
+	{
+	i=0;
+	[i<5 && .npc make("forest")] i+=1;
+	}
+

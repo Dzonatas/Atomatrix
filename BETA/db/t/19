@@ -1,0 +1,11 @@
+o6 p10 c0 s16 l27 c0 w28 p0 v3
+name	(19,877)	$ square
+aliases	(19,877)	$ rubic*|cube
+desc	(19,877)	$ A ubiquitous looking Rubic's cube.
+
+.
+_moveto (0)
+textate("The square spins in place and avoids your grasp!");
+0!
+
+

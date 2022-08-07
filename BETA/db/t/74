@@ -1,0 +1,48 @@
+o6 p73 c122 s129 l73 c137 w127 p0 v7
+name	(6,73)	$ Normal Armour
+desc	(6,73)	?
+worn	(6,73)	?
+types	(6,73)	A 9
+A 8
+$ head
+$ neck
+$ u-body
+$ arms
+$ hands
+$ l-body
+$ legs
+$ feet
+A 1
+M 110
+A 1
+M 122
+A 1
+M 112
+A 1
+M 109
+A 1
+M 136
+A 1
+M 115
+A 1
+M 120
+A 1
+M 137
+defense	(6,73)	?
+type	(6,73)	$ armour
+verbs	(20,0)	A 2
+A 6
+$ wear
+# 1
+# -1
+# -1
+# 75
+$ wear
+A 6
+$ remove
+# 1
+# -1
+# -1
+# 75
+$ remove
+.

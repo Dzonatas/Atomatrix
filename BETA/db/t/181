@@ -1,0 +1,12 @@
+o17 p4 c0 s99 l0 c377 w0 p0 v3
+name	(181,877)	$ Hell
+desc	(181,877)	$ Your body burns with fire and also stings with cracking cold.
+
+exits	(4,219)	A 4
+A 1
+# 5
+A 1
+M 88
+A 0
+A 0
+.

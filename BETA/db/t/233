@@ -1,0 +1,12 @@
+o17 p4 c0 s232 l0 c347 w0 p0 v3
+name	(233,877)	$ Field of Clover
+desc	(233,877)	$ Compared to the raging waterfall, this field of clover seems quiet and
+peaceful.  The sound of rushing water eminates from the north.
+exits	(4,219)	A 4
+A 1
+# 1
+A 1
+M 232
+A 0
+A 0
+.

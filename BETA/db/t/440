@@ -1,0 +1,12 @@
+o440 p2 c0 s437 l36 c0 w105 p0 v10
+name	(440,877)	$ somebody
+aliases	(440,877)	?
+password	(0,292)	$ test
+login_time	(2,381)	# 796155592
+logoff_time	(2,381)	# 796155626
+uid	(2,292)	?
+gender	(440,877)	$ male
+desc	(440,877)	$ have you taken a good look at yourself
+status	(440,27)	A 0
+editmode	(440,73)	# 0
+.

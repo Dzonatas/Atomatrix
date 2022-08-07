@@ -1,0 +1,15 @@
+o1 p4 c0 s108 l0 c0 w0 p0 v3
+exits	(26,219)	A 3
+A 2
+# 3
+# 4
+A 2
+M 108
+M 11
+A 2
+$ 
+$ 
+name	(6,27)	$ dirt trail
+desc	(6,27)	$ power plant is west
+dirt trail goes east
+.

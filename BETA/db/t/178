@@ -1,0 +1,174 @@
+o17 p220 c0 s189 l179 c239 w257 p0 v11
+name	(178,877)	$ Jake
+aliases	(178,877)	$ jake|barten*|barman
+desc	(178,877)	$ Jake seems to be the friendliest (and largest) man you have ever seen.
+He's got a big, wide smile that flashes warmly as he tips the heads off 
+his homemade beer.
+vocab	(17,73)	A 1
+A 2
+$ Fred
+$ Jake nods.
+drinks	(17,73)	A 11
+$ beer
+$ wine
+$ rum
+$ scotch
+$ coke
+$ pepsi
+$ diet
+$ water
+$ espresso
+$ whiskey
+$ coffee
+verbs	(20,0)	A 1
+A 6
+$ test
+# 1
+# -1
+# -1
+# -1
+$ test
+commands	(220,219)	A 0
+wait_time	(72,219)	# 932274238
+speech	(17,73)	A 7
+$ Fish crackers all right?  They've been in the back for years.  Thought
+they'd be stale.
+$ Don't drink too much, you'll get kicked out like that other guy did.
+A 2
+$ Fred>Fred, you need a refill yet?
+$ Jake>Nah, I'm fine.
+A 3
+$ Fred<Been to the temple lately?
+$ Jake<Yea, that priest is a riot.  What a rogue.
+$ Fred<Actually I was talking about the monk.  Nice guy, once you get
+to know him.  
+$ This last batch of beer came out pretty good.
+A 3
+$ Fred<You see that guy who came in here fresh out of the sewers?
+$ Jake<See him, ha--you could smell him a block off.
+$ Fred<It's getting so I'll have to put a sign out front.  "Bad smell,
+No service!"
+A 3
+$ Fred>I heard the blacksmith's got a sale running this week.  All 
+maces half off.
+$ Jake<Really, have to go see about that.  My ball 'n chain's getting
+kind of rusty.
+$ Fred<%w laughs.
+task	(72,73)	# 5
+addroomdesc	(17,27)	A 1
+A 2
+$ Ye Weary Publance
+$ _Jake_ busies himself serving drinks.
+.
+serve (0)
+argv -> p, drink;
+cup=0;
+genericcup=$object_class.container.cup;
+[ o; p.objects] {
+	genericcup precesses(o) ? { cup=o; <; }
+	}
+cup.inside ? {
+	speak("Why don't you finish your "+cup.inside+" first?",p);
+	0!
+	}
+
+nobj=genericcup make(p,drink);
+str=" slides you a "+drink;
+cup ? {
+	str=" takes your "+cup.type+" and slides your new drink down the bar";
+	cup _recycle();
+	}
+
+p tell(.name+str+".");
+.location announce_x(p,.name+
+		" slides a "+drink+" down the bar to "+p.name+".");
+
+~~nobj ? {
+	p tell($util wrap(70,
+"You try to grab the "+drink+" but you miss, and it falls to the ground, "+
+"shattering glass everywhere!"));
+	p.location announce_x(p,$util wrap(70,
+p.name+" tries to grab the "+drink+" but misses, and it falls to the "+
+"ground, shattering glass everywhere!"));
+	!
+	}
+
+~~p.robot ? {
+	p tell("You now have ",$util name(nobj)+".");
+	}
+
+sorry (0)
+p=argv[0];
+m={
+"Jake says, 'None of that here, my friend.'  He points to the sign.",
+"Jake shakes his head.  He gestures towards the sign.",
+"Jake looks up quizzically and nods towards the sign."
+};
+
+l=m length();
+p.location announce_all(m[ $crtl random(l) ]);
+
+
+parse (0)
+~~args=_parse(this) ? { 0! }
+args -> src, words;
+"_moved_in" @# words ? {
+	$program sleep(3);
+	$object_class.container.cup precesses(src) ? { 
+		emote("%w takes the ",src.name," and puts it away ",
+				"under the bar.");
+		src _recycle();
+		}
+    , isAvatar( src ) ?
+		emote("%w looks up as ",src.name," enters.");
+	!
+	}
+	
+"_moved_out" @# words ? {
+	$program sleep(2);
+	olist={};
+	[ obj; src.objects] {
+		$object_class.container.cup precesses(obj) ?
+			{
+			pushl(olist,obj);
+			obj _recycle();
+			}
+		}
+	~~olist ? !
+	emote("%w cleans ",src.name, "'s ",olist[0].type," and puts it away.");
+	!
+	}
+
+src.robot ? {
+	~~match=this match("vocab",+words) ? !
+	match[0][1] ? .location announce_all(match[0][1]);
+	!
+}
+
+"drink" + words ? { 
+	speak("Well, what kind of drink ya want?  Read "+
+		"the sign, I'll be here.",src);
+	!
+	}
+~~(match=this match("drinks",+words)) ? {
+        sorry(src);
+        !
+        }
+serve(src,match[0]);
+
+give (0)
+p=avatar() serinteger();
+i=iobjstr;
+
+i=="" ? {
+	huh(p);
+	!
+	}
+~~(match=this match(i)) ? {
+	sorry(p);
+	!
+	}
+
+p tell("Jake slides you a "+match+".");
+
+

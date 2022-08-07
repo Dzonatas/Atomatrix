@@ -1,0 +1,13 @@
+o218 p2 c0 s211 l14 c0 w303 p0 v9
+name	(0,365)	$ Mertermex
+aliases	(218,877)	?
+password	(0,292)	$ rhea
+login_time	(2,603)	# 751080190
+logoff_time	(2,603)	# 0
+uid	(2,365)	# 3779
+gender	(218,877)	$ male
+desc	(218,877)	$ male, about 6'5'' with blake hair and a blake mustache, both graying.
+
+status	(0,73)	A 1
+$ sleeping
+.

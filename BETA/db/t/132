@@ -1,0 +1,22 @@
+o17 p129 c0 s131 l129 c0 w133 p0 v7
+name	(73,73)	$ SHORT SWORD
+desc	(73,73)	?
+damage	(73,73)	$ d6
+type	(73,73)	$ s-sword
+hitstr	(73,73)	$ slice
+ohitstr	(73,73)	$ slices
+types	(6,73)	A 4
+A 3
+$ ws
+$ ss
+$ ab
+A 2
+$ wooden sword
+$ d4
+A 2
+$ short sword
+$ d6
+A 2
+$ alloy blade
+$ d6+1
+.

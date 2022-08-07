@@ -1,0 +1,17 @@
+o17 p4 c0 s228 l0 c0 w0 p0 v3
+name	(229,877)	$ Forest Waterfall
+desc	(229,877)	$ The forest suddenly drops off here as the forest turns into a sharp cliff,
+almost as if the other half of the mountain has been sliced away.
+The river, turning into a huge waterfall, sprays up mist all about you.
+The trail leads west, and a rickety bridge leads across the face of the 
+waterfall to the south.
+exits	(4,219)	A 4
+A 2
+# 4
+# 2
+A 2
+M 228
+M 230
+A 0
+A 0
+.

@@ -1,0 +1,16 @@
+o17 p4 c0 s187 l0 c210 w0 p0 v3
+name	(188,877)	$ Fresh Brew
+desc	(188,877)	$ This shop is filled with potions, scrolls, and dusty wands.  Hagga
+stands over a cauldron, preparing something.  The exit is to the
+northwest, but there is a smaller room to the back of the shop (southeast).
+(try: hagga, I'd like to buy something)
+exits	(4,219)	A 4
+A 2
+# 9
+# 8
+A 2
+M 208
+M 154
+A 0
+A 0
+.

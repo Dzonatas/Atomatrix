@@ -1,0 +1,17 @@
+o17 p4 c0 s67 l0 c0 w0 p0 v3
+desc	(17,73)	$ This seems to be a vast platform constructed above the
+house.  You have a good view of the neighborhood from 
+this height.  To the north stands a large birdhouse
+and a ladder leads back down to the mansion.
+
+name	(17,73)	$ Rooftop Platform
+exits	(4,219)	A 4
+A 2
+# 6
+# 1
+A 2
+M 14
+M 71
+A 0
+A 0
+.

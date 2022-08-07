@@ -1,0 +1,143 @@
+o6 p1 c94 s35 l0 c0 w0 p0 v9
+name	(40,877)	$ Portal Object
+aliases	(40,877)	?
+desc	(40,877)	$ undescript object
+portal	(40,877)	# 1
+locked	(40,877)	?
+other_side	(40,877)	?
+open	(40,877)	# 0
+verbs	(20,0)	A 6
+A 6
+$ open
+# 1
+# -1
+# -1
+# -1
+$ open
+A 6
+$ close
+# 1
+# -1
+# -1
+# -1
+$ close
+A 6
+$ lock
+# 1
+# -1
+# -1
+# -1
+$ lock
+A 6
+$ unlock
+# 1
+# -1
+# -1
+# -1
+$ unlock
+A 6
+$ knock
+# 1
+# -1
+# -1
+# -1
+$ knock
+A 6
+$ knock
+# -1
+# 13
+# 1
+# -1
+$ knock
+dark	(6,73)	# 1
+.
+_knob (0)
+textate("Nothing happens.");
+
+
+_switch (0)
+textate("Nothing happens.");
+
+evoke (0)
+~~argc ? o=avatar() ; , o=argv[0];
+~~.open ? {
+	textate("It's closed.");
+	0!
+	}
+o _moveto(.other_side.location)!
+
+open (0)
+.open ? {
+	textate("It's already open.");
+	!
+	}
+.locked ? {
+	textate("It's locked.");
+	intertextate(avatar().name,
+		" tried to open the locked door.");
+	.other_side.location announce_all("You hear a door rattle.");
+	!
+	}
+.open=1;
+.other_side.open=1;
+avatar() ==this ? {
+	.location announce_all(.name + " opens.");
+	.other_side.location announce_all(.name + " opens.");
+	}
+,	{
+	textate("Opened.");
+	intertextate(avatar().name," opened a door.");
+	.other_side.location announce_all("You see a door open.");
+	}
+
+close (0)
+~~.open ? {
+	textate(.name + " is already closed.");
+	!
+	}
+.open=0;
+.other_side.open=0;
+avatar() ==this ? {
+	.location announce_all(.name + " closes.");
+	.other_side.location announce_all(.name + " closes.");
+	}
+,	{
+	textate("Closed.");
+	.location announce_all(avatar().name," closed a door.");
+	.other_side.location announce_all("You see a door close.");
+	}
+
+lock (0)
+.locked ? {
+	textate("It's already locked.");
+	!
+	}
+.locked=1;
+.other_side.locked=1;
+textate("Locked.");
+intertextate(avatar().name," locked a door.");
+.other_side.location announce_all("You hear a door lock.");
+
+unlock (0)
+~~.locked ? {
+	textate("It's already unlocked.");
+	!
+	}
+.locked=0;
+.other_side.locked=0;
+textate("Unlocked.");
+intertextate(avatar().name," unlocked a door.");
+.other_side.location announce_all("You here a door unlock.");
+
+knock (0)
+textateLocals("KNOCK KNOCK KNOCK\n", 
+	avatar().name," knocks on the door.");
+.other_side.location announce_all("KNOCK KNOCK KNOCK");
+.open ? {
+	.other_side.location announce_all(
+		"You can see ", avatar().name," knocking on the open door.");
+	}
+
+_button (0)
+textate("Nothing happens.");
+

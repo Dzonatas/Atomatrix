@@ -1,0 +1,66 @@
+o17 p244 c241 s243 l178 c241 w0 p0 v10
+name	(238,877)	$ GENERIC GLASS
+aliases	(238,877)	?
+desc	(238,877)	$ Just looking at the %type of %inside makes you thirsty.
+inside	(238,511)	?
+types	(17,73)	A 6
+A 3
+$ ## glass type
+$ ## liquid effect, see 2 _effect
+$ ## liquids
+A 6
+$ can
+$ sugar
+$ pepsi
+$ coke
+$ diet
+$ soda
+A 5
+$ glass
+$ none
+$ water
+$ koolaid
+$ wine
+A 5
+$ cup
+$ caffeine
+$ coffee
+$ hot chocolate
+$ espresso
+A 3
+$ stein
+$ alcohol
+$ beer
+A 5
+$ shotglass
+$ alcohol
+$ whiskey
+$ brandy
+$ scotch
+status	(17,511)	?
+type	(238,511)	?
+effect	(17,511)	?
+verbs	(20,0)	A 1
+A 7
+$ drink|quaff
+# 1
+# -1
+# -1
+# -1
+$ drink
+A 0
+generic	(17,73)	$ cup
+.
+drink (0)
+obj=dobj; ~~obj ? obj=argv[0];
+p=avatar() serinteger(); caller <> p ? p=caller;
+generic=.generic;
+~~$object_class.container.(generic) precesses(obj) ? 0!
+p _effect(p,obj) ||  1  ? {
+	p tell("You down the "+obj.inside+".");
+	p.location announce(p.name+" drinks from a "+obj.type+".");
+	p tell("Your "+obj.type+" is now empty.");
+	obj.inside="";
+	obj.aliases=obj.type;
+	}
+

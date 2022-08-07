@@ -1,0 +1,383 @@
+o6 p1 c0 s20 l85 c0 w0 p0 v7
+name	(6,73)	$ Battle Rules
+desc	(6,73)	$ This object contains all the programs to run the fighting aspects of the 
+current dungeon.
+
+object	(6,73)	M 73
+entrance	(6,73)	M 181
+money	(6,73)	M 146
+body	(6,73)	A 2
+A 19
+$ h
+$ n
+$ ub
+$ ra
+$ la
+$ rh
+$ lh
+$ c
+$ b
+$ lb
+$ ll
+$ rl
+$ lf
+$ rf
+$ d
+$ bh
+$ bf
+$ ba
+$ bl
+A 19
+$ head
+$ neck
+$ upper-body
+$ right-arm
+$ left-arm
+$ right-hand
+$ left-hand
+$ chest
+$ back
+$ lower-body
+$ left-leg
+$ right-leg
+$ left-foot
+$ right-foot
+$ finger
+$ hands
+$ feet
+$ arms
+$ legs
+attack_types	(6,73)	A 2
+A 8
+$ blunt
+$ sharp
+$ missle
+$ fire
+$ cold
+$ electric
+$ magic
+$ light
+A 8
+$ 0
+$ 0
+$ 0
+$ 0
+$ 0
+$ 0
+$ 0
+$ 100
+.
+ready_weapon_is (0)
+argv -> o, who;
+~~$battle.object precesses(o) ?
+	$error.perm !
+~~who ?
+	who = avatar() ;
+~~o ?
+	who.default_weapon ?
+		o = $battle.object make(who.default_weapon) ;
+$util db( who , " battle ready weapon is " , $util name(o) ) ;
+wr	= who.ready_weapon;
+who.ready_weapon = o ;
+wr ?
+	$battle.object unuse(wr) ;
+
+update_mods (0)
+argv -> who;
+def={};
+dtypes={};
+[ o; $battle.object hasready(who)] {
+	info = o defenses();
+	[ type; info] {
+		type -> ta, tp;
+		( i=ta @# dtypes) @ $integer ?
+			def[i][1]+=tp;
+		,	{
+			pushr(dtypes,ta);
+			pushr(def,type);
+			}
+		}
+	}
+who.defenses=def;
+
+defenses (0)
+/* evaluates percentage of protection for each attack type */
+argv -> o, parts, w, types;  /* opp., {parts}, weapon, {types} */
+
+pcnt=0;
+i=0;
+$util db(o,".defenses=",ascii(o.defenses));
+[ def; o.defenses] {
+	def -> type, percentage;
+	type @# types ? { pcnt+=percentage; i+=1; }
+	}
+i==0 ? 0!
+(pcnt/i)!
+
+bodystr (0)
+( x = argv[0] @# $battle.body[0] ) @ $integer ?
+	$battle.body[1][x] !
+
+equip (0)
+dobj ? {
+	who=dobj;
+	~~ isAvatar( who ) && ~~$npc_class precesses(who) ? {
+		textate($util name(who)," is not a character.");
+		!
+		}
+	textate(who.name," is currently,");
+	}
+,	{
+	who=avatar() serinteger();
+	dobjstr ?
+		textate("Who?") !
+	textate("You are currently,");
+	}
+held={};
+worn={};
+[ o; $battle.object hasready(who)] {
+	o.held ? pushr(held,o);, pushr(worn,o);
+	}
+textate("Wearing:");
+~~worn ? textate("\tNothing");
+[ o; worn] {
+	textate($vreality format("\t[^15] ",$battle bodystr(o.worn)),$util name(o));
+	}
+textate("Wielding:");
+~~held ? textate("\tNothing");
+[ o; held] {
+	o==who.ready_weapon ? r="*";, r=" ";
+	textate($vreality format("\t[^15] ",r+$battle bodystr(o.held)),$util name(o));
+	}
+
+aim_blow (0)
+/* determine where opp is hit */
+
+argv[0] ? {		/* aimed blow chosen by avatar() ie "hit obj on head" */
+	$crtl random(100) < 100 ?
+		{argv[0],argv[0]}1 /* % for success, automatic 100% for now */
+	}
+
+$crtl random(100) < 60 || argv[0] ?		/* 60% of hitting main body */
+	({"chest","chest"})!
+			/* unless aimed blow misses, where main body hit is automatic */
+
+limbs={
+	{ "head", "head" },
+	{ "arms", "arm" },
+	{ "hands", "hand" },
+	{ "feet", "foot" },
+	{ "legs", "leg" },
+	{ "neck", "neck" }
+	};
+
+limbs[$crtl random(limbs length())]!
+
+protect (0)
+argv -> opp, w, damage, parts;
+total_strength=0;
+mindam=0;
+maxdam=500;
+
+[ o; opp.armour] {	 /* each armor object worn */
+
+	aobj_protect=aobj.(area);
+	~~aobj_protect ?
+		aobj_protect=(area @# aobj.protects);
+
+	aobj_protect || ("all" @# aobj.protects) ? {
+		strengths={};
+
+		[ typestr; w_classes] {
+			type=(typestr @# offset_table);
+			aobj_strength=aobj.(typestr);
+			type || aobj_strength ? {
+				~~aobj_strength ?
+					aobj_strength=aobj.strengths[ type +1 ];
+
+				strengths={+strengths, aobj_strength};
+				}
+			}
+
+		aobj_strength=$util lowestnum(+strengths);
+		/* strength is weakest value w/r/t hittype */
+
+		total_strength=total_strength+aobj_strength;
+		aobj.strengths[0] > mindam ?
+			mindam=aobj.strengths[0];
+		aobj.strengths[1] < maxdam ?
+			maxdam=aobj.strengths[1];
+		}
+	}
+
+total_strength < 1 ?
+	damage!
+
+damage > maxdam ? {
+	modify= - (total_strength * 30) /100;	/* lose 30% */
+	}
+damage < mindam ? {
+	modify=95-total_strength;		/* adjust total to 95% */
+	}
+total_strength > 100 || total_strength+modify > 100 ? {
+	total_strength=100;
+	modify=0;
+	}
+
+protection=(damage*(total_strength+modify))/100;
+damage-protection!
+
+hit (0)
+/* Figure out how the avatar() was hit/missed */
+// opp	= argv[0] ;	/* opponents object */
+// w	= avatar().ready_weapon ;
+( opp = argv[0] ).hp < 1 ?
+	{
+	textate(opp.name, " is already dead!");
+	-1!
+	}
+( w = avatar().ready_weapon )
+	&& w _used_on(opp) ?
+	{
+	/* 1! if to abort hit now */
+	/* it could change anything and then continue on hitting */
+	-1!
+	}
+/* figure dexterity scale */
+dex	= avatar().dexterity ;
+
+/* if item is marked to modify dexterity then apply it */
+[ o; avatar().dexmods]
+	dex += o _dex(opp) ;
+
+dex	= (dex - opp.dexterity) + 50;  /* normal range 0-100 */
+
+dexneed=$crtl random(100);
+dex <= dexneed ?
+	{
+	textate("You missed!");
+	opp.location announce_all($util name(avatar(),"")," misses ",opp.name);
+	-1!
+	}
+
+hitstr = w.hitstr || "hit";
+ohitstr= w.ohitstr || "hits";
+
+/* get all/random possible parts hit */
+parts=w _area_aim(opp.body,default_aim) || {"ub"}; 
+
+defenses=$battle defenses(opp,parts,w,w _attack_types() || {"blunt"});
+$util db(avatar().name," defenses ",ascii(defenses));
+
+damage=w _damage(opp) || 1;
+
+i	= parts[0] @# $battle.body[0];
+areastr	= $battle.body[1][i] || "body";
+
+defenses ?
+	opp_damage = damage ;
+,	( opp_damage = damage - ( damage * defenses ) / 100 ) < 0 ?
+		opp_damage = 0 ;
+$util db("def=",defenses,"  dam=",damage,"  opp_dam=",opp_damage);
+
+opp.hp	= opp.hp - opp_damage ;
+
+pstr	= "You "+hitstr+" at "+$util name(opp) ;
+vpstr	= "You "+hitstr+" at your opponent's "+areastr ;
+ostr	= $util name(avatar(),"")+" "+ohitstr+" you!";
+vostr	= $util name(avatar(),"")+" "+ohitstr+" your "+areastr;
+astr	= avatar().name+" "+ohitstr+" "+opp.name+"!" ;
+
+opp_damage < 1 ?
+	{
+	vpstr=vpstr+", but the damage is absorbed!";
+	vostr=vostr+", but your armor absorbs the damage.";
+	}
+,
+opp_damage < damage ?
+	{
+	vpstr=vpstr+", and penetrate for "+ opp_damage string() +" hp.";
+	/* use $util strcat */
+	vostr=vostr+", penetrating your armor.  HP:"+
+			opp.hp string() +"/"+ opp.mhp string() ;
+	}
+,
+opp_damage == damage ?
+	{
+	vpstr=vpstr+" for "+ opp_damage string() +" hp!";
+	vostr=vostr+"!  HP:"+ opp.hp string() +"/"+ opp.mhp string() ;
+	}
+
+avatar().verbose ? textate(vpstr);, textate(pstr);
+
+opp.verbose ? opp tell(vostr);, opp tell(ostr);
+
+opp.location announce_x({avatar() serinteger(),opp},astr);
+
+opp.hp <= 0 ?
+	{
+	opp.location <> avatar().location ?
+		textateLocals(avatar().name," killed ",opp.name);
+	opp.location announce_all(avatar().name," killed ",opp.name);
+	$battle kill(opp);
+	}
+
+kill (0)
+/* take care of all misc. tasks to virtually recycle an avatar() or NPC */
+who=argv[0];
+
+$npc_class precesses(who) ? {
+	who.status="corpse";
+	who.doing="die";
+	who.wait_time= $crtl time() + 30;
+	/*who droptreasure(who); die() should do this */
+	!
+	}
+who tell("You've died.  (sort-of)");
+who.hp=who.mhp;
+~~$wizard precesses(who) ? {
+	who reintermodulize(.entrance);	/* dungeon entrance */
+	drop={};
+	[ i; who.objects] {
+		$battle.treasure precesses(i) ? {
+			drop = { i, +drop };
+		}
+	}
+	drop length() ? {
+		who tell("You drop your money due to the intense pain of death.");
+		[ i; drop] {
+			.money _recycle(i);
+		}
+	}
+}
+
+
+who.location announce_all("Resurrecting ",$util name(who),"..   *BAMPH*!");
+
+damage (0)
+/* figure out a damage score by a weapon caused to an opponent */
+
+opp=argv[0];  /* opponent object */
+weapon=argv[1];    /* weapon object */
+
+weapon && $module serialed(weapon) @ $module ? {
+	damage=$util rolld(weapon.damage);
+	damage < 0 ?
+		0!,
+		damage!
+	}
+,	$util rolld("1d4")! /* hand-hand combat */
+
+makeitem (0)
+$battle.object make(+argv)!
+
+register (0)
+argv -> o;
+~~($npc_class precesses(o) || isAvatar( o ) ) ?
+	$error.perm !
+vs={ "hp", "mhp", "attacking", "armour", "ready_weapon"};
+[ v ; vs ]
+	o addVariant( v ) security( "=orwtrwerw" ) ;
+$battle ready_weapon_is(0,o);
+1!
+

@@ -1,0 +1,9 @@
+o6 p10 c0 s125 l254 c435 w452 p0 v3
+mywm	(6,219)	M 451
+name	(6,219)	$ display
+process	(6,219)	M 435
+.
+task (0)
+.mywm mywm();
+1!
+

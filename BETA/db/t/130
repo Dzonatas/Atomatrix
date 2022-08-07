@@ -1,0 +1,14 @@
+o17 p129 c0 s0 l129 c0 w131 p0 v7
+name	(73,73)	$ TWO-HANDED SWORD
+desc	(73,73)	?
+damage	(73,73)	$ 2d4+2
+type	(73,73)	$ 2hsword
+hitstr	(73,73)	$ swing
+ohitstr	(73,73)	$ swings
+types	(6,73)	A 2
+A 1
+$ ts
+A 2
+$ two-handed sword
+$ 2d6+2
+.

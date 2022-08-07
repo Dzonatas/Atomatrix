@@ -1,0 +1,9 @@
+o73 p133 c0 s0 l373 c0 w363 p0 v4
+name	(6,585)	$ rapier
+type	(73,585)	$ pk
+damage	(6,731)	$ 3d5
+using	(73,80)	A 2
+# 373
+A 1
+$ rh
+.

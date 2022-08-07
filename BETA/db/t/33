@@ -1,0 +1,270 @@
+o6 p1 c0 s28 l5 c0 w0 p0 v7
+name	(33,1023)	$ postBoard
+aliases	(33,877)	$ board|note board|post*-it-note board
+desc	(33,877)	$ Try 'browse' or 'post'.
+notes	(33,877)	A 27
+$ Welcome to Virtual Realities!
+Sorry for the mess around here.  This is undergoing major development!
+
+Feel free to use the board to post ideas, bugs, or such.
+
+$ Hmm. Neat.
+
+
+
+$ All these preposition (phrases) can be used.  Each one on the same line
+have the same meaning. 
+
+is
+as
+over
+at/to
+behind
+beside
+through
+for/about
+off/off of
+with/using
+in front of
+in/inside/into
+on top of/on/onto/upon
+out of/from inside/from
+under/underneath/beneath
+
+$ Aliases now work on all objects.
+See the details on pattern matching to find out how they work.
+
+
+$ this is a test
+
+?
+$ Now you don't have to enter a password after the game has reconized you.
+Besure to remember your password.  If there is any change and the system
+doesn't automatically reconize you this is your key back to your character.
+
+$ Looks like I let missed a permission bug.  I have it fixed now.  But it
+wiped out all the new messages on this board.  I restored the old board
+from back ups.
+
+$ Hello...
+At least I've figured out how to use tthe Post-It-Note Board...
+For some reason, I was having troubles before.
+ 
+Asmodeus:
+I visited your lab.  Nice place.  Not that I know what you do there...
+ 
+
+
+$ Subject: new areas
+ 
+    I've moved the Shrine to an entirely new area, the top of the cliff.
+Getting to it is tricky, but it leaves room for some expansion  --  I know
+Jon Cline in particular didn't like the idea of a cramped map, and we might
+have run into trouble with overlapping rooms.
+    However, you can still reach the Shrine through the secret door in the
+Play Rooms.  A magic entrance, perhaps?
+
+$ The swimming program for the river doesn't work yet, so until it does,
+use 'sw' (southwest) to get into the beaverpond -- which is how most people
+get into the river in the first place...
+
+$ this is neet
+
+
+$ buddy
+
+eh brah
+es da'kine
+
+mahalo
+
+$ new development in how process tasks are timed
+
+$ fuel cell
+fuel-cell
+
+fast car
+fresh choice
+
+fair city
+fare cash
+
+
+$ ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+
+$ editor
+eddittor
+ed.tor
+tor.ed
+rot.ed
+
+rotide
+rotidel
+tidel
+tilde
+
+$ edit method
+with first erase()
+so editField is below last inputField
+
+$ the new volkswagon
+
+$ the language is dynamic
+
+type 'help' for more knowledge
+
+$ from objectSpaceSystem
+
+
+hmmm.... need to create log
+
+$ i dunno
+just thoughts
+
+$ humm...
+
+maybe use the xwindow network protocol as a means to send shared memory
+
+$ medium of data
+view data space time syncronized
+projection
+
+$ default of .desc is to have the variable inherited
+need to add when a new object is created
+
+steps to rid of the inherit status bit on object variable permissions
+
+$ about to function
+
+$ [ Olympic Trials events in SacramentoCa at this date ]
+
+examples of dynamic shared objects have been coded
+need to move code around to the logical objects
+parser work... needs to go to expand on flexibleness [bison/yacc]
+speed of the parser is expected to slow at first
+
+
+notesubs	(33,877)	A 27
+$ HI
+$ 
+$ New prepositions that can be used!
+$ Aliases
+$ test
+$ hi
+$ auto login
+$ Hmm....
+$ this board
+$ new areas
+$ swimming in the river
+$ wow
+$ who are you
+$ tasks
+$ FC
+$ acemnorsuvwxz
+$ IDEOLOGY tidel
+$ IDEOLOGY tidel
+$ vw.com/vapor
+$ oops language
+$ openStructureSsystem
+$ fuelCellBackupMemory
+$ xwindow shared memory
+$ movie tape archive
+$ look at .desc
+$ process.fork()
+$ 20000716
+notefrom	(33,877)	A 27
+$ Asmodeus
+$ 
+$ Asmodeus
+$ Asmodeus
+$ 
+$ 
+$ Asmodeus
+$ Asmodeus
+$ Solomon Dee
+$ Solomon Dee
+$ Solomon Dee
+$ Silver Cat
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+$ DatThang
+verbs	(20,0)	A 3
+A 7
+$ browse
+# -1
+# -1
+# -1
+# -1
+$ browse
+A 0
+A 6
+$ post
+# -1
+# -1
+# -1
+# -1
+$ post
+A 7
+$ browse
+# 0
+# -1
+# -1
+# -1
+$ browse
+A 1
+# -101
+.
+browse (0)
+~~argc ? {
+	x=1;
+	intertextate(avatar().name," looks at the board.");
+	textate("Current Notes:");
+	[ i; .notesubs] {
+		textate(x,"\t",i);
+		x=x+1;
+		}
+	textate("Type 'browse 5' to read message #5, for example.");
+	!
+	}
+msgnum= argv[0] integer() ;
+~~.notes[msgnum-1] ? {
+	textate("No such note!");
+	msgnum==0 ? browse();
+	!
+	}
+textate("From: ",.notefrom[msgnum-1]);
+textate("Subj: ",.notesubs[msgnum-1]);
+intertextate(avatar().name," reads a note.");
+textate(.notes[msgnum-1]);
+
+post (0)
+textate("Subject:");
+subj=input();
+msg="";
+msg= $editor.edit(msg);
+
+~~msg || msg=="" ? {
+	textate("No message entered");
+	!
+	}
+
+pushr(.notes,msg);
+pushr(.notesubs,subj);
+pushr(.notefrom,avatar().name);
+msgnum=.notes length();
+textate("Note #",msgnum," posted.");
+intertextate(avatar().name," posted a note.");
+

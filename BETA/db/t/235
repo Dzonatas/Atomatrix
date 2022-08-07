@@ -1,0 +1,86 @@
+o6 p4 c0 s233 l234 c458 w0 p0 v5
+name	(235,877)	$ inside blue sphere
+desc	(235,877)	$ You can see and hear outside from within.
+dark	(6,91)	# 1
+exits	(4,219)	A 4
+A 0
+A 0
+A 0
+A 0
+verbs	(20,0)	A 2
+A 7
+$ exit
+# -1
+# -1
+# -1
+# -1
+$ exit
+A 0
+A 7
+$ zap
+# 0
+# -1
+# -1
+# -1
+$ zap
+A 1
+# -104
+.
+_accept (0)
+avatar() serinteger() == 6 ? 1 !
+
+zap (0)
+oname=argv[0];
+o=$util findobj(oname,234.location);
+o>0 ? {
+	o _moveto(235);
+	234.location announce(
+		"The sphere magically dissolves ",$util name(o,"the"),"\n");
+	!
+	}
+o=$util findobj(oname,235);
+o>0 ? {
+	o _moveto(234.location);
+	234.location announce("The sphere shines while ",
+		$util name(o)," appears from nowhere.\n");
+	!
+	}
+
+look (0)
+textate(235 lookat());
+textate("\nOutside you see \n",234.location lookat());
+avatar().editmode ? 234.location tell_exits();
+
+exit (0)
+~~avatar() _moveto(234.location) ? {
+	textate("You can't exit here.");
+	!
+	}
+textateLocals(
+"The blue sphere spins a cloud in dust which ",avatar().name," emerges from.");
+textateLocals(
+avatar().name," grabs the blue sphere and tucks it away quickly.");
+234 _moveto(avatar() serinteger());
+avatar().location look();
+
+movedir (0)
+obj=234;
+
+~~verb ? verb=argv[0];
+verb=="nw" ? verb="northwest";
+, verb=="sw" ? verb="southwest";
+, verb=="ne" ? verb="northeast";
+, verb=="se" ? verb="southeast";
+exit=234.location _dir(verb);
+exit=chroom(obj,exit,verb,0/*odir*/) ?
+	{
+	avatar() @~ $undefined ?
+		exit look() ;
+	obj.status @ $varray ?
+		obj.status = {};
+	1!
+	}
+0!
+
+enter (0)
+

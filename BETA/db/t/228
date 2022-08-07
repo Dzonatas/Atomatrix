@@ -1,0 +1,14 @@
+o17 p4 c0 s226 l0 c259 w0 p0 v3
+name	(228,877)	$ Forest River
+desc	(228,877)	$ This path continues, following the river east and west.  Farther to the
+east there seems to be a clearing.
+exits	(4,219)	A 4
+A 2
+# 4
+# 3
+A 2
+M 207
+M 229
+A 0
+A 0
+.

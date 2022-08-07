@@ -1,0 +1,77 @@
+o12 p10 c0 s271 l478 c0 w260 p0 v1
+name	(6,219)	$ Alchematrix
+.
+source (0)
+!
+/*
+$vreality repository( "radix" ,
+"<module>
+	<intramodule m=\"1\"/>
+</module>" ) ;
+*/
+
+$vreality repository( "1" ,
+"<module id=\"1\">
+	<principal m=\"1\"/>
+	<precursor m=\"radix\"/>
+	<intramodules m=\"kernel\"/>
+	<variant>
+		<identifier><ascii>kernel</ascii></identifier>
+		<principal><serial><ascii>1</ascii></serial></principal>
+		<principle><integer n=\"73\"/></principle>
+		<source><ascii>kernel</ascii></source>
+	</variant>
+	<variant>
+		<identifier><ascii>_keywords</ascii></identifier>
+		<principal><serial><ascii>1</ascii></serial></principal>
+		<principle><integer n=\"219\"/></principle>
+	</variant>
+	<method>
+		<identifier><ascii>interface</ascii></identifier>
+		<source>
+<ascii>._keywords=( $module serialed( 1 ) )._keywords ;
+.kernel intraface() ;
+._keywords={};</ascii>
+		</source>
+	</method>
+</module>" ) ;
+
+/*
+$vreality repository( "kernel" ,
+"<module>
+	<principal>kernel</principal>
+	<precursor>radix</precursor>
+	<method>
+		<identifier>interface</identifier>
+		<source>$atomatrix output( \"kernel intrafaced\" ) ;</source>
+>._keywords=( $module serialed( 1 ) )._keywords ;
+.kernel intraface() ;
+._keywords={};<
+		source>
+	</method>
+</module>" ) ;
+*/
+/*
+<module>
+	<principal></principal>
+	<precursor></precursor>
+	<intramodule></intramodule>
+	<intramodules></intramodules>
+	<orbit></orbit>
+	<intermodule></intermodule>
+	<intermodules></intermodules>
+	<principle></principle>
+	<variant>
+		<identifier></identifier>
+		<principal></principal>
+		<principle></principle>
+		<type></type>
+		<data></data>
+	</variant>
+	<method>
+		<identifier></identifier>
+		<source></source>
+	</method>
+</module>
+*/
+

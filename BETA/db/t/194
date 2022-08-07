@@ -1,0 +1,16 @@
+o17 p4 c0 s193 l0 c0 w0 p0 v3
+name	(194,877)	$ Inside the Oak
+desc	(194,877)	$ This massive hole in the oak, created by some fire long ago, makes the
+tree seem very spacious.  From inside the oak, the forest looks quiet
+and peaceful.  The exit is northwest.  There also appears to be light
+coming from somewhere further into the tree...
+exits	(4,219)	A 4
+A 2
+# 8
+# 2
+A 2
+M 193
+M 195
+A 0
+A 0
+.

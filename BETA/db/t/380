@@ -1,0 +1,9 @@
+o73 p136 c0 s285 l373 c0 w186 p0 v4
+name	(73,585)	$ leather gloves
+type	(73,585)	$ lg
+defense	(73,585)	$ +1
+using	(73,80)	A 2
+# 373
+A 1
+$ bh
+.

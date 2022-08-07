@@ -1,0 +1,30 @@
+o6 p1 c0 s96 l101 c0 w0 p0 v4
+name	(102,877)	$ toilet
+aliases	(102,877)	$ pot|bowl|stall|shi*|dump
+desc	(102,877)	$ Pot-O-Porcelin
+verbs	(20,0)	A 1
+A 6
+$ use
+# 1
+# -1
+# -1
+# -1
+$ use
+.
+use (0)
+textate("You undress and sit down.");
+$program sleep(2);
+textate("EERRRRR AAAAA EERRRRRRR");
+$program sleep(3);
+textate("PPPLLLLLLLLLOOOOOOOOPPPDDIIIPP");
+$program sleep(2);
+textate("EERRRRR AAAAA EERRRRRRR");
+$program sleep(3);
+textate("EERRRRR AAAAA EERRRRRRR");
+$program sleep(3);
+textate("PPPLLLLLLLLLOOOOOOOOPPPDDIIIPP");
+$program sleep(2);
+textate("AAAAAaaaaaahhhhhhh... what a relief!");
+textate("You notice someone forgot to replace the toilet paper!");
+textate("Maybe you can use the sink.");
+

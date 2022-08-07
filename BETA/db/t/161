@@ -1,0 +1,67 @@
+o17 p220 c0 s219 l188 c0 w0 p0 v8
+name	(161,877)	$ Hagga
+aliases	(161,877)	$ hagga
+desc	(161,877)	$ Hagga looks up at you beneath the shaggy strands of her withering hair.
+wait_time	(72,511)	# 932274238
+vocab	(17,73)	A 4
+$ buy
+$ sell
+$ potion
+$ scroll
+speech	(17,73)	A 5
+$ The red potions are for health, I would suggest keeping a stock.
+$ There are some new scrolls in this week, the selection is perfect for dungeon slaying.
+$ The wise man always carries a lock of wolfsbane, just in case.
+$ Green vials might be for strength, but some have been known to poison.
+$ Gems can be blessed, you know.  For magical protection.
+action	(17,73)	A 4
+$ Hagga stirs the pot cautiously.
+$ Hagga throws something foul into the cauldron.
+$ Hagga inspects you cautiously.
+$ Hagga fills a small potion vial with the cauldron's steaming contents.
+task	(72,73)	# 4
+.
+sorry (0)
+speak("What do you want, then?  To buy or sell a potion or scroll?");
+
+parse (0)
+~~args=_parse() ? 0!
+args -> src, words;
+ 
+~~(match=this match("vocab",+words)) ? {
+        sorry(p);
+        1!
+        }
+
+[ w; match] {
+/*	w = w + "=1;";
+	$program evaluate(w); */
+
+	w == "buy" ? buy=1;
+	w == "sell" ? sell=1;
+	w=="potion" ? potion=1;
+	w=="scroll" ? scroll=1;
+	
+}
+
+17 tell("--#",avatar() serinteger()," tries ", match join(" ") ," from #",this);
+l = .location;
+
+
+buy ? { 
+	potion ? {
+		l announce_all(argv[0][0] +" tries to buy a potion.\n");
+	}
+	, scroll ? {
+		l announce_all(argv[0][0]+ " tries to buy a scroll.\n");
+	}
+	, {
+		l announce_all("Hagga says, '",argv[0][0]," can buy only a potion or scroll.");
+	}
+}
+
+sell ? {
+	l announce_all(argv[0][0]+ " tries to sell something.\n");
+}
+
+

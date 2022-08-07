@@ -1,0 +1,31 @@
+o17 p74 c375 s136 l74 c0 w112 p0 v4
+name	(110,73)	$ ARMOUR-HEAD
+worn	(6,73)	$ h
+types	(6,73)	A 7
+A 6
+$ bh
+$ lc
+$ hm
+$ sh
+$ rh
+$ ph
+A 2
+$ biker's helmet
+$ +2
+A 2
+$ leather cap
+$ +1
+A 2
+$ halloween mask
+$ +1
+A 2
+$ scaled helm
+$ +2
+A 2
+$ ring-mail helm
+$ +3
+A 2
+$ plated helm
+$ +4
+type	(6,73)	$ head
+.

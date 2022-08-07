@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{ea071d15-18c0-44c1-b645-daccae77b10c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\op">
+      <UniqueIdentifier>{9122eab4-ca3e-43c9-8e8b-48059afac9de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{1545465e-c355-4e85-8912-0c6e02035bfd}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{d9cd6c51-a1ba-4442-b624-18014d0030e0}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Add_Vars.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Assign_Var.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Delete_Vars.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Evaluate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Execute.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Find_Var.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Inherit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aAtomatrix_addTask.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aIndexInteger.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cod.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="execCreate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="find_func.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ischild.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iscontainedin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="machine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="o_atomized.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="structor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="task.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tkn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vartostr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="opADD.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opAND.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opARY_ITER.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opASSIGN.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opASSIGN_AE.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opASSIGN_ME.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opBAND.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opBNEGATE.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opBOR.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opBRA.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opBRF.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opBRT.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opDIV.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opEQ.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opEVAL.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opFOREACH.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opFUNC.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opGE.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opGT.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opINDEX.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opIS.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opIS_NOT.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opLE.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opLT.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opLVERB.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opMAKE_ARY.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opMUL.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opNE.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opNEGATE.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opNOT.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opOBJ_FUNC.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opOR.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPOP.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPOPL.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPOPR.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPOP_BRA.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPULL.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPUSHL.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPUSHR.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPUSH_ON_ARY.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPUSH_OV.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPUSH_OVT.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPUSH_OVTS.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPUSH_OVV.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPUSH_OVVS.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPUSH_OV_A_S.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opPUSH_VAR.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opREF.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opSEARCH.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opSPLICE.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opSPLIT.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opSUB.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opTVERB.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opVERB.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+    <ClCompile Include="opVERB_A_S.c">
+      <Filter>Source Files\op</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="avei.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="executable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="op.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="opcode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sframe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

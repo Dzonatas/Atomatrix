@@ -1,0 +1,153 @@
+o17 p1 c116 s103 l71 c0 w0 p0 v13
+name	(82,877)	$ pigeon
+aliases	(82,877)	?
+desc	(82,877)	$ Its wings are dirty white.
+roaming	(17,877)	# 50
+task	(17,73)	# 0
+home	(17,73)	A 1
+M 71
+editmode	(17,73)	# 0
+delay	(17,73)	$ 10d6
+visit	(17,73)	A 11
+M 5
+M 7
+M 8
+M 14
+M 32
+M 38
+M 39
+M 43
+M 46
+M 47
+M 58
+actions	(17,73)	A 3
+$ pecks at the ground.
+$ bobs its head.
+$ coos gently.
+msg_leave	(17,73)	$ flies away.
+msg_arrive	(17,73)	$ lands here.
+verbs	(20,0)	A 1
+A 7
+$ hit|kick|kill|attack
+# 1
+# -1
+# -1
+# -1
+$ hit
+A 1
+# -100
+.
+hit (0)
+verb = argv[0];
+$wizard precesses(avatar()) ?
+	{
+	textate("You ",verb," the ",.name,".");
+	intertextate(avatar().name," hits the ",.name,".");
+	textateLocals(.name," disappears in a puff of smoke!");
+	.task=0;
+	this reintermodulize(.home[0]);
+	.location announce_all(.name," enters.");
+	!
+	}
+textate("You realize that such action would be unethical.");
+intertextate(avatar().name," grows angry at ",$util name(this),
+		" but realizes the nature of all good things.");
+
+
+tell (0)
+ok	= 0 ;
+[ obj ; .location.objects ]
+	isAvatar( obj ) ?
+		ok = 1 ;
+ok==1 && .roaming && taskok() ?
+	{
+	.task=1;
+	addtask(this, "roam");
+	}
+
+getnewloc (0)
+oldloc=.location;
+exits={}; dirs={};
+
+~~(oldloc @# .visit) ? /* _this_ is lost somewhere */
+	({ .home[0], "somewhere", "somewhere" })!
+
+[ dir; $compass_dirs] {
+	room=oldloc.(dir);
+	$module serialed(room) @ $module && (room @# .visit) ? {
+		exits={ +exits, room };
+		dirs={ +dirs, dir };
+		}
+	}
+
+exits length()==0 ?
+	({ 0, 0, 0 })!
+
+r=$crtl random(exits length());
+dirnum = ( dirs[r] @# $compass_dirs);
+({ exits[r], dirs[r], $compass_odirs[dirnum] })!
+
+roam (0)
+maxtask=.maxtask;
+~~maxtask ? maxtask=10;
+[.task>0] {
+
+$program sleep(3);
+what=$crtl random(100);
+debug="";
+
+what < .roaming ? {
+	oldloc=.location;
+	newloc=getnewloc();
+
+	newloc[0] ? {
+		err=this reintermodulize(newloc[0]);
+		err @~ $error && err ? {
+			msgl=.msg_leave;
+			~~msgl ? msgl="leaves ~dir."+debug;
+			dmsgl= msgl replace("~dir",newloc[1]) ?
+				msgl=dmsgl;
+
+			msga=.msg_arrive;
+			~~msga ? msga="arrives from the ~odir."+debug;
+			dmsga= msga replace("~odir",newloc[2]) ?
+				msga=dmsga;
+
+			oldloc announce_all($util name(this,"The")+" "+dmsgl+debug);
+			newloc[0] announce_all($util name(this,"A")+" "+dmsga+debug);
+			}
+		}
+	$program sleep($util rolld(.delay));
+	}
+,	{
+	str=.actions[$crtl random(.actions length()-1)];
+	.location announce_all($util name(this,"The")+" "+str+debug);
+	}
+
+$program sleep($util rolld(.delay));
+
+.task > maxtask ? {
+	[ homeloc; .home] {
+		.task && .location==homeloc ?
+			{
+			.task=0;
+			$program sleep($util rolld(.delay)*2);
+			}
+		}
+	}
+,	.task=.task+1;
+
+}
+
+taskok (0)
+ok=1;
+[ task; tasks()] {
+	[ prog; task[2]] {
+		prog[0]==this && (prog[1]=="roam" || prog[1]=="<eval>") ?
+			ok=0;
+		}
+	}
+
+ok!
+	
+

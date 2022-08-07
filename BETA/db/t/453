@@ -1,0 +1,140 @@
+o6 p10 c0 s451 l6 c0 w170 p0 v6
+name	(453,895)	$ visual editor
+aliases	(453,895)	$ vi
+desc	(453,895)	?
+verbs	(20,0)	A 1
+A 7
+$ vi
+# 0
+# -1
+# -1
+# -1
+$ vi
+A 1
+# -101
+objs	(6,27)	A 17
+# 454
+# 6
+# 440
+# 457
+# 456
+# 455
+# 234
+# 55
+# 164
+# 434
+# 159
+# 302
+# 256
+# 453
+# 170
+# 291
+# 6
+obj	(6,219)	# 457
+.
+vi (0)
+$curses initscr(); 
+$curses cbreak();  
+$curses noecho();
+$curses nonl(); 
+$curses erase();
+
+.objs = undef;
+avatar().location ?
+	{
+        .objs = { +.objs,
+                avatar().location,
+                +avatar().location.objects,
+                +avatar().objects,
+                avatar()
+                };
+        }
+,	{
+        .objs = { +.objs,
+                +avatar().objects,
+                avatar()
+                };
+        }
+argv[0] ?
+	.obj = $parse obj_name(argv[0]);
+.obj ?
+	input();
+$curses refresh();
+$curses endwin();
+
+input (0)
+$curses move(0,40);
+$curses addch($util name(.obj));
+
+input2();
+
+!
+
+y=0;
+[ o; .objs] {
+	$curses move(y,0);
+	$curses addch( ascii($util name(o)));
+	y += 1;
+	}
+
+yy=y;
+y=0;
+
+[1] {
+	$curses move(y,0);
+	$curses refresh();
+	i = $curses.getch();
+	(i == 'j') && (y < yy) ? {
+		y += 1;
+		<;
+		}
+	i == 'k' ? {
+		y -= 1;
+		<;
+		}
+	i == 'e' ? {
+		.obj = .obj[y];
+		input2();
+		.;
+		}
+	.;
+	}
+
+input2 (0)
+o = .obj;
+
+$curses clear();
+$curses move(0,40);
+$curses addch($util name(.obj));
+
+pp = o programs();
+
+y=0;
+[ p; pp] {
+	$curses move(y,0);
+	$curses addch(p identifier());
+	y += 1;
+	}
+yy=y;
+y=0;
+[1] {
+	$curses move(y,0);
+	$curses refresh();
+	i = $curses getch();
+	i == 'j' ? {
+		(y+1) < yy ? y += 1;
+		<;
+		}
+	i == 'k' ? {
+		y > 0 ? y -= 1;
+		<;
+		}
+	i == 'e' ? {
+		$curses endwin();
+		$programmer editprog(o,pp[y] identifier());
+		$curses initscr();
+		<;
+		}
+	.;
+	}
+

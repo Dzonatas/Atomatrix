@@ -1,0 +1,34 @@
+o17 p4 c0 s138 l0 c189 w0 p0 v5
+name	(179,877)	$ Ye Weary Publance
+desc	(179,877)	$ A huge bar looms before you.  The barman, Jake, looks up at you
+briefly and returns to his business.  There is a smaller room to
+the back of the bar (east).  A sign is mounted behind the bar, 
+listing various drinks.
+
+(try: jake, gimme a drink)
+ 
+barman	(17,73)	# 178
+exits	(4,219)	A 4
+A 2
+# 4
+# 3
+A 2
+M 138
+M 99
+A 0
+A 0
+clues	(17,91)	A 4
+$ Try: Jake, gimme a drink.
+$ The fishcrackers look tempting...
+$ Are you thirsty?
+$ The barman is here to serve.
+.
+_moved_in (0)
+obj=caller;
+.barman _command(obj,.barman,"_moved_in");
+!
+
+_moved_out (0)
+caller==avatar() serinteger() ?
+	.barman _command(avatar() serinteger(),.barman,"_moved_out");
+

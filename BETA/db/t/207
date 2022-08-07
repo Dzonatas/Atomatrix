@@ -1,0 +1,14 @@
+o17 p4 c0 s206 l0 c280 w0 p0 v3
+name	(207,877)	$ Forest River
+desc	(207,877)	$ The river speeds past you to the south as it flows down this mountain slope.
+To the east a trail follows the river, and to the west a trail leads uphill.
+exits	(4,219)	A 4
+A 2
+# 4
+# 3
+A 2
+M 205
+M 228
+A 0
+A 0
+.

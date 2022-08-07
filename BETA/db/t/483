@@ -1,0 +1,11 @@
+o4 p4 c0 s480 l107 c490 w485 p0 v3
+name	(4,219)	$ Berkeley Software Distribution
+desc	(4,219)	?
+exits	(4,219)	A 4
+A 0
+A 0
+A 1
+$ exit
+A 1
+M 475
+.

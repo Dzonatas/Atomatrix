@@ -1,0 +1,105 @@
+o6 p162 c17 s0 l0 c0 w0 p32768 v2
+name	(0,365)	$ Wizard
+verbs	(20,0)	A 1
+A 7
+$ @@*
+# 0
+# 0
+# 0
+# 163
+$ wizperm
+A 2
+# -100
+# -102
+.
+test (0)
+$module serialed( 234 ) . desc = "It looked at you." ;
+wizperm (0)
+/* does certain commands with wizard permissions */
+
+~~$wizard precesses(caller) ? 0!  /* only wizards */
+verb	= argv[0];
+list0	= argv[1] split(",");
+list1	= argv[2] split(",");
+list2	= argv[3] split(",");
+
+textate(verb);
+
+verb=="@@cvo" ?
+	{
+	o = $module serialed( argv[3] integer() ) ;
+	[ l0; list0] 
+		{
+		m = $module serialed( l0 integer() ) ;
+		[ l1; list1]
+			m variant( l2 ) principal( o ) ;
+		textate("cvo ", l0, ",", l1, ",", l2 ) ;
+		}
+	}
+, verb=="@@cvp" ?
+	{
+	[ l0; list0]
+		{
+		m = $module serialed( l0 integer() ) ;
+		[ l1; list1]
+			m variant( l2 ) security( argv[3] ) ;
+		textate("cvp ", l0, ",", l1, ",", l2 ) ;
+		}
+	}
+m = $module serialed( argv[0] integer() ) ;
+verb=="@@coo"		? m principal( $module serialed( argv[1] integer() ) ) ;
+, verb=="@@cos"		? m security(argv[1]);
+, verb=="@@chp"		? m reprecessize( $module serialed( argv[1] integer() ) ) ;
+, verb=="@@name"	? m.name = argv[1]!
+, verb=="@@e"		? textate(ascii( $program evaluate( argv join(" ") )));
+, textate("Unknown wizperm.");
+
+strip (0)
+m = argv[0] ;
+[ z ; m programs() ]
+	z delete() ;
+[ z ; m variants() ]
+	z delete() ;
+m principal( $module serialed( 1 ) ) ;  // UPDATE: too explicit
+
+_chobjown (0)
+/* temporary fix */
+argv[0] principal( argv[1] ) !
+
+fixExits (0)
+/****************************************************/
+
+o = 0 ;
+r = $module serialed( 4 ) ;
+[ (o+=1) <= 512 ]
+	{
+	m = $module serialed( o ) ;
+	( v = m variant("exits") ) @ $error ?
+		< ;
+	~~( r precesses( m ) ) ?
+		< ;
+	textate( "-------------",m serinteger() ) ;
+	( e = m.exits[1] ) ?
+		{
+		x	= {} ;
+		[ i ; e ]
+			i @ $integer ?
+				pushr( x , $module serialed( i ) ) ;
+			,	pushr( x , i ) ;
+		m.exits[1] = x ;
+		}
+	( e = m.exits[3] ) ?
+		{
+		x	= {} ;
+		[ i ; e ]
+			i @ $integer ?
+				pushr( x , $module serialed( i ) ) ;
+			,	pushr( x , i ) ;
+		m.exits[3] = x ;
+		}
+	m save() ;
+	}
+
+/****************************************************/
+tell( "." ) ;
+

@@ -1,0 +1,42 @@
+o6 p10 c0 s451 l254 c0 w21 p0 v4
+name	(452,895)	$ centralProgramUnit
+aliases	(452,895)	?
+process	(452,895)	# 242
+desc	(452,895)	$ centralProgramUnit
+.
+kernel (0)
+//radicate() ;
+p	= $module serialed( 6 ) ;
+//$processity addVariant("avatar") ;
+//$processity.avatar = p ;	// UPDATE:
+
+// ~~ .location.display.process spawn() ? !  // My Window Manager
+( e = .location.io.process spawn() ) @ $error ?
+	{
+	$atomatrix output( ascii( "[CPU I/O process] " , e ) ) ;
+	$atomatrix input() ;
+	. ;
+	}
+crystalize() ;
+
+crystalize (0)
+avatar() serinteger() == 6 ?
+	[ m ; $module active() ]
+		{
+		$processity.debug ? textate( "+\\c" ) ;
+		m save() ;
+		}
+
+radicate (0)
+//$vreality repository( "radix" ) @~ $undefined !
+
+$vreality repository( "radix" ,
+"<module>
+<item>
+<identity>name</identity>
+<principal><permission><code>877</code></permission></principal>
+<type>ASCII</type>
+<content>RADIX</content>
+</item>
+</module>
+" ) ;

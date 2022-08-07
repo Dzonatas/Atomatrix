@@ -1,0 +1,9 @@
+o6 p96 c0 s0 l47 c0 w94 p0 v5
+name	(97,877)	$ small grey button
+aliases	(97,877)	$ button
+desc	(97,877)	$ Nothing special.
+evoke	(6,73)	M 94
+clues	(6,91)	A 2
+$ Try 'push button'.
+$ It might be connected to something...
+.

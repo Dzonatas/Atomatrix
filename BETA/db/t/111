@@ -1,0 +1,96 @@
+o17 p10 c0 s114 l85 c0 w73 p0 v8
+name	(111,73)	$ Area_Listing
+aliases	(111,73)	$ area*
+forest	(17,73)	A 11
+# 180
+# 192
+# 193
+# 194
+# 196
+# 204
+# 205
+# 206
+# 207
+# 228
+# 229
+mansion	(17,73)	A 18
+# 5
+# 8
+# 14
+# 15
+# 18
+# 24
+# 25
+# 27
+# 32
+# 37
+# 38
+# 39
+# 43
+# 46
+# 47
+# 58
+# 101
+# 64
+sunrise	(17,73)	A 12
+# 44
+# 45
+# 67
+# 138
+# 148
+# 149
+# 151
+# 152
+# 153
+# 154
+# 155
+# 187
+dungeon	(17,73)	A 7
+# 84
+# 86
+# 87
+# 88
+# 89
+# 90
+# 91
+mansion_roof	(17,73)	A 2
+# 69
+# 71
+areas	(17,73)	A 5
+$ forest
+$ mansion
+$ sunrise
+$ dungeon
+$ mansion_roof
+.
+find_area (0)
+/* first area a room is in*/
+loc=argv[0];
+area={};
+~~ .roomgen precesses( loc ) ? 0!
+[ a; .areas] {
+	rooms=$area_listing area_expand(a);
+	loc @# rooms ? pushr(area,a);
+	}
+area[0]!
+
+
+area_expand (0)
+/* all possible rooms in arealist of argv */
+all_exits = {} ;
+this	= $area_list ;
+[argv[0]]
+	{
+	v	= popl(argv);
+	v @ $string && .(v) ?
+		 v = .(v) ;  /* ??? this.(v) */
+	v @ $varray ?
+		{
+		[ e ; v ] pushr( argv , e ) ;
+		<;
+		}
+	v @ $integer ?
+		pushr( all_exits , v ) ;
+	}
+all_exits !
+

@@ -1,0 +1,12 @@
+o6 p4 c0 s38 l0 c0 w0 p0 v3
+name	(39,877)	$ Dining Room
+desc	(39,877)	$ There is a nice dining set with eloquent light fixtures.
+The kitchen is south.
+exits	(4,219)	A 4
+A 1
+# 2
+A 1
+M 37
+A 0
+A 0
+.

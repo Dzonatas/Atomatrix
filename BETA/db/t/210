@@ -1,0 +1,26 @@
+o17 p29 c0 s209 l188 c0 w160 p0 v4
+name	(210,877)	$ Witch's Brewbook
+aliases	(210,877)	$ brewbook
+desc	(210,877)	?
+note	(210,877)	$ 
+			potions red restore your health
+			potions blue recover wealth
+			vials yellow give thou speed
+			vials pink give strength for deed
+			quaff of green to cure a wound
+			or bless with ivory wand if runed
+
+
+.
+write (0)
+~~$wizard precesses(avatar()) ?
+	textate("You think of writing in the book, "+
+		"but then consider the action foolish.") !
+$object_class.generic_note write(this);
+
+_begin_read (0)
+textate($util wrap(70,"\nYou can only make out the first page of the "+
+	"book, for its words are written in a strange lettering."));
+
+
+

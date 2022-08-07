@@ -1,0 +1,21 @@
+o17 p29 c0 s184 l208 c0 w0 p0 v4
+name	(209,877)	$ dusty spellbook
+aliases	(209,877)	$ spellbook
+desc	(209,877)	?
+note	(209,877)	$ 
+
+.
+write (0)
+~~$wizard precesses(avatar()) ?
+	textate("As your hand approaches the book, "+
+			"it suddenly grows shaky and you draw away in fear.") !
+$object_class.generic_note write(this);
+
+_begin_read (0)
+/* only let a priest/mage/etc read this book */
+
+textate($util wrap(70,"The book's pages are filled with writing and "+
+	"diagrams, but you fail to understand them."));
+
+1!	/* won't read .note */
+

@@ -1,0 +1,22 @@
+o6 p4 c0 s44 l0 c0 w0 p0 v5
+name	(45,877)	$ Sunrise Blvd.
+desc	(45,877)	$ A driveway leads west.  The street goes north and deadends here with a
+manhole cover below.  Further to the south lies the edge of a forest.
+_down_ok_msg	(6,73)	$ Your able to move the cover and drop down.
+_down_ok_omsg	(6,73)	$ %W quickly drops down into the sewer, almost not noticed.
+exits	(4,219)	A 4
+A 5
+# 3
+# 6
+# 4
+# 2
+# 1
+A 5
+M 41
+M 245
+M 46
+M 187
+M 44
+A 0
+A 0
+.

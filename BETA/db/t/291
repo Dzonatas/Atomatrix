@@ -1,0 +1,21 @@
+o6 p10 c0 s244 l478 c0 w302 p0 v4
+name	(291,383)	$ netScape
+aliases	(291,383)	?
+desc	(291,383)	$ net scape
+verbs	(20,0)	A 1
+A 7
+$ netscape
+# -1
+# -1
+# -1
+# -1
+$ netscape
+A 1
+# -102
+.
+netscape (0)
+$proc.fork(this,"forked");
+
+forked (0)
+$proc.exec("netscape");
+

@@ -1,0 +1,29 @@
+o6 p4 c0 s53 l0 c0 w0 p0 v4
+exits	(41,219)	A 4
+A 1
+# 4
+A 1
+M 45
+A 0
+A 0
+name	(6,27)	$ bus station
+desc	(6,27)	$ sunrise is to the west
+verbs	(20,0)	A 1
+A 7
+$ wait
+# -1
+# -1
+# -1
+# -1
+$ buswait
+A 1
+# -102
+.
+buswait (0)
+textate("bus arrives");
+textate("you get on");
+textate("bus moves");
+avatar() reintermodulize(3);
+$program sleep(3);
+textate("you get off");
+

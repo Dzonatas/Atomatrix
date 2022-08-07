@@ -1,0 +1,26 @@
+o17 p129 c0 s135 l129 c0 w0 p0 v7
+name	(73,73)	$ SMALL AXE
+desc	(73,73)	$ 
+damage	(73,73)	$ 2d4
+type	(73,73)	$ s-axe
+hitstr	(73,73)	$ hack
+ohitstr	(73,73)	$ hacks
+types	(6,73)	A 5
+A 4
+$ wm
+$ h
+$ im
+$ a
+A 2
+$ wooden mace
+$ d4
+A 2
+$ hachet
+$ d4
+A 2
+$ iron mace
+$ d5
+A 2
+$ axe
+$ d5
+.

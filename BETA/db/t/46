@@ -1,0 +1,16 @@
+o6 p4 c0 s45 l0 c95 w0 p0 v3
+name	(46,877)	$ Driveway
+desc	(46,877)	$ The driveway comes out west from the garage and continues into the street.
+A walkway head northwest.
+exits	(4,219)	A 4
+A 3
+# 8
+# 4
+# 3
+A 3
+M 43
+M 95
+M 45
+A 0
+A 0
+.

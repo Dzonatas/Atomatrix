@@ -1,0 +1,29 @@
+o17 p220 c0 s60 l148 c59 w437 p0 v7
+name	(219,877)	$ Hamlet
+aliases	(219,877)	$ 
+desc	(17,877)	$ He wears a dark cloak and appears to be in mourning.
+wait_time	(72,219)	# 932274238
+speech	(17,73)	A 8
+$ This indeed seems, for they are actions that a man might play. 
+But I have that within which passes show, these are but the trappings
+and the suits of woe.
+$ Oh that this too too sallied flesh would melt,
+thaw, and resolve itself into a dew!
+$ How weary, stale, flat, and unprofitable
+seem to me all the uses of this world!
+$ One may smile, and smile, and be a villain!
+$ There are more things in heaven and earth, friend,
+than are dreampt of in your philosophy.
+$ Friend, to be honest, as this world goes, is to be one man
+picked out of ten thousand.
+$ This world is a prison!  A goodly one, in which there are
+many confines, wards, and dungeons; this land being one o' th' worst.
+$ I am but mad north-north-west.  When the wind is southerly I know a hawk
+from a hand-saw.
+wander_bounds	(17,73)	A 4
+$ sunrise
+# -138
+# -179
+$ forest
+task	(72,73)	# 3
+.

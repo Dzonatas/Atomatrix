@@ -1,0 +1,38 @@
+o17 p4 c0 s69 l0 c83 w0 p0 v3
+desc	(17,73)	$ A large birdhouse stands here, marked by years of birddroppings.
+Some rustling can be heard from young hatchlings inside the nests.
+The platform's ladder lies south.
+
+name	(17,73)	$ Birdhouse
+exits	(4,219)	A 4
+A 1
+# 2
+A 1
+M 69
+A 0
+A 0
+.
+_moved_in (0)
+ok=0;
+[ obj; .objects]
+	isAvatar( obj ) ?
+		ok = 1 ;
+
+~~ok || ~~ isAvatar( caller ) ? !
+
+addtask(this,"agitate");
+
+/*
+[ i; .objects] {
+	i.roaming && i.task==0 ? {
+		i.task=1;
+		addtask(i,"roam"); 
+		}
+	}
+*/
+
+agitate (0)
+$program sleep(4);
+announce_all("\nThe birds grow agitated.");
+
+

@@ -1,0 +1,33 @@
+o6 p10 c0 s191 l6 c235 w453 p0 v5
+inside	(234,877)	M 235
+name	(234,877)	$ blue hover sphere
+aliases	(234,877)	$ sphere|blue
+desc	(234,877)	$ It looked at you.
+verbs	(20,0)	A 1
+A 7
+$ enter
+# 1
+# -1
+# -1
+# -1
+$ enter
+A 0
+.
+_accept (0)
+1!
+
+enter (0)
+avatar() serinteger() <> 6 ?
+	textate("You can't enter a sphere!") !
+~~this @# avatar().objects ?
+	textate("You must be holding it first.") !
+~~_moveto(avatar().location) ?
+	textate("You can't seem to do that here.") !
+textateLocals(
+"A lighting bolt suddenly zaps ",avatar().name,", leaving nothing but dust.");
+avatar() _moveto(.inside);
+avatar().location look();
+
+tell (0)
+.inside announce_x(this,"Outside: ",+argv);
+

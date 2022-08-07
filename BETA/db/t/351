@@ -1,0 +1,15 @@
+o258 p258 c0 s262 l258 c0 w262 p0 v13
+name	(72,219)	$ goblin
+task	(72,219)	# 5
+doing	(72,219)	# 0
+wait_time	(72,219)	# 932274242
+status	(72,219)	?
+hp	(75,219)	# 11
+mhp	(75,219)	# 11
+attacking	(75,219)	?
+armour	(75,219)	?
+ready_weapon	(75,219)	# 214
+dexterity	(258,27)	# 80
+desc	(258,27)	$ An ugly, wickedly grinning goblin.
+home	(258,27)	# 90
+.

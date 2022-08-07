@@ -1,0 +1,11 @@
+o4 p4 c0 s477 l107 c275 w477 p0 v3
+name	(4,219)	$ laboratory
+desc	(4,219)	?
+exits	(4,219)	A 4
+A 0
+A 0
+A 1
+$ exit
+A 1
+M 477
+.

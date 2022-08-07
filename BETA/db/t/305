@@ -1,0 +1,15 @@
+o4 p4 c0 s272 l384 c0 w310 p0 v3
+name	(4,219)	$ KMAL 8TH
+desc	(4,219)	$ entrance to 810
+exits	(4,219)	A 4
+A 2
+# 4
+# 3
+A 2
+M 272
+M 310
+A 1
+$ lobby
+A 1
+M 203
+.

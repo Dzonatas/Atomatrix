@@ -1,0 +1,13 @@
+o4 p4 c0 s384 l107 c0 w36 p0 v3
+name	(4,219)	$ 810 lobby
+desc	(4,219)	?
+exits	(4,219)	A 4
+A 1
+# 5
+A 1
+M 36
+A 1
+$ exit
+A 1
+M 305
+.

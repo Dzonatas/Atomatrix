@@ -1,0 +1,30 @@
+o6 p10 c117 s457 l22 c0 w23 p0 v1
+name	(6,219)	$ atomigen
+.
+_lookat (0)
+ascii(
+	"NAME\t", .name, "\n",
+	"SYMBOL\t", .symbol, "\n",
+	"NUMBER\t", .atomic_number, "\n",
+	"WEIGHT\t", .atomic_weight, "\n",
+	"ORBITS\t", .norbitals, "\n"
+	)!
+
+spawn (0)
+o = $program inherit(77);
+textate(o);
+m = $module serialed( o ) ;
+$module serialed(163) _chobjown(o,77);
+[ s ; {	"name" , "symbol" , "atomic_weight" , "atomic_number" ,	"norbitals" } ]
+	m addVariant( s ) security( "a+rw" ) ;
+o reintermodulize(22);
+o set();
+o!
+
+set (0)
+textate("NAME\t: \\c");	.name = input();
+textate("SYMBOL\t: \\c");	.symbol = input();
+textate("WEIGHT\t: \\c");	.atomic_weight = input();
+textate("NUMBER\t: \\c");	.atomic_number = input();
+textate("ORBITS\t: \\c");	.norbitals = input();
+

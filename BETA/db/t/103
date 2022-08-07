@@ -1,0 +1,28 @@
+o6 p1 c0 s102 l101 c0 w102 p0 v4
+name	(103,877)	$ sink
+aliases	(103,877)	?
+desc	(103,877)	$ Looks clean...
+verbs	(20,0)	A 2
+A 7
+$ wash|rinse
+# 0
+# -1
+# -1
+# -1
+$ wash
+A 1
+# -101
+A 6
+$ use
+# 1
+# -1
+# -1
+# -1
+$ wash
+.
+wash (0)
+~~( argv[0] @# {"hand","hands","","sink"} ) ?
+	textate( "As your try to turn on the sink you notice a little label," +
+		" \"For your hands only.\"" ) !
+textate( "You gently wash your hands in the sink.  Trying to get rid of any smell.");
+

@@ -1,0 +1,15 @@
+o261 p261 c0 s438 l261 c0 w438 p0 v13
+name	(72,219)	$ small bear
+task	(72,219)	# 4
+doing	(72,219)	# 0
+wait_time	(72,219)	# 932274242
+status	(72,219)	?
+hp	(75,219)	# 10
+mhp	(75,219)	# 10
+attacking	(75,219)	?
+armour	(75,219)	?
+ready_weapon	(75,219)	# 214
+dexterity	(261,27)	# 80
+desc	(261,27)	$ An angry %type with black, empty eyes.
+home	(261,27)	# 207
+.

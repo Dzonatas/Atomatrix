@@ -1,0 +1,14 @@
+o6 p4 c0 s0 l0 c116 w0 p0 v3
+name	(5,877)	$ Large Dark Room
+desc	(5,1023)	$ This could be a very large room.  But becuase it is so dark in here you are unable to tell.  You do bump into stuff that is laying around on the floor.  There is light to the north.
+
+exits	(4,219)	A 4
+A 2
+# 3
+# 1
+A 2
+M 8
+M 7
+A 0
+A 0
+.

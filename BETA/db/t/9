@@ -1,0 +1,22 @@
+o9 p162 c0 s163 l67 c156 w0 p0 v16
+name	(0,365)	$ Turk
+aliases	(9,877)	?
+desc	(9,877)	$ A tall slender guy.
+login_time	(2,603)	# 760582608
+logoff_time	(2,603)	# 760582775
+uid	(2,365)	# 208
+gender	(9,877)	$ male
+verbose	(9,73)	# 1
+hp	(75,73)	# 90
+mhp	(75,73)	# 5
+dexterity	(75,73)	# 50
+strength	(9,73)	# 50
+armor	(75,73)	A 1
+# 118
+ready_weapon	(75,73)	# 124
+status	(9,73)	A 1
+A 2
+$ sleeping
+# 760582839
+password	(0,292)	$ ankh
+.

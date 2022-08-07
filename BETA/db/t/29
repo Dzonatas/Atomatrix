@@ -1,0 +1,49 @@
+o6 p10 c201 s19 l478 c0 w0 p0 v6
+name	(29,895)	$ Generic Note
+aliases	(29,895)	?
+desc	(29,895)	?
+note	(29,895)	?
+verbs	(20,0)	A 2
+A 6
+$ read
+# 1
+# -1
+# -1
+# -1
+$ read
+A 6
+$ write
+# 1
+# -1
+# -1
+# -1
+$ write
+write_accept	(29,895)	?
+.
+read (0)
+.note ?	{
+	_begin_read() ?
+		!
+	textate( "The " ,.name , " says:" ) ;
+	textate( .note ) ;
+	_end_read() ;
+	}
+,	{
+	textate( "Nothing to read on it." ) ;
+	}
+intertextate( avatar().name , " reads the " , .name , "." ) ;
+
+write (0)
+$object_class.generic_note precesses( argv[0] ) ?
+	this = argv[0] ;
+.write_accept && ~~avatar() serinteger() @# .write_accept ?
+	{
+	textate("You not allowed.") ;
+	!
+	}
+textate( "Writing to " , .name , "." ) ;
+msg	= $editor.edit( .note ) ;
+.note	= msg ;
+textate( "It is written." ) ;
+intertextate( avatar().name , " wrote something on " , .name , "." ) ;
+

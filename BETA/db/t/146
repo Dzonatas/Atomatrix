@@ -1,0 +1,76 @@
+o6 p10 c174 s139 l158 c80 w0 p0 v4
+name	(146,73)	$ money
+aliases	(146,73)	$ money|coin*s|gold* coins
+desc	(146,73)	$ gold coins
+worth	(146,365)	# 0
+.
+_moveto (0)
+146 move(this,+argv)!
+
+_aliases (0)
+w= ascii(.worth) ;
+.worth>1 ? s="s"; , s="";
+argv[0] @# ({
+	"gold", 
+	w + " gold", 
+	"coin" + s, 
+	w + " coin" + s, 
+	"gold coin" + s,
+	w + " gold coin" + s
+	}) ? 1 !
+
+move (0)
+obj=argv[0];
+to=argv[1];
+howmuch=argv[2];
+
+/* 146 = money */
+
+/* Does TO object have money already in it */
+to==146 || to==158 ?
+	obj reintermodulize(146) !
+[ o; {+to.objects,0}]
+	( 146 precesses(o) && o <> obj )?
+		. ;
+~~o ?
+	obj reintermodulize(to)!  /* if not move OBJ */
+
+~~howmuch || howmuch>obj.worth ? howmuch=obj.worth;
+w = obj.worth - howmuch;
+o.worth = o.worth + howmuch;
+~~w ? obj reintermodulize(146)!
+obj.worth =w;
+1!
+
+_name (0)
+~~.worth ? "money"!
+.worth==1 ? "1 gold coin"!
+ascii(.worth) + " gold coins" !
+
+make (0)
+where	=argv[0];
+howmuch	=argv[1];
+type	=argv[2];
+
+146.objects length() ? {
+	obj=146.objects[0];
+	obj.worth=howmuch;
+	obj.type=type;
+	s=146 move(obj,where);
+	s==1 ? obj!
+	0!
+	}
+obj=create(146,146);
+obj.worth=howmuch;
+obj.type=type;
+obj reintermodulize(146);		/* in case move below fails */
+s=146 move(obj,where);
+s==1 ? obj!
+0!
+
+_accept (0)
+146 precesses(argv[0])!
+
+_recycle (0)
+146 move(this,146);
+

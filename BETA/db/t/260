@@ -1,0 +1,120 @@
+o12 p10 c0 s215 l478 c0 w92 p0 v1
+name	(6,219)	$ wndgen
+.
+construct (0)
+m = $module atomize() ;
+
+m addVariant( "_keywords" ) security( "a+rw" ) ;
+m._keywords = { { "wnd" , $wnd } } ;
+m addVariant( "wnd" ) security( "a+rw" ) ;
+m addVariant( "x" ) security( "a+rw" ) ;
+m addVariant( "y" ) security( "a+rw" ) ;
+m addVariant( "output" ) security( "a+rw" ) ;
+m addVariant( "map" ) security( "a+rw" ) ;
+
+m.output = { { 0 , 0 , $unicode string( "" ) } } ;
+
+m addProgram( "initialize" ) source(
+	"
+	.wnd = $wnd construct() ;
+	.wnd show() ;
+	.wnd update() ;
+	" ) ;
+m addProgram( "output" ) source( program( "_output" ) source() ) ;
+m addProgram( "update" ) source( program( "_update" ) source() ) ;
+m addProgram( "ascii" ) source( $module serialed(1) program( "ascii" ) source() ) ;
+m addProgram( "_ascii" ) source( $module serialed(1) program( "_ascii" ) source() ) ;
+m addProgram( "_ascii_array" ) source( $module serialed(1) program( "_ascii_array" ) source() ) ;
+m addProgram( "unicode" ) source( $module serialed(1) program( "unicode" ) source() ) ;
+m addProgram( "_unicode" ) source( $module serialed(1) program( "_unicode" ) source() ) ;
+m addProgram( "_unicode_array" ) source( $module serialed(1) program( "_unicode_array" ) source() ) ;
+
+m initialize() ;
+m !
+
+
+
+_output (0)
+~~( .wnd getCharWidth( "M" ) ) ?	// UPDATE:  .wnd ?
+	$error !
+
+w	= .wnd ;
+
+tm	= w getTextMetrics() ;
+tab	= tm.AveCharWidth * 8 ;
+xx = x	= 0 ;
+r	= w getRectangle() ;
+s	= $unicode string( "" ) ;
+t	= {} ;
+q	= popr( .output ) ;
+xx = x	= q[0] + 0 ;
+yy = y	= q[1] + 0 ;
+s	= q[2] + "" ;
+s ?	{
+	p = w getTextExtentPoint( s ) ;
+	x = xx + p.cx ;
+	}
+
+[ a ; unicode(+argv) ]
+	{
+	a == "\n" ?
+		{
+		x = 0 ;
+		y = y + tm.Height ;
+		}
+	, a == "\t" ?
+		{
+		( x = ( ( x / tab ) + 1 ) * tab ) => r.right ?
+			{
+			x = 0 ;
+			y = y + tm.Height ;
+			}
+		}
+	, ( x += w getCharWidth( a ) ) < r.right ?
+		{
+		s += a ;
+		< ;
+		}
+	,	{
+		pushr( .output , { xx , yy , s } ) ;
+		s = a ;
+		xx = 0 ;
+		x = w getCharWidth( a ) ;
+		yy = y = y + tm.Height ;
+		< ;
+		}
+	pushr( .output , { xx , yy , s } ) ;
+	s	= $unicode string( "" ) ;
+	xx = x ;
+	yy = y ;
+	}
+pushr( .output , { xx , y , s } ) ;
+.x = xx ;
+y => r.bottom ?
+	{
+	y -= r.bottom ;
+	y += tm.Height ;
+	[ a ; .output ] a[1] = a[1] - y ;
+	}
+o	= {} ;
+[ a ; .output ] a[1] => 0 ? pushr( o , a ) ;
+.map = o ;
+.output = o ;
+update() ;
+
+_update (0)
+o = .output ;
+
+w	= .wnd ;
+w	caret() ;
+w	erase() ;
+
+o	= .map ;
+~~o ? !
+[ a ; o ] w textOut(+a) ;
+z = o[o length()-1] ;
+s = w getTextExtentPoint( z[2] ) ;
+w caret( z[1] , s.cx + z[0] ) ;
+		
+//textate( (w getRectangle()).right ) ;   // UPDATE: fixit
+w update() ;

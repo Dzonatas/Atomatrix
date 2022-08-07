@@ -1,0 +1,15 @@
+o17 p4 c0 s179 l0 c66 w0 p0 v3
+name	(99,877)	$ Saloon's Back Room
+desc	(99,877)	$ This room is fairly dark, but contains small tables with people talking
+in small circles.  Several people glance up as you walk through the doorway
+and then resume their conversations.
+exits	(4,219)	A 4
+A 2
+# 6
+# 4
+A 2
+M 182
+M 179
+A 0
+A 0
+.

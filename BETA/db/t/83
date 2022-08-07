@@ -1,0 +1,19 @@
+o17 p82 c0 s0 l71 c0 w82 p0 v11
+name	(83,877)	$ hummingbird
+aliases	(83,877)	?
+desc	(83,877)	$ It has a long, sharp beek.
+home	(17,73)	A 1
+# 71
+task	(17,73)	# 8
+delay	(17,73)	$ 10d6
+actions	(17,73)	A 3
+$ darts through the air.
+$ hovers silently.
+$ shoots into the sky.
+roaming	(17,73)	# 75
+visit	(17,73)	A 2
+# 69
+# 71
+msg_leave	(17,73)	$ darts off to the ~dir.
+msg_arrive	(17,73)	$ darts into view from the ~odir.
+.

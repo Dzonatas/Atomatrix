@@ -1,0 +1,71 @@
+o17 p10 c238 s234 l178 c0 w238 p0 v11
+name	(244,877)	$ CONTAINER
+aliases	(244,877)	?
+desc	(244,877)	?
+dish	(17,73)	# 243
+cup	(17,73)	# 238
+types	(17,73)	?
+status	(17,73)	?
+type	(17,73)	?
+effect	(17,73)	?
+inside	(17,73)	?
+generic	(17,73)	$ container
+.
+make (0)
+argv -> where, inside, type, effect;
+~~type && ~~(type=gettype(inside)) ? 0!
+type @ $varray ? { type=type[0]; effect=type[1]; }
+generic=.generic;
+genericobj=$object_class.container.(generic);
+genericobj.objects length() ?
+	{
+	obj=genericobj.objects[0] ;
+	}
+,	{
+	obj=create(genericobj) ;
+	}
+genericobj update(obj,inside,type,effect);
+obj _moveto(genericobj);
+ok=obj _moveto(where);
+ok ? obj!
+0!
+
+_name (0)
+this==$object_class.container ? "GENERIC CONTAINER"!
+generictype=.generic;
+this==$object_class.container.(generictype) ?
+	"CONTAINER_"+generictype!
+type=.type; ~~type ? type=generictype;
+prefix=""; .status ? prefix=.status+" ";
+~~.inside ? "empty "+type!
+, prefix+type+" of "+.inside!
+
+update (0)
+argv -> obj, inside, type, effect;
+generic=obj.generic;
+obj.inside=inside;
+obj.type=type;
+obj.effect=effect;
+obj.aliases=inside+"|"+type;
+obj.name=type;
+dstr=$object_class.container.(generic).desc;
+/* "Just looking at the %type of %inside makes you hungry." */
+dstr = dstr replace("%type",.type) replace("%inside",.inside);
+obj.desc=dstr;
+
+_recycle (0)
+generic=.generic;
+_moveto($object_class.container.(generic))!
+
+gettype (0)
+argv -> inside;
+[ types; .types]
+	[ insidetype; types[1..-1]]
+		insidetype==inside ? types[0]!
+.generic!
+
+_accept (0)
+obj=argv[0];
+generic=obj.generic;
+$object_class.container.(generic) precesses(argv[0])!
+

@@ -1,0 +1,183 @@
+o17 p163 c0 s6 l151 c63 w81 p0 v23
+name	(0,365)	$ Dazed
+aliases	(17,877)	?
+desc	(17,877)	$ A very friendly looking fuzzy blonde ball of hair.
+
+login_time	(2,603)	# 779259749
+logoff_time	(2,603)	# 779259770
+password	(0,292)	?
+uid	(2,365)	?
+gender	(17,877)	$ male
+editmode	(17,219)	# 0
+hp	(75,73)	# 11
+mhp	(75,73)	# 15
+dexterity	(75,73)	# 80
+attacking	(75,73)	?
+ready_weapon	(75,73)	# 76
+armor	(75,73)	A 0
+verbose	(17,73)	# 1
+mail	(147,73)	A 0
+status	(17,73)	A 1
+A 2
+$ sleeping
+# 779259870
+verbs	(20,0)	A 2
+A 6
+$ test
+# -1
+# -1
+# -1
+# -1
+$ test
+A 6
+$ xyzzy
+# 0
+# 0
+# 0
+# -1
+$ xyzzy
+debug	(56,27)	A 0
+wrap_length	(17,27)	# 78
+line_length	(17,27)	# 0
+tmp	(17,27)	A 4
+A 5
+# 6
+# 4
+# 3
+# 2
+# 1
+A 5
+# 32
+# 101
+# 32
+# 5
+# 14
+A 0
+A 0
+.
+test3 (0)
+
+test2 (0)
+argv->r;
+~~.roomgen precesses(r) ? {
+	this tell("not a room!");
+	!
+	}
+r=0;
+[r<max_obj()] {
+	r += 1;
+	~~.roomgen precesses(r) ? { <; }
+	dirs	= {} ;
+	exits	= {} ;
+	exitvar	= { {} , {} , {} , {} } ;
+	loc	= r ;
+	m	= $module serialed( loc ) ;
+
+	[ dir; $compass_dirs]
+		$module serialed(m.(dir)) @ $module ?
+			pushl(dirs,{dir,m.(dir)});
+	i=0;
+	[i<dirs length()]
+		{
+		dir=dirs[i][0];
+		dirnum=dir @# $compass_dirs;
+		exit=dirs[i][1];
+		pushr(exitvar[0],dirnum);
+		pushr(exitvar[1],exit);
+		i+=1;
+		}
+	v = m addVariant("exits") ;
+	17 p(xx=loc@#exitvar);
+	m.exits=exitvar;
+	v principal( $module serialed(.roomgen) ) ;
+	}
+
+_connect (0)
+textateLocals(
+"\nYou see a shimmering, and "+avatar().name+" materializes."); 
+avatar().location look();
+avatar().mail ?
+	textate("You have mail.");
+
+test (0)
+textate("verb=",verb,"\tdobjstr=",dobjstr);
+textate("argv[0]=",argv[0],"\targv[1]=",argv[1]);
+
+xyzzy (0)
+argv[2] ? { srcstr=argv[0]; deststr=argv[2]; }
+, { srcstr=avatar() serinteger(); deststr=argv[0]; }
+
+~~srcstr || ~~deststr ?
+	textate("xyzzy?") !
+srcstr <> avatar() ? { src=$util findobj(srcstr); }
+, src=avatar();
+dest=$util findobj(deststr);
+~~src ?
+	textate(srcstr," not found.") !
+~~dest ?
+	textate(deststr," not found.") !
+
+~~.roomgen precesses(dest) ? dest=dest.location;
+$module serialed(dest) @~ $module ?
+	textate("Invalid: ",dest.name,"/",deststr," #",dest) !
+src==dest ?
+	textate("xyzzy: source and destination are the same!") !
+src.location announce_all($util name(src)," teleports.  *BAMPH*!");
+textate("--Send ",$util name(src)," to ",$util name(dest),"...");
+src reintermodulize(dest) ? src.location announce_all(src.name," teleports in.  Xxyyyzzzzyyyyy!");
+, src.location announce_all(src.name," shimmers and reappears.");
+
+p (0)
+this tell($util strary(argv));
+
+testpar (0)
+textate(">> \\c");
+[(str=input()) <> "."] {
+	$parse _input(str);
+	textate(">> \\c");
+	}
+
+db (0)
+dbobj=caller;
+pdbobj= $module serialed(caller) precessant() serinteger() ;
+dbobj @# avatar().debug || pdbobj @# avatar().debug ?
+	this tell("\t\t",+argv);
+
+exit (0)
+/* tell avatar() all exits in room */
+/* .exits= { {index,..}, {loc,..}, {"string",..}, {strlocs,..} } */
+loc = dobj || argv[0] || this;
+~~loc.exits ? {
+	textate("No exits.  Muahhahaha!");
+	!
+	}
+exitstr="";
+exits={};
+i=0;
+[p=loc.exits[0][i]] {
+	pushl(exits, ascii(loc.exits[1][i])+" "+$compass_dirs[p-1]);
+	i+=1;
+	}
+i=0;
+[loc.exits[3][i]] {
+	pushl(exits, ascii(loc.exits[3][i])+" "+loc.exits[2][i]);
+	i+=1;
+	}
+17 p(exits);
+exits=$util sort(exits,0);
+i=0;
+prev=0;
+[exits[i]] {
+	exit=exits[i] split(" ");
+	exit[0]==prev ? {
+		exitstr+="/"+exit[1];
+		}
+	, {
+		exitstr+="  "+exit[1];
+		prev=exit[0];
+		}
+	i+=1;
+	}
+textate("Exits:  ",exitstr);
+
+

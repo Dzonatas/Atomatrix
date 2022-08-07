@@ -1,0 +1,12 @@
+o6 p4 c0 s37 l0 c0 w0 p0 v3
+name	(38,877)	$ Living Room
+desc	(38,877)	$ A huge brick fireplace stands to the north.  Comfortable funiture lays
+around the room facing a big screen TV.  The front hallway is south.
+exits	(4,219)	A 4
+A 1
+# 2
+A 1
+M 32
+A 0
+A 0
+.

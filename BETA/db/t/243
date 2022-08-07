@@ -1,0 +1,57 @@
+o17 p244 c257 s0 l178 c0 w244 p0 v11
+name	(243,877)	$ BOWL
+aliases	(243,877)	?
+desc	(243,877)	$ Just looking at the %type of %inside makes you hungry.
+types	(17,73)	A 5
+A 3
+$ ## bowl type
+$ ## food effect
+$ ## foods..
+A 3
+$ plate
+$ protein
+$ food
+A 4
+$ bowl
+$ protein
+$ fish crackers
+$ soup
+A 3
+$ tray/platter/serving tray
+$ protein
+$ i dunno
+A 3
+$ tupperware
+$ poison
+$ leftovers
+status	(17,511)	?
+type	(17,511)	?
+effect	(17,511)	?
+inside	(17,511)	?
+generic	(17,73)	$ dish
+amount	(17,73)	?
+verbs	(20,0)	A 1
+A 7
+$ eat
+# 1
+# -1
+# -1
+# -1
+$ eat
+A 0
+.
+eat (0)
+obj=dobj; ~~obj ? obj=argv[0];
+p=avatar() serinteger(); caller <> p ? p=caller;
+~~$object_class.container.dish precesses(obj) ? -1!
+p _effect(p,obj);
+~~obj doaction(p,"eat") ? {
+	p tell("You eat the "+obj.inside+".");
+	p.location announce(p.name+" eats from a "+obj.type+".");
+	}
+obj.amount <> "infinite" ? {
+	p tell("Your "+obj.type+" is now empty.");
+	obj.inside="";
+	obj.aliases=obj.type;
+	}
+

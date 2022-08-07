@@ -1,0 +1,539 @@
+o6 p1 c0 s40 l0 c0 w0 p0 v5
+name	(56,877)	$ Utilities
+aliases	(56,877)	?
+desc	(56,877)	$ undescript object
+
+pronouns	(56,877)	A 3
+A 5
+$ it
+$ it
+$ itself
+$ its
+$ its
+A 5
+$ he
+$ him
+$ himself
+$ his
+$ his
+A 5
+$ she
+$ her
+$ herself
+$ her
+$ hers
+genders	(56,877)	?
+.
+toggleary (0)
+/* Toggles a value in/out of avatar().(argv[0]) array */
+o=avatar() serinteger();
+v=argv[0];
+arg= argv[1] integer() ;
+m = $module serialed( o ) ;
+
+m.(v) @~ $varray ? { m tell(o,".",v," not an array."); ! }
+~~v ? !
+
+arg ? {
+	( t = arg @# m.(v) ) @ $integer ?
+		{
+		val=pull(m.(v),t);
+		m tell(v,":",arg," turned off.\t\\c");
+		}
+	,	{
+		z = m addVariant( v ) ;
+		z principal( $module serialed( $util ) ) ;
+		z security( "=orwtrw" ) ;
+		val=pushr(m.(v),arg);
+		m tell(v,":",arg," turned on.\t\\c");
+		}
+	~~val ? m tell(val,"\t\\c");
+	}
+~~v || ~~m.(v) ? {
+	m tell(v," not set.");
+	!
+	}
+m tell("Current ",v,": \\c");
+[ val; m.(v)] {
+	m tell(val," \\c");
+	}
+m tell("\n");
+
+ltrim (0)
+l= (str=argv[0]) length();
+x=0;
+[x<l] {
+	str[x] <> " " ? .;
+	x+=1;
+	}
+(str[x..-1])!
+
+rtrim (0)
+x= (str=argv[0]) length() ;
+[x>0] {
+	x-=1;
+	str[x] <> " " ? .;
+	}
+(str[0..x])!
+
+findobj (0)
+argv -> name, where;
+name substring(0,1) == "#"
+	&& ( o = $module serialed( name substring(1) integer() ) ) ? 
+		name = o ;
+,
+(o= name integer() ) && ( o = $module serialed(o) ) ?
+		name = o ;
+where ?	{
+	textate("1" );
+	name serinteger() @ $integer && name.location==where ?
+		name!
+	[ o; where.objects]
+		{
+		name == o.name ?
+			o!
+		name lowercase() == o.name lowercase() ?
+			o!
+		o.aliases && $vreality match(name,o.aliases) ?
+			o!
+		o _aliases(name) ?
+			o!
+		}
+	0!
+	}
+,	{
+	textate("2" );
+	name serinteger() @ $integer ?
+		name !
+	o	= 0 ;
+	name	= name lowercase() ;
+	[o<=max_obj()]
+		{
+		o += 1;
+		(m=$module serialed(o)) @~ $module ?
+			< ;
+		name== m.name lowercase() ?
+			m !
+		m.aliases && $vreality match(name,m.aliases) ?
+			m !
+		m _aliases(name) ?
+			m !
+		}
+	0!
+	}
+
+
+rsort (0)
+/* sorts array (argv[0]) buy element (argv[1]) largest to smallest */
+argv -> ary, e;
+
+not_sorted=1;
+
+len=ary length()-1;
+[not_sorted] {
+	not_sorted=0;
+	i=0;
+	[i<len] {
+		ary[i][e]<ary[i+1][e] ? {
+			tmp=ary[i]; ary[i]=ary[i+1]; ary[i+1]=tmp;
+			not_sorted=1;
+			}
+		i+=1;
+		}
+	}
+ary!
+
+_str_to_ary (0)
+ary={};
+n=argv[1];
+i=argv[2];
+li=i length();
+l=0;
+[argv[0][n] <> i+"}"] {
+	c= argv[0][n] substring(li+0,2);
+	r= argv[0][n] substring(li+2);
+	c=="# " ? { pushr(ary, r integer() ); l=l+1; }
+	, c==" {" ? { 
+		r= _str_to_ary(argv[0],n+1,i+" "); 
+		r==-1 ? { -1! }
+		pushr(ary,r[0]); l=l+1;
+		n=r[1];
+		}
+	, c=="$ " ? { pushr(ary,r); l=l+1; }
+	, c=="^ " ? { 
+		ary[l-1] @~ $string ? { -1! }
+		ary[l-1]=ary[l-1]+"\n"+r; 
+		}
+	, { -1! }
+	n=n+1;
+	~~argv[0][n] ? { -1! }
+	}
+({ ary, n })!
+
+ary_to_str (0)
+i=argv[1]; ~~i ? i="";
+str=i+"{\n";
+[ e; argv[0]] {
+	e @ $integer ? str += i + "# " + e string() + "\n" ;
+	, e @ $string ? {
+		e= e replace("\n","\n"+i+"^ ");
+		str+=i+"$ "+e+"\n";
+		}
+	, e @ $varray ? str+= ary_to_str(e,i+" ");
+	, str+=i+"? \n";
+	}
+str+i+"}\n"!
+
+perm_to_str (0)
+argv -> p ;
+p & 1 		?	s ="r"; , s ="-";
+p & 2		?	s+="w"; , s+="-";
+p & 4		?	s+="x"; , s+="-";
+p & 8		?	s+="r"; , s+="-";
+p & 16		?	s+="w"; , s+="-";
+p & 32		?	s+="x"; , s+="-";
+p & 64		?	s+="r"; , s+="-";
+p & 128		?	s+="w"; , s+="-";
+p & 256		?	s+="x"; , s+="-";
+p & 512		?	s+="c"; , s+="-";
+p & 1024	?	s+="u"; , s+="-";
+s!
+/*
+p & P_OR 	?	s ="r"; , s ="-";
+p & P_OW	?	s+="w"; , s+="-";
+p & P_OX	?	s+="x"; , s+="-";
+p & P_TR	?	s+="r"; , s+="-";
+p & P_TW	?	s+="w"; , s+="-";
+p & P_TX	?	s+="x"; , s+="-";
+p & P_AR	?	s+="r"; , s+="-";
+p & P_AW	?	s+="w"; , s+="-";
+p & P_AX	?	s+="x"; , s+="-";
+p & P_CHOWN	?	s+="c"; , s+="-";
+p & P_UNIQUE	?	s+="u"; , s+="-";
+*/
+/*
+p & P_READ	?	s ="r"; , s =" ";
+p & P_WRITE	?	s+="w"; , s+=" ";
+p & P_CHOWN	?	s+="c"; , s+=" ";
+p & P_INHERIT	?	s+="i"; , s+=" ";
+s!
+*/
+
+pronoun_sub (0)
+~~(str=argv[0]) ? ""!
+who	= argv[1] ; ~~who	? who	= avatar() ;
+what	= argv[2] ; ~~what	? what	= caller ;
+where	= argv[3] ; ~~where	? where	= caller.location ;
+w	= { name(who,"",1), name(what,"",1), name(where,"",1) };
+who.gender @ $error
+	|| ( sex = who.gender @# {"neuter", "male", "female"} ) @ $undefined ?
+	sex = 0 ;
+//~~(sex==0 || sex==1 || sex==2) ? sex=0;
+rstr	= "";
+[ ( i= str index( "%" ) ) @ $integer ]
+	{
+	c	= str substring(i+1,1);
+	rstr	+= str substring(0,i);
+	( x= c @# {"s","o","r","p","q"} ) @ $integer ?
+		rstr += .pronouns[sex][x];
+	, ( x = c @# {"S","O","R","P","Q"} ) @ $integer ?
+		rstr += capitalize( .pronouns[sex][x] ) ;
+	, ( x = c @# {"w","t","l"} ) @ $integer ?
+		rstr += w[x];
+	, ( x = c @# {"W","T","L"} ) @ $integer ?
+		rstr += capitalize(w[x]);
+	li = i + 2 ;
+	str = str substring( li ) ;
+	}
+rstr	+= str ;
+rstr!
+
+objlist (0)
+argv	-> objs ;
+len	= objs length();
+len ?	{
+	str = name( objs[0] ) ;
+	i = 1 ;
+	[ i < (len-1) ]
+		{
+		str += ", " +  name( objs[i] ) ;
+		i += 1 ;
+		}
+	len > 1 ?
+		str += " and " +  name( objs[i] ) ;
+	str !
+	}
+"" !
+
+name (0)
+o	= argv[0];
+prefix	= argv[1] || "";
+suffixok=~~argv[2];
+suffix	="";
+modifier="";
+
+~~o ?
+	""!
+o @ $integer ?
+	$atomatrix output( "caller=" + caller serinteger() string() ) !
+name	= o _name() || o.name ;
+
+name @ $error ?
+	name = _ascii( name ) ;
+
+suffixok && avatar().editmode ?
+	suffix = "(#" + o serinteger() string() + ")" ;
+
+"pn" @# o.name_def ?
+	name+suffix!
+
+fletter= name substring(0,1);
+name substring(-1,1) lowercase() <> "s" ?
+	{
+	fletter lowercase() @# {"a","e","i","o","u"} ?
+		modifier = "an " ;
+	,	modifier = "a " ;
+	}
+ 
+ /* specific "Gargoyle" vs generic "a gargoyle" */
+/*
+o.npc && fletter lowercase() <> fletter ? modifier="";
+*/
+o.name_def @ $undefined && fletter lowercase() <> fletter ? modifier="the ";
+
+prefix=="A" ? modifier= modifier replace("a","A");
+, prefix ? modifier=prefix+" ";
+
+modifier + name + suffix !
+
+trim (0)
+argv[0] substring(-1) == "\n" ?
+	argv[0] substring(0,-1)!
+argv[0]!
+
+roll (0)
+/* die roll with argv[0]=count, argv[1]=sides, argv[2]=modifier */
+argv[1]==0 ? argv[2]!
+i=0;
+r=0;
+[i<argv[0]] { r=r+$crtl random(argv[1])+1; i=i+1; }
+argc==3 ? r=r+argv[2];
+r!
+
+rolld (0)
+/* rolls a die with argv[0] in the format of "#D#+n" like "2d6" or "2d6+1" */
+/* or rolld("20") defaults to 1d20 format */
+/* see $util roll(); */
+
+mod=argv[0] split("+");
+mod[1] ? m= mod[1] integer() ;
+, m=0;
+
+roll= mod[0] lowercase() split("d");
+roll[1] ? {
+	s= roll[1] integer() ;
+	roll[0] ? n= roll[0] integer() ;
+	, n=1;
+	}
+, {
+	s= roll[0] integer() ;
+	n=1;
+	}
+
+roll(n, s, m)!
+
+sort (0)
+/* sorts array (ary) by element (e) smallest to largest */
+argv -> ary, e;
+
+not_sorted=1;
+
+len=ary length()-1;
+[not_sorted] {
+	not_sorted=0;
+	i=0;
+	[i<len] {
+		ary[i][e]>ary[i+1][e] ? { 
+			tmp=ary[i]; ary[i]=ary[i+1]; ary[i+1]=tmp;
+			not_sorted=1;
+			}
+		i+=1;
+		}
+	}
+ary!
+
+strcat (0)
+s="";
+[ str; argv] {
+	str @ $string ?
+		s=s+str;
+	,
+		s=s + _ascii(str) ;
+	}
+
+}
+s!
+
+
+lowestnum (0)
+/* lowest number of argv */ 
+
+low=argv[0];
+[ n; argv] {
+	n<low ? 
+		low=n;
+	}
+low!
+
+highestnum (0)
+/* highest number of argv */ 
+ 
+hi=argv[0];
+[ n; argv] {
+	n>hi ?
+		hi=n;
+	}
+
+hi!
+
+str_to_ary (0)
+/* this only excepts the format made by ary_to_str */
+w=argv[0] split("\n");
+a= _str_to_ary(w,1,"");
+a==-1 ? -1!
+a[0]!
+
+capitalize (0)
+( a = argv[0] split( " " ) ) length() <= 1 ?
+	argv[0] uppercase( 1 ) !
+s = popl( a ) uppercase( 1 ) ;
+[ w ; a ]
+	s += " " + w uppercase( 1 ) ;
+s !
+
+del_elem (0)
+ary=argv[0];
+num=argv[1];
+len=ary length();
+num>0 ? {
+	textate("num>0 [0..",num-1,"]");
+	nary=ary[0..num-1];
+	}
+num+1<len ? {
+	nary={+nary,+ary[(num+1)..-1]};
+	textate("num<len [",num+1,"..-1]");
+	}
+nary!
+
+toggle (0)
+o	= avatar() ;
+v	= argv[0] ;
+
+~~v ?	{
+	verb=="verbose" ? { v="verbose"; }
+	, verb=="editmode" || verb=="emode" ? { v="editmode"; }
+	, verb=="debug" ? v="debug";
+	}
+o addVariant( v ) ;
+o.(v) ? {
+	o tell(v," off.");
+	o.(v)=0;
+	}
+,	{
+	o tell(v," on.");
+	o.(v)=1;
+	}
+
+wrap (0)
+/* wrap text str with a screen width of n */
+n	= argv[0];
+str	= argv[1..-1] join("") ;
+str length() < n ? str!
+words= str split("\n") join(" ") split(" ") ;
+p=0; rstr="";
+[ w; words] {
+	w length()+p > n ? {	/* wrap line */
+		p=w length();
+		rstr += "\n   " + w; /* indent it */
+		}
+	, p ? {		/* add word to line*/
+		p += w length() +1;
+		rstr += " " + w;
+		}
+	, {		/* add word beginning of line*/
+		p=w length();
+		rstr += w;
+		}
+	}
+rstr!
+
+var (0)
+argv	-> str, global;
+vars	= str split(".");
+str	= popl(vars);
+str[0] == "#" ?
+	s = "$module serialed( " + str substring(1) + " )" ;
+, str == "me" ?
+	s = "avatar( )" ;
+, str == "here" ?
+	s = "avatar().location" ;
+, str[0] == "$" ?
+	s = "$program evaluate(str+\"!\")" ;
+,	
+	s = "$module serialed( " + this serinteger() string() + " ) findobj( \"" + str + "\" , avatar().location )" ;  // UPDATE: encapsulate quotes in str
+[ v; vars]
+	s += "." + v ;
+s !
+strary (0)
+argv -> ary;
+str = "" ;
+[ e ; ary ]
+	{
+	str ? str += ", " ;
+	e @ $string ?
+		str += "\"" + v replace( "\n" , "\\n" ) replace( "\"" , "\\\"" ) + "\"" !
+	,	str += _ascii( e ) ;
+	}
+"{" + str + "}" !
+
+_ascii (0)
+argv -> v ;
+v @ $error ?
+	"[ERROR]"!  /* UPDATE */
+v @ $integer ?
+	v string() !
+v @ $string ?
+	v !
+v @ $varray ?
+	strary(v) !
+v @ $module ?
+	"[#" + v serinteger() string() + "]" !
+"[UNDEFINED]" !
+
+ascii (0)
+s = "" ;
+[ a ; argv ] s += _ascii( a ) ;
+s !
+
+tostr (0)
+/* change a variable into a simple readable-graphical format */
+argv -> v ;
+v @ $error ?
+	"[ERROR]"!  /* UPDATE */
+v @ $integer ?
+	v string() !
+v @ $string ?
+	"\"" + v replace( "\n" , "\\n" ) replace( "\"" , "\\\"" ) + "\"" !
+v @ $varray ?
+	strary(v) !
+"(undef)" !
+
+db (0)
+dbobj=caller;
+pdbobj= $module serialed(caller) precessant() serinteger() ;
+
+[ o; logins()] {
+	dbobj @# o.debug || pdbobj @# o.debug ?
+		o tell("[DB ",+argv," ]");
+	}
+

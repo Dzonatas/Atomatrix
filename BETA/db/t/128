@@ -1,0 +1,14 @@
+o17 p85 c0 s0 l0 c0 w0 p0 v4
+name	(128,877)	$ Armory
+aliases	(128,877)	?
+desc	(128,877)	$ Welcome to the Armory.
+exits	(4,219)	A 4
+A 2
+# 4
+# 1
+A 2
+M 85
+M 134
+A 0
+A 0
+.

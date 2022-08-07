@@ -1,0 +1,603 @@
+o6 p100 c0 s171 l478 c0 w171 p0 v15
+name	(6,219)	$ cli
+scroll	(6,27)	?
+task	(6,27)	# 0
+t	(6,27)	# 0
+input	(6,27)	?
+map	(6,27)	A 24
+A 3
+# 0
+# 0
+U ATOMATRIX 20040113
+A 3
+# 0
+# 28
+U ] Alchematrix 0.1.0.10
+A 3
+# 0
+# 56
+U type 'help'
+A 3
+# 0
+# 84
+U &#10144; l
+A 3
+# 0
+# 112
+U office model(#479)
+A 3
+# 0
+# 140
+U large windows display outside
+A 3
+# 0
+# 168
+U You see the timepiece [currently &#9793;+1JO:D:2NM3C](#271) and the Project Documentation(#144).
+A 3
+# 0
+# 196
+U exits:    exit
+A 3
+# 0
+# 224
+U &#10144; .
+A 3
+# 0
+# 252
+U Alchematrix 0.1.0.10
+A 3
+# 0
+# 280
+U type 'help'
+A 3
+# 0
+# 308
+U &#10144; test
+A 3
+# 0
+# 336
+U ok
+A 3
+# 0
+# 364
+U &#65533;
+A 3
+# 0
+# 392
+U {652, 813, {"hello"}}
+A 3
+# 0
+# 420
+U ._keywords
+A 3
+# 144
+# 420
+U .tmp
+A 3
+# 216
+# 420
+U .kernel
+A 3
+# 288
+# 420
+U 
+A 3
+# 0
+# 448
+U .interface
+A 3
+# 144
+# 448
+U 
+A 3
+# 0
+# 476
+U &#65533;
+A 3
+# 0
+# 504
+U &#10144; .
+A 3
+# 0
+# 532
+U 
+output	(6,27)	A 24
+A 3
+# 0
+# 0
+U ATOMATRIX 20040113
+A 3
+# 0
+# 28
+U ] Alchematrix 0.1.0.10
+A 3
+# 0
+# 56
+U type 'help'
+A 3
+# 0
+# 84
+U &#10144; l
+A 3
+# 0
+# 112
+U office model(#479)
+A 3
+# 0
+# 140
+U large windows display outside
+A 3
+# 0
+# 168
+U You see the timepiece [currently &#9793;+1JO:D:2NM3C](#271) and the Project Documentation(#144).
+A 3
+# 0
+# 196
+U exits:    exit
+A 3
+# 0
+# 224
+U &#10144; .
+A 3
+# 0
+# 252
+U Alchematrix 0.1.0.10
+A 3
+# 0
+# 280
+U type 'help'
+A 3
+# 0
+# 308
+U &#10144; test
+A 3
+# 0
+# 336
+U ok
+A 3
+# 0
+# 364
+U &#65533;
+A 3
+# 0
+# 392
+U {652, 813, {"hello"}}
+A 3
+# 0
+# 420
+U ._keywords
+A 3
+# 144
+# 420
+U .tmp
+A 3
+# 216
+# 420
+U .kernel
+A 3
+# 288
+# 420
+U 
+A 3
+# 0
+# 448
+U .interface
+A 3
+# 144
+# 448
+U 
+A 3
+# 0
+# 476
+U &#65533;
+A 3
+# 0
+# 504
+U &#10144; .
+A 3
+# 0
+# 532
+U 
+wnd	(6,27)	# 0
+text	(6,27)	?
+mc	(6,27)	# 0
+mx	(6,27)	# 819
+my	(6,27)	# 235
+position	(6,27)	?
+exposition	(6,27)	?
+x	(6,219)	# 0
+.
+reformat (0)
+p = argv[0] ;
+
+w	= .wnd ;
+
+.output = { { 0 , 0 , $unicode string( "" ) } } ;
+[ a ; .scroll ] output( a ) ;
+task (0)
+.wnd	= $wnd construct() ;
+//.position @~ $undefined ?
+	.wnd position( .position ) ;
+.wnd show() ;
+.wnd focus() ;
+.wnd front() ;
+.wnd update() ;
+//.input	= { } ;
+.t set() ;
+.position = .wnd position() ;
+.exposition = .wnd position() ;
+$program inherit( .wnd ) ;
+.wnd	= 0 ;
+
+backspace (0)
+w = popr( .output ) ;
+w[2] ?	{
+	w[2] = w[2] substring( 0 , w[2] length( ) - 1 ) ;
+	pushr( .output , w ) ;
+	}
+,	~~.output ? .output = { { 0 , 0 , $unicode string( "" ) } } ;
+.map	= .output ;
+input (0)
+x	= 0 ;
+y	= 0 ;
+c	= 0 ;
+s = "" ;
+p	= .wnd position() ;
+//.wnd position( $wnd rectangle( 0 , 0 , p.right , p.bottom ) ) ;
+
+[1]	{
+	m = .input item() ;
+//	.t wait() ;
+//	( m = popl( .input ) ) @ $undefined ?
+//		$error !
+//	.input ? .t set() ;
+	m == 0 ? "." !
+	m.message == m.WM_CHAR ?
+		{
+		m.ascii ?
+			{
+			s += m.ascii ;
+			output( m.ascii ) ;
+			< ;
+			}
+		m.pparam == 13 ?
+			s !
+		m.pparam == 10 ?
+			s !
+		m.pparam == 8 ?
+			{
+			s ?	{
+				backspace() ;
+				s = s substring( 0 , s length() - 1 ) ;
+				wnd() ;
+				}
+			< ;
+			}
+		< ;
+		}
+	}
+$error !
+output (0)
+~~( .wnd getCharWidth( "M" ) ) ?	// UPDATE:  .wnd ?
+	$error !
+
+w	= .wnd ;
+
+tm	= w getTextMetrics() ;
+tab	= tm.AveCharWidth * 8 ;
+xx = x	= 0 ;
+r	= w getRectangle() ;
+s	= $unicode string( "" ) ;
+t	= {} ;
+q	= popr( .output ) ;
+xx = x	= q[0] + 0 ;
+yy = y	= q[1] + 0 ;
+//s	= q[2] + "" ;
+s	= $unicode string( q[2] ) ;
+s ?	{
+	p = w getTextExtentPoint( s ) ;
+	x = xx + p.cx ;
+	}
+
+[ a ; unicode(+argv) ]
+	{
+	a == "\n" ?
+		{
+		x = 0 ;
+		y = y + tm.Height ;
+		}
+	, a == "\t" ?
+		{
+		( x = ( ( x / tab ) + 1 ) * tab ) => r.right ?
+			{
+			x = 0 ;
+			y = y + tm.Height ;
+			}
+		}
+	, ( x += w getCharWidth( a ) ) < r.right ?
+		{
+		s += a ;
+		< ;
+		}
+	,	{
+		pushr( .output , { xx , yy , s } ) ;
+		s = a ;
+		xx = 0 ;
+		x = w getCharWidth( a ) ;
+		yy = y = y + tm.Height ;
+		< ;
+		}
+	pushr( .output , { xx , yy , s } ) ;
+	s = $unicode string( "" ) ;
+	xx = x ;
+	yy = y ;
+	}
+pushr( .output , { xx , y , s } ) ;
+.x = xx ;
+y => r.bottom ?
+	{
+	y -= r.bottom ;
+	y += tm.Height ;
+	[ a ; .output ] a[1] = a[1] - y ;
+	}
+o	= {} ;
+[ a ; .output ] a[1] => 0 ? pushr( o , a ) ;
+.map = o ;
+.output = o ;
+wnd() ;
+
+cli (0)
+~~.output ?
+	.output = { { 0 , 0 , $unicode string( "" ) } } ;
+.t	= $wnd event() ;
+.task	= 1 ;
+.position = $wnd rectangle(+.position) ;
+.input	= $wnd queue() ;
+$atomatrix addTask( program( "task" ) ) ;
+avatar() setIO( this ) ;
+
+.t wait() ;
+f = $wnd font( 28 , 0 , 0 , 0 , $wnd.FW_NORMAL , 0 , 0 , 0 ,
+	$wnd.DEFAULT_CHARSET , $wnd.OUT_DEFAULT_PRECIS , $wnd.CLIP_DEFAULT_PRECIS ,
+	$wnd.DEFAULT_QUALITY , $wnd.DEFAULT_PITCH | $wnd.FF_DONTCARE ,
+//	"Arial"
+	"Arial Unicode MS"
+	) ;
+
+//f = $wnd font( 16 , 16 , 0 , 0 , $wnd.FW_NORMAL , 0 , 0 , 0 ,
+//	$wnd.DEFAULT_CHARSET , $wnd.OUT_DEFAULT_PRECIS , $wnd.CLIP_DEFAULT_PRECIS ,
+//	$wnd.DEFAULT_QUALITY , $wnd.DEFAULT_PITCH | $wnd.FF_DONTCARE , 0
+//	) ;
+
+
+.wnd select( f ) ;
+v = "Alchematrix " + ascii( $processity.alchematrix ) ;
+
+output( v + "\ntype 'help'\n" ) ;
+
+[1]	{
+//	a = $atomatrix.atomized() ;
+//	output( ascii( $atomatrix memory() , " " , a , " " , a[0]-a[2] , " " ) ) ;
+//	a = $atomatrix.atomized() ;
+//	output( ascii( $atomatrix memory() , " " , a , " " , a[0]-a[2] , " " ) ) ;
+//	a = $atomatrix.atomized() ;
+//	output( ascii( $atomatrix memory() , " " , a , " " , a[0]-a[2] , " " ) ) ;
+//	a = $atomatrix.atomized() ;
+//	output( ascii( $atomatrix memory() , " " , a , " " , a[0]-a[2] , " " ) ) ;
+	l = avatar() ;
+	l = $util name( l.location ) ;
+	.wnd setTitle( ascii( l , " - " , v ) ) ;
+	output( $unicode entity( 10144 ) + " " ) ;
+	( s = input() ) @ $error ? s !
+	output( "\n" ) ;
+	s == "quit\n" || s == ".\n" || s == "." ? . ;
+	s == ".." ?
+		{
+		.output = { { 0 , 0 , $unicode string( "" ) } } ;
+		.wnd destruct() ;
+		avatar() setIO( ) ;
+		$error !
+		}
+	s = s replace( "\n" , "" ) ;
+	( e = avatar() _input( s ) ) @~ $undefined ?
+		output( ascii(e) ) ;
+	}
+avatar() setIO( ) ;
+.wnd destruct() ;
+a = { .position.left+0 , .position.top+0 , .position.right+0 , .position.bottom+0 } ;
+.position = a ;		// UPDATE: .position undefines with
+			//.position = { .position.left+0 , .position.top+0 , .position.right+0 , .position.bottom+0 } ) ;
+
+.task	= 0 ;
+.t	= 0 ;
+wnd (0)
+//o = .output ;
+
+w	= .wnd ;
+w	caret() ;
+w	erase() ;
+
+o	= .map ;
+~~o ? !
+[ a ; o ] w textOut(+a) ;
+z = o[o length()-1] ;
+s = w getTextExtentPoint( z[2] ) ;
+w caret( z[1] , s.cx + z[0] ) ;
+		
+//textate( (w getRectangle()).right ) ;   // UPDATE: fixit
+w update() ;
+process (0)
+~~.output ?
+	.output = { { 0 , 0 , $unicode string( "" ) } } ;
+.t	= $wnd event() ;
+.task	= 1 ;
+$atomatrix addTask( program( "task" ) ) ;
+avatar() setIO( this ) ;
+
+.t wait() ;
+$crtl sleep( 20000 ) ;
+f = $wnd font( 24 , 0 , 0 , 0 , $wnd.FW_NORMAL , 0 , 0 , 0 ,
+	$wnd.DEFAULT_CHARSET , $wnd.OUT_DEFAULT_PRECIS , $wnd.CLIP_DEFAULT_PRECIS ,
+	$wnd.DEFAULT_QUALITY , $wnd.DEFAULT_PITCH | $wnd.FF_DONTCARE ,
+	"Arial Unicode MS"
+	) ;
+
+.wnd select( f ) ;
+
+output( "Alchematrix " + ascii( $processity.alchematrix ) + "\ntype 'help'\n" ) ;
+
+[1]	{
+	output( "] " ) ;
+	( s = input() ) @ $error ? s !
+	output( "\n" ) ;
+	s == "quit\n" || s == ".\n" || s == "." ? . ;
+	s == ".." ?
+		{
+		.output = { { 0 , 0 , $unicode string( "" ) } } ;
+		.wnd destruct() ;
+		avatar() setIO( ) ;
+		$error !
+		}
+	s = s replace( "\n" , "" ) ;
+	( e = avatar() _input( s ) ) @~ $undefined ?
+		output( ascii(e) ) ;
+	}
+avatar() setIO( ) ;
+.wnd destruct() ;
+.task	= 0 ;
+.t	= 0 ;
+mCHAR (0)
+//pushr( .input , argv[0] ) ;
+//.t set() ;
+.input item( argv[0] ) ;
+mSYSCOMMAND (0)
+m	= argv[0] ;
+( m.pparam & 65520 ) == m.SC_SIZE ?
+	{
+	.mx = m.x ;
+	.my = m.y ;
+	.mc = m.pparam - m.SC_SIZE ;
+	.exposition = .position ;
+	.wnd setCapture() ;
+	!
+	}
+( m.pparam & 65520 ) == m.SC_CLOSE ?
+	{
+	mCLOSE( m ) ;
+	!
+	}
+
+mLBUTTONUP (0)
+.mc ?	{
+	.wnd releaseCapture() ;
+	.mc = 0 ;
+	}
+
+mLBUTTONDOWN (0)
+
+mMOUSEMOVE (0)
+( c = .mc ) ?
+	{
+	m	= argv[0] ;
+	p	= .position ;
+	o	= .exposition ;
+	mx = p.left + m.x - .mx ;
+	my = p.top + m.y - .my ;
+	c == m.WMSZ_LEFT ?
+		r = $wnd rectangle( o.left + mx , o.top , o.right - mx , o.bottom ) ;
+	, c == m.WMSZ_RIGHT ?
+		r = $wnd rectangle( o.left , o.top , o.right + mx , o.bottom ) ;
+	, c == m.WMSZ_TOP ?
+		r = $wnd rectangle( o.left , o.top + my , o.right , o.bottom - my ) ;
+	, c == m.WMSZ_TOPLEFT ?
+		r = $wnd rectangle( o.left + mx , o.top + my , o.right - mx , o.bottom - my ) ;
+	, c == m.WMSZ_TOPRIGHT ?
+		r = $wnd rectangle( o.left , o.top + my , o.right + mx , o.bottom - my ) ;
+	, c == m.WMSZ_BOTTOM ?
+		r = $wnd rectangle( o.left , o.top , o.right , o.bottom + my ) ;
+	, c == m.WMSZ_BOTTOMLEFT ?
+		r = $wnd rectangle( o.left + mx , o.top , o.right - mx , o.bottom + my ) ;
+	, c == m.WMSZ_BOTTOMRIGHT ?
+		r = $wnd rectangle( o.left , o.top , o.right + mx , o.bottom + my ) ;
+	, 
+		$atomatrix output( "mousemove c=" + ascii( c ) + "\n" ) ;
+	r.right > 150 && r.bottom > 150 ?
+		.wnd position( r ) ;
+	}
+mWINDOWPOSCHANGED (0)
+m = argv[0] ;
+.position = m.position ;
+wnd() ;
+mCLOSE (0)
+//pushr( .input , 0 ) ;
+//.t set() ;
+.input item( 0 ) ;
+mCAPTURECHANGED (0)
+.mc = 0 ;
+notify (0)
+~~( .wnd getCharWidth( "M" ) ) ?	// UPDATE:  .wnd ?
+	$error !
+
+w	= .wnd ;
+
+tm	= w getTextMetrics() ;
+tab	= tm.AveCharWidth * 8 ;
+xx = x	= 0 ;
+r	= w getRectangle() ;
+s	= "" ;
+t	= {} ;
+q	= popr( .output ) ;
+xx = x	= q[0] + 0 ;
+yy = y	= q[1] + 0 ;
+s	= q[2] + "" ;
+s ?	{
+	p = w getTextExtentPoint( s ) ;
+	x = xx + p.cx ;
+	}
+pushr( .output , q ) ;
+
+word	= $unicode string( "" ) ;
+str	= $unicode string( "" ) ;
+
+[ a ; unicode(+argv) ]
+	{
+	a == "\n" ?
+		{
+		x = 0 ;
+		str += word + "\n" ;
+		word = $unicode string( "" ) ;
+		< ;
+		}
+	, a == "\t" ?
+		{
+		( x = ( ( x / tab ) + 1 ) * tab ) => r.right ?
+			{
+			x = 0 ;
+			str += "\n" ;
+			}
+		str += word + "\t" ;
+		word = $unicode string( "" ) ;
+		< ;
+		}
+	, ( x += w getCharWidth( a ) ) < r.right ?
+		{
+		a == " " ?
+			{
+			str += word + " " ;
+			word = $unicode string( "" ) ;
+			}
+		,	{
+			word += a ;
+			}
+		< ;
+		}
+	,	{
+		str += "\n" ;
+		word += a ;
+		p = .wnd getTextExtentPoint( word ) ;
+		x = p.cx ;
+		< ;
+		}
+	}
+str += word ;
+output( str ) ;

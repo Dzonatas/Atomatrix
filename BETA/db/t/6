@@ -1,0 +1,291 @@
+o0 p163 c0 s0 l479 c234 w271 p0 v35
+name	(0,511)	$ software engineer
+aliases	(6,877)	$ developer
+desc	(6,877)	$ there are bold smiles and here is one
+
+login_time	(2,603)	# 942466227
+logoff_time	(2,603)	# 0
+password	(0,292)	$ hi
+uid	(2,365)	?
+gender	(6,877)	$ male
+editmode	(6,877)	# 1
+hp	(75,73)	# 1
+mhp	(75,73)	# 3
+dexterity	(75,73)	# 100
+strength	(6,73)	?
+ready_weapon	(75,73)	M 287
+attacking	(75,73)	?
+environatal	(6,0)	?
+verbose	(6,73)	# 1
+mail	(147,73)	A 0
+status	(6,73)	A 0
+t	(6,219)	T +1JN:A2:HBGMW
+types	(6,73)	A 0
+verbs	(20,0)	A 5
+A 7
+$ test
+# 0
+# -1
+# -1
+# -1
+$ test
+A 1
+# -102
+A 7
+$ go
+# 0
+# -1
+# -1
+# -1
+$ go
+A 1
+# -102
+A 7
+$ search
+# 0
+# -1
+# -1
+# -1
+$ search
+A 1
+# -102
+A 7
+$ cli
+# -1
+# -1
+# -1
+# 213
+$ cli
+A 0
+A 7
+$ save
+# -1
+# -1
+# -1
+# 452
+$ crystalize
+A 1
+# -102
+defenses	(75,73)	A 0
+tasks	(6,219)	A 0
+task	(6,219)	# 2
+task_wait	(6,219)	# 0
+debug	(56,27)	A 5
+# 221
+# 258
+# 100
+# 220
+# 72
+emode	(56,27)	# 1
+language	(6,91)	$ -bdfghijklpqty
+io	(6,27)	?
+cli	(6,27)	M 213
+wrap_length	(6,27)	# 75
+line_length	(6,27)	?
+previousedit	(6,27)	$ me:test
+xmltest	(6,91)	$ 
+.
+tt (0)
+162 editprog({2,"notify"});
+
+search (0)
+argv -> o, str;
+o[0]=="#" ?
+	o = o[1..-1] integer() ;,
+	o = 56 findobj(o,avatar().location);
+textate(o);
+[ p ; $module serialed( o ) programs() ]
+	{
+	l=1;
+	[ line ; p source() split("\n")]
+		{
+		line index( str ) ?
+			{
+			line= line replace(str,"#"+str+"!");
+			textate(p identifier(),":",l,") ",line);
+			}
+		l+=1;
+		}
+	}
+
+parser (0)
+textate("> \\c");
+[(str=input()) <> "."] {
+	avatar() _input(str);
+	textate("> \\c");
+	}
+
+test3 (0)
+[1] {
+	textate(">> \\c");
+	(str=input()) == "." ? .;
+	// $parse _input(str);
+	<;
+	}
+
+setIO (0)
+argv[0] ?
+	.io = argv[0] ; ,
+	.io = undefined ;
+go (0)
+m = $module serialed( argv[0] integer() ) ;
+where =	{
+	{ "camp", 454 },
+	{ "dungeon", 85 },
+	{ "rd", 253 },
+	{ "lab", 478 },
+	{ "post", 5 },
+	{ "lobby" , 36 }
+	};
+
+argv[1]=="obj" ? {
+    o=1;
+    [o<300] {
+	    o+=1;
+	    $module serialed(o) @~ $module ? <;
+	    .roomgen precesses(o) && i=$util findobj(argv[0],o) ? {
+		.location announce_all(avatar().name," teleports out.");
+		this reintermodulize(o);
+		.location announce_all(avatar().name," teleports in.");
+		avatar().location look();
+		!
+		}
+	    }
+    }
+
+[ i; where]
+	{
+	i[0]==argv[0] ?
+		{
+		.location announce_all(avatar().name," teleports out.");
+		this reintermodulize( $module serialed( i[1] ) ) ;
+		.location announce_all(avatar().name," teleports in.");
+		avatar().location look();
+		!
+		}
+	}
+.roomgen precesses( m ) ?
+	{
+	.location announce_all(avatar().name," teleports out.");
+	avatar() reintermodulize( m );
+	.location announce_all(avatar().name," teleports in.");
+	avatar().location look();
+	!
+	}
+textate("Room not known.");
+
+test2 (0)
+n = $url get("http://sourceforge.net/export/rss_sfnewreleases.php") ;
+n = $url get("http://sourceforge.net/export/rss2_projnews.php?group_id=40636") ;
+
+/*
+x = "<hi>" ;
+
+textate( c = $vreality canonicalize( x ) , "\n" ) ;
+
+textate( $vreality decanonicalize( c ) ) ;
+
+//textate( $url get("http://sourceforge.net/export/rss2_projnews.php?group_id=40636") ) ;
+*/
+
+
+/*
+textate( $vreality repository( "radix" ,
+"<module>
+<hierarchy>1<intra>440<lateral>4</lateral></intra></hierarchy>
+<item>
+<identity>name</identity>
+<principal><permission><code>877</code></permission></principal>
+<type>ASCII</type>
+<content>avatarigen</content>
+</item>
+</module>
+"
+)
+
+) ; *//*
+textate( $vreality repository() ) ;
+textate( n = $vreality repository( "radix" ) ) ;
+
+xml = $module serialed( 215 ) ;
+
+m = xml translate( n ) ;
+textate( xml translate( m ) ) ;
+
+*/
+
+/*
+m = $module serialed( 171 ) construct() ;
+
+m process() ;
+
+*//*   would crash
+i = 100 ;
+[ i ]	{
+	$module serialed( 171 ) process() ;
+	i-=1 ;
+	}
+*/
+
+
+
+test (0)
+//$module serialed(92) .gdna core_connect() ;
+a = $module atomize( "ionica" ) ;
+
+a pregeneration() ;
+a machine() ;
+a degeneration() ;
+
+/*
+$module serialed( 275 ) source() ;
+a = $module atomize( "1" );
+a @ $module ? textate( "ok" ) ; , textate( "!" ) ;
+textate( a._keywords ) ;
+textate( a.tmp ) ;
+a save() ;
+textate( "---" ) ;
+
+str = "" ;
+[ v; a variants() ]
+        str += "." + v identifier() + "\t" ;
+textate( str ) ;
+str = "" ;
+[ v; a programs() ]
+        str += "." + v identifier() + "\t" ;
+textate( str ) ;
+        
+a = $module atomize( "radix" );
+textate( a.source ) ;
+*/
+/*
+a = 
+"<module>
+	<principal></principal>
+	<precursor></precursor>
+	<intramodule></intramodule>
+	<intramodules></intramodules>
+	<orbit></orbit>
+	<intermodule></intermodule>
+	<intermodules></intermodules>
+	<principle></principle>
+	<variant>
+		<identifier></identifier>
+		<principal></principal>
+		<principle></principle>
+		<data></data>
+	</variant>
+	<method>
+		<identifier></identifier>
+		<source></source>
+	</method>
+</module>" ;
+
+*/
+
+output (0)
+
+input (0)
+.io ? .io input() !
+$atomatrix input() relpace( "\n" , "" ) !
+

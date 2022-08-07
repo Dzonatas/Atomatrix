@@ -1,0 +1,71 @@
+o6 p450 c0 s0 l442 c448 w0 p0 v8
+main	(447,895)	M 447
+cli	(447,895)	M 448
+display	(447,895)	M 444
+name	(447,895)	$ Main Window
+aliases	(447,895)	?
+desc	(447,895)	?
+window	(6,219)	?
+active	(6,219)	M 448
+.
+event (0)
+e = argv[0];
+e.type == 2  ?	.active keypress(e); ,
+e.type == 4  ?	.active buttonpress(e); ,
+e.type == 12 ?	caller expose(e);
+
+setactive (0)
+.active = argv[0];
+
+flush (0)
+$X.flush();
+
+hide (0)
+.display hide();
+.window unmap();
+flush();
+
+show (0)
+.window map();
+.display show();
+flush();
+
+create (0)
+textate("...");
+textate($x);
+
+/*
+.window			= $X.window();
+.window.x		= 0;
+.window.y		= 0;
+.window.width		= 640 + 4;
+.window.height		= 400 + 20 + 8;
+.window.background	= .grey;
+.window create();
+*/
+
+textate(.window);
+textate("...");
+
+!
+
+enableevents();
+
+.display create();
+.cli create();
+
+destroy (0)
+/* .window destroy(); */
+disableevents();
+.display.window = NULL;
+.cli.window = NULL;
+.main.window = NULL;
+flush();
+
+expose (0)
+
+keypress (0)
+.active keypress(+argv);
+
+buttonpress (0)
+

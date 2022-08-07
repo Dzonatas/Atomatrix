@@ -1,0 +1,434 @@
+o6 p10 c0 s42 l235 c0 w270 p0 v4
+name	(52,877)	$ Game Manual
+aliases	(52,877)	$ man*ual|game man*ual
+desc	(52,877)	$ Virtual Realities game manual.
+verbs	(20,0)	A 2
+A 7
+$ man*ual
+# 0
+# -1
+# -1
+# -1
+$ manual
+A 1
+# -102
+A 6
+$ read
+# 1
+# -1
+# -1
+# -1
+$ read
+.
+vol8 (0)
+
+vol7 (0)
+
+vol6 (0)
+
+vol5 (0)
+
+vol4 (0)
+
+vol3 (0)
+/* join, logins, children, move, list, typeof */
+argv[0]=="join" ? { textate("
+STR join(ARY,STR)
+
+Return a concatenated string of ARY delimited by STR.
+");
+	}
+
+argv[0]=="logins" ? { textate("
+ARY logins()
+
+Returns an array of object number that are players currently connected.
+");
+	}
+argv[0]=="children" ? { textate("
+ARY children(OBJ)
+
+Returns a array of object numbers that are direct children of OBJ.
+");
+	}
+
+argv[0]=="move" ? { textate("
+ERR move(OBJ,TO_OBJ)
+
+This is a only way to move an objects location.  It changes OBJ location
+to TO_OBJ contents.  Returns value of 1 if successful otherwise an error
+value.  
+Before actually moving the object, \"_accept\" is called on TO_OBJ.  Which 
+should return a value of 1 if the move is okay.  If the program doesn't
+exist then the move is denied and $error.perm is returned.
+\"_moved_in\" and \"_moved_out\" is called also.
+");
+	}
+argv[0]=="list" ? { textate("
+STR list(OBJ,STR)
+
+Returns the whole program with the name of STR on OBJ.
+");
+	}
+argv[0]=="typeof" ? { textate("
+NUM typeof([STR,NUM,ARY,ERR])
+
+Returns the value of constants _STR, _NUM, _ARY, or _ERR depeding on the
+type of value of the argument.
+");
+	}
+
+vol2 (0)
+/* read addvar split length tolower chvarown */
+argv[0]=="read" ? {
+textate("
+STR read()
+
+Waits for input from the users and returns it.
+");
+!
+}
+
+argv[0]=="addvar" ? {
+textate("
+[ERROR] addvar(OBJ,STR)
+
+Creates a new variable named STR on OBJ.  Returns a ERROR if failed.
+STR must be a valid variable name.
+");
+!
+}
+
+argv[0]=="split" ? {
+textate("
+ARY split(STR1,STR2)
+
+This returns an array of strings which has split STR1 by a delimiting string
+(STR2).
+
+Example:
+	str=split(\"good bye\",\" \");
+	/* result: str = { \"good\", \"bye\" } */
+");
+!
+}
+
+argv[0]=="length" ? {
+textate("
+NUM length([STR,ARY])
+
+Returns either length of STR or number of elements in ARY.
+");
+!
+}
+
+argv[0]=="tolower" ? {
+textate("
+STR tolower(STR)
+
+Returns STR all in lower alphabet.
+");
+!
+}
+
+argv[0]=="chvarown" ? {
+textate("
+[ERROR] chvarown(OBJ,STR,OBJ2)
+
+Changes ownership of a variable (STR on OBJ) to OBJ2.  Returns an ERROR
+if failed.
+");
+!
+}
+
+vol1 (0)
+argv[0]=="notify" ? {
+textate("
+UNDEF notify(OBJ,STR)
+
+This sends a message (STR) to a user that is currently connected via a
+player object (OBJ).  No error if user is not connected.
+");
+!
+}
+
+argv[0]=="tostr" ? {
+textate("
+STR tostr([NUM,VAR,STR,ERR]{[,...]})
+
+Returns a concatenated string of the argument(s).  Argumnent types will be 
+changed into string type.
+");
+!
+}
+
+argv[0]=="tonum" ? {
+textate("
+NUM tonum(STR)
+
+Returns STR converted to NUM type.
+");
+!
+}
+
+argv[0]=="create" ? {
+textate("
+OBJ create(OBJ1 {,OBJ2})
+
+Creates a new object from a valid object (OBJ1).  Returns new object number
+if successful else returns an ERROR type.  New object will be owned by
+OBJ2 (if valid object number).  If OBJ2 equals -1 or is not specified then
+object will be owned by owner of the current task.
+");
+!
+}
+
+argv[0]=="chparent" ? {
+textate("
+NUM chparent(OBJ1,OBJ2)
+
+This changes an objects (OBJ1) parentship to another object (OBJ2).  All
+children objects of OBJ1 are kept.  Returns TRUE (1) if successful else FALSE.
+
+Object variables, progams, and verbs will change depending on objects
+inheritance.
+");
+!
+}
+
+argv[0]=="chvarperm" ? {
+textate("
+NUM chvarperm(OBJ,STR,NUM) 
+
+Changes variable (STR) permissions on an object (OBJ).  Return new 
+permission value.
+");
+!
+}
+
+vol0 (0)
+argv[0]=="functions" ? { textate("
+Current Built in Functions:
+ Strings and Numbers:
+  tostr() tonum() tolower() tofmt() strsub() substr()
+ 
+ Tasks:
+  connect() disconnect() addtask() tasks() kill() logins() read() notify()
+
+ Programs:
+  addprog() delprog() list() program() programs()
+ 
+ Verbs:
+  setverbs() verbs()
+
+ Objects:
+  create() chparent() move() recycle() isvalid() children() ischild()
+  ancestors()
+
+ Object Varibles:
+  vars() addvar() delvar() chvarown() chvarperm()
+
+ Varibles and Arrays:
+  join() split() length() typeof()
+  
+ Misc:
+  time() localtime()
+");
+!
+}
+
+argv[0]=="verbs" ? { textate("
+The verb definition is just an array attached to the object.  The parser 
+searches this array to match the parsed format.  If found then it
+executes the program specified.
+
+Here is the structer of a verb definition:
+	{ VERB-NAME, DOBJ, PREP, IOBJ, OBJ, PROGRAM-NAME }
+
+VERB-NAME	a string of words for pattern matching
+DOBJ		a number (-1 = none, 0 = any, 1 = current object)
+PREP		a number (-1 = none, 0 = any, or prep phrase value)
+IOBJ		a number (-1 = none, 0 = any, 1 = current object)
+OBJ		a number (-1 = current object, else a valid object number
+			where the program should be)
+PROGRAM-NAME	a string that is a valid program name to be executed.
+
+Untill I program something better, I've made a few programs to help edit
+verbs and programs.  So far: (OBJECT is an object name or '#' with a number)
+
+verbs OBJECT
+	Lists and numbers verbs that are defined on OBJECT
+
+ev NUMBER on OBJECT
+	Edits a verb definition.  NUMBER is a number found in the 'verbs' 
+	command.  Use values described above.  To add a new verb use 
+	'new' instead of NUMBER.
+
+programs OBJECT 	(or 'progs')
+	list program names on OBJECT
+
+edit NAME on OBJECT
+	Edits a programs named NAME on OBJECT.
+");
+!
+}
+
+manual (0)
+vols=
+{ /*  0 */ {	"functions",	"verbs"
+},/*  1 */ {	"notify",	"tostr",	"tonum",
+		"chparent",	"chvarperm",	"create"
+},/*  2 */ {	"chvarown",	"read",		"addvar",
+		"split",	"length",	"tolower"
+},/*  3 */ {	"join",		"logins",	"children",
+		"move",		"list",		"typeof"
+},/*  4 */ {	"isvalid",	"setverbs",	"program",
+		"programs",	"kill",		"verbs"
+},/*  5 */ {	"vars",		"ancestors",	"recycle",
+		"delvar",	"meminfo",	"time"
+},/*  6 */ {	"localtime",	"addprog",	"delprog",
+		"connect",	"disconnect",	"tofmt"
+},/*  7 */ {	"substr",	"strsub",	"ischild"
+},/*  8 */ {	
+},/*  9 */ {	"parsing",	"prepositions",	"variables"
+} };
+
+~~argv[0] ? {
+	textate("Currect Topics:\n");
+	textate(" functions  verbs  parsing  variables  prepositions\n");
+	!
+	}
+
+l=0;
+[ vol; vols] {
+	[ i; vol] {
+		i==argv[0] ? {
+			this:("vol" + ascii(l))(i);
+			!
+			}
+		}
+	l=l+1;
+	}
+textate("Manual not found.");
+
+read (0)
+textate("Use:
+ man              - for a list of topics
+ man <TOPIC>      - to read a topic
+ ");
+
+vol9 (0)
+argv[0]=="parsing" ? { textate("
+The parser will look at what a person enters in and try to form one of
+these structers of senteneces...
+
+VERB
+VERB DIRECT-OBJECT
+VERB DIRECT-OBJECT PREPOSITION INDIRECT-OBJECT
+VERB PREPOSITION INDIRECT-OBJECT
+
+and possible but not recommended:
+VERB DIRECT-OBJECT PREPOSITION 
+
+It first takes the first word and marks it as the verb.  Then tries to find 
+a preposition.  Examples of prepositions phrases you can use are below.  If 
+it does match a word/phrase then the parser considers everything after the 
+preposition to be the indirect-object and everything before it is the 
+direct-object.
+
+Here is a few examples of parsing: (V=verb D=direct I=indirect P=prep.)
+
+	jump
+	<-V>
+
+	examine ball
+	<--V--> <-D>
+
+	give ball to Jon
+	<-V> <-D> <P <I>
+
+	get out of boat
+	<V> <--P-> <-I>
+");
+!
+}
+
+argv[0]=="prepositions" ? { textate("
+Here is a list of current prepositions.  Some have the same meaning.
+
+ID      Phrase
+1	is
+2	as
+3	over
+4	at/to
+5	behind
+6	beside
+7	through
+8	for/about
+9	off/off of
+10	with/using
+11	in front of
+12	in/inside/into/inside of
+13	on top of/on/onto/upon
+14	out of/from inside/from
+15	under/underneath/beneath
+");
+!
+}
+
+argv[0]=="variables" ? { textate("
+Two types of variables which are local variables and object variables.  Local
+variables are used by programs.  They only last in memory while the program
+is executing.  A program can not access variables of other programs.  Object 
+variables are defined on objects.  They last as long as the object exists.  
+They can be accessed by any program.
+
+Varibles names are a string of alphanumeric characters.  They can have 
+an underscore ('_') but cannot start with a number.  Object variables have 
+the form 'OBJ-ID.VAR-NAME'.  Where OBJ-ID is the object number that the variable
+VAR-NAME can be found.
+
+Object variables have permissions.  (SEE: permissons)
+
+Syntax for variables:
+
+  STRING		 STRING is the name of a local variable
+  EXPR.STRING 		 object variable; EXPR returns a valid object-id
+				STRING is the name of the variable
+  EXPR1.(EXPR2)		 object variables; EXPR1 returns a valid object-id
+				EXPR2 returns a valid variable name
+
+There are special object variables:
+
+	OBJ.location	object number of which OBJ is in
+	OBJ.objects	array of objects in OBJ
+	OBJ.owner	OBJ that owns this object
+
+When a program starts to execute the local variables below are automatically
+set to ther values:
+
+If program is called from a verb (the parser):
+
+	argc		count of words after the verb
+	argv		array of words after the verb
+	verb		the verb matched
+	dobj		the direct object or array of
+	iobj		the indirect object or array of
+	prep		preposition phrase (value 1-15 if matched)
+	dobjstr		direct object string (set if found)
+	iobjstr		indirect object string (set if found)
+	this		object verb was found on
+	player		the player object number
+	caller		same as player
+
+If program is called from another program:
+
+	argc		number of arguments
+	argv		array of the arguments
+	this		object the progam is on
+	player		the player object number
+	caller		object number of the calling program
+");
+!
+}
+

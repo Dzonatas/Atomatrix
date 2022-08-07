@@ -1,0 +1,47 @@
+o61 p220 c0 s227 l99 c0 w0 p0 v8
+money	(61,73)	M 146
+name	(61,73)	$ busty virgin
+aliases	(61,73)	$ lady|female|girl|virgin|busty*
+desc	(61,73)	$  (.)(.)
+  )  (
+ ( \/ )
+
+
+task	(72,1023)	# 4
+action	(17,73)	A 3
+$ %w winks at you.
+$ %w tosses her hair seductively.
+$ %w crosses her legs temptingly.
+wait_time	(72,73)	# 932274238
+addroomdesc	(17,27)	A 1
+A 2
+$ Saloon's Back Room
+$ A busty female sits daintily on a chair.
+.
+_moved_in (0)
+textate(argv[0]);
+.money precesses(argv[0]) ? addtask(this,"gets_coin",argv[0]);
+
+gets_coin (0)
+/*.task ? !*/
+textate(argv[0]);
+.task=1;
+$program sleep(2);
+.location announce_all("The virgin blushes.");
+argv[0] _recycle();
+$program sleep(3);
+.location announce_all("The busty woman screams in orgasm.");
+.desc="An orgasmatic woman";
+.name="busty woman";
+$program sleep(4);
+.location announce_all("The busty woman sighs with relief.");
+.desc="A very statisfied woman";
+$program sleep(10);
+.desc="A very willing virgin";
+.name="busty virgin";
+.task=0;
+
+_accept (0)
+$npc_class.treasure precesses(argv[0]) ? 1!
+0!
+

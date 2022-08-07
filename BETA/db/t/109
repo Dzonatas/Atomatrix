@@ -1,0 +1,16 @@
+o17 p74 c0 s112 l74 c0 w115 p0 v5
+name	(109,73)	$ ARMOUR-ARMS
+desc	(109,73)	$ A new leather vest.
+worn	(6,73)	$ ba
+types	(6,73)	A 3
+A 2
+$ la
+$ ma
+A 2
+$ leather armbands
+$ +1
+A 2
+$ metal armbands
+$ +2
+type	(6,73)	$ arms
+.

@@ -1,0 +1,90 @@
+o6 p10 c0 s55 l478 c0 w164 p0 v6
+name	(6,219)	$ visual list
+y	(6,219)	# 8
+list	(6,219)	A 14
+$ .
+$ ..
+$ CVS
+$ gro.o
+$ o_i.o
+$ o_o.o
+$ creatMakefile
+$ .dso
+$ o_o.c
+$ Makefile
+$ o.h
+$ gro.c
+$ tty.so
+$ o_i.c
+top	(6,27)	# 0
+end	(6,219)	# 14
+lines	(6,219)	# 24
+.
+input (0)
+visualize();
+
+[1] {
+	$curses move(.y,0);
+	$curses refresh();
+	i = $curses getch();
+	i == 'j' ? {
+		.y < (.lines-1) ?
+			.y += 1;
+		, (.top+.y) < (.end-1) ? {
+			.top += 1;
+			visualize();
+			}
+		<;
+		}
+	i == 'J' ? {
+		.top + .lines < .end ?
+			.y = .lines-1;
+		,	.y = .end - (.top+1);
+		.y < 0 ? .y = 0;
+		<;
+		}
+	i == 'k' ? {
+		.y > 0 ?
+			.y -= 1;
+		, .top > 0 ? {
+			.top -= 1;
+			visualize();
+			}
+		<;
+		}
+	i == 'M' ? {
+		.top + .lines < .end ?
+			.y = .lines / 2;
+		,	.y = (.end - (.top+1))/2;
+		.y < 0 ? .y = 0;
+		<;
+		}
+	i == 'K' ? {
+		.y = 0;
+		<;
+		}
+	i!
+	}
+
+visualize (0)
+$curses erase();
+y	= 0;
+[y < .lines] {
+	y+.top == .end ?  .;
+	$curses move(y,0);
+	$curses addch( ascii(.list[y+.top]) ) ;
+	y += 1;
+	}
+$curses move(.y,0);
+$curses refresh();
+
+initialize (0)
+.list	= argv[0];
+.y	= 0;
+.top	= 0;
+.end	= .list length();
+.lines	= 24;
+
+item (0)
+.list[.top+.y]!
+
