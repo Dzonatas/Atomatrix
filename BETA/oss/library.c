@@ -155,9 +155,9 @@ atom oLibrary( string S )
 	}
 
 #ifdef _DEBUG
-#define		SUBVERSION	"\\2"
+#define		SUBVERSION	"\\Debug"
 #else
-#define		SUBVERSION	"\\1"
+#define		SUBVERSION	"\\Release"
 #endif
 
 void libraries_preconstructor( void )

@@ -108,9 +108,9 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\2/variant.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)variant.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>.\2/variant.lib</ImportLibrary>
+      <ImportLibrary>$(OutDir)variant.lib</ImportLibrary>
     </Link>
     <Midl>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -158,9 +158,9 @@
       <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ProgramDatabaseFile>.\1/variant.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)variant.pdb</ProgramDatabaseFile>
       <OptimizeReferences>true</OptimizeReferences>
-      <ImportLibrary>.\1/variant.lib</ImportLibrary>
+      <ImportLibrary>$(OutDir)variant.lib</ImportLibrary>
     </Link>
     <Midl>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>

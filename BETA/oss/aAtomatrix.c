@@ -36,9 +36,9 @@ atom aAtomatrix$attach( atom A , unsigned T , atom* V )
 	if( a->precursor == aAsciiString )
 		{
 #ifdef _DEBUG
-		ss	= add_s( a->datum , "\\2\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
+		ss	= add_s( a->datum , "\\Debug\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
 #else
-		ss	= add_s( a->datum , "\\1\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
+		ss	= add_s( a->datum , "\\Release\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
 #endif
 		}
 	else
@@ -48,9 +48,9 @@ atom aAtomatrix$attach( atom A , unsigned T , atom* V )
 		s[1] = (byte)a->datum ;
 		s[0] = 0 ;
 #ifdef _DEBUG
-		ss	= add_s( s , "\\2\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
+		ss	= add_s( s , "\\Debug\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
 #else
-		ss	= add_s( s , "\\1\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
+		ss	= add_s( s , "\\Release\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
 #endif
 		}
 	else
@@ -58,9 +58,9 @@ atom aAtomatrix$attach( atom A , unsigned T , atom* V )
 		{
 		string s = aUnicodedString_canonicalize( (unicodes)a->datum ) ;
 #ifdef _DEBUG
-		ss	= add_s( s , "\\2\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
+		ss	= add_s( s , "\\Debug\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
 #else
-		ss	= add_s( s , "\\1\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
+		ss	= add_s( s , "\\Release\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
 #endif
 		dealloc( s ) ;
 		}
@@ -73,9 +73,9 @@ atom aAtomatrix$attach( atom A , unsigned T , atom* V )
 		u[1] = 0 ;
 		s = aUnicodedString_canonicalize( u ) ;
 #ifdef _DEBUG
-		ss	= add_s( s , "\\2\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
+		ss	= add_s( s , "\\Debug\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
 #else
-		ss	= add_s( s , "\\1\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
+		ss	= add_s( s , "\\Release\\" ) ;			// UPDATE: DYNAMIC SUBVERSION
 #endif
 		dealloc( s ) ;
 		}

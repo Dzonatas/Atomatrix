@@ -11,9 +11,9 @@
 
 #define BUFSZ	512
 #ifdef _DEBUG
-# define ATOMATRIX_OSS_PATH	"OSS\\2\\oss.dll"
+# define ATOMATRIX_OSS_PATH	"OSS\\Debug\\oss.dll"
 #else
-# define ATOMATRIX_OSS_PATH	"OSS\\1\\oss.dll"
+# define ATOMATRIX_OSS_PATH	"OSS\\Release\\oss.dll"
 #endif
 
 char* direction_ATOMATRIX( void )

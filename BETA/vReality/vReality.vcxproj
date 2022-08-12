@@ -109,9 +109,9 @@
       <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ProgramDatabaseFile>.\1/vReality.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)vReality.pdb</ProgramDatabaseFile>
       <OptimizeReferences>true</OptimizeReferences>
-      <ImportLibrary>.\1/vReality.lib</ImportLibrary>
+      <ImportLibrary>$(OutDir)vReality.lib</ImportLibrary>
     </Link>
     <Midl>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -156,9 +156,9 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\2/vReality.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)vReality.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>.\2/vReality.lib</ImportLibrary>
+      <ImportLibrary>$(OutDir)vReality.lib</ImportLibrary>
     </Link>
     <Midl>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>

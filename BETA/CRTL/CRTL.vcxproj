@@ -106,9 +106,9 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\2/CRTL.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)CRTL.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>.\2/CRTL.lib</ImportLibrary>
+      <ImportLibrary>$(OutDir)CRTL.lib</ImportLibrary>
     </Link>
     <Midl>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -156,9 +156,9 @@
       <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ProgramDatabaseFile>.\1/CRTL.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)CRTL.pdb</ProgramDatabaseFile>
       <OptimizeReferences>true</OptimizeReferences>
-      <ImportLibrary>.\1/CRTL.lib</ImportLibrary>
+      <ImportLibrary>$(OutDir)CRTL.lib</ImportLibrary>
     </Link>
     <Midl>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>

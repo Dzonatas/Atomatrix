@@ -111,9 +111,9 @@
       <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ProgramDatabaseFile>.\1/object.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)object.pdb</ProgramDatabaseFile>
       <OptimizeReferences>true</OptimizeReferences>
-      <ImportLibrary>.\1/object.lib</ImportLibrary>
+      <ImportLibrary>$(OutDir)object.lib</ImportLibrary>
     </Link>
     <Midl>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -160,9 +160,9 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\2/object.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)object.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>.\2/object.lib</ImportLibrary>
+      <ImportLibrary>$(OutDir)object.lib</ImportLibrary>
       <AddModuleNamesToAssembly>
       </AddModuleNamesToAssembly>
       <AdditionalLibraryDirectories>
