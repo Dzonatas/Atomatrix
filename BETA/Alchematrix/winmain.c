@@ -26,7 +26,7 @@ int WINAPI WinMain( HINSTANCE I , HINSTANCE P , LPSTR C , int S )
 
 void displayLastErrorText( void )
 	{
-	HMODULE		m ;
+	LPCVOID		m ;
 	LPSTR		p ;
 	DWORD		l ;
 	DWORD		f ;
@@ -41,9 +41,14 @@ void displayLastErrorText( void )
 		if( m = LoadLibraryEx( TEXT("netmsg.dll") , NULL ,
 			LOAD_LIBRARY_AS_DATAFILE ) ) 
 				f |= FORMAT_MESSAGE_FROM_HMODULE ;
-	l	= FormatMessageA( f , m , e ,
+	l	= FormatMessageA( 
+		f , 
+		m , 
+		e ,
 		MAKELANGID( LANG_NEUTRAL, SUBLANG_DEFAULT ) ,
-		(LPSTR) &p , 0 , NULL ) ;
+		(LPSTR) &p , 
+		0 , 
+		NULL ) ;
 	if( l )	{
 		MessageBox( 0 , p , "ATOMATRIX" , MB_OK | MB_ICONERROR ) ;
 		LocalFree( p ) ;
