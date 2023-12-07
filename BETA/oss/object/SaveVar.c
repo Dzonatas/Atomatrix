@@ -40,7 +40,7 @@ int SaveVar( atom V, FILE *F )
 	else
 	if( V->precursor == aInteger )
 		{
-		err = fprintf( F, "# %p\n", V->datum );
+		err = fprintf( F, "# %ld\n", (long)V->datum );
 		}
 	else
 	if( V->precursor == aAsciiString )

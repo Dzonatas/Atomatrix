@@ -65,7 +65,7 @@ atom o_save( atom A , unsigned T , atom* V )
 		return atominul ;
 	if( A->precursor == aModuleAlpha )
 		return aModuleXML_alphaSave( A ) ;
-#ifdef _DEBUG
+#ifdef NO_SAVE
 	return atominul ;
 #endif
 	if( A->precursor != aModuleSerialed )
