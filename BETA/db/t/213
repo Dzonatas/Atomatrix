@@ -4,199 +4,415 @@ scroll	(6,27)	?
 task	(6,27)	# 0
 t	(6,27)	# 0
 input	(6,27)	?
-map	(6,27)	A 24
+map	(6,27)	A 51
 A 3
 # 0
-# 0
+# -334
 U ATOMATRIX 20040113
 A 3
 # 0
-# 28
+# -306
 U ] Alchematrix 0.1.0.10
 A 3
 # 0
-# 56
+# -278
 U type 'help'
 A 3
 # 0
-# 84
+# -250
 U &#10144; l
 A 3
 # 0
-# 112
+# -222
 U office model(#479)
 A 3
 # 0
-# 140
+# -194
 U large windows display outside
 A 3
 # 0
-# 168
+# -166
 U You see the timepiece [currently &#9793;+1JO:D:2NM3C](#271) and the Project Documentation(#144).
 A 3
 # 0
-# 196
+# -138
 U exits:    exit
 A 3
 # 0
-# 224
+# -110
 U &#10144; .
 A 3
 # 0
-# 252
+# -82
 U Alchematrix 0.1.0.10
 A 3
 # 0
-# 280
+# -54
 U type 'help'
 A 3
 # 0
-# 308
+# -26
 U &#10144; test
 A 3
 # 0
-# 336
+# 2
 U ok
 A 3
 # 0
-# 364
+# 30
 U &#65533;
 A 3
 # 0
-# 392
+# 58
 U {652, 813, {"hello"}}
 A 3
 # 0
-# 420
+# 86
 U ._keywords
 A 3
 # 144
-# 420
+# 86
 U .tmp
 A 3
 # 216
-# 420
+# 86
 U .kernel
 A 3
 # 288
-# 420
+# 86
 U 
 A 3
 # 0
-# 448
+# 114
 U .interface
 A 3
 # 144
-# 448
+# 114
 U 
 A 3
 # 0
-# 476
+# 142
 U &#65533;
 A 3
 # 0
-# 504
+# 170
 U &#10144; .
 A 3
 # 0
-# 532
-U 
-output	(6,27)	A 24
+# 198
+U Alchematrix 0.1.0.10
 A 3
 # 0
+# 226
+U type 'help'
+A 3
 # 0
+# 254
+U &#10144; exit
+A 3
+# 0
+# 282
+U cybertronix(#477)
+A 3
+# 0
+# 310
+U You see the IONIX System Computer(#254) and a teletype(#256).
+A 3
+# 0
+# 338
+U exits:    office  laboratory  exit
+A 3
+# 0
+# 366
+U &#10144; quit
+A 3
+# 0
+# 394
+U &#10144; 
+A 3
+# 0
+# 422
+U &#10144; 
+A 3
+# 0
+# 450
+U &#10144; kghvik
+A 3
+# 0
+# 478
+U dunno
+A 3
+# 0
+# 506
+U type 'help'
+A 3
+# 0
+# 534
+U &#10144; look
+A 3
+# 0
+# 562
+U cybertronix(#477)
+A 3
+# 0
+# 590
+U You see the IONIX System Computer(#254) and a teletype(#256).
+A 3
+# 0
+# 618
+U exits:    office  laboratory  exit
+A 3
+# 0
+# 646
+U &#10144; exit
+A 3
+# 0
+# 674
+U 810 level twenty one(#476)
+A 3
+# 0
+# 702
+U exits:    classroom  cybertronix  down
+A 3
+# 0
+# 730
+U &#10144; exit
+A 3
+# 0
+# 758
+U dunno
+A 3
+# 0
+# 786
+U type 'help'
+A 3
+# 0
+# 814
+U &#10144; quit
+A 3
+# 0
+# 842
+U &#10144; stop
+A 3
+# 0
+# 870
+U dunno
+A 3
+# 0
+# 898
+U type 'help'
+A 3
+# 0
+# 926
+U &#10144; 
+A 3
+# 0
+# 954
+U 
+output	(6,27)	A 51
+A 3
+# 0
+# -334
 U ATOMATRIX 20040113
 A 3
 # 0
-# 28
+# -306
 U ] Alchematrix 0.1.0.10
 A 3
 # 0
-# 56
+# -278
 U type 'help'
 A 3
 # 0
-# 84
+# -250
 U &#10144; l
 A 3
 # 0
-# 112
+# -222
 U office model(#479)
 A 3
 # 0
-# 140
+# -194
 U large windows display outside
 A 3
 # 0
-# 168
+# -166
 U You see the timepiece [currently &#9793;+1JO:D:2NM3C](#271) and the Project Documentation(#144).
 A 3
 # 0
-# 196
+# -138
 U exits:    exit
 A 3
 # 0
-# 224
+# -110
 U &#10144; .
 A 3
 # 0
-# 252
+# -82
 U Alchematrix 0.1.0.10
 A 3
 # 0
-# 280
+# -54
 U type 'help'
 A 3
 # 0
-# 308
+# -26
 U &#10144; test
 A 3
 # 0
-# 336
+# 2
 U ok
 A 3
 # 0
-# 364
+# 30
 U &#65533;
 A 3
 # 0
-# 392
+# 58
 U {652, 813, {"hello"}}
 A 3
 # 0
-# 420
+# 86
 U ._keywords
 A 3
 # 144
-# 420
+# 86
 U .tmp
 A 3
 # 216
-# 420
+# 86
 U .kernel
 A 3
 # 288
-# 420
+# 86
 U 
 A 3
 # 0
-# 448
+# 114
 U .interface
 A 3
 # 144
-# 448
+# 114
 U 
 A 3
 # 0
-# 476
+# 142
 U &#65533;
 A 3
 # 0
-# 504
+# 170
 U &#10144; .
 A 3
 # 0
-# 532
+# 198
+U Alchematrix 0.1.0.10
+A 3
+# 0
+# 226
+U type 'help'
+A 3
+# 0
+# 254
+U &#10144; exit
+A 3
+# 0
+# 282
+U cybertronix(#477)
+A 3
+# 0
+# 310
+U You see the IONIX System Computer(#254) and a teletype(#256).
+A 3
+# 0
+# 338
+U exits:    office  laboratory  exit
+A 3
+# 0
+# 366
+U &#10144; quit
+A 3
+# 0
+# 394
+U &#10144; 
+A 3
+# 0
+# 422
+U &#10144; 
+A 3
+# 0
+# 450
+U &#10144; kghvik
+A 3
+# 0
+# 478
+U dunno
+A 3
+# 0
+# 506
+U type 'help'
+A 3
+# 0
+# 534
+U &#10144; look
+A 3
+# 0
+# 562
+U cybertronix(#477)
+A 3
+# 0
+# 590
+U You see the IONIX System Computer(#254) and a teletype(#256).
+A 3
+# 0
+# 618
+U exits:    office  laboratory  exit
+A 3
+# 0
+# 646
+U &#10144; exit
+A 3
+# 0
+# 674
+U 810 level twenty one(#476)
+A 3
+# 0
+# 702
+U exits:    classroom  cybertronix  down
+A 3
+# 0
+# 730
+U &#10144; exit
+A 3
+# 0
+# 758
+U dunno
+A 3
+# 0
+# 786
+U type 'help'
+A 3
+# 0
+# 814
+U &#10144; quit
+A 3
+# 0
+# 842
+U &#10144; stop
+A 3
+# 0
+# 870
+U dunno
+A 3
+# 0
+# 898
+U type 'help'
+A 3
+# 0
+# 926
+U &#10144; 
+A 3
+# 0
+# 954
 U 
 wnd	(6,27)	# 0
 text	(6,27)	?
