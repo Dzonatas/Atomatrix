@@ -108,7 +108,8 @@ atom aVReality_canonicalize( atom A , int T , atom* V )
 		{
 		if( ( *a < ' ' && *a != '\n' ) || *a == '&' || *a == 127 || *a == '"' || *a == '<' || *a == '>' )
 			{
-			sprintf( temp , "%ld" , (unsigned)*a ) ;
+			//sprintf(temp, "%ld", (unsigned)*a);
+			sprintf_s(temp, 50, "%ld", (unsigned)*a);
 			i	= 0 ;
 			*(s++)	= '&' ;
 			*(s++)	= '#' ;
@@ -145,6 +146,7 @@ atom aVReality_decanonicalize( atom A , int T , atom* V )
 	unsigned		i ;
 	int			q ;
 	unsigned		v ;
+	//char temp[50];
 	
 
 	if( T != 1 )
@@ -184,7 +186,8 @@ atom aVReality_decanonicalize( atom A , int T , atom* V )
 			if( *(++a) != '#' )
 				_asm int 3 ;
 			++a ;
-			i = sscanf( a , "%ld;" , &v ) ;
+			//i = sscanf( a , "%ld;" , &v ) ;
+			i = sprintf_s(a, (size_t)50, "%u;", v);
 			if( i != 1 )
 				_asm int 3 ;
 			if( v > 127 )

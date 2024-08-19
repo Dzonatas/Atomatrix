@@ -36,8 +36,8 @@ void* aVReality_edit_ascii_task( struct _arg* A  )
 	char path[250] ;
 	char cmd[250] ;
 
-	sprintf( path , "D:\\WINDOWS\\Temp\\ATOMATRIX %u.txt" , editSequence ) ;		// UPDATE: no drive
-	sprintf( cmd , "notepad D:\\WINDOWS\\Temp\\ATOMATRIX %u.txt" , editSequence++ ) ;
+	sprintf_s( path , sizeof( path ), "D:\\WINDOWS\\Temp\\ATOMATRIX %u.txt" , editSequence ) ;		// UPDATE: no drive
+	sprintf_s( cmd , sizeof( cmd ), "notepad D:\\WINDOWS\\Temp\\ATOMATRIX %u.txt" , editSequence++ ) ;
 
 
 	z	= 4096 ;
@@ -95,8 +95,8 @@ void* aVReality_edit_unicode_task( struct _arg_unicode* A  )
 	char path[250] ;
 	char cmd[250] ;
 
-	sprintf( path , "D:\\WINDOWS\\Temp\\ATOMATRIX %u.txt" , editSequence ) ;		// UPDATE: no drive
-	sprintf( cmd , "notepad D:\\WINDOWS\\Temp\\ATOMATRIX %u.txt" , editSequence++ ) ;
+	sprintf_s( path , sizeof( path ), "D:\\WINDOWS\\Temp\\ATOMATRIX %u.txt" , editSequence ) ;		// UPDATE: no drive
+	sprintf_s( cmd , sizeof( cmd ), "notepad D:\\WINDOWS\\Temp\\ATOMATRIX %u.txt" , editSequence++ ) ;
 
 
 	z	= 4096 ;
@@ -187,7 +187,7 @@ atom aVReality_edit( atom A , int T , atom* V )
 	if( V[0]->precursor == aUnicodedEntity )
 		{
 		struct _arg_unicode	a ;
-		unicode			b[2] ;
+		unicode			b[2];
 		b[0]	= (unicode)V[0]->datum ;
 		b[1]	= 0 ;
 		a.s	= b ;

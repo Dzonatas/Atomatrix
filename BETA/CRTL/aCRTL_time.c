@@ -12,9 +12,9 @@
 
 atom aCRTL_time( atom A , unsigned T , atom* V )
 	{
-	extern atom		(*oInteger)(int) ;
 	time_t			clocked;
+	extern atom		(*oInteger)(int) ;
 
-	time( &clocked ) ;
-	return oInteger( clocked );
+	time(&clocked);
+	return oInteger( (int) clocked );
 	}
