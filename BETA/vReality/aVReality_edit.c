@@ -20,8 +20,9 @@ struct	_arg_unicode
 	{
 	unicodes	s ;
 	} ;
+extern void* aVReality_edit_unicode_task(struct _arg_unicode* A);
 
-void* aVReality_edit_ascii_task( struct _arg* A  )
+static void* aVReality_edit_ascii_task( struct _arg* A  )
 	{
 	extern int		(*str_len)(string) ;
 	extern void*		(*allocm)(unsigned) ;
@@ -79,7 +80,8 @@ void* aVReality_edit_ascii_task( struct _arg* A  )
 	}
 
 
-void* aVReality_edit_unicode_task( struct _arg_unicode* A  )
+
+static void* aVReality_edit_unicode_task(struct _arg_unicode* A)
 	{
 	extern void*		(*allocm)(unsigned) ;
 	extern void*		(*allocr)(void*,unsigned) ;
@@ -165,31 +167,29 @@ atom aVReality_edit( atom A , int T , atom* V )
 		}
 	if( V[0]->precursor == aAsciiString )
 		{
-		struct _arg		a ;
+		struct _arg		a = { 0 } ;
 		a.s	= (string)V[0]->datum ;
 		return	aAsciiString_atomize( taskSplice( aVReality_edit_ascii_task , &a ) ) ;
 		}
 	if( V[0]->precursor == aAsciiCharacter )
 		{
-		struct _arg		a ;
-		char			b[2] ;
-		b[0]	= (byte)V[0]->datum ;
-		b[1]	= 0 ;
+		struct _arg		a = { 0 } ;
+		char			b[2] = { (byte)V[0]->datum, 0 } ;
+//		b[0]	= (byte)V[0]->datum ;
+	//	b[1]	= 0 ;
 		a.s	= b ;
 		return	aAsciiString_atomize( taskSplice( aVReality_edit_ascii_task , &a ) ) ;	// UPDATE: return aAsciiCharacter ?
 		}
 	if( V[0]->precursor == aUnicodedString )
 		{
-		struct _arg_unicode	a ;
+		struct _arg_unicode	a = { 0 } ;
 		a.s	= (unicodes)V[0]->datum ;
 		return	aUnicodedString_atomize( taskSplice( aVReality_edit_unicode_task , &a ) ) ;
 		}
 	if( V[0]->precursor == aUnicodedEntity )
 		{
-		struct _arg_unicode	a ;
-		unicode			b[2];
-		b[0]	= (unicode)V[0]->datum ;
-		b[1]	= 0 ;
+		struct _arg_unicode	a = { 0 } ;
+		unicode			b[2] = { (unicode)V[0]->datum , 0 };
 		a.s	= b ;
 		return	aUnicodedString_atomize( taskSplice( aVReality_edit_unicode_task , &a ) ) ;
 		}

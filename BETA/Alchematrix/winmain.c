@@ -26,7 +26,7 @@ int WINAPI WinMain( HINSTANCE I , HINSTANCE P , LPSTR C , int S )
 
 void displayLastErrorText( void )
 	{
-	LPCVOID		m ;
+	HMODULE		m = NULL ;
 	LPSTR		p = NULL ;
 	DWORD		l ;
 	DWORD		f ;
@@ -37,10 +37,9 @@ void displayLastErrorText( void )
 	f	= FORMAT_MESSAGE_ALLOCATE_BUFFER
 		| FORMAT_MESSAGE_IGNORE_INSERTS
 		| FORMAT_MESSAGE_FROM_SYSTEM ;
-	m	= 0 ;
 	if( e >= NERR_BASE && e <= MAX_NERR )
 		if( m = LoadLibraryExA( TEXT("netmsg.dll") , h /*, LOAD_LIBRARY_AS_DATAFILE*/, f |= FORMAT_MESSAGE_FROM_HMODULE));
-	l	= FormatMessageA( 
+	l	= FormatMessageA(
 		f , 
 		m , 
 		e ,

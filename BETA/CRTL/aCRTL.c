@@ -11,7 +11,7 @@
 extern atom		aCRTL ;
 
 
-void aCRTL_preconstructent( atom A )
+ void aCRTL_preconstructent( atom A )
 	{
 	extern atom		atomine ;
 	extern atom		(*atomize)(atom) ;
@@ -22,7 +22,7 @@ void aCRTL_preconstructent( atom A )
 	}
 
 
-void aCRTL_constructent( atom A )
+ void aCRTL_constructent( atom A )
 	{
 	extern atom		(*atomize)(atom) ;
 	extern void		(*interatomize)(atom,atom) ;

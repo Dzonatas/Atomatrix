@@ -145,7 +145,7 @@ atom aVReality_decanonicalize( atom A , int T , atom* V )
 	unsigned		z ;
 	unsigned		i ;
 	int			q ;
-	unsigned		v ;
+	unsigned		v = 0 ;
 	//char temp[50];
 	
 
